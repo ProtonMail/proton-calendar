@@ -25,7 +25,7 @@ To set up the project, follow the steps below:
 ## How to deploy
 
 - `$ npm run deploy -- --branch=<deploy-X> --api=<target>`
-_Deploy the app as /settings_
+_Deploy the app as /calendar_
 
 - `$ npm run deploy:standalone -- --branch=<deploy-X> --api=<target>`
 _Deploy the app as deploy + /login_
