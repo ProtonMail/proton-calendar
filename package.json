@@ -1,0 +1,69 @@
+{
+    "name": "protonmail-settings",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "config": {
+        "publicPathFlag": "--publicPath=/calendar/"
+    },
+    "scripts": {
+        "build": "cross-env NODE_ENV=production proton-pack compile $npm_package_config_publicPathFlag",
+        "start": "proton-pack dev-server $npm_package_config_publicPathFlag",
+        "lint": "eslint src --ext .js --quiet --cache",
+        "i18n:validate": "proton-i18n validate lint-functions",
+        "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
+        "i18n:upgrade": "proton-i18n extract && proton-i18n crowdin -u && proton-i18n commit update",
+        "pretty": "prettier --write  $(find src/app -type f -name '*.js')",
+        "preversion": "git update-index --no-assume-unchanged package-lock.json",
+        "postversion": "git update-index --assume-unchanged package-lock.json && git push --tags",
+        "deploy": "proton-bundler"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ProtonMail/proton-calendar.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ProtonMail/proton-calendar/issues"
+    },
+    "homepage": "https://github.com/ProtonMail/proton-calendar#readme",
+    "devDependencies": {
+        "cross-env": "^5.2.0",
+        "husky": "^2.3.0",
+        "lint-staged": "^8.1.7",
+        "prettier": "^1.17.1",
+        "proton-bundler": "github:ProtonMail/proton-bundler#semver:^1.2.0",
+        "proton-i18n": "github:ProtonMail/proton-i18n#semver:^1.4.0"
+    },
+    "dependencies": {
+        "@babel/polyfill": "^7.2.5",
+        "abortcontroller-polyfill": "^1.2.1",
+        "dayjs": "^1.8.14",
+        "design-system": "github:ProtonMail/design-system.git#master",
+        "file-saver": "^2.0.2",
+        "keycode": "^2.2.0",
+        "pmcrypto": "github:ProtonMail/pmcrypto.git#semver:^6.0.0",
+        "proton-pack": "github:ProtonMail/proton-pack.git#semver:^1.0.0",
+        "proton-shared": "github:ProtonMail/proton-shared.git#master",
+        "react": "^16.8.6",
+        "react-components": "github:ProtonMail/react-components.git#master",
+        "react-dom": "^16.8.6",
+        "react-router": "^4.3.1",
+        "react-router-dom": "^4.3.1",
+        "ttag": "^1.7.5",
+        "yetch": "^1.1.0"
+    },
+    "lint-staged": {
+        "*.js": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    }
+}
