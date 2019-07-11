@@ -1,22 +1,25 @@
 {
-    "name": "protonmail-settings",
+    "name": "proton-contact",
     "version": "1.0.0",
-    "description": "",
+    "description": "React web application to manage ProtonMail calendar",
     "main": "index.js",
     "config": {
         "publicPathFlag": "--publicPath=/calendar/"
     },
     "scripts": {
-        "build": "cross-env NODE_ENV=production proton-pack compile $npm_package_config_publicPathFlag",
-        "start": "proton-pack dev-server $npm_package_config_publicPathFlag",
+        "start": "proton-pack dev-server",
         "lint": "eslint src --ext .js --quiet --cache",
-        "i18n:validate": "proton-i18n validate lint-functions",
-        "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
-        "i18n:upgrade": "proton-i18n extract && proton-i18n crowdin -u && proton-i18n commit update",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js')",
         "preversion": "git update-index --no-assume-unchanged package-lock.json",
         "postversion": "git update-index --assume-unchanged package-lock.json && git push --tags",
-        "deploy": "proton-bundler"
+        "i18n:validate": "proton-i18n validate lint-functions",
+        "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
+        "i18n:upgrade": "proton-i18n extract && proton-i18n crowdin -u && proton-i18n commit update",
+        "i18n:getlatest": "proton-i18n upgrade",
+        "deploy": "proton-bundler",
+        "deploy:standalone": "proton-bundler --appMode standalone",
+        "build": "cross-env NODE_ENV=production proton-pack compile $npm_package_config_publicPathFlag",
+        "build:standalone": "cross-env NODE_ENV=production proton-pack compile --appMode=standalone"
     },
     "repository": {
         "type": "git",
