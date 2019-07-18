@@ -7,7 +7,7 @@
         "publicPathFlag": "--publicPath=/calendar/"
     },
     "scripts": {
-        "start": "proton-pack dev-server",
+        "start": "proton-pack dev-server $npm_package_config_publicPathFlag --appMode=standalone",
         "lint": "eslint src --ext .js --quiet --cache",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js')",
         "preversion": "git update-index --no-assume-unchanged package-lock.json",
