@@ -1,6 +1,5 @@
 {
     "name": "proton-calendar",
-    "name": "proton-contact",
     "version": "1.0.0",
     "description": "React web application to manage ProtonMail calendar",
     "main": "index.js",
@@ -42,14 +41,10 @@
         "proton-i18n": "github:ProtonMail/proton-i18n#semver:^1.4.0"
     },
     "dependencies": {
-        "@babel/polyfill": "^7.2.5",
         "@toast-ui/react-calendar": "^1.0.2",
         "abortcontroller-polyfill": "^1.2.1",
         "date-fns": "^1.30.1",
-        "dayjs": "^1.8.14",
         "design-system": "github:ProtonMail/design-system.git#master",
-        "file-saver": "^2.0.2",
-        "keycode": "^2.2.0",
         "pmcrypto": "github:ProtonMail/pmcrypto.git#semver:^6.0.0",
         "proton-pack": "github:ProtonMail/proton-pack.git#semver:^1.0.0",
         "proton-shared": "github:ProtonMail/proton-shared.git#master",
