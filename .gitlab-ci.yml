@@ -1,0 +1,112 @@
+image: node:latest
+
+stages:
+    - setup
+    - test
+    - deploy
+    - deploy-qa
+    - deploy-beta
+    - deploy-prod
+    - i18n-upgrade-app
+    - i18n-to-crowdin
+
+variables:
+    NODE_OPTIONS: --max-old-space-size=4096
+
+before_script:
+ - apt-get -y update
+ - 'which ssh-agent || apt-get -y install openssh-client'
+ - eval $(ssh-agent -s)
+ - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+ - git config --global user.email $GIT_CI_EMAIL
+ - git config --global user.name $GIT_CI_USERNAME
+ - mkdir ~/.ssh 2> /dev/null
+ - ssh-keyscan -t rsa ${CI_SERVER_HOST} > ~/.ssh/known_hosts
+
+setup:
+    stage: setup
+    script:
+        - npm install --no-audit --no-package-lock
+        - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@${CONFIG_GIT} ${CI_PROJECT_DIR}/configApp
+        - cp ${CI_PROJECT_DIR}/configApp/.gitconfig ${CI_PROJECT_DIR}/.gitconfig
+        - cp ${CI_PROJECT_DIR}/configApp/calendar/appConfig.json ${CI_PROJECT_DIR}/appConfig.json
+        - cat ${CI_PROJECT_DIR}/configApp/.env > ${CI_PROJECT_DIR}/.env
+        - echo >> ${CI_PROJECT_DIR}/.env
+        - cat ${CI_PROJECT_DIR}/configApp/calendar/.env >> ${CI_PROJECT_DIR}/.env
+        - cat ${CI_PROJECT_DIR}/{.env,appConfig.json}
+        - npx proton-pack config
+    artifacts:
+        expire_in: 1 days
+        paths:
+            - node_modules/
+            - src/app/config.js
+            - .env
+            - .gitconfig
+            - appConfig.json
+
+lint:
+    stage: test
+    script:
+        - npm run lint
+
+i18n:
+    stage: test
+    tags:
+        - dind
+    script:
+        - npm run i18n:validate
+        - npm run i18n:validate:context
+
+i18n-upgrade-app:
+    stage: i18n-upgrade-app
+    tags:
+        - dind
+    script:
+        - git checkout master
+        - npm run i18n:getlatest -- --limit-i18n=${I18N_APPROVED} --verbose
+    when: manual
+
+i18n-to-crowdin:
+    stage: i18n-to-crowdin
+    tags:
+        - dind
+    script:
+        - git checkout master
+        - npm run i18n:upgrade
+    when: manual
+
+deploy:
+    stage: deploy
+    tags:
+        - dind
+    script:
+        - npm i --no-audit --no-package-lock
+        - npm run deploy -- --branch=deploy-$BRANCH_DEPLOY --api=$API_DEPLOY --verbose --no-i18n --no-lint --forceFetch --fromCi
+    when: manual
+
+deploy-qa:
+    stage: deploy-qa
+    tags:
+        - dind
+    script:
+        - npm i --no-audit --no-package-lock
+        - npm run deploy -- --branch=deploy-$BRANCH_DEPLOY_QA --api=$API_DEPLOY --verbose --no-i18n --no-lint --forceFetch --fromCi
+    when: manual
+
+deploy-beta:
+    stage: deploy-beta
+    tags:
+        - dind
+    script:
+        - npm i --no-audit --no-package-lock
+        - npm run deploy -- --branch=deploy-beta --api=beta --verbose --no-i18n --no-lint --forceFetch --fromCi
+    when: manual
+
+deploy-prod:
+    stage: deploy-prod
+    tags:
+        - dind
+    script:
+        - npm i --no-audit --no-package-lock
+        - npm run deploy -- --branch=deploy-prod --api=prod --verbose --no-i18n --no-lint --forceFetch --fromCi
+    when: manual
