@@ -31,8 +31,8 @@ dist
 
 env.json
 .env
-src/config.js
 src/app/config.js
+src/app/config.ts
 appConfig.json
 env.json
 po/i18n.txt
