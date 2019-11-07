@@ -1,20 +1,24 @@
-image: node:latest
+image: node:lts
 
 stages:
     - setup
     - test
     - deploy
     - deploy-qa
-    - deploy-beta
-    - deploy-prod
     - i18n-upgrade-app
     - i18n-to-crowdin
+
+cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
 
 variables:
     NODE_OPTIONS: --max-old-space-size=4096
 
 before_script:
  - apt-get -y update
+ - apt-get install -y gawk rsync
  - 'which ssh-agent || apt-get -y install openssh-client'
  - eval $(ssh-agent -s)
  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
@@ -22,38 +26,31 @@ before_script:
  - git config --global user.name $GIT_CI_USERNAME
  - mkdir ~/.ssh 2> /dev/null
  - ssh-keyscan -t rsa ${CI_SERVER_HOST} > ~/.ssh/known_hosts
+ - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+ - git remote -v
+ - git clone "$CI_SCRIPTS_GIT" --depth 1 ci-scripts
+ - ls -l
 
 setup:
     stage: setup
+    tags:
+        - dind
     script:
-        - npm install --no-audit --no-package-lock
-        - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@${CONFIG_GIT} ${CI_PROJECT_DIR}/configApp
-        - cp ${CI_PROJECT_DIR}/configApp/.gitconfig ${CI_PROJECT_DIR}/.gitconfig
-        - cp ${CI_PROJECT_DIR}/configApp/calendar/appConfig.json ${CI_PROJECT_DIR}/appConfig.json
-        - cat ${CI_PROJECT_DIR}/configApp/.env > ${CI_PROJECT_DIR}/.env
-        - echo >> ${CI_PROJECT_DIR}/.env
-        - cat ${CI_PROJECT_DIR}/configApp/calendar/.env >> ${CI_PROJECT_DIR}/.env
-        - cat ${CI_PROJECT_DIR}/{.env,appConfig.json}
-        - npx proton-pack config
+        - ./ci-scripts/prepare-ci.sh install-app --remote "$APP_GIT"
     artifacts:
-        expire_in: 1 days
+        expire_in: 7 days
         paths:
-            - node_modules/
-            - src/app/config.js
+            - src/app/config.ts
             - .env
             - .gitconfig
             - appConfig.json
 
 lint:
     stage: test
-    script:
-        - npm run lint
-
-i18n:
-    stage: test
     tags:
         - dind
     script:
+        - npm run lint
         - npm run i18n:validate
         - npm run i18n:validate:context
 
@@ -62,8 +59,7 @@ i18n-upgrade-app:
     tags:
         - dind
     script:
-        - git checkout master
-        - npm run i18n:getlatest -- --limit-i18n=${I18N_APPROVED} --verbose
+        - ./ci-scripts/prepare-ci.sh i18n upgrade-app --limit "$I18N_APPROVED"
     when: manual
 
 i18n-to-crowdin:
@@ -71,8 +67,7 @@ i18n-to-crowdin:
     tags:
         - dind
     script:
-        - git checkout master
-        - npm run i18n:upgrade
+        - ./ci-scripts/prepare-ci.sh i18n to-crowdin
     when: manual
 
 deploy:
@@ -80,8 +75,8 @@ deploy:
     tags:
         - dind
     script:
-        - npm i --no-audit --no-package-lock
-        - npm run deploy -- --branch=deploy-$BRANCH_DEPLOY --api=$API_DEPLOY --verbose --no-i18n --no-lint --forceFetch --fromCi
+        - ./ci-scripts/prepare-ci.sh install-app-remote
+        - ./ci-scripts/prepare-ci.sh deploy-app --branch "$BRANCH_DEPLOY" --api "$API_DEPLOY"
     when: manual
 
 deploy-qa:
@@ -89,24 +84,9 @@ deploy-qa:
     tags:
         - dind
     script:
-        - npm i --no-audit --no-package-lock
-        - npm run deploy -- --branch=deploy-$BRANCH_DEPLOY_QA --api=$API_DEPLOY --verbose --no-i18n --no-lint --forceFetch --fromCi
+        - ./ci-scripts/prepare-ci.sh install-app-remote --update-lock
+        - ./ci-scripts/prepare-ci.sh deploy-app --branch "$BRANCH_DEPLOY_QA" --api "$API_DEPLOY"
     when: manual
 
-deploy-beta:
-    stage: deploy-beta
-    tags:
-        - dind
-    script:
-        - npm i --no-audit --no-package-lock
-        - npm run deploy -- --branch=deploy-beta --api=beta --verbose --no-i18n --no-lint --forceFetch --fromCi
-    when: manual
-
-deploy-prod:
-    stage: deploy-prod
-    tags:
-        - dind
-    script:
-        - npm i --no-audit --no-package-lock
-        - npm run deploy -- --branch=deploy-prod --api=prod --verbose --no-i18n --no-lint --forceFetch --fromCi
-    when: manual
+variables:
+    APP_GIT: git@github.com:ProtonMail/proton-calendar.git
