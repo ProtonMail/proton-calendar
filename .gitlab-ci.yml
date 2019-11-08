@@ -42,6 +42,7 @@ setup:
         paths:
             - src/app/config.ts
             - .env
+            - webapp-bundle.tar.gz
             - .gitconfig
             - appConfig.json
 
