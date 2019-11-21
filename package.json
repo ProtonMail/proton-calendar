@@ -63,7 +63,6 @@
         "react-dom": "^16.8.6",
         "react-router": "^4.3.1",
         "react-router-dom": "^4.3.1",
-        "timezone-support": "^2.0.2",
         "tinycolor2": "^1.4.1",
         "interval-tree": "github:ProtonMail/interval-tree#semver:^1.0.0",
         "ttag": "^1.7.5",
