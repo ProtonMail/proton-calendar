@@ -58,6 +58,7 @@
         "date-fns": "^2.5.0",
         "design-system": "github:ProtonMail/design-system#master",
         "proton-pack": "github:ProtonMail/proton-pack#semver:^3.0.0",
+        "interval-tree": "github:ProtonMail/interval-tree#semver:^1.0.0",
         "proton-shared": "github:ProtonMail/proton-shared#master",
         "react": "^16.8.6",
         "react-components": "github:ProtonMail/react-components#master",
@@ -65,7 +66,6 @@
         "react-router": "^4.3.1",
         "react-router-dom": "^4.3.1",
         "tinycolor2": "^1.4.1",
-        "interval-tree": "github:ProtonMail/interval-tree#semver:^1.0.0",
         "ttag": "^1.7.5",
         "yetch": "^1.1.0"
     },
