@@ -41,7 +41,8 @@ default:
 setup:
     stage: setup
     script:
-        - ./ci-scripts/prepare-ci.sh install-app --remote "$APP_GIT"
+        - ./ci-scripts/prepare-ci.sh install-app \
+            --remote "$CI_REPOSITORY_URL"
     artifacts:
         expire_in: 7 days
         paths:
@@ -63,7 +64,8 @@ lint:
 i18n-upgrade-app:
     stage: i18n
     script:
-        - ./ci-scripts/prepare-ci.sh i18n upgrade-app --limit "$I18N_APPROVED"
+        - ./ci-scripts/prepare-ci.sh i18n upgrade-app \
+            --limit "$I18N_APPROVED"
     when: manual
 
 i18n-to-crowdin:
@@ -79,8 +81,10 @@ deploy:
     tags:
         - experimental
     script:
-        - ./ci-scripts/prepare-ci.sh install-app-remote
-        - ./ci-scripts/prepare-ci.sh deploy-app --branch "$BRANCH_DEPLOY" --api "$API_DEPLOY"
+        - ./ci-scripts/prepare-ci.sh deploy-app \
+            --branch "$BRANCH_DEPLOY" \
+            --api "$API_DEPLOY" \
+            --remote "$CI_REPOSITORY_URL"
     when: manual
 
 deploy-qa:
@@ -88,18 +92,23 @@ deploy-qa:
     tags:
         - experimental
     script:
-        - ./ci-scripts/prepare-ci.sh install-app-remote --update-lock
-        - ./ci-scripts/prepare-ci.sh deploy-app --branch "$BRANCH_DEPLOY_QA" --api "$API_DEPLOY"
+        - ./ci-scripts/prepare-ci.sh reinstall-vendor \
+            --update-lock
+        - ./ci-scripts/prepare-ci.sh deploy-app \
+            --branch "$BRANCH_DEPLOY_QA" \
+            --api "$API_DEPLOY" \
+            --remote "$CI_REPOSITORY_URL" \
+            --update-lock
     when: manual
 
 clean-pipeline:
     cache: {}
     stage: menache
     script:
-        - ./ci-scripts/manage-pipelines.js retry "$CI_PROJECT_ID" "$CI_PIPELINE_ID" --verbose
+        - ./ci-scripts/manage-pipelines.js retry "$CI_PROJECT_ID" "$CI_PIPELINE_ID" \
+            --verbose
     when: manual
     dependencies: []
 
 variables:
-    APP_GIT: git@github.com:ProtonMail/proton-calendar.git
     NODE_OPTIONS: --max-old-space-size=4096
