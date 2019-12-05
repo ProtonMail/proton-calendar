@@ -40,6 +40,8 @@ default:
 
 setup:
     stage: setup
+    tags:
+        - experimental
     script:
         - ./ci-scripts/prepare-ci.sh install-app \
             --remote "$CI_REPOSITORY_URL"
@@ -58,7 +60,19 @@ lint:
         - experimental
     script:
         - npm run lint
+
+lint-translations:
+    stage: test
+    tags:
+        - experimental
+    script:
         - npm run i18n:validate
+
+lint-translations-context:
+    stage: test
+    tags:
+        - experimental
+    script:
         - npm run i18n:validate:context
 
 i18n-upgrade-app:
