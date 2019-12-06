@@ -17,6 +17,8 @@ default:
         - git config --global user.email $GIT_CI_EMAIL
         - git config --global user.name $GIT_CI_USERNAME
         - git config --global url."https://".insteadOf git://
+        ## Because gitlab... https://stackoverflow.com/questions/51716044/how-do-i-push-to-a-repo-from-within-a-gitlab-ci-pipeline
+        - export APP_GIT=`echo $CI_REPOSITORY_URL | perl -pe 's#.*@(.+?(\:\d+)?)/#git@\1:#'`
         - mkdir ~/.ssh 2> /dev/null
         - |
           cat <<EOF > ~/.ssh/config
@@ -43,7 +45,7 @@ setup:
     tags:
         - experimental
     script:
-        - ./ci-scripts/prepare-ci.sh install-app --remote "$CI_REPOSITORY_URL"
+        - ./ci-scripts/prepare-ci.sh install-app --remote "$APP_GIT"
     artifacts:
         expire_in: 7 days
         paths:
@@ -93,7 +95,7 @@ deploy:
     tags:
         - experimental
     script:
-        - ./ci-scripts/prepare-ci.sh deploy-app --branch "$BRANCH_DEPLOY" --api "$API_DEPLOY" --remote "$CI_REPOSITORY_URL"
+        - ./ci-scripts/prepare-ci.sh deploy-app --branch "$BRANCH_DEPLOY" --api "$API_DEPLOY" --remote "$APP_GIT"
     when: manual
 
 deploy-qa:
@@ -102,7 +104,7 @@ deploy-qa:
         - experimental
     script:
         - ./ci-scripts/prepare-ci.sh reinstall-vendor --update-lock
-        - ./ci-scripts/prepare-ci.sh deploy-app --branch "$BRANCH_DEPLOY_QA" --api "$API_DEPLOY" --remote "$CI_REPOSITORY_URL" --update-lock
+        - ./ci-scripts/prepare-ci.sh deploy-app --branch "$BRANCH_DEPLOY_QA" --api "$API_DEPLOY" --remote "$APP_GIT" --update-lock
     when: manual
 
 clean-pipeline:
