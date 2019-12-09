@@ -52,7 +52,6 @@ setup:
             - node_modules/
             - src/app/config.ts
             - .env
-            - webapp-bundle.tar.gz
             - appConfig.json
 
 lint:
@@ -97,6 +96,10 @@ deploy:
     script:
         - ./ci-scripts/prepare-ci.sh deploy-app --branch "$BRANCH_DEPLOY" --api "$API_DEPLOY" --remote "$APP_GIT"
     when: manual
+    artifacts:
+        expire_in: 2 days
+        paths:
+            - webapp-bundle.tar.gz
 
 deploy-qa:
     stage: deploy-qa
@@ -106,6 +109,10 @@ deploy-qa:
         - ./ci-scripts/prepare-ci.sh reinstall-vendor --update-lock
         - ./ci-scripts/prepare-ci.sh deploy-app --branch "$BRANCH_DEPLOY_QA" --api "$API_DEPLOY" --remote "$APP_GIT" --update-lock
     when: manual
+    artifacts:
+        expire_in: 2 days
+        paths:
+            - webapp-bundle.tar.gz
 
 clean-pipeline:
     cache: {}
