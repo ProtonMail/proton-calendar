@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: protonmail\n"
 "Language-Team: Croatian\n"
 "Language: hr_HR\n"
-"PO-Revision-Date: 2019-12-22 11:22\n"
+"PO-Revision-Date: 2019-12-27 12:23\n"
 
 #: node_modules/proton-shared/lib/helpers/humanSize.js:13
 msgctxt "file size format"
@@ -225,12 +225,12 @@ msgctxt "Error"
 msgid "Member address not found"
 msgstr "Adresa člana nije pronađena"
 
-#: src/app/components/eventModal/eventForm/state.js:197
+#: src/app/components/eventModal/eventForm/state.js:204
 msgctxt "Error"
 msgid "Title required"
 msgstr "Naslov je potreban"
 
-#: src/app/components/eventModal/eventForm/state.js:204
+#: src/app/components/eventModal/eventForm/state.js:211
 msgctxt "Error"
 msgid "Start time must be before end time"
 msgstr "Početno vrijeme mora biti prije vremena završetka"
@@ -661,8 +661,8 @@ msgstr "Vaš novi kalendar je spreman. Svi događaji u vašem kalendaru šifrira
 #: src/app/containers/setup/CalendarReady.js:15
 #, javascript-format
 msgctxt "Info"
-msgid "If you encounter a problem, you can reach our support team by clicking the ${ supportIcon } button."
-msgstr "Ako naiđete na problem, možete kontaktirati naš tim za podršku klikom na gumb ${ supportIcon }."
+msgid "If you encounter a problem, you can reach our support team by clicking on Profile/${ supportIcon } Report bug button."
+msgstr "Ako naiđete na problem, možete kontaktirati naš tim za podršku klikom na Profil/${ supportIcon } Prijavi problem."
 
 #: src/app/containers/setup/CalendarResetSection.js:8
 msgctxt "Info"
@@ -697,22 +697,22 @@ msgstr "Učitavanje događaja"
 #: src/app/containers/calendar/InteractiveCalendarView.js:371
 msgctxt "Info"
 msgid "Would you like to edit all recurring events? This event will become the starting event."
-msgstr ""
+msgstr "Želite li urediti sve ponavljajuće događaje? Ovaj će događaj postati početni događaj."
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:376
 msgctxt "Info"
 msgid "Edit recurring event"
-msgstr ""
+msgstr "Uredi ponavljajući događaj"
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:415
 msgctxt "Info"
 msgid "Discard changes?"
-msgstr ""
+msgstr "Odbaciti promjene?"
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:428
 msgctxt "Info"
 msgid "Would you like to delete all recurring events?"
-msgstr ""
+msgstr "Želite li ukloniti sve ponavljajuće događaje?"
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:429
 msgctxt "Info"
@@ -738,12 +738,12 @@ msgstr "Tjedno u ${ startDay }"
 #: src/app/components/events/PopoverEventContent.js:20
 msgctxt "Info"
 msgid "Monthly"
-msgstr ""
+msgstr "Mjesečno"
 
 #: src/app/components/events/PopoverEventContent.js:23
 msgctxt "Info"
 msgid "Yearly"
-msgstr ""
+msgstr "Godišnje"
 
 #: node_modules/react-components/containers/api/HumanVerificationModal.js:22
 msgctxt "Label"
@@ -1290,7 +1290,7 @@ msgctxt "Action"
 msgid "Create"
 msgstr "Stvori"
 
-#: src/app/components/events/EventPopover.js:108
+#: src/app/components/events/EventPopover.js:113
 #: src/app/containers/settings/section/CalendarsTable.js:14
 msgctxt "Action"
 msgid "Edit"
@@ -1329,12 +1329,12 @@ msgstr "Novi događaj"
 #: src/app/containers/calendar/InteractiveCalendarView.js:375
 msgctxt "Action"
 msgid "Yes"
-msgstr ""
+msgstr "Da"
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:377
 msgctxt "Action"
 msgid "No"
-msgstr ""
+msgstr "Ne"
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:417
 msgctxt "Action"
@@ -1672,7 +1672,7 @@ msgctxt "Payment method option"
 msgid "Pay with Bitcoin"
 msgstr "Plati s Bitcoinom"
 
-#: node_modules/react-components/components/input/TimeInput.js:25
+#: node_modules/react-components/components/input/TimeInput.js:26
 #, javascript-format
 msgctxt "Time unit"
 msgid "${ hours } hour"
@@ -1681,7 +1681,7 @@ msgstr[0] "${ hours } sat"
 msgstr[1] "${ hours } sata"
 msgstr[2] "${ hours } sati"
 
-#: node_modules/react-components/components/input/TimeInput.js:26
+#: node_modules/react-components/components/input/TimeInput.js:27
 msgctxt "Time unit"
 msgid "${ minutes } minutes"
 msgid_plural "${ minutes } minutes"
