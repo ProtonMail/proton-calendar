@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: protonmail\n"
 "Language-Team: Croatian\n"
 "Language: hr_HR\n"
-"PO-Revision-Date: 2019-12-27 12:23\n"
+"PO-Revision-Date: 2020-01-04 14:21\n"
 
 #: node_modules/proton-shared/lib/helpers/humanSize.js:13
 msgctxt "file size format"
@@ -286,7 +286,7 @@ msgctxt "Title"
 msgid "Account disabled"
 msgstr "Račun je onemogućen"
 
-#: node_modules/react-components/containers/support/BugModal.js:127
+#: node_modules/react-components/containers/support/BugModal.js:136
 msgctxt "Title"
 msgid "Report bug"
 msgstr "Prijavi problem"
@@ -390,18 +390,18 @@ msgctxt "Title"
 msgid "Layout"
 msgstr "Izgled"
 
-#: src/app/containers/settings/section/CalendarsSection.js:41
+#: src/app/containers/settings/section/CalendarsSection.js:43
 msgctxt "Title"
-msgid "Confirm delete"
-msgstr "Potvrdi brisanje"
+msgid "Delete calendar"
+msgstr "Ukloni kalendar"
 
-#: src/app/containers/settings/section/CalendarsSection.js:53
+#: src/app/containers/settings/section/CalendarsSection.js:59
 msgctxt "Title"
 msgid "Calendars"
 msgstr "Kalendari"
 
 #: src/app/components/layout/PrivateHeader.js:36
-#: src/app/containers/settings/SettingsContainer.js:65
+#: src/app/containers/settings/SettingsContainer.js:63
 msgctxt "Title"
 msgid "Settings"
 msgstr "Postavke"
@@ -413,7 +413,7 @@ msgctxt "Title"
 msgid "Calendar"
 msgstr "Kalendar"
 
-#: src/app/containers/alarms/AlarmWatcher.js:17
+#: src/app/containers/alarms/AlarmWatcher.js:18
 msgctxt "Title"
 msgid "Calendar alarm"
 msgstr "Alarm kalendara"
@@ -507,13 +507,13 @@ msgctxt "Info"
 msgid "Screenshot(s) attached"
 msgstr "Snimka(e) zaslona su pridodane"
 
-#: node_modules/react-components/containers/support/BugModal.js:130
+#: node_modules/react-components/containers/support/BugModal.js:139
 #, javascript-format
 msgctxt "Info"
 msgid "Refreshing the page or ${ link } will automatically resolve most issues."
 msgstr "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
 
-#: node_modules/react-components/containers/support/BugModal.js:245
+#: node_modules/react-components/containers/support/BugModal.js:254
 #, javascript-format
 msgctxt "Info"
 msgid "Contact us at ${ criticalEmail } for critical security issues."
@@ -679,12 +679,12 @@ msgctxt "Info"
 msgid "Week and month views only apply to desktop."
 msgstr "Tjedni i mjesečni prikazi primjenjuju se samo na radnu površinu."
 
-#: src/app/containers/settings/section/CalendarsSection.js:42
+#: src/app/containers/settings/section/CalendarsSection.js:48
 msgctxt "Info"
 msgid "Are you sure you want to delete this calendar?"
 msgstr "Jeste li sigurni da želite ukloniti ovaj kalendar?"
 
-#: src/app/containers/settings/section/CalendarsSection.js:55
+#: src/app/containers/settings/section/CalendarsSection.js:61
 msgctxt "Info"
 msgid "Feature coming soon"
 msgstr "Značajka uskoro dolazi"
@@ -694,32 +694,42 @@ msgctxt "Info"
 msgid "Loading events"
 msgstr "Učitavanje događaja"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:371
+#: src/app/containers/calendar/InteractiveCalendarView.js:372
 msgctxt "Info"
 msgid "Would you like to edit all recurring events? This event will become the starting event."
 msgstr "Želite li urediti sve ponavljajuće događaje? Ovaj će događaj postati početni događaj."
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:376
+#: src/app/containers/calendar/InteractiveCalendarView.js:377
 msgctxt "Info"
 msgid "Edit recurring event"
 msgstr "Uredi ponavljajući događaj"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:415
+#: src/app/containers/calendar/InteractiveCalendarView.js:422
 msgctxt "Info"
 msgid "Discard changes?"
 msgstr "Odbaciti promjene?"
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:428
 msgctxt "Info"
+msgid "You will lose all unsaved changes."
+msgstr "Izgubit ćete sve nespremljene promjene."
+
+#: src/app/containers/calendar/InteractiveCalendarView.js:437
+msgctxt "Info"
 msgid "Would you like to delete all recurring events?"
 msgstr "Želite li ukloniti sve ponavljajuće događaje?"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:429
+#: src/app/containers/calendar/InteractiveCalendarView.js:438
 msgctxt "Info"
 msgid "Would you like to delete this event?"
 msgstr "Želite li ukloniti ovaj događaj?"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:433
+#: src/app/containers/calendar/InteractiveCalendarView.js:439
+msgctxt "Info"
+msgid "Delete events"
+msgstr "Izbriši događaje"
+
+#: src/app/containers/calendar/InteractiveCalendarView.js:439
 msgctxt "Info"
 msgid "Delete event"
 msgstr "Izbriši događaj"
@@ -781,47 +791,47 @@ msgctxt "Label"
 msgid "Mailbox password"
 msgstr "Lozinka sandučića e-pošte"
 
-#: node_modules/react-components/containers/support/BugModal.js:135
+#: node_modules/react-components/containers/support/BugModal.js:144
 msgctxt "Label"
 msgid "Proton username"
 msgstr "Proton korisničko ime"
 
-#: node_modules/react-components/containers/support/BugModal.js:147
+#: node_modules/react-components/containers/support/BugModal.js:156
 msgctxt "Label"
 msgid "Email address"
 msgstr "Adresa e-pošte"
 
-#: node_modules/react-components/containers/support/BugModal.js:159
+#: node_modules/react-components/containers/support/BugModal.js:168
 msgctxt "Label"
 msgid "Category"
 msgstr "Kategorija"
 
-#: node_modules/react-components/containers/support/BugModal.js:171
+#: node_modules/react-components/containers/support/BugModal.js:180
 msgctxt "Label"
 msgid "What happened?"
 msgstr "Što se dogodilo?"
 
-#: node_modules/react-components/containers/support/BugModal.js:192
+#: node_modules/react-components/containers/support/BugModal.js:201
 msgctxt "Label"
 msgid "System information"
 msgstr "Informacije o sustavu"
 
-#: node_modules/react-components/containers/support/BugModal.js:200
+#: node_modules/react-components/containers/support/BugModal.js:209
 msgctxt "Label"
 msgid "Operating system"
 msgstr "Operativni sustav"
 
-#: node_modules/react-components/containers/support/BugModal.js:211
+#: node_modules/react-components/containers/support/BugModal.js:220
 msgctxt "Label"
 msgid "Operating system version"
 msgstr "Verzija operativnog sustava"
 
-#: node_modules/react-components/containers/support/BugModal.js:222
+#: node_modules/react-components/containers/support/BugModal.js:231
 msgctxt "Label"
 msgid "Browser"
 msgstr "Preglednik"
 
-#: node_modules/react-components/containers/support/BugModal.js:233
+#: node_modules/react-components/containers/support/BugModal.js:242
 msgctxt "Label"
 msgid "Browser version"
 msgstr "Verzija preglednika"
@@ -948,12 +958,12 @@ msgctxt "Label"
 msgid "All day"
 msgstr "Cijeli dan"
 
-#: src/app/components/eventModal/rows/DateTimeRow.js:157
+#: src/app/components/eventModal/rows/DateTimeRow.js:158
 msgctxt "Label"
 msgid "From"
 msgstr "Od"
 
-#: src/app/components/eventModal/rows/DateTimeRow.js:166
+#: src/app/components/eventModal/rows/DateTimeRow.js:167
 msgctxt "Label"
 msgid "To"
 msgstr "Za"
@@ -1022,37 +1032,37 @@ msgctxt "Placeholder"
 msgid "Mailbox password"
 msgstr "Lozinka sandučića e-pošte"
 
-#: node_modules/react-components/containers/support/BugModal.js:141
+#: node_modules/react-components/containers/support/BugModal.js:150
 msgctxt "Placeholder"
 msgid "Proton username"
 msgstr "Proton korisničko ime"
 
-#: node_modules/react-components/containers/support/BugModal.js:153
+#: node_modules/react-components/containers/support/BugModal.js:162
 msgctxt "Placeholder"
 msgid "A way to contact you"
 msgstr "Način kako da vas kontaktiramo"
 
-#: node_modules/react-components/containers/support/BugModal.js:177
+#: node_modules/react-components/containers/support/BugModal.js:186
 msgctxt "Placeholder"
 msgid "Please describe the problem and include any error messages"
 msgstr "Molimo opišite problem i pridružite sve poruke o pogreškama"
 
-#: node_modules/react-components/containers/support/BugModal.js:206
+#: node_modules/react-components/containers/support/BugModal.js:215
 msgctxt "Placeholder"
 msgid "OS name"
 msgstr "Naziv OS-a"
 
-#: node_modules/react-components/containers/support/BugModal.js:217
+#: node_modules/react-components/containers/support/BugModal.js:226
 msgctxt "Placeholder"
 msgid "OS version"
 msgstr "Verzija OS"
 
-#: node_modules/react-components/containers/support/BugModal.js:228
+#: node_modules/react-components/containers/support/BugModal.js:237
 msgctxt "Placeholder"
 msgid "Browser name"
 msgstr "Naziv preglednika"
 
-#: node_modules/react-components/containers/support/BugModal.js:239
+#: node_modules/react-components/containers/support/BugModal.js:248
 msgctxt "Placeholder"
 msgid "Browser version"
 msgstr "Verzija preglednika"
@@ -1136,8 +1146,8 @@ msgstr "Prijavite se"
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:101
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:143
 #: src/app/components/eventModal/CreateEventModal.js:38
-#: src/app/containers/calendar/InteractiveCalendarView.js:416
-#: src/app/containers/calendar/InteractiveCalendarView.js:434
+#: src/app/containers/calendar/InteractiveCalendarView.js:423
+#: src/app/containers/calendar/InteractiveCalendarView.js:444
 #: src/app/containers/settings/AskUpdateTimezoneModal.js:31
 msgctxt "Action"
 msgid "Cancel"
@@ -1146,7 +1156,7 @@ msgstr "Poništi"
 #: node_modules/react-components/components/modal/FormModal.js:20
 #: node_modules/react-components/containers/login/LoginForm.js:239
 #: node_modules/react-components/containers/login/LoginForm.js:267
-#: node_modules/react-components/containers/support/BugModal.js:126
+#: node_modules/react-components/containers/support/BugModal.js:135
 msgctxt "Action"
 msgid "Submit"
 msgstr "Pošalji"
@@ -1161,12 +1171,12 @@ msgctxt "Action"
 msgid "Add screenshot(s)"
 msgstr "Dodaj snimku(e) zaslona"
 
-#: node_modules/react-components/containers/support/BugModal.js:194
+#: node_modules/react-components/containers/support/BugModal.js:203
 msgctxt "Action"
 msgid "Hide info"
 msgstr "Sakrij informacije"
 
-#: node_modules/react-components/containers/support/BugModal.js:194
+#: node_modules/react-components/containers/support/BugModal.js:203
 msgctxt "Action"
 msgid "Show info"
 msgstr "Prikaži informacije"
@@ -1241,7 +1251,7 @@ msgid "Logout"
 msgstr "Odjava"
 
 #: node_modules/react-components/components/miniCalendar/LocalizedMiniCalendar.js:31
-#: src/app/components/DateCursorButtons.js:48
+#: src/app/components/DateCursorButtons.js:62
 msgctxt "Action"
 msgid "Next month"
 msgstr "Sljedeći mjesec"
@@ -1299,13 +1309,14 @@ msgstr "Uredi"
 #: src/app/components/eventModal/CreateEventModal.js:52
 #: src/app/components/eventModal/Notifications.js:27
 #: src/app/components/events/EventPopover.js:52
-#: src/app/containers/calendar/InteractiveCalendarView.js:432
+#: src/app/containers/calendar/InteractiveCalendarView.js:442
+#: src/app/containers/settings/section/CalendarsSection.js:44
 #: src/app/containers/settings/section/CalendarsTable.js:18
 msgctxt "Action"
 msgid "Delete"
 msgstr "Obriši"
 
-#: src/app/containers/settings/section/CalendarsSection.js:56
+#: src/app/containers/settings/section/CalendarsSection.js:62
 msgctxt "Action"
 msgid "Add calendar"
 msgstr "Dodaj kalendar"
@@ -1316,27 +1327,27 @@ msgid "Select calendar view"
 msgstr "Odaberite prikaz kalendara"
 
 #: src/app/containers/calendar/CalendarContainerView.js:110
-#: src/app/containers/settings/SettingsContainer.js:55
+#: src/app/containers/settings/SettingsContainer.js:53
 msgctxt "Action"
 msgid "Upgrade"
 msgstr "Nadogradnja"
 
-#: src/app/containers/calendar/CalendarSidebar.js:87
+#: src/app/containers/calendar/CalendarSidebar.js:96
 msgctxt "Action"
 msgid "New event"
 msgstr "Novi događaj"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:375
+#: src/app/containers/calendar/InteractiveCalendarView.js:376
 msgctxt "Action"
 msgid "Yes"
 msgstr "Da"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:377
+#: src/app/containers/calendar/InteractiveCalendarView.js:378
 msgctxt "Action"
 msgid "No"
 msgstr "Ne"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:417
+#: src/app/containers/calendar/InteractiveCalendarView.js:424
 msgctxt "Action"
 msgid "Discard"
 msgstr "Odbaci"
@@ -1362,42 +1373,42 @@ msgctxt "Action"
 msgid "More options"
 msgstr "Više opcija"
 
-#: src/app/components/DateCursorButtons.js:39
+#: src/app/components/DateCursorButtons.js:53
 msgctxt "Action"
 msgid "Previous day"
 msgstr "Prethodni dan"
 
-#: src/app/components/DateCursorButtons.js:40
+#: src/app/components/DateCursorButtons.js:54
 msgctxt "Action"
 msgid "Previous week"
 msgstr "Prethodni tjedan"
 
-#: src/app/components/DateCursorButtons.js:41
+#: src/app/components/DateCursorButtons.js:55
 msgctxt "Action"
 msgid "Previous month"
 msgstr "Prethodni mjesec"
 
-#: src/app/components/DateCursorButtons.js:42
+#: src/app/components/DateCursorButtons.js:56
 msgctxt "Action"
 msgid "Previous year"
 msgstr "Prethodna godina"
 
-#: src/app/components/DateCursorButtons.js:46
+#: src/app/components/DateCursorButtons.js:60
 msgctxt "Action"
 msgid "Next day"
 msgstr "Sljedeći dan"
 
-#: src/app/components/DateCursorButtons.js:47
+#: src/app/components/DateCursorButtons.js:61
 msgctxt "Action"
 msgid "Next week"
 msgstr "Sljedeći tjedan"
 
-#: src/app/components/DateCursorButtons.js:49
+#: src/app/components/DateCursorButtons.js:63
 msgctxt "Action"
 msgid "Next year"
 msgstr "Sljedeća godina"
 
-#: src/app/components/DateCursorButtons.js:61
+#: src/app/components/DateCursorButtons.js:75
 msgctxt "Action"
 msgid "Today"
 msgstr "Danas"
@@ -1418,101 +1429,101 @@ msgctxt "Error notification in the bug report modal when the user upload file"
 msgid "No image selected"
 msgstr "Nije odabrana nijedna slika"
 
-#: node_modules/react-components/containers/support/BugModal.js:35
-#: node_modules/react-components/containers/support/BugModal.js:49
+#: node_modules/react-components/containers/support/BugModal.js:38
+#: node_modules/react-components/containers/support/BugModal.js:52
 msgctxt "Bug category"
 msgid "Login problem"
 msgstr "Problem s prijavom"
 
-#: node_modules/react-components/containers/support/BugModal.js:36
+#: node_modules/react-components/containers/support/BugModal.js:39
 msgctxt "Bug category"
 msgid "Sign up problem"
 msgstr "Problem s registracijom"
 
-#: node_modules/react-components/containers/support/BugModal.js:37
+#: node_modules/react-components/containers/support/BugModal.js:40
 msgctxt "Bug category"
 msgid "Bridge problem"
 msgstr "Problem s Bridgeom"
 
-#: node_modules/react-components/containers/support/BugModal.js:38
+#: node_modules/react-components/containers/support/BugModal.js:41
 msgctxt "Bug category"
 msgid "Import / export problem"
 msgstr "Problem s uvozom/izvozom"
 
-#: node_modules/react-components/containers/support/BugModal.js:39
+#: node_modules/react-components/containers/support/BugModal.js:42
 msgctxt "Bug category"
 msgid "Custom domains problem"
 msgstr "Problem s prilagođenim domenama"
 
-#: node_modules/react-components/containers/support/BugModal.js:40
-#: node_modules/react-components/containers/support/BugModal.js:51
+#: node_modules/react-components/containers/support/BugModal.js:43
+#: node_modules/react-components/containers/support/BugModal.js:54
 msgctxt "Bug category"
 msgid "Payments problem"
 msgstr "Problem s naplatom"
 
-#: node_modules/react-components/containers/support/BugModal.js:41
-#: node_modules/react-components/containers/support/BugModal.js:55
+#: node_modules/react-components/containers/support/BugModal.js:44
+#: node_modules/react-components/containers/support/BugModal.js:58
 msgctxt "Bug category"
 msgid "Connection problem"
 msgstr "Problem s vezom"
 
-#: node_modules/react-components/containers/support/BugModal.js:42
+#: node_modules/react-components/containers/support/BugModal.js:45
 msgctxt "Bug category"
 msgid "Slow speed problem"
 msgstr "Problem s sporom brzinom"
 
-#: node_modules/react-components/containers/support/BugModal.js:43
+#: node_modules/react-components/containers/support/BugModal.js:46
 msgctxt "Bug category"
 msgid "VPN problem"
 msgstr "Problem s VPN-om"
 
-#: node_modules/react-components/containers/support/BugModal.js:44
-#: node_modules/react-components/containers/support/BugModal.js:60
+#: node_modules/react-components/containers/support/BugModal.js:47
+#: node_modules/react-components/containers/support/BugModal.js:63
 msgctxt "Bug category"
 msgid "Feature request"
 msgstr "Predložite novu značajku"
 
-#: node_modules/react-components/containers/support/BugModal.js:45
+#: node_modules/react-components/containers/support/BugModal.js:48
 msgctxt "Bug category"
 msgid "Other"
 msgstr "Ostalo"
 
-#: node_modules/react-components/containers/support/BugModal.js:50
+#: node_modules/react-components/containers/support/BugModal.js:53
 msgctxt "Bug category"
 msgid "Signup problem"
 msgstr "Problem s registracijom"
 
-#: node_modules/react-components/containers/support/BugModal.js:52
+#: node_modules/react-components/containers/support/BugModal.js:55
 msgctxt "Bug category"
 msgid "Installation problem"
 msgstr "Problem s instalacijom"
 
-#: node_modules/react-components/containers/support/BugModal.js:53
+#: node_modules/react-components/containers/support/BugModal.js:56
 msgctxt "Bug category"
 msgid "Update problem"
 msgstr "Problem s nadogradnjom"
 
-#: node_modules/react-components/containers/support/BugModal.js:54
+#: node_modules/react-components/containers/support/BugModal.js:57
 msgctxt "Bug category"
 msgid "Application problem"
 msgstr "Problem s aplikacijom"
 
-#: node_modules/react-components/containers/support/BugModal.js:56
+#: node_modules/react-components/containers/support/BugModal.js:59
 msgctxt "Bug category"
 msgid "Speed problem"
 msgstr "Problem s brzinom"
 
-#: node_modules/react-components/containers/support/BugModal.js:57
+#: node_modules/react-components/containers/support/BugModal.js:60
 msgctxt "Bug category"
 msgid "Manual setup problem"
 msgstr "Problem s ručnim postavljanjem"
 
-#: node_modules/react-components/containers/support/BugModal.js:58
+#: node_modules/react-components/containers/support/BugModal.js:61
 msgctxt "Bug category"
 msgid "Website access problem"
 msgstr "Problem s pristupom web stanici"
 
-#: node_modules/react-components/containers/support/BugModal.js:59
+#: node_modules/react-components/containers/support/BugModal.js:62
 msgctxt "Bug category"
 msgid "Streaming problem"
 msgstr "Problem s streamingom"
@@ -1522,7 +1533,7 @@ msgctxt "Action to select a title for the bug report modal"
 msgid "Select"
 msgstr "Odaberi"
 
-#: node_modules/react-components/containers/support/BugModal.js:95
+#: node_modules/react-components/containers/support/BugModal.js:89
 msgctxt "Link"
 msgid "clearing your browser cache"
 msgstr "čišćenje predmemorije preglednika"
@@ -1543,17 +1554,17 @@ msgctxt "Link"
 msgid "Learn more"
 msgstr "Saznajte više"
 
-#: src/app/containers/settings/SettingsContainer.js:37
+#: src/app/containers/settings/SettingsContainer.js:35
 msgctxt "Link"
 msgid "General"
 msgstr "Općenito"
 
-#: src/app/containers/settings/SettingsContainer.js:38
+#: src/app/containers/settings/SettingsContainer.js:36
 msgctxt "Link"
 msgid "Calendars"
 msgstr "Kalendari"
 
-#: node_modules/react-components/containers/support/BugModal.js:111
+#: node_modules/react-components/containers/support/BugModal.js:120
 msgctxt "Success"
 msgid "Bug reported"
 msgstr "Pogreška je prijavljena"
@@ -1581,7 +1592,7 @@ msgctxt "Success"
 msgid "Preference saved"
 msgstr "Postavke su spremljene"
 
-#: src/app/containers/settings/section/CalendarsSection.js:48
+#: src/app/containers/settings/section/CalendarsSection.js:54
 msgctxt "Success"
 msgid "Calendar removed"
 msgstr "Kalendar je uklonjen"
@@ -1631,12 +1642,12 @@ msgctxt "Success"
 msgid "Alarm deleted"
 msgstr "Alarm je uklonjen"
 
-#: node_modules/react-components/containers/support/BugModal.js:131
+#: node_modules/react-components/containers/support/BugModal.js:140
 msgctxt "Warning"
 msgid "Bug reports are not end-to-end encrypted, please do not send any sensitive information."
 msgstr "Izvještaji o pogreškama nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
 
-#: node_modules/react-components/containers/support/BugModal.js:184
+#: node_modules/react-components/containers/support/BugModal.js:193
 msgctxt "Label, make it short please"
 msgid "Attach screenshot(s)"
 msgstr "Dodajte snimke zaslona"
@@ -1689,7 +1700,7 @@ msgstr[0] "${ minutes } minuta"
 msgstr[1] "${ minutes } minute"
 msgstr[2] "${ minutes } minuta"
 
-#: src/app/components/eventModal/inputs/NotificationInput.js:91
+#: src/app/components/eventModal/inputs/NotificationInput.js:96
 msgctxt "Time unit"
 msgid "Minute"
 msgid_plural "Minutes"
@@ -1697,7 +1708,7 @@ msgstr[0] "Minuta"
 msgstr[1] "Minute"
 msgstr[2] "Minute"
 
-#: src/app/components/eventModal/inputs/NotificationInput.js:95
+#: src/app/components/eventModal/inputs/NotificationInput.js:100
 msgctxt "Time unit"
 msgid "Hour"
 msgid_plural "Hours"
@@ -1705,7 +1716,7 @@ msgstr[0] "Sat"
 msgstr[1] "Sati"
 msgstr[2] "Sati"
 
-#: src/app/components/eventModal/inputs/NotificationInput.js:98
+#: src/app/components/eventModal/inputs/NotificationInput.js:103
 msgctxt "Time unit"
 msgid "Day"
 msgid_plural "Days"
@@ -1713,7 +1724,7 @@ msgstr[0] "Dan"
 msgstr[1] "Dani"
 msgstr[2] "Dani"
 
-#: src/app/components/eventModal/inputs/NotificationInput.js:99
+#: src/app/components/eventModal/inputs/NotificationInput.js:104
 msgctxt "Time unit"
 msgid "Week"
 msgid_plural "Weeks"
@@ -1753,7 +1764,7 @@ msgctxt "Header"
 msgid "Actions"
 msgstr "Radnje"
 
-#: src/app/containers/calendar/CalendarSidebar.js:66
+#: src/app/containers/calendar/CalendarSidebar.js:69
 msgctxt "Header"
 msgid "Calendars"
 msgstr "Kalendari"
@@ -1851,7 +1862,7 @@ msgctxt "Calendar view"
 msgid "Month"
 msgstr "Mjesec"
 
-#: src/app/containers/settings/SettingsContainer.js:33
+#: src/app/containers/settings/SettingsContainer.js:31
 msgctxt "Page title"
 msgid "Calendar settings - ProtonCalendar"
 msgstr "Postavke kalendara - ProtonCalendar"
@@ -1861,37 +1872,37 @@ msgctxt "Modal title"
 msgid "Time zone changed"
 msgstr "Vremenska zona je promijenjena"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:109
+#: src/app/containers/calendar/InteractiveCalendarView.js:110
 msgctxt "Alert"
 msgid "By leaving now, you will lose your event."
 msgstr "Izlaskom će te izgubiti vaš događaj."
 
-#: src/app/components/eventModal/inputs/NotificationInput.js:26
+#: src/app/components/eventModal/inputs/NotificationInput.js:27
 msgctxt "Event trigger"
 msgid "Before at"
 msgstr "Prije u"
 
-#: src/app/components/eventModal/inputs/NotificationInput.js:27
+#: src/app/components/eventModal/inputs/NotificationInput.js:28
 msgctxt "Event trigger"
 msgid "After at"
 msgstr "Nakon u"
 
-#: src/app/components/eventModal/inputs/NotificationInput.js:30
+#: src/app/components/eventModal/inputs/NotificationInput.js:31
 msgctxt "Event trigger"
 msgid "Before"
 msgstr "Prije"
 
-#: src/app/components/eventModal/inputs/NotificationInput.js:31
+#: src/app/components/eventModal/inputs/NotificationInput.js:32
 msgctxt "Event trigger"
 msgid "After"
 msgstr "Nakon"
 
-#: src/app/components/eventModal/inputs/NotificationInput.js:48
+#: src/app/components/eventModal/inputs/NotificationInput.js:49
 msgctxt "Notification type"
 msgid "Notification"
 msgstr "Obavijest"
 
-#: src/app/components/eventModal/inputs/NotificationInput.js:49
+#: src/app/components/eventModal/inputs/NotificationInput.js:50
 msgctxt "Notification type"
 msgid "Email"
 msgstr "E-pošta"
@@ -1966,69 +1977,69 @@ msgctxt "Notifications"
 msgid "at ${ time }"
 msgstr "u ${ time }"
 
-#: src/app/helpers/alarms.js:38
+#: src/app/helpers/alarms.js:39
 msgctxt "Alarm notification"
 msgid "${ title } started today"
 msgstr "${ title } započeo danas"
 
-#: src/app/helpers/alarms.js:41
+#: src/app/helpers/alarms.js:42
 #, javascript-format
 msgctxt "Alarm notification"
 msgid "${ title } will start at ${ formattedHour }"
 msgstr "${ title } će započeti u ${ formattedHour }"
 
-#: src/app/helpers/alarms.js:43
+#: src/app/helpers/alarms.js:44
 #, javascript-format
 msgctxt "Alarm notification"
 msgid "${ title } started at ${ formattedHour }"
 msgstr "${ title } započinje u ${ formattedHour }"
 
-#: src/app/helpers/alarms.js:48
+#: src/app/helpers/alarms.js:49
 msgctxt "Alarm notification"
 msgid "${ title } will start tomorrow"
 msgstr "${ title } će započeti sutra"
 
-#: src/app/helpers/alarms.js:50
+#: src/app/helpers/alarms.js:51
 #, javascript-format
 msgctxt "Alarm notification"
 msgid "${ title } will start tomorrow at ${ formattedHour }"
 msgstr "${ title } će započeti sutra u ${ formattedHour }"
 
-#: src/app/helpers/alarms.js:56
+#: src/app/helpers/alarms.js:57
 #, javascript-format
 msgctxt "Alarm notification"
 msgid "${ title } will start on ${ formattedDate }"
 msgstr "${ title } će započeti ${ formattedDate }"
 
-#: src/app/helpers/alarms.js:58
+#: src/app/helpers/alarms.js:59
 #, javascript-format
 msgctxt "Alarm notification"
 msgid "${ title } will start on ${ formattedDate } at ${ formattedHour }"
 msgstr "${ title } će započeti ${ formattedDate } u ${ formattedHour }"
 
-#: src/app/helpers/alarms.js:64
+#: src/app/helpers/alarms.js:65
 msgctxt "Alarm notification"
 msgid "${ title } will start on ${ _formattedDate }"
 msgstr "${ title } će započeti ${ _formattedDate }"
 
-#: src/app/helpers/alarms.js:66
+#: src/app/helpers/alarms.js:67
 #, javascript-format
 msgctxt "Alarm notification"
 msgid "${ title } will start on ${ _formattedDate } at ${ formattedHour }"
 msgstr "${ title } će započeti ${ _formattedDate } u ${ formattedHour }"
 
-#: src/app/helpers/alarms.js:71
+#: src/app/helpers/alarms.js:72
 #, javascript-format
 msgctxt "Alarm notification"
 msgid "${ title } will start on ${ formattedDateWithoutTime }"
 msgstr "${ title } će započeti ${ formattedDateWithoutTime }"
 
-#: src/app/helpers/alarms.js:75
+#: src/app/helpers/alarms.js:76
 msgctxt "Alarm notification"
 msgid "${ title } will start on ${ formattedDateWithTime }"
 msgstr "${ title } će započeti ${ formattedDateWithTime }"
 
-#: src/app/helpers/alarms.js:77
+#: src/app/helpers/alarms.js:78
 #, javascript-format
 msgctxt "Alarm notification"
 msgid "${ title } started on ${ formattedDateWithTime }"
