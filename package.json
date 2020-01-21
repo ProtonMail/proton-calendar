@@ -22,8 +22,7 @@
         "build": "cross-env NODE_ENV=production proton-pack compile $npm_package_config_publicPathFlag",
         "build:standalone": "cross-env NODE_ENV=production proton-pack compile --appMode=standalone",
         "deploy:prod": "proton-bundler --remote --branch=deploy-prod",
-        "bundle": "cross-env NODE_ENV=production proton-pack config",
-        "postbundle": "cross-env NODE_ENV_DIST=bundle-only proton-bundler",
+        "bundle": "cross-env NODE_ENV_DIST=bundle-only proton-bundler",
         "check-types": "tsc"
     },
     "repository": {
