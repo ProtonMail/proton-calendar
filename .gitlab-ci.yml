@@ -1,5 +1,5 @@
 include:
-  - project: 'proton/fe/proton-config'
+  - project: 'web/core/proton-config'
     ref: master
     file: '/_templates-ci/private-open.gitlab-ci.yaml'
 
