@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: protonmail\n"
-"X-Crowdin-Language: hr\n"
+"X-Crowdin-Language: pt-BR\n"
 "X-Crowdin-File: ProtonMail Calendar App.pot\n"
 "Project-Id-Version: protonmail\n"
-"Language-Team: Croatian\n"
-"Language: hr_HR\n"
-"PO-Revision-Date: 2020-01-30 13:21\n"
+"Language-Team: Portuguese, Brazilian\n"
+"Language: pt_BR\n"
+"PO-Revision-Date: 2020-01-30 12:20\n"
 
 #: node_modules/proton-shared/lib/helpers/humanSize.js:13
 msgctxt "file size format"
@@ -28,740 +28,740 @@ msgstr "GB"
 #: node_modules/proton-shared/lib/themes/themes.js:13
 msgctxt "Theme"
 msgid "Default theme"
-msgstr "Zadana tema"
+msgstr "Tema padrão"
 
 #: node_modules/proton-shared/lib/themes/themes.js:23
 msgctxt "Theme"
 msgid "Custom theme"
-msgstr "Prilagođena tema"
+msgstr "Tema personalizado"
 
 #: node_modules/proton-shared/lib/themes/themes.js:33
 msgctxt "Theme"
 msgid "Light"
-msgstr "Svijetla"
+msgstr "Claro"
 
 #: node_modules/proton-shared/lib/themes/themes.js:42
 msgctxt "Theme"
 msgid "Blue"
-msgstr "Plava"
+msgstr "Azul"
 
 #: node_modules/proton-shared/lib/themes/themes.js:51
 msgctxt "Theme"
 msgid "Dark theme"
-msgstr "Tamna tema"
+msgstr "Tema escuro"
 
 #: node_modules/proton-shared/lib/calendar/integration/createOrUpdateEvent.js:14
 msgctxt "Error"
 msgid "Primary address key not found"
-msgstr "Ključ primarne adrese nije pronađen"
+msgstr "A chave de endereço primário não foi encontrada"
 
 #: node_modules/proton-shared/lib/calendar/integration/createOrUpdateEvent.js:21
 msgctxt "Error"
 msgid "Primary calendar key is not decrypted"
-msgstr "Primarni ključ kalendara nije dešifriran"
+msgstr "A chave primária do calendário não foi descriptografada"
 
 #: node_modules/proton-shared/lib/keys/calendarKeys.js:98
 #: node_modules/proton-shared/lib/keys/keys.js:102
 msgctxt "Error"
 msgid "Signature verification failed"
-msgstr "Potvrda potpisa je neuspješna"
+msgstr "Falha na verificação da assinatura"
 
 #: node_modules/proton-shared/lib/keys/keys.js:122
 msgctxt "Error"
 msgid "Incorrect decryption password"
-msgstr "Neispravna lozinka za dešifriranje"
+msgstr "Senha de descriptografia inválida"
 
 #: node_modules/proton-shared/lib/keys/calendarKeys.js:230
 #, javascript-format
 msgctxt "Error"
 msgid "Could not find address ${ email }."
-msgstr "Ne mogu pronaći adresu ${ email }."
+msgstr "Não foi possível encontrar o endereço ${ email }."
 
 #: node_modules/react-components/containers/api/ApiProvider.js:47
 msgctxt "Error"
 msgid "Could not connect to server."
-msgstr "Povezivanje na server nije moguće."
+msgstr "Não foi possível conectar ao servidor."
 
 #: node_modules/react-components/containers/api/ApiProvider.js:48
 msgctxt "Error"
 msgid "No internet connection found"
-msgstr "Nema internetske veze"
+msgstr "Nenhuma conexão com a internet foi encontrada"
 
 #: node_modules/react-components/containers/api/ApiProvider.js:56
 msgctxt "Error"
 msgid "Request timed out."
-msgstr "Zahtjev je istekao."
+msgstr "A solicitação expirou."
 
 #: node_modules/react-components/containers/payments/paymentTokenHelper.js:32
 #: node_modules/react-components/containers/payments/paymentTokenHelper.js:128
 msgctxt "Error"
 msgid "Process aborted"
-msgstr "Proces je prekinut"
+msgstr "Processo abortado"
 
 #: node_modules/react-components/containers/payments/paymentTokenHelper.js:36
 msgctxt "Error"
 msgid "Payment process cancelled"
-msgstr "Proces plaćanja je otkazan"
+msgstr "Processo de pagamento cancelado"
 
 #: node_modules/react-components/containers/payments/paymentTokenHelper.js:42
 msgctxt "Error"
 msgid "Payment process failed"
-msgstr "Proces plaćanja nije uspio"
+msgstr "Falha no processo de pagamento"
 
 #: node_modules/react-components/containers/payments/paymentTokenHelper.js:46
 msgctxt "Error"
 msgid "Payment process consumed"
-msgstr "Proces plaćanja je konzumiran"
+msgstr "Processo de pagamento concluído"
 
 #: node_modules/react-components/containers/payments/paymentTokenHelper.js:50
 msgctxt "Error"
 msgid "Payment process not supported"
-msgstr "Proces plaćanja nije podržan"
+msgstr "Modo de pagamento não suportado"
 
 #: node_modules/react-components/containers/payments/paymentTokenHelper.js:62
 msgctxt "Error"
 msgid "Unknown payment token status"
-msgstr "Nepoznati status tokena za plaćanje"
+msgstr "Status do token de pagamento desconhecido"
 
 #: node_modules/react-components/containers/payments/paymentTokenHelper.js:95
 msgctxt "Error"
 msgid "Tab closed"
-msgstr "Kartica zatvorena"
+msgstr "A guia foi fechada"
 
 #: node_modules/react-components/containers/payments/PayPal.js:85
 msgctxt "Error"
 msgid "Amount below minimum."
-msgstr "Iznos ispod minimuma."
+msgstr "Quantidade abaixo do mínimo."
 
 #: node_modules/react-components/containers/payments/PayPal.js:91
 msgctxt "Error"
 msgid "Amount above the maximum."
-msgstr "Iznos veći od maksimuma."
+msgstr "Quantidade acima do máximo."
 
 #: node_modules/react-components/containers/payments/Bitcoin.js:51
 msgctxt "Error"
 msgid "Error connecting to the Bitcoin API."
-msgstr "Pogreška prilikom spajanja na Bitcoin API."
+msgstr "Erro ao conectar com a API do Bitcoin."
 
 #: node_modules/react-components/containers/payments/Payment.js:50
 #, javascript-format
 msgctxt "Error"
 msgid "The minimum amount that can be donated is ${ price }"
-msgstr "Minimalni iznos koji se može donirati je ${ price }"
+msgstr "A quantia mínima que pode ser doada é ${ price }"
 
 #: node_modules/react-components/containers/payments/Payment.js:59
 #, javascript-format
 msgctxt "Error"
 msgid "The minimum amount of credit that can be added is ${ _price }"
-msgstr "Minimalni iznos kredita koji se može dodati je ${ _price }"
+msgstr "A quantidade mínima de crédito que pode ser adicionado é ${ _price }"
 
 #: node_modules/react-components/containers/payments/Payment.js:68
 #, javascript-format
 msgctxt "Error"
 msgid "The minimum payment we accept is ${ _price2 }"
-msgstr "Minimalni iznos koji prihvaćamo je ${ _price2 }"
+msgstr "O pagamento mínimo que aceitamos é ${ _price2 }"
 
 #: node_modules/react-components/containers/payments/cardValidator.js:16
 msgctxt "Error"
 msgid "Name on card required"
-msgstr "Ime s kartice je nužno"
+msgstr "Nome do cartão de credito obrigatório"
 
 #: node_modules/react-components/containers/payments/cardValidator.js:22
 msgctxt "Error"
 msgid "Invalid expiration date"
-msgstr "Nevažeći datum isteka"
+msgstr "Data de validade inválida"
 
 #: node_modules/react-components/containers/payments/cardValidator.js:27
 msgctxt "Error"
 msgid "Invalid card number"
-msgstr "Netočan broj kartice"
+msgstr "Número do cartão inválido"
 
 #: node_modules/react-components/containers/payments/cardValidator.js:36
 #, javascript-format
 msgctxt "Error"
 msgid "Invalid ${ name } code"
-msgstr "Nevažeći ${ name } kôd"
+msgstr "Código ${ name } inválido"
 
 #: node_modules/react-components/containers/payments/cardValidator.js:43
 msgctxt "Error"
 msgid "Invalid postal code"
-msgstr "Netočan poštanski broj"
+msgstr "CEP inválido"
 
 #: node_modules/react-components/components/alert/DoNotWindowOpenAlertError.js:7
 msgctxt "Error"
 msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
-msgstr "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
+msgstr "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Por favor, use um navegador diferente ou inicie a sessão através de um computador."
 
 #: node_modules/react-components/components/input/EmailInput.js:9
 msgctxt "Error"
 msgid "Email address invalid"
-msgstr "Adresa e-pošte nije valjana"
+msgstr "Endereço de e-mail inválido"
 
 #: node_modules/react-components/components/input/Input.js:32
 msgctxt "Error"
 msgid "This field is required"
-msgstr "Ovo polje je obavezno"
+msgstr "Este campo é obrigatório"
 
 #: src/app/containers/setup/resetHelper.js:172
 msgctxt "Error"
 msgid "Please create an address first."
-msgstr "Prvo stvorite adresu."
+msgstr "Por favor, primeiro crie um endereço de e-mail."
 
 #: src/app/containers/setup/WelcomeModal.js:53
 msgctxt "Error"
 msgid "No valid address found."
-msgstr "Nije pronađena važeća adresa."
+msgstr "Nenhum endereço válido encontrado."
 
 #: src/app/containers/settings/CalendarModal.js:157
 #: src/app/containers/setup/WelcomeModal.js:59
 msgctxt "Error"
 msgid "Primary address key is not decrypted."
-msgstr "Primarni ključ adrese e-pošte nije dešifriran."
+msgstr "O endereço da chave primária não foi descriptografada."
 
 #: src/app/containers/settings/CalendarModal.js:38
 msgctxt "Error"
 msgid "Name required"
-msgstr "Naziv je obavezan"
+msgstr "Nome obrigatório"
 
 #: src/app/containers/settings/CalendarModal.js:77
 msgctxt "Error"
 msgid "No valid address found"
-msgstr "Nije pronađena važeća adresa"
+msgstr "Nenhum endereço válido encontrado"
 
 #: src/app/containers/settings/CalendarModal.js:98
 msgctxt "Error"
 msgid "Member address not found"
-msgstr "Adresa člana nije pronađena"
+msgstr "Endereço do usuário não encontrado"
 
 #: src/app/components/eventModal/eventForm/state.js:174
 msgctxt "Error"
 msgid "Title required"
-msgstr "Naslov je potreban"
+msgstr "Título obrigatório"
 
 #: src/app/components/eventModal/eventForm/state.js:181
 msgctxt "Error"
 msgid "Start time must be before end time"
-msgstr "Početno vrijeme mora biti prije vremena završetka"
+msgstr "A hora de início deve ser antes da hora de término"
 
 #: src/app/components/events/EventPopover.js:64
 msgctxt "Error"
 msgid "Error"
-msgstr "Greška"
+msgstr "Erro"
 
 #: src/app/components/events/EventPopover.js:69
 msgctxt "Error"
 msgid "Decryption error: Decryption of this event's content failed."
-msgstr "Pogreška pri dešifriranju: Dešifriranje sadržaja ovog događaja nije uspjelo."
+msgstr "Erro ao descriptografar: A descriptografia deste evento falhou."
 
 #: src/app/components/events/EventPopover.js:70
 #, javascript-format
 msgctxt "Error"
 msgid "Error: ${ errorMessage }"
-msgstr "Pogreška: ${ errorMessage }"
+msgstr "Erro: ${ errorMessage }"
 
 #: node_modules/react-components/containers/error/GenericError.js:13
 msgctxt "Error message"
 msgid "Aaah! Something went wrong"
-msgstr "Uuups! Nešto je pošlo po zlu"
+msgstr "Opa! Alguma coisa deu errado"
 
 #: node_modules/react-components/containers/error/GenericError.js:16
 msgctxt "Error message"
 msgid "Brace yourself till we get the error fixed."
-msgstr "Molimo pričekajte dok ne popravimo pogrešku."
+msgstr "Fique tranquilo, logo iremos corrigir este erro."
 
 #: node_modules/react-components/containers/error/GenericError.js:17
 msgctxt "Error message"
 msgid "You may also refresh the page or try again later."
-msgstr "Možete osvježiti stranicu ili pokušati ponovo kasnije."
+msgstr "Você pode atualizar a página ou tentar novamente mais tarde."
 
 #: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:77
 msgctxt "Title"
 msgid "Storage"
-msgstr "Prostor za pohranu"
+msgstr "Armazenamento"
 
 #: node_modules/react-components/containers/api/HumanVerificationModal.js:9
 msgctxt "Title"
 msgid "Human verification"
-msgstr "Ljudska provjera"
+msgstr "Verificação humana"
 
 #: node_modules/react-components/containers/login/UnlockModal.js:33
 msgctxt "Title"
 msgid "Sign in again to continue"
-msgstr "Ponovno se prijavite da biste nastavili"
+msgstr "Inicie a sessão novamente para continuar"
 
 #: node_modules/react-components/containers/login/AbuseModal.js:6
 msgctxt "Title"
 msgid "Account disabled"
-msgstr "Račun je onemogućen"
+msgstr "Conta desativada"
 
 #: node_modules/react-components/containers/support/BugModal.js:136
 msgctxt "Title"
 msgid "Report bug"
-msgstr "Prijavi problem"
+msgstr "Reportar um problema"
 
 #: node_modules/react-components/containers/payments/Card.js:80
 msgctxt "Title"
 msgid "ZIP / postal code"
-msgstr "Poštanski broj"
+msgstr "CEP / código postal"
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:44
 msgctxt "Title"
 msgid "Unsupported browser"
-msgstr "Preglednik nije podržan"
+msgstr "Navegador não suportado"
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:45
 msgctxt "Title"
 msgid "Card verification"
-msgstr "Potvrda kartice"
+msgstr "Verificação do cartão"
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:45
 msgctxt "Title"
 msgid "Payment verification"
-msgstr "Potvrda plaćanja"
+msgstr "Verificação de pagamento"
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:46
 msgctxt "Title"
 msgid "Processing..."
-msgstr "Obrada..."
+msgstr "Processando..."
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:48
 msgctxt "Title"
 msgid "Card verification in progress"
-msgstr "Potvrda kartice u tijeku"
+msgstr "Verificação do cartão em progresso"
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:49
 msgctxt "Title"
 msgid "Payment verification in progress"
-msgstr "U tijeku je provjera plaćanja"
+msgstr "Verificação de pagamento em progresso"
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:50
 msgctxt "Title"
 msgid "3-D Secure verification failed"
-msgstr "3-D Secure potvrda nije uspjela"
+msgstr "Falha na verificação 3-D de segurança"
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:162
 #: src/app/containers/setup/ResetModal.js:99
 msgctxt "Title"
 msgid "Error"
-msgstr "Pogreška"
+msgstr "Erro"
 
 #: node_modules/react-components/containers/payments/DonateModal.js:42
 msgctxt "Title"
 msgid "Make a donation"
-msgstr "Donirajte"
+msgstr "Fazer uma doação"
 
 #: node_modules/react-components/components/dropdown/DropdownActions.js:48
 msgctxt "Title"
 msgid "Open actions dropdown"
-msgstr "Otvorite padajući izbornik radnji"
+msgstr "Abrir menu de ações"
 
 #: src/app/containers/setup/FreeModal.js:13
 #: src/app/containers/setup/ResetModal.js:157
 #: src/app/containers/setup/WelcomeModal.js:40
 msgctxt "Title"
 msgid "Welcome to ProtonCalendar"
-msgstr "Dobrodošli u ProtonCalendar"
+msgstr "Bem-vindo(a) ao ProtonCalendar"
 
 #: src/app/containers/setup/ResetModal.js:157
 #: src/app/containers/setup/WelcomeModal.js:40
 msgctxt "Title"
 msgid "Preparing your calendar"
-msgstr "Pripremamo vaš kalendar"
+msgstr "Preparando seu calendário"
 
 #: src/app/containers/setup/ResetModal.js:117
 msgctxt "Title"
 msgid "Reset calendar keys"
-msgstr "Poništi ključeve kalendara"
+msgstr "Redefinir chaves do calendário"
 
 #: src/app/containers/setup/ResetModal.js:138
 msgctxt "Title"
 msgid "Reactivate calendar keys"
-msgstr "Ponovno aktiviraj ključeve kalendara"
+msgstr "Reativar chaves do calendário"
 
 #: src/app/containers/settings/CalendarModal.js:57
 msgctxt "Title"
 msgid "Update calendar"
-msgstr "Ažuriraj kalendar"
+msgstr "Atualizar calendário"
 
 #: src/app/containers/settings/CalendarModal.js:57
 msgctxt "Title"
 msgid "Create calendar"
-msgstr "Stvori kalendar"
+msgstr "Criar calendário"
 
 #: src/app/containers/settings/section/TimeSection.js:65
 msgctxt "Title"
 msgid "Region & time zone"
-msgstr "Regija i vremenska zona"
+msgstr "Região e fuso horário"
 
 #: src/app/containers/settings/section/LayoutSection.js:38
 msgctxt "Title"
 msgid "Layout"
-msgstr "Izgled"
+msgstr "Layout"
 
 #: src/app/containers/settings/section/CalendarsSection.js:40
 msgctxt "Title"
 msgid "Delete calendar"
-msgstr "Ukloni kalendar"
+msgstr "Excluir calendário"
 
 #: src/app/containers/settings/section/CalendarsSection.js:58
 msgctxt "Title"
 msgid "Calendars"
-msgstr "Kalendari"
+msgstr "Calendários"
 
 #: src/app/components/layout/PrivateHeader.js:36
 #: src/app/containers/settings/SettingsContainer.js:63
 msgctxt "Title"
 msgid "Settings"
-msgstr "Postavke"
+msgstr "Configurações"
 
 #: src/app/components/layout/PrivateHeader.js:28
 #: src/app/containers/calendar/CalendarContainerView.js:120
 #: src/app/containers/calendar/CalendarContainerView.js:130
 msgctxt "Title"
 msgid "Calendar"
-msgstr "Kalendar"
+msgstr "Calendário"
 
 #: src/app/containers/alarms/AlarmWatcher.js:18
 msgctxt "Title"
 msgid "Calendar alarm"
-msgstr "Alarm kalendara"
+msgstr "Alarme do calendário"
 
 #: src/app/components/eventModal/eventForm/i18n.js:6
 msgctxt "Title"
 msgid "Create new event"
-msgstr "Stvori novi događaj"
+msgstr "Criar novo evento"
 
 #: src/app/components/eventModal/eventForm/i18n.js:7
 msgctxt "Title"
 msgid "Edit event"
-msgstr "Uredi događaj"
+msgstr "Editar evento"
 
 #: src/app/components/eventModal/eventForm/i18n.js:14
 msgctxt "Title"
 msgid "Create new task"
-msgstr "Stvorite novi zadatak"
+msgstr "Crie uma nova tarefa"
 
 #: src/app/components/eventModal/eventForm/i18n.js:15
 msgctxt "Title"
 msgid "Edit task"
-msgstr "Uredi zadatak"
+msgstr "Editar tarefa"
 
 #: src/app/components/eventModal/eventForm/i18n.js:22
 msgctxt "Title"
 msgid "Create new alarm"
-msgstr "Stvorite novi alarm"
+msgstr "Criar novo alarme"
 
 #: src/app/components/eventModal/eventForm/i18n.js:23
 msgctxt "Title"
 msgid "Edit alarm"
-msgstr "Uredi alarm"
+msgstr "Editar alarme"
 
 #: src/app/components/events/PopoverEventContent.js:77
 msgctxt "Title"
 msgid "Location"
-msgstr "Lokacija"
+msgstr "Localização"
 
 #: src/app/components/events/PopoverEventContent.js:91
 msgctxt "Title"
 msgid "Description"
-msgstr "Opis"
+msgstr "Descrição"
 
 #: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:78
 #, javascript-format
 msgctxt "Info"
 msgid "${ usedSpaceFormatted } of ${ maxSpaceFormatted } used"
-msgstr "${ usedSpaceFormatted } od ${ maxSpaceFormatted } iskorišteno"
+msgstr "${ usedSpaceFormatted } de ${ maxSpaceFormatted } usado"
 
 #: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:81
 msgctxt "Info"
 msgid "Your storage space is shared across all Proton products."
-msgstr "Vaš prostor za pohranu dijeli se na sve Proton proizvode."
+msgstr "Seu espaço de armazenamento é compartilhado com todos os produtos Proton."
 
 #: node_modules/react-components/containers/api/HumanVerificationModal.js:19
 msgctxt "Info"
 msgid "For security reasons, please verify that you are not a robot."
-msgstr "Iz sigurnosnih razloga, potvrdite da niste robot."
+msgstr "Por razões de segurança, precisamos que comprove que você não é um robô."
 
 #: node_modules/react-components/containers/app/LoaderPage.js:15
 #, javascript-format
 msgctxt "Info"
 msgid "Loading ${ appName }"
-msgstr "Učitavanje ${ appName }"
+msgstr "Carregando ${ appName }"
 
 #: node_modules/react-components/containers/login/AbuseModal.js:10
 msgctxt "Info"
 msgid "abuse or fraud"
-msgstr "zloupotreba ili prijevara"
+msgstr "abuso ou fraude"
 
 #: node_modules/react-components/containers/login/AbuseModal.js:16
 msgctxt "Info"
 msgid "here"
-msgstr "ovdje"
+msgstr "aqui"
 
 #: node_modules/react-components/containers/login/AbuseModal.js:23
 #, javascript-format
 msgctxt "Info"
 msgid "Account disabled due to ${ abuseOrFraudLink }."
-msgstr "Račun je onemogućen zbog ${ abuseOrFraudLink }."
+msgstr "Conta desativada devido a ${ abuseOrFraudLink }."
 
 #: node_modules/react-components/containers/login/AbuseModal.js:24
 #, javascript-format
 msgctxt "Info"
 msgid "You can find more information and contact us ${ contactLink }."
-msgstr "Možete pronaći više informacija i kontaktirati nas ${ contactLink }."
+msgstr "Você pode encontrar mais informações e/ou entrar em contato conosco ${ contactLink }."
 
 #: node_modules/react-components/containers/support/AttachScreenshot.js:45
 msgctxt "Info"
 msgid "Screenshot(s) attached"
-msgstr "Snimka(e) zaslona su pridodane"
+msgstr "Captura(s) de tela anexada"
 
 #: node_modules/react-components/containers/support/BugModal.js:139
 #, javascript-format
 msgctxt "Info"
 msgid "Refreshing the page or ${ link } will automatically resolve most issues."
-msgstr "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
+msgstr "Atualizando a página ou ${ link } irá resolver automaticamente a maioria dos problemas."
 
 #: node_modules/react-components/containers/support/BugModal.js:254
 #, javascript-format
 msgctxt "Info"
 msgid "Contact us at ${ criticalEmail } for critical security issues."
-msgstr "Kontaktirajte nas na ${ criticalEmail } za kritične sigurnosne probleme."
+msgstr "Contate-nos em ${ criticalEmail } para problemas críticos de segurança."
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:112
 msgctxt "Info"
 msgid "Your bank requires 3-D Secure verification for security purposes."
-msgstr "Vaša banka zahtijeva 3-D Secure potvrdu iz sigurnosnih razloga."
+msgstr "Por motivos de segurança, seu banco requer a verificação de segurança 3-D."
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:119
 msgctxt "Info"
 msgid "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately."
-msgstr "Proces potvrde otvorit će se u novoj kartici preglednika, stoga onemogućite sve blokade skočnih prozora. Neće vam biti naplaćeno. Bilo koji iznos korišten za potvrdu kartice bit će vraćen odmah."
+msgstr "O processo de verificação irá precisar abrir uma nova guia. Por favor, desative os bloqueadores de pop-ups. Você não será cobrado. Qualquer quantia usada para verificar seu cartão será reembolsado imediatamente."
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:121
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:130
 msgctxt "Info"
 msgid "Verification will open a new tab, please disable any popup blockers."
-msgstr "Proces potvrde otvoriti će se u novoj kartici preglednika, stoga onemogućite sve blokade skočnih prozora."
+msgstr "A verificação irá abrir uma nova guia no seu navegador. Por favor, desative todos os bloqueadores de pop-ups."
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:127
 msgctxt "Info"
 msgid "You will be soon redirected to your bank to verify your payment."
-msgstr "Uskoro ćete biti preusmjereni na vašu banku radi potvrde plaćanja."
+msgstr "Em breve você será redirecionado ao seu banco para verificar seu pagamento."
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:138
 msgctxt "Info"
 msgid "Please verify the card in the new tab which was opened."
-msgstr "Potvrdite karticu u novootvorenoj kartici vašeg preglednika."
+msgstr "Por favor, verifique o cartão na nova guia que foi aberta no seu navegador."
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:139
 msgctxt "Info"
 msgid "Please verify payment at the new tab which was opened."
-msgstr "Potvrdite naplatu u novootvorenoj kartici vašeg preglednika."
+msgstr "Por favor, verifique o pagamento na nova guia que foi aberta."
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:147
 msgctxt "Info"
 msgid "Verification can take a few minutes."
-msgstr "Potvrda može potrajati nekoliko minuta."
+msgstr "A verificação pode levar alguns minutos."
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:148
 msgctxt "Info"
 msgid "Payment can take a few minutes to fully verify."
-msgstr "Naplata može potrajati nekoliko minuta dok se potpuno potvrdi."
+msgstr "O pagamento pode demorar alguns minutos para ser totalmente verificado."
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:160
 msgctxt "Info"
 msgid "Please try again, use a different payment method, or call your bank for assistance."
-msgstr "Pokušajte ponovo, koristite drugi način plaćanja ili nazovite banku za pomoć."
+msgstr "Por favor, tente novamente, use um método de pagamento diferente ou entre em contato com seu banco."
 
 #: node_modules/react-components/containers/payments/PayPal.js:135
 msgctxt "Info"
 msgid "Please verify the payment in the new tab."
-msgstr "Molimo potvrdite plaćanje u novoj kartici."
+msgstr "Por favor, finalize o pagamento na nova guia."
 
 #: node_modules/react-components/containers/payments/PayPal.js:145
 #: node_modules/react-components/containers/payments/PayPal.js:175
 msgctxt "Info"
 msgid "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue."
-msgstr "Preusmjerit ćemo vas na PayPal u novoj kartici preglednika da biste dovršili ovu transakciju. Ako koristite bilo koje blokade skočnih prozora, onemogućite ih kako bi mogli nastaviti."
+msgstr "Vamos redirecioná-lo para o PayPal em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
 
 #: node_modules/react-components/containers/payments/PayPal.js:153
 #, javascript-format
 msgctxt "Info"
 msgid "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please ${ clickHere }."
-msgstr "Morate imati kreditnu karticu ili bankovni račun povezan sa vašim PayPal računom. Ukoliko nemate navedeno na vašem PayPal računu, molimo vas ${ clickHere }."
+msgstr "Você precisa ter um cartão de crédito ou uma conta bancária vinculada na sua conta do PayPal. Se a sua conta do PayPal não tiver isso, ${ clickHere }."
 
 #: node_modules/react-components/containers/payments/PayPal.js:160
 msgctxt "Info"
 msgid "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue."
-msgstr "Ovo će omogućiti PayPalu da se koristi za plaćanje vaše Proton pretplate. Preusmjerit ćemo vas na PayPal u novoj kartici preglednika. Ako koristite bilo koje blokade skočnih prozora, onemogućite ih kako bi mogli nastaviti."
+msgstr "Isso permitirá que o PayPal seja usado para pagar sua assinatura Proton. Vamos redirecioná-lo para o PayPal em uma nova guia do navegador. Desative qualquer bloqueador de pop-ups que estiver usando."
 
 #: node_modules/react-components/containers/payments/PayPal.js:168
 msgctxt "Info"
 msgid "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method."
-msgstr "Morate imati kreditnu karticu ili bankovni račun povezan sa vašim PayPal računom kako biste ga mogli dodati kao način plaćanja."
+msgstr "Você deve ter um cartão de crédito ou uma conta bancária vinculada na sua conta do PayPal para que possa ser adicionada como método de pagamento."
 
 #: node_modules/react-components/containers/payments/Bitcoin.js:40
 #, javascript-format
 msgctxt "Info"
 msgid "Amount below minimum. (${ amount })"
-msgstr "Iznos ispod minimuma. (${ amount })"
+msgstr "Valor abaixo do mínimo. (${ amount })"
 
 #: node_modules/react-components/containers/payments/Bitcoin.js:64
 msgctxt "Info"
 msgid "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits."
-msgstr "Potvrda Bitcoin transakcije može potrajati neko vrijeme (do 24 sata). Kada potvrdimo, dodijelit ćemo vam kredit na vaš račun. Nakon potvrde transakcije, možete platiti fakturu s kreditom."
+msgstr "As transações em Bitcoin podem levar algum tempo para serem confirmadas (até 24 horas). Uma vez confirmada, adicionaremos os créditos na sua conta. Após a confirmação da transação, você pode pagar sua fatura com os créditos."
 
 #: node_modules/react-components/containers/payments/Bitcoin.js:73
 msgctxt "Info"
 msgid "After making your Bitcoin payment, please follow the instructions below to upgrade."
-msgstr "Nakon što ste izvršili Bitcoin uplatu, molimo slijedite ove upute ispod za nadogradnju."
+msgstr "Após efetuar o seu pagamento em Bitcoin. Por favor, siga as instruções abaixo para fazer o upgrade de plano."
 
 #: node_modules/react-components/containers/payments/DonateModal.js:46
 msgctxt "Info"
 msgid "Your payment details are protected with TLS encryption and Swiss privacy laws."
-msgstr "Vaši podaci o plaćanju zaštićeni su TLS enkripcijom i švicarskim zakonima o privatnosti."
+msgstr "Suas informações de pagamento estão protegidas com a criptografia TLS e leis de privacidade Suíças."
 
 #: node_modules/react-components/containers/paymentMethods/usePaymentMethods.js:43
 msgctxt "Info"
 msgid "Expired"
-msgstr "Isteklo"
+msgstr "Expirado"
 
 #: node_modules/react-components/containers/paymentMethods/usePaymentMethods.js:44
 msgctxt "Info"
 msgid "default"
-msgstr "zadano"
+msgstr "padrão"
 
 #: node_modules/react-components/components/miniCalendar/WeekNumbers.js:36
 msgctxt "Info"
 msgid "Week"
-msgstr "Tjedan"
+msgstr "Semana"
 
 #: src/app/content/PrivateApp.js:49
 msgctxt "Info"
 msgid "Loading ProtonCalendar"
-msgstr "Učitavanje ProtonCalendar-a"
+msgstr "Carregando ProtonCalendar"
 
 #: src/app/containers/setup/FreeModal.js:24
 msgctxt "Info"
 msgid "ProtonCalendar is currently in Beta and is only available to paid users of ProtonMail."
-msgstr "ProtonCalendar je trenutno u Beta inačici i dostupan je samo plaćenim ProtonMail korisnicima."
+msgstr "O ProtonCalendar está atualmente em fase beta e só está disponível para usuários pagos do ProtonMail."
 
 #: src/app/containers/setup/FreeModal.js:27
 msgctxt "Info"
 msgid "If you only would like to participate in our Beta program today, consider upgrading to a paid plan. ProtonCalendar will be available to free users upon launch."
-msgstr "Ako biste željeli sudjelovati u našem Beta programu već danas, razmislite o nadogradnji na plaćeni plan. ProtonCalendar će biti dostupan besplatnim korisnicima nakon objave službene verzije."
+msgstr "Se você quiser participar do nosso programa Beta, considere fazer o upgrade para um plano pago. O ProtonCalendar estará disponível para usuários gratuitos no seu lançamento."
 
 #: src/app/containers/setup/CalendarCreating.js:9
 msgctxt "Info"
 msgid "Give us a moment while we prepare your calendar."
-msgstr "Molimo trenutak dok pripremimo vaš kalendar."
+msgstr "Aguarde um momento enquanto preparamos o seu calendário."
 
 #: src/app/containers/setup/CalendarCreating.js:12
 msgctxt "Info"
 msgid "Creating your calendar..."
-msgstr "Izrada vašeg kalendara..."
+msgstr "Criando seu calendário..."
 
 #: src/app/containers/setup/CalendarReady.js:10
 msgctxt "Info"
 msgid "Your new calendar is now ready. All events in your calendar are encrypted and inaccessible to anybody other than you."
-msgstr "Vaš novi kalendar je spreman. Svi događaji u vašem kalendaru šifrirani su i nedostupni svima osim vama."
+msgstr "O seu novo calendário está pronto para uso. Todos os eventos no seu calendário estão criptografados e inacessíveis a qualquer pessoa além de você."
 
 #: src/app/containers/setup/CalendarReady.js:15
 #, javascript-format
 msgctxt "Info"
 msgid "If you encounter a problem, you can reach our support team by clicking on Profile/${ supportIcon } Report bug button."
-msgstr "Ako naiđete na problem, možete kontaktirati naš tim za podršku klikom na Profil/${ supportIcon } Prijavi problem."
+msgstr "Se você encontrar algum problema, você pode entrar em contato com nossa equipe de suporte clicando em Perfil/${ supportIcon } e depois no botão Reportar erro."
 
 #: src/app/containers/setup/CalendarResetSection.js:8
 msgctxt "Info"
 msgid "You have reset your password and events linked to the following calendars couldn't be decrypted."
-msgstr "Poništili ste lozinku te događaji povezani sa sljedećim kalendarima se ne mogu dešifrirati."
+msgstr "Você redefiniu sua senha e os eventos vinculados aos seguintes calendários não foram descriptografados."
 
 #: src/app/containers/setup/CalendarReactivateSection.js:8
 msgctxt "Info"
 msgid "You have reactivated your keys and events linked to the following calendars can now be decrypted."
-msgstr "Poništili ste lozinku te događaji povezani sa sljedećim kalendarima se sada mogu dešifrirati."
+msgstr "Você reativou suas chaves e os eventos vinculados aos seguintes calendários podem ser descriptografados."
 
 #: src/app/containers/settings/section/LayoutSection.js:42
 msgctxt "Info"
 msgid "Week and month views only apply to desktop."
-msgstr "Tjedni i mjesečni prikazi primjenjuju se samo na radnu površinu."
+msgstr "As visualizações da semana e do mês só se aplicam ao desktop."
 
 #: src/app/containers/settings/section/CalendarsSection.js:45
 msgctxt "Info"
 msgid "Are you sure you want to delete this calendar?"
-msgstr "Jeste li sigurni da želite ukloniti ovaj kalendar?"
+msgstr "Você tem certeza de que deseja excluir este calendário?"
 
 #: src/app/containers/settings/section/CalendarsSection.js:63
 msgctxt "Info"
 msgid "Feature coming soon"
-msgstr "Značajka uskoro dolazi"
+msgstr "Em breve"
 
 #: src/app/containers/calendar/CalendarContainerView.js:150
 msgctxt "Info"
 msgid "Loading events"
-msgstr "Učitavanje događaja"
+msgstr "Carregando eventos"
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:368
 msgctxt "Info"
 msgid "Would you like to edit all recurring events? This event will become the starting event."
-msgstr "Želite li urediti sve ponavljajuće događaje? Ovaj će događaj postati početni događaj."
+msgstr "Deseja editar todos os eventos recorrentes? Este evento será o evento inicial."
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:373
 msgctxt "Info"
 msgid "Edit recurring event"
-msgstr "Uredi ponavljajući događaj"
+msgstr "Editar evento recorrente"
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:418
 msgctxt "Info"
 msgid "Discard changes?"
-msgstr "Odbaciti promjene?"
+msgstr "Descartar alterações?"
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:424
 msgctxt "Info"
 msgid "You will lose all unsaved changes."
-msgstr "Izgubit ćete sve nespremljene promjene."
+msgstr "Você irá perder todas as alterações não salvas."
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:433
 msgctxt "Info"
 msgid "Would you like to delete all recurring events?"
-msgstr "Želite li ukloniti sve ponavljajuće događaje?"
+msgstr "Você gostaria de excluir todos os eventos recorrentes?"
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:434
 msgctxt "Info"
 msgid "Would you like to delete this event?"
-msgstr "Želite li ukloniti ovaj događaj?"
+msgstr "Gostaria de excluir este evento?"
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:435
 msgctxt "Info"
 msgid "Delete events"
-msgstr "Izbriši događaje"
+msgstr "Excluir eventos"
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:435
 msgctxt "Info"
 msgid "Delete event"
-msgstr "Izbriši događaj"
+msgstr "Excluir evento"
 
 #: src/app/components/events/PopoverEventContent.js:14
 msgctxt "Info"
 msgid "Daily"
-msgstr "Dnevno"
+msgstr "Diariamente"
 
 #: src/app/components/events/PopoverEventContent.js:17
 #, javascript-format
 msgctxt "Info"
 msgid "Weekly on ${ startDay }"
-msgstr "Tjedno u ${ startDay }"
+msgstr "Semanalmente em ${ startDay }"
 
 #: src/app/components/events/PopoverEventContent.js:20
 msgctxt "Info"
 msgid "Monthly"
-msgstr "Mjesečno"
+msgstr "Mensal"
 
 #: src/app/components/events/PopoverEventContent.js:23
 msgctxt "Info"
 msgid "Yearly"
-msgstr "Godišnje"
+msgstr "Anualmente"
 
 #: node_modules/react-components/containers/api/HumanVerificationModal.js:22
 msgctxt "Label"
@@ -771,381 +771,381 @@ msgstr "Captcha"
 #: node_modules/react-components/containers/login/UnlockModal.js:34
 msgctxt "Label"
 msgid "Cancel"
-msgstr "Poništi"
+msgstr "Cancelar"
 
 #: node_modules/react-components/containers/login/UnlockModal.js:35
 msgctxt "Label"
 msgid "Submit"
-msgstr "Pošalji"
+msgstr "Enviar"
 
 #: node_modules/react-components/containers/login/PasswordForm.js:28
 #: node_modules/react-components/containers/login/UnlockModal.js:41
 msgctxt "Label"
 msgid "Password"
-msgstr "Lozinka"
+msgstr "Senha"
 
 #: node_modules/react-components/containers/login/PasswordForm.js:10
 msgctxt "Label"
 msgid "Username"
-msgstr "Korisničko ime"
+msgstr "Nome de usuário"
 
 #: node_modules/react-components/containers/login/TOTPForm.js:9
 msgctxt "Label"
 msgid "Two-factor code"
-msgstr "Kôd dvofaktorske autentikacije"
+msgstr "Código de dois fatores"
 
 #: node_modules/react-components/containers/login/UnlockForm.js:9
 msgctxt "Label"
 msgid "Mailbox password"
-msgstr "Lozinka sandučića e-pošte"
+msgstr "Senha da caixa de correio"
 
 #: node_modules/react-components/containers/support/BugModal.js:144
 msgctxt "Label"
 msgid "Proton username"
-msgstr "Proton korisničko ime"
+msgstr "Nome de usuário Proton"
 
 #: node_modules/react-components/containers/support/BugModal.js:156
 msgctxt "Label"
 msgid "Email address"
-msgstr "Adresa e-pošte"
+msgstr "Endereço de e-mail"
 
 #: node_modules/react-components/containers/support/BugModal.js:168
 msgctxt "Label"
 msgid "Category"
-msgstr "Kategorija"
+msgstr "Categoria"
 
 #: node_modules/react-components/containers/support/BugModal.js:180
 msgctxt "Label"
 msgid "What happened?"
-msgstr "Što se dogodilo?"
+msgstr "O que aconteceu?"
 
 #: node_modules/react-components/containers/support/BugModal.js:201
 msgctxt "Label"
 msgid "System information"
-msgstr "Informacije o sustavu"
+msgstr "Informações do sistema"
 
 #: node_modules/react-components/containers/support/BugModal.js:209
 msgctxt "Label"
 msgid "Operating system"
-msgstr "Operativni sustav"
+msgstr "Sistema operacional"
 
 #: node_modules/react-components/containers/support/BugModal.js:220
 msgctxt "Label"
 msgid "Operating system version"
-msgstr "Verzija operativnog sustava"
+msgstr "Versão do sistema operacional"
 
 #: node_modules/react-components/containers/support/BugModal.js:231
 msgctxt "Label"
 msgid "Browser"
-msgstr "Preglednik"
+msgstr "Navegador"
 
 #: node_modules/react-components/containers/support/BugModal.js:242
 msgctxt "Label"
 msgid "Browser version"
-msgstr "Verzija preglednika"
+msgstr "Versão do navegador"
 
 #: node_modules/react-components/containers/payments/BitcoinDetails.js:10
 msgctxt "Label"
 msgid "Amount BTC"
-msgstr "Iznos BTC"
+msgstr "Valor em BTC"
 
 #: node_modules/react-components/containers/payments/BitcoinDetails.js:16
 msgctxt "Label"
 msgid "BTC address"
-msgstr "BTC adresa"
+msgstr "Endereço BTC"
 
 #: node_modules/react-components/containers/payments/Payment.js:74
 msgctxt "Label"
 msgid "Payment method"
-msgstr "Način plaćanja"
+msgstr "Método de pagamento"
 
 #: node_modules/react-components/containers/payments/DonateModal.js:48
 msgctxt "Label"
 msgid "Amount"
-msgstr "Iznos"
+msgstr "Valor"
 
 #: node_modules/react-components/containers/paymentMethods/PaymentMethodDetails.js:17
 msgctxt "Label"
 msgid "Cardholder name"
-msgstr "Ime vlasnika kartice"
+msgstr "Nome do titular do cartão"
 
 #: node_modules/react-components/containers/paymentMethods/usePaymentMethods.js:68
 msgctxt "Label"
 msgid "Pay with cash"
-msgstr "Plaćanje gotovinom"
+msgstr "Pagar em dinheiro"
 
 #: node_modules/react-components/components/button/Copy.js:20
 msgctxt "Label"
 msgid "Copied"
-msgstr "Kopirano"
+msgstr "Copiado"
 
 #: node_modules/react-components/components/button/Copy.js:20
 msgctxt "Label"
 msgid "Copy"
-msgstr "Kopiraj"
+msgstr "Copiar"
 
 #: node_modules/react-components/components/input/PasswordInput.js:21
 msgctxt "Label"
 msgid "Reveal password"
-msgstr "Prikaži lozinku"
+msgstr "Revelar senha"
 
 #: node_modules/react-components/components/input/PasswordInput.js:21
 msgctxt "Label"
 msgid "Hide password"
-msgstr "Sakrij lozinku"
+msgstr "Ocultar senha"
 
 #: src/app/containers/settings/CalendarSettingsTab.js:16
 msgctxt "Label"
 msgid "Name"
-msgstr "Naziv"
+msgstr "Nome"
 
 #: src/app/containers/settings/CalendarSettingsTab.js:30
 msgctxt "Label"
 msgid "Choose a color"
-msgstr "Odaberite boju"
+msgstr "Escolha uma cor"
 
 #: src/app/containers/settings/CalendarSettingsTab.js:37
 msgctxt "Label"
 msgid "Default email"
-msgstr "Zadana adresa e-pošte"
+msgstr "E-mail padrão"
 
 #: src/app/containers/settings/CalendarSettingsTab.js:55
 msgctxt "Label"
 msgid "Display"
-msgstr "Zaslon"
+msgstr "Exibir"
 
 #: src/app/components/eventModal/EventForm.js:88
 #: src/app/components/eventModal/MinimalEventForm.js:104
 #: src/app/containers/settings/CalendarSettingsTab.js:65
 msgctxt "Label"
 msgid "Description"
-msgstr "Opis"
+msgstr "Descrição"
 
 #: src/app/containers/settings/EventSettingsTab.js:13
 msgctxt "Label"
 msgid "Default event duration"
-msgstr "Zadano trajanje događaja"
+msgstr "Duração padrão do evento"
 
 #: src/app/containers/settings/EventSettingsTab.js:28
 msgctxt "Label"
 msgid "Default notifications"
-msgstr "Zadane obavijesti"
+msgstr "Notificações padrão"
 
 #: src/app/containers/settings/EventSettingsTab.js:44
 msgctxt "Label"
 msgid "Default full day notifications"
-msgstr "Zadane cijelodnevne obavijesti"
+msgstr "Notificações padrão para o dia inteiro"
 
 #: src/app/containers/settings/section/TimeSection.js:67
 msgctxt "Label"
 msgid "Time format"
-msgstr "Format vremena"
+msgstr "Formato de hora"
 
 #: src/app/containers/settings/section/LayoutSection.js:41
 msgctxt "Label"
 msgid "Default view"
-msgstr "Zadani prikaz"
+msgstr "Visualização padrão"
 
 #: src/app/containers/settings/section/LayoutSection.js:54
 msgctxt "Label"
 msgid "Week start"
-msgstr "Početak tjedna"
+msgstr "Início da semana"
 
 #: src/app/containers/settings/section/LayoutSection.js:65
 msgctxt "Label"
 msgid "Week numbers"
-msgstr "Brojevi tjedna"
+msgstr "Números da semana"
 
 #: src/app/containers/calendar/CalendarView.js:53
 msgctxt "Label"
 msgid "Week"
-msgstr "Tjedan"
+msgstr "Semana"
 
 #: src/app/components/eventModal/inputs/AllDayCheckbox.js:8
 msgctxt "Label"
 msgid "All day"
-msgstr "Cijeli dan"
+msgstr "Todo o dia"
 
 #: src/app/components/eventModal/rows/DateTimeRow.js:164
 msgctxt "Label"
 msgid "From"
-msgstr "Od"
+msgstr "De"
 
 #: src/app/components/eventModal/rows/DateTimeRow.js:173
 msgctxt "Label"
 msgid "To"
-msgstr "Za"
+msgstr "Para"
 
 #: src/app/components/eventModal/EventForm.js:33
 #: src/app/components/eventModal/MinimalEventForm.js:35
 msgctxt "Label"
 msgid "Frequency"
-msgstr "Frekvencija"
+msgstr "Frequência"
 
 #: src/app/components/eventModal/EventForm.js:41
 msgctxt "Label"
 msgid "Start timezone"
-msgstr "Početna vremenska zona"
+msgstr "Fuso horário de início"
 
 #: src/app/components/eventModal/EventForm.js:42
 msgctxt "Label"
 msgid "End timezone"
-msgstr "Krajnja vremenska zona"
+msgstr "Término do fuso horário"
 
 #: src/app/components/eventModal/EventForm.js:52
 #: src/app/components/eventModal/MinimalEventForm.js:49
 msgctxt "Label"
 msgid "Calendar"
-msgstr "Kalendar"
+msgstr "Calendário"
 
 #: src/app/components/eventModal/EventForm.js:62
 #: src/app/components/eventModal/MinimalEventForm.js:66
 msgctxt "Label"
 msgid "Title"
-msgstr "Naslov"
+msgstr "Título"
 
 #: src/app/components/eventModal/EventForm.js:71
 msgctxt "Label"
 msgid "Time"
-msgstr "Vrijeme"
+msgstr "Horário"
 
 #: src/app/components/eventModal/EventForm.js:83
 #: src/app/components/eventModal/MinimalEventForm.js:93
 msgctxt "Label"
 msgid "Location"
-msgstr "Lokacija"
+msgstr "Localização"
 
 #: src/app/components/eventModal/EventForm.js:93
 msgctxt "Label"
 msgid "Notifications"
-msgstr "Obavijesti"
+msgstr "Notificações"
 
 #: node_modules/react-components/containers/login/PasswordForm.js:22
 msgctxt "Placeholder"
 msgid "Username or email"
-msgstr "Korisničko ime ili adresa e-pošte"
+msgstr "Nome de usuário ou e-mail"
 
 #: node_modules/react-components/containers/login/PasswordForm.js:37
 msgctxt "Placeholder"
 msgid "Password"
-msgstr "Lozinka"
+msgstr "Senha"
 
 #: node_modules/react-components/containers/login/TOTPForm.js:20
 msgctxt "Placeholder"
 msgid "Two-factor code"
-msgstr "Kôd dvofaktorske autentikacije"
+msgstr "Código de dois fatores"
 
 #: node_modules/react-components/containers/login/UnlockForm.js:20
 msgctxt "Placeholder"
 msgid "Mailbox password"
-msgstr "Lozinka sandučića e-pošte"
+msgstr "Senha da caixa de correio"
 
 #: node_modules/react-components/containers/support/BugModal.js:150
 msgctxt "Placeholder"
 msgid "Proton username"
-msgstr "Proton korisničko ime"
+msgstr "Nome de usuário Proton"
 
 #: node_modules/react-components/containers/support/BugModal.js:162
 msgctxt "Placeholder"
 msgid "A way to contact you"
-msgstr "Način kako da vas kontaktiramo"
+msgstr "Uma maneira de entrar em contato com você"
 
 #: node_modules/react-components/containers/support/BugModal.js:186
 msgctxt "Placeholder"
 msgid "Please describe the problem and include any error messages"
-msgstr "Molimo opišite problem i pridružite sve poruke o pogreškama"
+msgstr "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
 
 #: node_modules/react-components/containers/support/BugModal.js:215
 msgctxt "Placeholder"
 msgid "OS name"
-msgstr "Naziv OS-a"
+msgstr "Nome do sistema operacional"
 
 #: node_modules/react-components/containers/support/BugModal.js:226
 msgctxt "Placeholder"
 msgid "OS version"
-msgstr "Verzija OS"
+msgstr "Versão do sistema operacional"
 
 #: node_modules/react-components/containers/support/BugModal.js:237
 msgctxt "Placeholder"
 msgid "Browser name"
-msgstr "Naziv preglednika"
+msgstr "Nome do navegador"
 
 #: node_modules/react-components/containers/support/BugModal.js:248
 msgctxt "Placeholder"
 msgid "Browser version"
-msgstr "Verzija preglednika"
+msgstr "Versão do navegador"
 
 #: node_modules/react-components/containers/payments/PaymentSelector.js:47
 msgctxt "Placeholder"
 msgid "Other"
-msgstr "Ostalo"
+msgstr "Outro"
 
 #: node_modules/react-components/containers/payments/CardNumberInput.js:48
 msgctxt "Placeholder"
 msgid "Card number"
-msgstr "Broj kreditne kartice"
+msgstr "Número do cartão"
 
 #: node_modules/react-components/containers/payments/Card.js:22
 msgctxt "Placeholder"
 msgid "Full name"
-msgstr "Ime i prezime"
+msgstr "Nome completo"
 
 #: node_modules/react-components/containers/payments/Card.js:79
 msgctxt "Placeholder"
 msgid "ZIP"
-msgstr "Poštanski broj"
+msgstr "CEP"
 
 #: node_modules/react-components/containers/payments/Card.js:79
 msgctxt "Placeholder"
 msgid "Postal code"
-msgstr "Poštanski broj"
+msgstr "Código postal"
 
 #: src/app/containers/settings/CalendarSettingsTab.js:23
 msgctxt "Placeholder"
 msgid "Add a calendar name"
-msgstr "Dodaj naziv kalendara"
+msgstr "Adicione o nome do calendário"
 
 #: src/app/containers/settings/CalendarSettingsTab.js:71
 msgctxt "Placeholder"
 msgid "Add a calendar description"
-msgstr "Dodaj opis kalendara"
+msgstr "Adicione a descrição do calendário"
 
 #: src/app/components/eventModal/inputs/LocationInput.js:9
 msgctxt "Placeholder"
 msgid "Add a location"
-msgstr "Dodaj lokaciju"
+msgstr "Adicionar localização"
 
 #: src/app/components/eventModal/inputs/DescriptionInput.js:11
 msgctxt "Placeholder"
 msgid "Add a description"
-msgstr "Dodaj opis"
+msgstr "Adicione uma descrição"
 
 #: src/app/components/eventModal/inputs/TitleInput.js:8
 msgctxt "Placeholder"
 msgid "Add an event title"
-msgstr "Dodaj naslov događaja"
+msgstr "Adicionar um título para o evento"
 
 #: src/app/components/eventModal/inputs/TitleInput.js:9
 msgctxt "Placeholder"
 msgid "Add an alarm title"
-msgstr "Dodaj naslov alarma"
+msgstr "Adicionar um título para o alarme"
 
 #: src/app/components/eventModal/inputs/TitleInput.js:10
 msgctxt "Placeholder"
 msgid "Add a task title"
-msgstr "Dodaj naslov zadatka"
+msgstr "Adicionar um título para a tarefa"
 
 #: node_modules/react-components/containers/login/AbuseModal.js:21
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:155
 #: src/app/containers/setup/ResetModal.js:100
 msgctxt "Action"
 msgid "Close"
-msgstr "Zatvori"
+msgstr "Fechar"
 
 #: node_modules/react-components/containers/login/LoginForm.js:207
 msgctxt "Action"
 msgid "Log in"
-msgstr "Prijavite se"
+msgstr "Iniciar sessão"
 
 #: node_modules/react-components/components/modal/Confirm.js:11
 #: node_modules/react-components/components/modal/FormModal.js:19
@@ -1159,7 +1159,7 @@ msgstr "Prijavite se"
 #: src/app/containers/settings/AskUpdateTimezoneModal.js:31
 msgctxt "Action"
 msgid "Cancel"
-msgstr "Poništi"
+msgstr "Cancelar"
 
 #: node_modules/react-components/components/modal/FormModal.js:20
 #: node_modules/react-components/containers/login/LoginForm.js:239
@@ -1167,152 +1167,152 @@ msgstr "Poništi"
 #: node_modules/react-components/containers/support/BugModal.js:135
 msgctxt "Action"
 msgid "Submit"
-msgstr "Pošalji"
+msgstr "Enviar"
 
 #: node_modules/react-components/containers/support/AttachScreenshot.js:46
 msgctxt "Action"
 msgid "Clear"
-msgstr "Očisti"
+msgstr "Limpar"
 
 #: node_modules/react-components/containers/support/AttachScreenshot.js:53
 msgctxt "Action"
 msgid "Add screenshot(s)"
-msgstr "Dodaj snimku(e) zaslona"
+msgstr "Adicionar captura(s) de tela"
 
 #: node_modules/react-components/containers/support/BugModal.js:203
 msgctxt "Action"
 msgid "Hide info"
-msgstr "Sakrij informacije"
+msgstr "Ocultar informação"
 
 #: node_modules/react-components/containers/support/BugModal.js:203
 msgctxt "Action"
 msgid "Show info"
-msgstr "Prikaži informacije"
+msgstr "Mostrar informação"
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:102
 msgctxt "Action"
 msgid "Verify"
-msgstr "Potvrda"
+msgstr "Verificar"
 
 #: node_modules/react-components/containers/payments/Bitcoin.js:52
 #: node_modules/react-components/containers/payments/PayPal.js:105
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:165
 msgctxt "Action"
 msgid "Try again"
-msgstr "Pokušaj ponovno"
+msgstr "Tentar novamente"
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:171
 msgctxt "Action"
 msgid "Use a different card"
-msgstr "Upotrijebite neku drugu karticu"
+msgstr "Usar outro cartão"
 
 #: node_modules/react-components/containers/payments/PaymentVerificationModal.js:172
 msgctxt "Action"
 msgid "Use a different payment method"
-msgstr "Koristite drugi način plaćanja"
+msgstr "Usar um método de pagamento diferente"
 
 #: node_modules/react-components/containers/payments/PayPal.js:149
 #: node_modules/react-components/containers/payments/PayPal.js:178
 msgctxt "Action"
 msgid "Check out with PayPal"
-msgstr "Naplati s PayPalom"
+msgstr "Finalizar compra com PayPal"
 
 #: node_modules/react-components/containers/payments/PayPal.js:164
 msgctxt "Action"
 msgid "Add PayPal payment method"
-msgstr "Dodaj PayPal način plaćanja"
+msgstr "Adicionar o Paypal como método de pagamento"
 
 #: node_modules/react-components/containers/payments/DonateModal.js:43
 msgctxt "Action"
 msgid "Donate"
-msgstr "Donirajte"
+msgstr "Doar"
 
 #: node_modules/react-components/containers/heading/UserDropdown.js:84
 #: node_modules/react-components/containers/heading/UserDropdown.js:92
 msgctxt "Action"
 msgid "Settings"
-msgstr "Postavke"
+msgstr "Configurações"
 
 #: node_modules/react-components/containers/heading/UserDropdown.js:109
 msgctxt "Action"
 msgid "I have a question"
-msgstr "Imam pitanje"
+msgstr "Eu tenho uma dúvida"
 
 #: node_modules/react-components/containers/heading/UserDropdown.js:119
 msgctxt "Action"
 msgid "Report bug"
-msgstr "Prijavi problem"
+msgstr "Reportar um problema"
 
 #: node_modules/react-components/containers/heading/UserDropdown.js:130
 msgctxt "Action"
 msgid "Proton shop"
-msgstr "Proton shop"
+msgstr "Loja Proton"
 
 #: node_modules/react-components/containers/heading/UserDropdown.js:140
 msgctxt "Action"
 msgid "Support us"
-msgstr "Podržite nas"
+msgstr "Apoie-nos"
 
 #: node_modules/react-components/containers/heading/UserDropdown.js:149
 msgctxt "Action"
 msgid "Logout"
-msgstr "Odjava"
+msgstr "Encerrar sessão"
 
 #: node_modules/react-components/components/miniCalendar/LocalizedMiniCalendar.js:31
 #: src/app/components/DateCursorButtons.js:62
 msgctxt "Action"
 msgid "Next month"
-msgstr "Sljedeći mjesec"
+msgstr "Próximo mês"
 
 #: node_modules/react-components/components/miniCalendar/LocalizedMiniCalendar.js:32
 msgctxt "Action"
 msgid "Prev month"
-msgstr "Prethodni mjesec"
+msgstr "Mês anterior"
 
 #: node_modules/react-components/components/modal/Confirm.js:10
 #: node_modules/react-components/components/modal/Confirm.js:12
 msgctxt "Action"
 msgid "Confirm"
-msgstr "Potvrdi"
+msgstr "Confirmar"
 
 #: node_modules/react-components/components/modal/Header.js:11
 #: node_modules/react-components/components/modal/Header.js:13
 msgctxt "Action"
 msgid "Close modal"
-msgstr "Zatvori skočni prozor"
+msgstr "Fechar janela"
 
 #: src/app/containers/setup/FreeModal.js:16
 msgctxt "Action"
 msgid "Back to ProtonMail"
-msgstr "Povratak na ProtonMail"
+msgstr "Voltar ao ProtonMail"
 
 #: src/app/containers/setup/WelcomeModal.js:120
 msgctxt "Action"
 msgid "Customize calendar"
-msgstr "Prilagodi kalendar"
+msgstr "Personalizar calendario"
 
 #: src/app/containers/setup/ResetModal.js:170
 #: src/app/containers/setup/WelcomeModal.js:124
 msgctxt "Action"
 msgid "Continue"
-msgstr "Nastavi"
+msgstr "Continuar"
 
 #: src/app/containers/settings/AskUpdateTimezoneModal.js:32
 #: src/app/containers/settings/CalendarModal.js:254
 msgctxt "Action"
 msgid "Update"
-msgstr "Ažuriraj"
+msgstr "Atualizar"
 
 #: src/app/containers/settings/CalendarModal.js:254
 msgctxt "Action"
 msgid "Create"
-msgstr "Stvori"
+msgstr "Criar"
 
 #: src/app/components/events/EventPopover.js:113
 #: src/app/containers/settings/section/CalendarsTable.js:14
 msgctxt "Action"
 msgid "Edit"
-msgstr "Uredi"
+msgstr "Editar"
 
 #: src/app/components/eventModal/CreateEventModal.js:52
 #: src/app/components/eventModal/Notifications.js:27
@@ -1322,276 +1322,276 @@ msgstr "Uredi"
 #: src/app/containers/settings/section/CalendarsTable.js:18
 msgctxt "Action"
 msgid "Delete"
-msgstr "Obriši"
+msgstr "Excluir"
 
 #: src/app/containers/settings/section/CalendarsSection.js:61
 #: src/app/containers/settings/section/CalendarsSection.js:64
 msgctxt "Action"
 msgid "Add calendar"
-msgstr "Dodaj kalendar"
+msgstr "Adicionar calendário"
 
 #: src/app/containers/settings/ViewPreferenceSelector.js:30
 msgctxt "Action"
 msgid "Select calendar view"
-msgstr "Odaberite prikaz kalendara"
+msgstr "Selecionar visualização do calendário"
 
 #: src/app/containers/calendar/CalendarContainerView.js:110
 #: src/app/containers/settings/SettingsContainer.js:53
 msgctxt "Action"
 msgid "Upgrade"
-msgstr "Nadogradnja"
+msgstr "Upgrade"
 
 #: src/app/containers/calendar/CalendarSidebar.js:96
 msgctxt "Action"
 msgid "New event"
-msgstr "Novi događaj"
+msgstr "Novo evento"
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:372
 msgctxt "Action"
 msgid "Yes"
-msgstr "Da"
+msgstr "Sim"
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:374
 msgctxt "Action"
 msgid "No"
-msgstr "Ne"
+msgstr "Não"
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:420
 msgctxt "Action"
 msgid "Discard"
-msgstr "Odbaci"
+msgstr "Descartar"
 
 #: src/app/components/eventModal/Notifications.js:25
 msgctxt "Action"
 msgid "Remove notification"
-msgstr "Ukloni obavijest"
+msgstr "Remover notificação"
 
 #: src/app/components/eventModal/Notifications.js:33
 msgctxt "Action"
 msgid "Add notification"
-msgstr "Dodaj obavijest"
+msgstr "Adicionar notificação"
 
 #: src/app/components/eventModal/CreateEventModal.js:44
 #: src/app/components/eventModal/CreateEventPopover.js:58
 msgctxt "Action"
 msgid "Save"
-msgstr "Spremi"
+msgstr "Salvar"
 
 #: src/app/components/eventModal/CreateEventPopover.js:56
 msgctxt "Action"
 msgid "More options"
-msgstr "Više opcija"
+msgstr "Mais opções"
 
 #: src/app/components/DateCursorButtons.js:53
 msgctxt "Action"
 msgid "Previous day"
-msgstr "Prethodni dan"
+msgstr "Dia anterior"
 
 #: src/app/components/DateCursorButtons.js:54
 msgctxt "Action"
 msgid "Previous week"
-msgstr "Prethodni tjedan"
+msgstr "Semana anterior"
 
 #: src/app/components/DateCursorButtons.js:55
 msgctxt "Action"
 msgid "Previous month"
-msgstr "Prethodni mjesec"
+msgstr "Mês anterior"
 
 #: src/app/components/DateCursorButtons.js:56
 msgctxt "Action"
 msgid "Previous year"
-msgstr "Prethodna godina"
+msgstr "Ano anterior"
 
 #: src/app/components/DateCursorButtons.js:60
 msgctxt "Action"
 msgid "Next day"
-msgstr "Sljedeći dan"
+msgstr "Próximo dia"
 
 #: src/app/components/DateCursorButtons.js:61
 msgctxt "Action"
 msgid "Next week"
-msgstr "Sljedeći tjedan"
+msgstr "Próxima semana"
 
 #: src/app/components/DateCursorButtons.js:63
 msgctxt "Action"
 msgid "Next year"
-msgstr "Sljedeća godina"
+msgstr "Próximo ano"
 
 #: src/app/components/DateCursorButtons.js:75
 msgctxt "Action"
 msgid "Today"
-msgstr "Danas"
+msgstr "Hoje"
 
 #: src/app/components/TimezoneSelector.js:23
 msgctxt "Action"
 msgid "Select timezone"
-msgstr "Odaberite vremensku zonu"
+msgstr "Selecionar fuso horário"
 
 #: src/app/components/events/PopoverCloseButton.js:7
 #: src/app/components/events/PopoverCloseButton.js:9
 msgctxt "Action"
 msgid "Close popover"
-msgstr "Zatvori skočni prozor"
+msgstr "Fechar"
 
 #: node_modules/react-components/containers/support/AttachScreenshot.js:23
 msgctxt "Error notification in the bug report modal when the user upload file"
 msgid "No image selected"
-msgstr "Nije odabrana nijedna slika"
+msgstr "Nenhuma imagem selecionada"
 
 #: node_modules/react-components/containers/support/BugModal.js:38
 #: node_modules/react-components/containers/support/BugModal.js:52
 msgctxt "Bug category"
 msgid "Login problem"
-msgstr "Problem s prijavom"
+msgstr "Problema ao iniciar sessão"
 
 #: node_modules/react-components/containers/support/BugModal.js:39
 msgctxt "Bug category"
 msgid "Sign up problem"
-msgstr "Problem s registracijom"
+msgstr "Problema de registro"
 
 #: node_modules/react-components/containers/support/BugModal.js:40
 msgctxt "Bug category"
 msgid "Bridge problem"
-msgstr "Problem s Bridgeom"
+msgstr "Problema de bridge"
 
 #: node_modules/react-components/containers/support/BugModal.js:41
 msgctxt "Bug category"
 msgid "Import / export problem"
-msgstr "Problem s uvozom/izvozom"
+msgstr "Problema ao importar/exportar"
 
 #: node_modules/react-components/containers/support/BugModal.js:42
 msgctxt "Bug category"
 msgid "Custom domains problem"
-msgstr "Problem s prilagođenim domenama"
+msgstr "Problema com domínios personalizados"
 
 #: node_modules/react-components/containers/support/BugModal.js:43
 #: node_modules/react-components/containers/support/BugModal.js:54
 msgctxt "Bug category"
 msgid "Payments problem"
-msgstr "Problem s naplatom"
+msgstr "Problema com pagamentos"
 
 #: node_modules/react-components/containers/support/BugModal.js:44
 #: node_modules/react-components/containers/support/BugModal.js:58
 msgctxt "Bug category"
 msgid "Connection problem"
-msgstr "Problem s vezom"
+msgstr "Problema de conexão"
 
 #: node_modules/react-components/containers/support/BugModal.js:45
 msgctxt "Bug category"
 msgid "Slow speed problem"
-msgstr "Problem s sporom brzinom"
+msgstr "Problema com lentidão"
 
 #: node_modules/react-components/containers/support/BugModal.js:46
 msgctxt "Bug category"
 msgid "VPN problem"
-msgstr "Problem s VPN-om"
+msgstr "Problema na VPN"
 
 #: node_modules/react-components/containers/support/BugModal.js:47
 #: node_modules/react-components/containers/support/BugModal.js:63
 msgctxt "Bug category"
 msgid "Feature request"
-msgstr "Predložite novu značajku"
+msgstr "Solicitação de recurso"
 
 #: node_modules/react-components/containers/support/BugModal.js:48
 msgctxt "Bug category"
 msgid "Other"
-msgstr "Ostalo"
+msgstr "Outro"
 
 #: node_modules/react-components/containers/support/BugModal.js:53
 msgctxt "Bug category"
 msgid "Signup problem"
-msgstr "Problem s registracijom"
+msgstr "Problema de registro"
 
 #: node_modules/react-components/containers/support/BugModal.js:55
 msgctxt "Bug category"
 msgid "Installation problem"
-msgstr "Problem s instalacijom"
+msgstr "Problema na instalação"
 
 #: node_modules/react-components/containers/support/BugModal.js:56
 msgctxt "Bug category"
 msgid "Update problem"
-msgstr "Problem s nadogradnjom"
+msgstr "Problema na atualização"
 
 #: node_modules/react-components/containers/support/BugModal.js:57
 msgctxt "Bug category"
 msgid "Application problem"
-msgstr "Problem s aplikacijom"
+msgstr "Problema no aplicativo"
 
 #: node_modules/react-components/containers/support/BugModal.js:59
 msgctxt "Bug category"
 msgid "Speed problem"
-msgstr "Problem s brzinom"
+msgstr "Problema de velocidade"
 
 #: node_modules/react-components/containers/support/BugModal.js:60
 msgctxt "Bug category"
 msgid "Manual setup problem"
-msgstr "Problem s ručnim postavljanjem"
+msgstr "Problema na configuração manual"
 
 #: node_modules/react-components/containers/support/BugModal.js:61
 msgctxt "Bug category"
 msgid "Website access problem"
-msgstr "Problem s pristupom web stanici"
+msgstr "Problema de acesso ao site"
 
 #: node_modules/react-components/containers/support/BugModal.js:62
 msgctxt "Bug category"
 msgid "Streaming problem"
-msgstr "Problem s streamingom"
+msgstr "Problema de streaming"
 
 #: node_modules/react-components/containers/support/BugModal.js:80
 msgctxt "Action to select a title for the bug report modal"
 msgid "Select"
-msgstr "Odaberi"
+msgstr "Selecione"
 
 #: node_modules/react-components/containers/support/BugModal.js:89
 msgctxt "Link"
 msgid "clearing your browser cache"
-msgstr "čišćenje predmemorije preglednika"
+msgstr "limpando o cache do seu navegador"
 
 #: node_modules/react-components/containers/payments/PayPal.js:125
 msgctxt "Link"
 msgid "click here"
-msgstr "kliknite ovdje"
+msgstr "clique aqui"
 
 #: node_modules/react-components/containers/heading/UpgradeButton.js:13
 #: node_modules/react-components/containers/heading/UpgradeButton.js:21
 msgctxt "Link"
 msgid "Upgrade"
-msgstr "Nadogradnja"
+msgstr "Upgrade"
 
 #: node_modules/react-components/components/link/LearnMore.js:7
 msgctxt "Link"
 msgid "Learn more"
-msgstr "Saznajte više"
+msgstr "Saiba mais"
 
 #: src/app/containers/settings/SettingsContainer.js:35
 msgctxt "Link"
 msgid "General"
-msgstr "Općenito"
+msgstr "Geral"
 
 #: src/app/containers/settings/SettingsContainer.js:36
 msgctxt "Link"
 msgid "Calendars"
-msgstr "Kalendari"
+msgstr "Calendários"
 
 #: node_modules/react-components/containers/support/BugModal.js:120
 msgctxt "Success"
 msgid "Bug reported"
-msgstr "Pogreška je prijavljena"
+msgstr "Problema reportado"
 
 #: node_modules/react-components/containers/payments/DonateModal.js:33
 msgctxt "Success"
 msgid "Your support is essential to keeping Proton running. Thank you for supporting internet privacy!"
-msgstr "Vaša podrška je neophodna za održavanje ProtonMaila. Hvala na podržavanju internetske privatnosti!"
+msgstr "O seu suporte é essencial para manter a Proton em execução. Obrigado por apoiar a privacidade da internet!"
 
 #: src/app/containers/settings/CalendarModal.js:227
 msgctxt "Success"
 msgid "Calendar updated"
-msgstr "Kalendar je ažuriran"
+msgstr "O calendário foi atualizado"
 
 #: src/app/containers/settings/CalendarModal.js:227
 msgctxt "Success"
 msgid "Calendar created"
-msgstr "Kalendar je stvoren"
+msgstr "O calendário foi criado"
 
 #: src/app/containers/settings/AskUpdateTimezoneModal.js:17
 #: src/app/containers/settings/section/LayoutSection.js:33
@@ -1599,458 +1599,448 @@ msgstr "Kalendar je stvoren"
 #: src/app/containers/settings/section/TimeSection.js:55
 msgctxt "Success"
 msgid "Preference saved"
-msgstr "Postavke su spremljene"
+msgstr "Preferências salvas"
 
 #: src/app/containers/settings/section/CalendarsSection.js:51
 msgctxt "Success"
 msgid "Calendar removed"
-msgstr "Kalendar je uklonjen"
+msgstr "Calendário removido"
 
 #: src/app/components/eventModal/eventForm/i18n.js:8
 msgctxt "Success"
 msgid "Event created"
-msgstr "Događaj je stvoren"
+msgstr "Evento criado"
 
 #: src/app/components/eventModal/eventForm/i18n.js:9
 msgctxt "Success"
 msgid "Event updated"
-msgstr "Događaj je ažuriran"
+msgstr "Evento atualizado"
 
 #: src/app/components/eventModal/eventForm/i18n.js:10
 msgctxt "Success"
 msgid "Event deleted"
-msgstr "Događaj je uklonjen"
+msgstr "Evento excluído"
 
 #: src/app/components/eventModal/eventForm/i18n.js:16
 msgctxt "Success"
 msgid "Task created"
-msgstr "Zadatak je stvoren"
+msgstr "Tarefa criada"
 
 #: src/app/components/eventModal/eventForm/i18n.js:17
 msgctxt "Success"
 msgid "Task updated"
-msgstr "Zadatak je ažuriran"
+msgstr "Tarefa atualizada"
 
 #: src/app/components/eventModal/eventForm/i18n.js:18
 msgctxt "Success"
 msgid "Task deleted"
-msgstr "Zadatak je uklonjen"
+msgstr "Tâche supprimée"
 
 #: src/app/components/eventModal/eventForm/i18n.js:24
 msgctxt "Success"
 msgid "Alarm created"
-msgstr "Alarm je stvoren"
+msgstr "Alarme criado"
 
 #: src/app/components/eventModal/eventForm/i18n.js:25
 msgctxt "Success"
 msgid "Alarm updated"
-msgstr "Alarm je ažuriran"
+msgstr "Alarme atualizado"
 
 #: src/app/components/eventModal/eventForm/i18n.js:26
 msgctxt "Success"
 msgid "Alarm deleted"
-msgstr "Alarm je uklonjen"
+msgstr "Alarme excluído"
 
 #: node_modules/react-components/containers/support/BugModal.js:140
 msgctxt "Warning"
 msgid "Bug reports are not end-to-end encrypted, please do not send any sensitive information."
-msgstr "Izvještaji o pogreškama nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
+msgstr "Os relatórios de erros não são criptografados de ponta a ponta. Por favor, não envie nenhuma informação sensível."
 
 #: node_modules/react-components/containers/support/BugModal.js:193
 msgctxt "Label, make it short please"
 msgid "Attach screenshot(s)"
-msgstr "Dodajte snimke zaslona"
+msgstr "Anexar captura(s) de tela"
 
 #: node_modules/react-components/containers/payments/Card.js:57
 msgctxt "Placeholder, make it short"
 msgid "Security code"
-msgstr "Sigurnosni kôd"
+msgstr "Código de segurança"
 
 #: node_modules/react-components/containers/payments/Cash.js:13
 #, javascript-format
 msgctxt "Info for cash payment method"
 msgid "To pay via Cash, please email us at ${ email } for instructions."
-msgstr "Za plaćanje gotovinom, pošaljite nam e-poštu na ${ email } za uputstva."
+msgstr "Para pagar com dinheiro, favor nos enviar um e-mail para ${ email } para obter instruções."
 
 #: node_modules/react-components/containers/paymentMethods/PaymentMethodDetails.js:21
 msgctxt "Label for credit card"
 msgid "Expiration"
-msgstr "Istječe"
+msgstr "Vencimento"
 
 #: node_modules/react-components/containers/paymentMethods/usePaymentMethods.js:34
 msgctxt "Payment method option"
 msgid "Pay with credit/debit card"
-msgstr "Plati kreditnom/debitnom karticom"
+msgstr "Pagar com cartão de crédito/débito"
 
 #: node_modules/react-components/containers/paymentMethods/usePaymentMethods.js:56
 msgctxt "Payment method option"
 msgid "Pay with PayPal"
-msgstr "Plati PayPal-om"
+msgstr "Pagar com PayPal"
 
 #: node_modules/react-components/containers/paymentMethods/usePaymentMethods.js:63
 msgctxt "Payment method option"
 msgid "Pay with Bitcoin"
-msgstr "Plati s Bitcoinom"
+msgstr "Pagar com Bitcoin"
 
 #: node_modules/react-components/components/input/TimeInput.js:26
 #, javascript-format
 msgctxt "Time unit"
 msgid "${ hours } hour"
 msgid_plural "${ hours } hours"
-msgstr[0] "${ hours } sat"
-msgstr[1] "${ hours } sata"
-msgstr[2] "${ hours } sati"
+msgstr[0] "${ hours } hora"
+msgstr[1] "${ hours } horas"
 
 #: node_modules/react-components/components/input/TimeInput.js:27
 msgctxt "Time unit"
 msgid "${ minutes } minutes"
 msgid_plural "${ minutes } minutes"
-msgstr[0] "${ minutes } minuta"
-msgstr[1] "${ minutes } minute"
-msgstr[2] "${ minutes } minuta"
+msgstr[0] "${ minutes } minutos"
+msgstr[1] "${ minutes } minutos"
 
 #: src/app/components/eventModal/inputs/NotificationInput.js:96
 msgctxt "Time unit"
 msgid "Minute"
 msgid_plural "Minutes"
-msgstr[0] "Minuta"
-msgstr[1] "Minute"
-msgstr[2] "Minute"
+msgstr[0] "Minuto"
+msgstr[1] "Minutos"
 
 #: src/app/components/eventModal/inputs/NotificationInput.js:100
 msgctxt "Time unit"
 msgid "Hour"
 msgid_plural "Hours"
-msgstr[0] "Sat"
-msgstr[1] "Sati"
-msgstr[2] "Sati"
+msgstr[0] "Hora"
+msgstr[1] "Horas"
 
 #: src/app/components/eventModal/inputs/NotificationInput.js:103
 msgctxt "Time unit"
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] "Dan"
-msgstr[1] "Dani"
-msgstr[2] "Dani"
+msgstr[0] "Dia"
+msgstr[1] "Dias"
 
 #: src/app/components/eventModal/inputs/NotificationInput.js:104
 msgctxt "Time unit"
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] "Tjedan"
-msgstr[1] "Tjedna"
-msgstr[2] "Tjedna"
+msgstr[0] "Semana"
+msgstr[1] "Semanas"
 
 #: node_modules/react-components/components/toggle/Toggle.js:10
 msgctxt "Toggle button"
 msgid "On"
-msgstr "Uključeno"
+msgstr "On"
 
 #: node_modules/react-components/components/toggle/Toggle.js:11
 msgctxt "Toggle button"
 msgid "Off"
-msgstr "Isključeno"
+msgstr "Off"
 
 #: src/app/containers/settings/section/CalendarsTable.js:8
 #: src/app/containers/setup/CalendarReactivateSection.js:11
 #: src/app/containers/setup/CalendarResetSection.js:11
 msgctxt "Header"
 msgid "Name"
-msgstr "Naziv"
+msgstr "Nome"
 
 #: src/app/containers/settings/CalendarModal.js:233
 msgctxt "Header"
 msgid "Calendar settings"
-msgstr "Postavke kalendara"
+msgstr "Configurações do calendário"
 
 #: src/app/containers/settings/CalendarModal.js:245
 msgctxt "Header"
 msgid "Event settings"
-msgstr "Postavke događaja"
+msgstr "Configurações do evento"
 
 #: src/app/containers/settings/section/CalendarsTable.js:8
 msgctxt "Header"
 msgid "Actions"
-msgstr "Radnje"
+msgstr "Ações"
 
 #: src/app/containers/calendar/CalendarSidebar.js:69
 msgctxt "Header"
 msgid "Calendars"
-msgstr "Kalendari"
+msgstr "Calendários"
 
 #: src/app/containers/settings/EventSettingsTab.js:18
 msgctxt "Duration"
 msgid "30 minutes"
-msgstr "30 minuta"
+msgstr "30 minutos"
 
 #: src/app/containers/settings/EventSettingsTab.js:19
 msgctxt "Duration"
 msgid "60 minutes"
-msgstr "60 minuta"
+msgstr "60 minutos"
 
 #: src/app/containers/settings/EventSettingsTab.js:20
 msgctxt "Duration"
 msgid "90 minutes"
-msgstr "90 minuta"
+msgstr "90 minutos"
 
 #: src/app/containers/settings/EventSettingsTab.js:21
 msgctxt "Duration"
 msgid "120 minutes"
-msgstr "120 minuta"
+msgstr "120 minutos"
 
 #: src/app/containers/settings/section/TimeSection.js:82
 msgctxt "Primary timezone"
 msgid "Primary time zone"
-msgstr "Zadana vremenska zona"
+msgstr "Fuso horário primário"
 
 #: src/app/containers/settings/section/TimeSection.js:99
 msgctxt "Checkbox"
 msgid "Ask to update primary time zone"
-msgstr "Zatraži ažuriranje primarne vremenske zone"
+msgstr "Perguntar para atualizar o fuso horário primário"
 
 #: src/app/containers/settings/section/TimeSection.js:134
 msgctxt "Checkbox"
 msgid "Show secondary time zone"
-msgstr "Prikaži sekundarnu vremensku zonu"
+msgstr "Mostrar fuso horário secundário"
 
 #: src/app/containers/settings/section/LayoutSection.js:74
 msgctxt "Checkbox"
 msgid "Show week numbers"
-msgstr "Prikaži brojeve tjedana"
+msgstr "Exibir números da semana"
 
 #: src/app/containers/settings/section/TimeSection.js:102
 msgctxt "Tooltip"
 msgid "If the computer time zone does not match the current time zone preference, you will be asked to update it (at most once per day). "
-msgstr "Ako vremenska zona računala ne odgovara trenutnim postavkama vremenske zone, od vas će se zatražiti da je ažurirate (najviše jednom dnevno). "
+msgstr "Se o fuso horário do computador não corresponder à preferência de fuso horário atual, você será solicitado a atualizá-lo (no máximo uma vez por dia). "
 
 #: src/app/components/eventModal/eventForm/i18n.js:11
 msgctxt "Tooltip"
 msgid "Delete event"
-msgstr "Izbriši događaj"
+msgstr "Excluir evento"
 
 #: src/app/components/eventModal/eventForm/i18n.js:19
 msgctxt "Tooltip"
 msgid "Delete task"
-msgstr "Izbriši zadatak"
+msgstr "Excluir tarefa"
 
 #: src/app/components/eventModal/eventForm/i18n.js:27
 msgctxt "Tooltip"
 msgid "Delete alarm"
-msgstr "Izbriši alarm"
+msgstr "Excluir alarme"
 
 #: src/app/containers/settings/section/TimeSection.js:119
 msgctxt "Secondary timezone"
 msgid "Secondary time zone"
-msgstr "Sekundarna vremenska zona"
+msgstr "Fuso horário secundário"
 
 #: src/app/containers/settings/WeekStartSelector.js:14
 msgctxt "Week day"
 msgid "Sunday"
-msgstr "Nedjelja"
+msgstr "Domingo"
 
 #: src/app/containers/settings/WeekStartSelector.js:15
 msgctxt "Week day"
 msgid "Monday"
-msgstr "Ponedjeljak"
+msgstr "Segunda-feira"
 
 #: src/app/components/ViewSelector.js:12
 #: src/app/containers/settings/ViewPreferenceSelector.js:18
 msgctxt "Calendar view"
 msgid "Day"
-msgstr "Dan"
+msgstr "Dia"
 
 #: src/app/components/ViewSelector.js:13
 #: src/app/containers/settings/ViewPreferenceSelector.js:19
 msgctxt "Calendar view"
 msgid "Week"
-msgstr "Tjedan"
+msgstr "Semana"
 
 #: src/app/components/ViewSelector.js:14
 #: src/app/containers/settings/ViewPreferenceSelector.js:20
 msgctxt "Calendar view"
 msgid "Month"
-msgstr "Mjesec"
+msgstr "Mês"
 
 #: src/app/containers/settings/SettingsContainer.js:31
 msgctxt "Page title"
 msgid "Calendar settings - ProtonCalendar"
-msgstr "Postavke kalendara - ProtonCalendar"
+msgstr "Configurações do calendário - ProtonCalendar"
 
 #: src/app/containers/settings/AskUpdateTimezoneModal.js:30
 msgctxt "Modal title"
 msgid "Time zone changed"
-msgstr "Vremenska zona je promijenjena"
+msgstr "Fuso horário alterado"
 
 #: src/app/containers/calendar/InteractiveCalendarView.js:106
 msgctxt "Alert"
 msgid "By leaving now, you will lose your event."
-msgstr "Izlaskom će te izgubiti vaš događaj."
+msgstr "Ao sair agora, você perderá o seu evento."
 
 #: src/app/components/eventModal/inputs/NotificationInput.js:27
 msgctxt "Event trigger"
 msgid "Before at"
-msgstr "Prije u"
+msgstr "Antes de"
 
 #: src/app/components/eventModal/inputs/NotificationInput.js:28
 msgctxt "Event trigger"
 msgid "After at"
-msgstr "Nakon u"
+msgstr "Depois de"
 
 #: src/app/components/eventModal/inputs/NotificationInput.js:31
 msgctxt "Event trigger"
 msgid "Before"
-msgstr "Prije"
+msgstr "Antes"
 
 #: src/app/components/eventModal/inputs/NotificationInput.js:32
 msgctxt "Event trigger"
 msgid "After"
-msgstr "Nakon"
+msgstr "Depois"
 
 #: src/app/components/eventModal/inputs/NotificationInput.js:49
 msgctxt "Notification type"
 msgid "Notification"
-msgstr "Obavijest"
+msgstr "Notificação"
 
 #: src/app/components/eventModal/inputs/NotificationInput.js:50
 msgctxt "Notification type"
 msgid "Email"
-msgstr "E-pošta"
+msgstr "E-mail"
 
 #: src/app/components/eventModal/inputs/FrequencyInput.js:10
 msgctxt "Option"
 msgid "Do not repeat"
-msgstr "Ne ponavljaj"
+msgstr "Não repetir"
 
 #: src/app/components/eventModal/inputs/FrequencyInput.js:11
 msgctxt "Option"
 msgid "Every week"
-msgstr "Tjedno"
+msgstr "Toda semana"
 
 #: src/app/components/eventModal/inputs/FrequencyInput.js:12
 msgctxt "Option"
 msgid "Every month"
-msgstr "Svaki mjesec"
+msgstr "Mensalmente"
 
 #: src/app/components/eventModal/inputs/FrequencyInput.js:13
 msgctxt "Option"
 msgid "Every year"
-msgstr "Svake godine"
+msgstr "Anualmente"
 
 #: src/app/helpers/notifications.js:9
 #, javascript-format
 msgctxt "Notifications"
 msgid "${ n } week"
 msgid_plural "${ n } weeks"
-msgstr[0] "${ n } tjedan"
-msgstr[1] "${ n } tjedna"
-msgstr[2] "${ n } tjedna"
+msgstr[0] "${ n } semana"
+msgstr[1] "${ n } semanas"
 
 #: src/app/helpers/notifications.js:10
 msgctxt "Notifications"
 msgid "${ n } day"
 msgid_plural "${ n } days"
-msgstr[0] "${ n } dan"
-msgstr[1] "${ n } dana"
-msgstr[2] "${ n } dana"
+msgstr[0] "${ n } dia"
+msgstr[1] "${ n } dias"
 
 #: src/app/helpers/notifications.js:11
 #, javascript-format
 msgctxt "Notifications"
 msgid "${ n } minute"
 msgid_plural "${ n } minutes"
-msgstr[0] "${ n } minuta"
-msgstr[1] "${ n } minute"
-msgstr[2] "${ n } minute"
+msgstr[0] "${ n } minuto"
+msgstr[1] "${ n } minutos"
 
 #: src/app/helpers/notifications.js:12
 msgctxt "Notifications"
 msgid "${ n } hour"
 msgid_plural "${ n } hours"
-msgstr[0] "${ n } sat"
-msgstr[1] "${ n } sata"
-msgstr[2] "${ n } sata"
+msgstr[0] "${ n } hora"
+msgstr[1] "${ n } horas"
 
 #: src/app/helpers/notifications.js:17
 msgctxt "Notifications"
 msgid "before"
-msgstr "prije"
+msgstr "antes"
 
 #: src/app/helpers/notifications.js:17
 msgctxt "Notifications"
 msgid "after"
-msgstr "nakon"
+msgstr "depois"
 
 #: src/app/helpers/notifications.js:21
 #, javascript-format
 msgctxt "Notifications"
 msgid "at ${ time }"
-msgstr "u ${ time }"
+msgstr "às ${ time }"
 
 #: src/app/helpers/alarms.js:39
 msgctxt "Alarm notification"
 msgid "${ title } started today"
-msgstr "${ title } započeo danas"
+msgstr "${ title } começou hoje"
 
 #: src/app/helpers/alarms.js:42
 #, javascript-format
 msgctxt "Alarm notification"
 msgid "${ title } will start at ${ formattedHour }"
-msgstr "${ title } će započeti u ${ formattedHour }"
+msgstr "${ title } começará em ${ formattedHour }"
 
 #: src/app/helpers/alarms.js:44
 #, javascript-format
 msgctxt "Alarm notification"
 msgid "${ title } started at ${ formattedHour }"
-msgstr "${ title } započinje u ${ formattedHour }"
+msgstr "${ title } começou em ${ formattedHour }"
 
 #: src/app/helpers/alarms.js:49
 msgctxt "Alarm notification"
 msgid "${ title } will start tomorrow"
-msgstr "${ title } će započeti sutra"
+msgstr "${ title } começará amanhã"
 
 #: src/app/helpers/alarms.js:51
 #, javascript-format
 msgctxt "Alarm notification"
 msgid "${ title } will start tomorrow at ${ formattedHour }"
-msgstr "${ title } će započeti sutra u ${ formattedHour }"
+msgstr "${ title } começará amanhã às ${ formattedHour }"
 
 #: src/app/helpers/alarms.js:57
 #, javascript-format
 msgctxt "Alarm notification"
 msgid "${ title } will start on ${ formattedDate }"
-msgstr "${ title } će započeti ${ formattedDate }"
+msgstr "${ title } começará em ${ formattedDate }"
 
 #: src/app/helpers/alarms.js:59
 #, javascript-format
 msgctxt "Alarm notification"
 msgid "${ title } will start on ${ formattedDate } at ${ formattedHour }"
-msgstr "${ title } će započeti ${ formattedDate } u ${ formattedHour }"
+msgstr "${ title } começará em ${ formattedDate } às ${ formattedHour }"
 
 #: src/app/helpers/alarms.js:65
 msgctxt "Alarm notification"
 msgid "${ title } will start on ${ _formattedDate }"
-msgstr "${ title } će započeti ${ _formattedDate }"
+msgstr "${ title } começará em ${ _formattedDate }"
 
 #: src/app/helpers/alarms.js:67
 #, javascript-format
 msgctxt "Alarm notification"
 msgid "${ title } will start on ${ _formattedDate } at ${ formattedHour }"
-msgstr "${ title } će započeti ${ _formattedDate } u ${ formattedHour }"
+msgstr "${ title } começará em ${ _formattedDate } às ${ formattedHour }"
 
 #: src/app/helpers/alarms.js:72
 #, javascript-format
 msgctxt "Alarm notification"
 msgid "${ title } will start on ${ formattedDateWithoutTime }"
-msgstr "${ title } će započeti ${ formattedDateWithoutTime }"
+msgstr "${ title } começará em ${ formattedDateWithoutTime }"
 
 #: src/app/helpers/alarms.js:76
 msgctxt "Alarm notification"
 msgid "${ title } will start on ${ formattedDateWithTime }"
-msgstr "${ title } će započeti ${ formattedDateWithTime }"
+msgstr "${ title } começará em ${ formattedDateWithTime }"
 
 #: src/app/helpers/alarms.js:78
 #, javascript-format
 msgctxt "Alarm notification"
 msgid "${ title } started on ${ formattedDateWithTime }"
-msgstr "${ title } je započeo ${ formattedDateWithTime }"
+msgstr "${ title } começou em ${ formattedDateWithTime }"
 

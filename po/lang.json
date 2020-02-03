@@ -1,6 +1,66 @@
 [
   {
+    "key": "ca",
+    "lang": "ca_ES"
+  },
+  {
+    "key": "da",
+    "lang": "da_DK"
+  },
+  {
+    "key": "de",
+    "lang": "de_DE"
+  },
+  {
+    "key": "es",
+    "lang": "es_ES"
+  },
+  {
+    "key": "fr",
+    "lang": "fr_FR"
+  },
+  {
     "key": "hr",
     "lang": "hr_HR"
+  },
+  {
+    "key": "hu",
+    "lang": "hu_HU"
+  },
+  {
+    "key": "is",
+    "lang": "is_IS"
+  },
+  {
+    "key": "it",
+    "lang": "it_IT"
+  },
+  {
+    "key": "nl",
+    "lang": "nl_NL"
+  },
+  {
+    "key": "pl",
+    "lang": "pl_PL"
+  },
+  {
+    "key": "pt-PT",
+    "lang": "pt_PT"
+  },
+  {
+    "key": "pt",
+    "lang": "pt_BR"
+  },
+  {
+    "key": "ro",
+    "lang": "ro_RO"
+  },
+  {
+    "key": "tr",
+    "lang": "tr_TR"
+  },
+  {
+    "key": "zh-CN",
+    "lang": "zh_CN"
   }
 ]
