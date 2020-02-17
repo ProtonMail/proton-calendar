@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: protonmail\n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
-"PO-Revision-Date: 2020-02-07 07:21\n"
+"PO-Revision-Date: 2020-02-16 04:21\n"
 
 #: node_modules/proton-shared/lib/helpers/humanSize.js:13
 msgctxt "file size format"
@@ -35,20 +35,35 @@ msgctxt "Error"
 msgid "Primary calendar key is not decrypted"
 msgstr "主密钥尚未解密"
 
-#: node_modules/react-components/containers/api/ApiProvider.js:47
+#: node_modules/react-components/components/alert/DoNotWindowOpenAlertError.js:7
 msgctxt "Error"
-msgid "Could not connect to server."
-msgstr "无法连接到服务器。"
+msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
+msgstr "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
 
-#: node_modules/react-components/containers/api/ApiProvider.js:48
+#: node_modules/react-components/components/input/EmailInput.js:9
 msgctxt "Error"
-msgid "No internet connection found"
-msgstr "无网络连接"
+msgid "Email address invalid"
+msgstr "无效的电子邮箱"
 
-#: node_modules/react-components/containers/api/ApiProvider.js:56
+#: node_modules/react-components/components/input/Input.js:32
+msgctxt "Error"
+msgid "This field is required"
+msgstr "此项必须填写"
+
+#: node_modules/react-components/containers/api/OfflineNotification.js:15
+msgctxt "Error"
+msgid "Servers are unreachable."
+msgstr "无法连接服务器。"
+
+#: node_modules/react-components/containers/api/ApiProvider.js:105
 msgctxt "Error"
 msgid "Request timed out."
 msgstr "请求超时。"
+
+#: node_modules/react-components/containers/api/ApiProvider.js:152
+msgctxt "Error"
+msgid "Bad app version"
+msgstr "应用版本无效"
 
 #: node_modules/react-components/containers/login/LoginForm.js:88
 msgctxt "Error"
@@ -150,22 +165,7 @@ msgctxt "Error"
 msgid "Invalid postal code"
 msgstr "邮政编码不正确"
 
-#: node_modules/react-components/components/alert/DoNotWindowOpenAlertError.js:7
-msgctxt "Error"
-msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
-msgstr "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
-
-#: node_modules/react-components/components/input/EmailInput.js:9
-msgctxt "Error"
-msgid "Email address invalid"
-msgstr "无效的电子邮箱"
-
-#: node_modules/react-components/components/input/Input.js:32
-msgctxt "Error"
-msgid "This field is required"
-msgstr "此项必须填写"
-
-#: src/app/containers/settings/CalendarModal.js:157
+#: src/app/containers/settings/CalendarModal.js:164
 #: src/app/containers/setup/WelcomeModal.js:59
 #: src/app/containers/setup/resetHelper.js:125
 msgctxt "Error"
@@ -182,50 +182,50 @@ msgctxt "Error"
 msgid "No valid address found."
 msgstr "未找到有效地址。"
 
-#: src/app/containers/settings/CalendarModal.js:38
+#: src/app/containers/settings/CalendarModal.js:45
 msgctxt "Error"
 msgid "Name required"
 msgstr "姓名是必填的"
 
-#: src/app/containers/settings/CalendarModal.js:77
+#: src/app/containers/settings/CalendarModal.js:84
 msgctxt "Error"
 msgid "No valid address found"
 msgstr "未找到有效地址"
 
-#: src/app/containers/settings/CalendarModal.js:98
+#: src/app/containers/settings/CalendarModal.js:105
 msgctxt "Error"
 msgid "Member address not found"
 msgstr "找不到会员地址"
 
-#: src/app/components/eventModal/eventForm/state.js:195
+#: src/app/components/eventModal/eventForm/state.js:194
 msgctxt "Error"
 msgid "Title required"
 msgstr "必须填写标题"
 
-#: src/app/components/eventModal/eventForm/state.js:202
+#: src/app/components/eventModal/eventForm/state.js:201
 msgctxt "Error"
 msgid "Start time must be before end time"
 msgstr "起始时间必须早于结束时间"
 
-#: src/app/components/eventModal/eventForm/state.js:206
+#: src/app/components/eventModal/eventForm/state.js:205
 msgctxt "Error"
 msgid "Interval cannot be empty"
-msgstr ""
+msgstr "间隔不能为空"
 
-#: src/app/components/eventModal/eventForm/state.js:211
+#: src/app/components/eventModal/eventForm/state.js:210
 msgctxt "Error"
 msgid "Ends on date cannot be empty"
-msgstr ""
+msgstr "结束日期不能为空"
 
-#: src/app/components/eventModal/eventForm/state.js:214
+#: src/app/components/eventModal/eventForm/state.js:213
 msgctxt "Error"
 msgid "Ends on date must be after start time"
-msgstr ""
+msgstr "结束日期必须在开始时间之后"
 
-#: src/app/components/eventModal/eventForm/state.js:219
+#: src/app/components/eventModal/eventForm/state.js:218
 msgctxt "Error"
 msgid "Number of occurrences cannot be empty"
-msgstr ""
+msgstr "事件数量不能为空"
 
 #: src/app/components/events/EventPopover.js:75
 msgctxt "Error"
@@ -268,320 +268,351 @@ msgctxt "Theme"
 msgid "Dark theme"
 msgstr "暗色"
 
-#: node_modules/react-components/containers/error/GenericError.js:16
-msgctxt "Error message"
-msgid "Aaah! Something went wrong"
-msgstr "啊！出错了"
+#: node_modules/react-components/components/link/LearnMore.js:7
+msgctxt "Link"
+msgid "Learn more"
+msgstr "了解详情"
 
-#: node_modules/react-components/containers/error/GenericError.js:19
-msgctxt "Error message"
-msgid "Brace yourself till we get the error fixed."
-msgstr "别担心，我们会解决的。"
+#: node_modules/react-components/containers/support/BugModal.js:89
+msgctxt "Link"
+msgid "clearing your browser cache"
+msgstr "清除浏览器缓存"
 
-#: node_modules/react-components/containers/error/GenericError.js:20
-msgctxt "Error message"
-msgid "You may also refresh the page or try again later."
-msgstr "您也可以刷新页面或稍后重试。"
+#: node_modules/react-components/containers/payments/PayPal.js:125
+msgctxt "Link"
+msgid "click here"
+msgstr "点击此处"
 
-#: node_modules/react-components/containers/login/AbuseModal.js:21
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:155
-#: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:61
-#: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:63
-#: src/app/containers/setup/ResetModal.js:100
-msgctxt "Action"
-msgid "Close"
-msgstr "关闭"
-
-#: node_modules/react-components/containers/login/LoginForm.js:212
-msgctxt "Action"
-msgid "Log in"
-msgstr "登录"
-
-#: node_modules/react-components/components/modal/Confirm.js:11
-#: node_modules/react-components/components/modal/FormModal.js:19
-#: node_modules/react-components/containers/login/LoginForm.js:221
-#: node_modules/react-components/containers/payments/PayPal.js:137
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:101
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:143
-#: src/app/components/eventModal/CreateEventModal.js:38
-#: src/app/containers/calendar/InteractiveCalendarView.js:422
-#: src/app/containers/calendar/InteractiveCalendarView.js:443
-#: src/app/containers/settings/AskUpdateTimezoneModal.js:31
-msgctxt "Action"
-msgid "Cancel"
-msgstr "取消"
-
-#: node_modules/react-components/components/modal/FormModal.js:20
-#: node_modules/react-components/containers/login/LoginForm.js:244
-#: node_modules/react-components/containers/login/LoginForm.js:272
-#: node_modules/react-components/containers/support/BugModal.js:135
-msgctxt "Action"
-msgid "Submit"
-msgstr "提交"
-
-#: node_modules/react-components/containers/support/AttachScreenshot.js:46
-msgctxt "Action"
-msgid "Clear"
-msgstr "移除"
-
-#: node_modules/react-components/containers/support/AttachScreenshot.js:53
-msgctxt "Action"
-msgid "Add screenshot(s)"
-msgstr "添加截图"
-
-#: node_modules/react-components/containers/support/BugModal.js:203
-msgctxt "Action"
-msgid "Hide info"
-msgstr "隐藏信息"
-
-#: node_modules/react-components/containers/support/BugModal.js:203
-msgctxt "Action"
-msgid "Show info"
-msgstr "显示信息"
-
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:102
-msgctxt "Action"
-msgid "Verify"
-msgstr "验证"
-
-#: node_modules/react-components/containers/payments/Bitcoin.js:54
-#: node_modules/react-components/containers/payments/PayPal.js:105
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:165
-msgctxt "Action"
-msgid "Try again"
-msgstr "重试"
-
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:171
-msgctxt "Action"
-msgid "Use a different card"
-msgstr "使用其他银行卡"
-
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:172
-msgctxt "Action"
-msgid "Use a different payment method"
-msgstr "使用其他方式支付"
-
-#: node_modules/react-components/containers/payments/PayPal.js:149
-#: node_modules/react-components/containers/payments/PayPal.js:178
-msgctxt "Action"
-msgid "Check out with PayPal"
-msgstr "使用 PayPal 支付"
-
-#: node_modules/react-components/containers/payments/PayPal.js:164
-msgctxt "Action"
-msgid "Add PayPal payment method"
-msgstr "添加 PayPal 支付方式"
-
-#: node_modules/react-components/containers/payments/DonateModal.js:43
-msgctxt "Action"
-msgid "Donate"
-msgstr "捐款"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:84
-#: node_modules/react-components/containers/heading/UserDropdown.js:92
-msgctxt "Action"
-msgid "Settings"
-msgstr "设置"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:109
-msgctxt "Action"
-msgid "I have a question"
-msgstr "我有疑问"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:119
-msgctxt "Action"
-msgid "Report bug"
-msgstr "反馈问题"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:130
-msgctxt "Action"
-msgid "Proton shop"
-msgstr "Proton 商店"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:140
-msgctxt "Action"
-msgid "Support us"
-msgstr "支持我们"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:149
-msgctxt "Action"
-msgid "Logout"
-msgstr "退出账户"
-
-#: node_modules/react-components/components/miniCalendar/LocalizedMiniCalendar.js:31
-#: src/app/components/DateCursorButtons.js:62
-msgctxt "Action"
-msgid "Next month"
-msgstr "下个月"
-
-#: node_modules/react-components/components/miniCalendar/LocalizedMiniCalendar.js:32
-msgctxt "Action"
-msgid "Prev month"
-msgstr "上个月"
-
-#: node_modules/react-components/components/modal/Confirm.js:10
-#: node_modules/react-components/components/modal/Confirm.js:12
-msgctxt "Action"
-msgid "Confirm"
-msgstr "确认"
-
-#: node_modules/react-components/components/modal/Header.js:11
-#: node_modules/react-components/components/modal/Header.js:13
-msgctxt "Action"
-msgid "Close modal"
-msgstr "关闭"
-
-#: src/app/containers/setup/FreeModal.js:16
-msgctxt "Action"
-msgid "Back to ProtonMail"
-msgstr "返回 ProtonMail"
-
-#: src/app/containers/setup/WelcomeModal.js:120
-msgctxt "Action"
-msgid "Customize calendar"
-msgstr "定制日历"
-
-#: src/app/containers/setup/ResetModal.js:170
-#: src/app/containers/setup/WelcomeModal.js:124
-msgctxt "Action"
-msgid "Continue"
-msgstr "继续"
-
-#: src/app/containers/settings/AskUpdateTimezoneModal.js:32
-#: src/app/containers/settings/CalendarModal.js:254
-msgctxt "Action"
-msgid "Update"
-msgstr "更改"
-
-#: src/app/containers/settings/CalendarModal.js:254
-msgctxt "Action"
-msgid "Create"
-msgstr "创建"
-
-#: src/app/components/events/EventPopover.js:126
-#: src/app/containers/settings/section/CalendarsTable.js:14
-msgctxt "Action"
-msgid "Edit"
-msgstr "更改"
-
-#: src/app/components/eventModal/CreateEventModal.js:52
-#: src/app/components/eventModal/Notifications.js:27
-#: src/app/components/events/EventPopover.js:63
-#: src/app/containers/calendar/InteractiveCalendarView.js:441
-#: src/app/containers/settings/section/CalendarsSection.js:41
-#: src/app/containers/settings/section/CalendarsTable.js:18
-msgctxt "Action"
-msgid "Delete"
-msgstr "删除"
-
-#: src/app/containers/settings/section/CalendarsSection.js:61
-#: src/app/containers/settings/section/CalendarsSection.js:64
-msgctxt "Action"
-msgid "Add calendar"
-msgstr "添加分类"
-
-#: src/app/containers/settings/ViewPreferenceSelector.js:30
-msgctxt "Action"
-msgid "Select calendar view"
-msgstr "更改日历视图"
-
-#: src/app/containers/calendar/CalendarContainerView.js:110
-#: src/app/containers/settings/SettingsContainer.js:53
-msgctxt "Action"
+#: node_modules/react-components/containers/heading/UpgradeButton.js:13
+#: node_modules/react-components/containers/heading/UpgradeButton.js:21
+msgctxt "Link"
 msgid "Upgrade"
 msgstr "升级"
 
-#: src/app/containers/calendar/CalendarSidebar.js:96
-msgctxt "Action"
-msgid "New event"
-msgstr "创建事件"
+#: src/app/containers/settings/SettingsContainer.js:37
+msgctxt "Link"
+msgid "General"
+msgstr "常规"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:374
-msgctxt "Action"
-msgid "Yes"
-msgstr "是"
+#: src/app/containers/settings/SettingsContainer.js:38
+msgctxt "Link"
+msgid "Calendars"
+msgstr "分类"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:376
-msgctxt "Action"
-msgid "No"
-msgstr "否"
+#: node_modules/react-components/components/button/Copy.js:21
+msgctxt "Label"
+msgid "Copied"
+msgstr "已复制"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:423
-msgctxt "Action"
-msgid "Discard"
-msgstr "放弃"
+#: node_modules/react-components/components/button/Copy.js:21
+msgctxt "Label"
+msgid "Copy"
+msgstr "复制"
 
-#: src/app/components/eventModal/Notifications.js:25
-msgctxt "Action"
-msgid "Remove notification"
-msgstr "取消提醒"
+#: node_modules/react-components/components/input/PasswordInput.js:21
+msgctxt "Label"
+msgid "Reveal password"
+msgstr "显示密码"
 
-#: src/app/components/eventModal/Notifications.js:33
-msgctxt "Action"
-msgid "Add notification"
-msgstr "添加提醒时间"
+#: node_modules/react-components/components/input/PasswordInput.js:21
+msgctxt "Label"
+msgid "Hide password"
+msgstr "隐藏密码"
 
-#: src/app/components/eventModal/CreateEventModal.js:44
-#: src/app/components/eventModal/CreateEventPopover.js:58
-msgctxt "Action"
-msgid "Save"
-msgstr "保存"
+#: node_modules/react-components/containers/api/HumanVerificationModal.js:22
+msgctxt "Label"
+msgid "Captcha"
+msgstr "验证码"
 
-#: src/app/components/eventModal/CreateEventPopover.js:56
-msgctxt "Action"
-msgid "More options"
-msgstr "更多选项"
+#: node_modules/react-components/containers/login/UnlockModal.js:34
+msgctxt "Label"
+msgid "Cancel"
+msgstr "取消"
 
-#: src/app/components/DateCursorButtons.js:53
-msgctxt "Action"
-msgid "Previous day"
-msgstr "前一天"
+#: node_modules/react-components/containers/login/UnlockModal.js:35
+msgctxt "Label"
+msgid "Submit"
+msgstr "确定"
 
-#: src/app/components/DateCursorButtons.js:54
-msgctxt "Action"
-msgid "Previous week"
-msgstr "前一周"
+#: node_modules/react-components/containers/login/PasswordForm.js:28
+#: node_modules/react-components/containers/login/UnlockModal.js:41
+msgctxt "Label"
+msgid "Password"
+msgstr "密码"
 
-#: src/app/components/DateCursorButtons.js:55
-msgctxt "Action"
-msgid "Previous month"
-msgstr "上个月"
+#: node_modules/react-components/containers/login/PasswordForm.js:10
+msgctxt "Label"
+msgid "Username"
+msgstr "用户名"
 
-#: src/app/components/DateCursorButtons.js:56
-msgctxt "Action"
-msgid "Previous year"
-msgstr "上一年"
+#: node_modules/react-components/containers/login/TOTPForm.js:9
+msgctxt "Label"
+msgid "Two-factor code"
+msgstr "双重验证码"
 
-#: src/app/components/DateCursorButtons.js:60
-msgctxt "Action"
-msgid "Next day"
-msgstr "后一天"
+#: node_modules/react-components/containers/login/UnlockForm.js:9
+msgctxt "Label"
+msgid "Mailbox password"
+msgstr "邮箱密码"
 
-#: src/app/components/DateCursorButtons.js:61
-msgctxt "Action"
-msgid "Next week"
-msgstr "下一周"
+#: node_modules/react-components/containers/support/BugModal.js:144
+msgctxt "Label"
+msgid "Proton username"
+msgstr "Proton 用户名"
 
-#: src/app/components/DateCursorButtons.js:63
-msgctxt "Action"
-msgid "Next year"
-msgstr "下一年"
+#: node_modules/react-components/containers/support/BugModal.js:156
+msgctxt "Label"
+msgid "Email address"
+msgstr "邮箱地址"
 
-#: src/app/components/DateCursorButtons.js:75
-msgctxt "Action"
-msgid "Today"
-msgstr "今天"
+#: node_modules/react-components/containers/support/BugModal.js:168
+msgctxt "Label"
+msgid "Category"
+msgstr "类别"
 
-#: src/app/components/TimezoneSelector.js:23
-msgctxt "Action"
-msgid "Select timezone"
-msgstr "选择时区"
+#: node_modules/react-components/containers/support/BugModal.js:180
+msgctxt "Label"
+msgid "What happened?"
+msgstr "问题描述"
 
-#: src/app/components/events/PopoverCloseButton.js:7
-#: src/app/components/events/PopoverCloseButton.js:9
-msgctxt "Action"
-msgid "Close popover"
-msgstr "关闭对话框"
+#: node_modules/react-components/containers/support/BugModal.js:201
+msgctxt "Label"
+msgid "System information"
+msgstr "系统信息"
+
+#: node_modules/react-components/containers/support/BugModal.js:209
+msgctxt "Label"
+msgid "Operating system"
+msgstr "操作系统"
+
+#: node_modules/react-components/containers/support/BugModal.js:220
+msgctxt "Label"
+msgid "Operating system version"
+msgstr "操作系统版本"
+
+#: node_modules/react-components/containers/support/BugModal.js:231
+msgctxt "Label"
+msgid "Browser"
+msgstr "浏览器"
+
+#: node_modules/react-components/containers/support/BugModal.js:242
+msgctxt "Label"
+msgid "Browser version"
+msgstr "浏览器版本"
+
+#: node_modules/react-components/containers/payments/BitcoinDetails.js:11
+msgctxt "Label"
+msgid "BTC amount"
+msgstr "比特币金额"
+
+#: node_modules/react-components/containers/payments/BitcoinDetails.js:20
+msgctxt "Label"
+msgid "BTC address"
+msgstr "比特币地址"
+
+#: node_modules/react-components/containers/payments/Payment.js:74
+msgctxt "Label"
+msgid "Payment method"
+msgstr "支付方式"
+
+#: node_modules/react-components/containers/payments/DonateModal.js:48
+msgctxt "Label"
+msgid "Amount"
+msgstr "金额"
+
+#: node_modules/react-components/containers/paymentMethods/PaymentMethodDetails.js:17
+msgctxt "Label"
+msgid "Cardholder name"
+msgstr "持卡人姓名"
+
+#: node_modules/react-components/containers/paymentMethods/useMethods.js:70
+msgctxt "Label"
+msgid "Pay with cash"
+msgstr "现金支付"
+
+#: src/app/containers/settings/CalendarSettingsTab.js:16
+msgctxt "Label"
+msgid "Name"
+msgstr "名称"
+
+#: src/app/containers/settings/CalendarSettingsTab.js:31
+msgctxt "Label"
+msgid "Choose a color"
+msgstr "颜色"
+
+#: src/app/containers/settings/CalendarSettingsTab.js:38
+msgctxt "Label"
+msgid "Default email"
+msgstr "首选邮箱"
+
+#: src/app/containers/settings/CalendarSettingsTab.js:56
+msgctxt "Label"
+msgid "Display"
+msgstr "显示"
+
+#: src/app/components/eventModal/EventForm.js:86
+#: src/app/components/eventModal/MinimalEventForm.js:108
+#: src/app/containers/settings/CalendarSettingsTab.js:66
+msgctxt "Label"
+msgid "Description"
+msgstr "描述"
+
+#: src/app/containers/settings/EventSettingsTab.js:13
+msgctxt "Label"
+msgid "Default event duration"
+msgstr "预设事件持续时间"
+
+#: src/app/containers/settings/EventSettingsTab.js:28
+msgctxt "Label"
+msgid "Default notifications"
+msgstr "预设提醒时间"
+
+#: src/app/containers/settings/EventSettingsTab.js:44
+msgctxt "Label"
+msgid "Default full day notifications"
+msgstr "预设按天提醒时间"
+
+#: src/app/containers/settings/section/TimeSection.js:67
+msgctxt "Label"
+msgid "Time format"
+msgstr "时间格式"
+
+#: src/app/containers/settings/section/LayoutSection.js:41
+msgctxt "Label"
+msgid "Default view"
+msgstr "首选视图"
+
+#: src/app/containers/settings/section/LayoutSection.js:54
+msgctxt "Label"
+msgid "Week start"
+msgstr "每周第一天"
+
+#: src/app/containers/settings/section/LayoutSection.js:65
+msgctxt "Label"
+msgid "Week numbers"
+msgstr "周序号"
+
+#: src/app/containers/calendar/CalendarView.js:53
+msgctxt "Label"
+msgid "Week"
+msgstr "周"
+
+#: src/app/components/eventModal/inputs/AllDayCheckbox.js:8
+msgctxt "Label"
+msgid "All day"
+msgstr "全天"
+
+#: src/app/components/eventModal/rows/RepeatEveryRow.js:33
+msgctxt "Label"
+msgid "Repeat every"
+msgstr "重复间隔"
+
+#: src/app/components/eventModal/rows/RepeatOnRow.js:32
+msgctxt "Label"
+msgid "Repeat on"
+msgstr "重复于"
+
+#.  Can get undefined through the input
+#: src/app/components/eventModal/rows/EndsRow.js:44
+msgctxt "Label"
+msgid "Ends"
+msgstr "结束"
+
+#: src/app/components/eventModal/rows/DateTimeRow.js:167
+msgctxt "Label"
+msgid "From"
+msgstr "从"
+
+#: src/app/components/eventModal/rows/DateTimeRow.js:176
+msgctxt "Label"
+msgid "To"
+msgstr "到"
+
+#: src/app/components/eventModal/EventForm.js:33
+#: src/app/components/eventModal/MinimalEventForm.js:35
+msgctxt "Label"
+msgid "Frequency"
+msgstr "重复"
+
+#: src/app/components/eventModal/EventForm.js:46
+msgctxt "Label"
+msgid "Start timezone"
+msgstr "起始时区"
+
+#: src/app/components/eventModal/EventForm.js:47
+msgctxt "Label"
+msgid "End timezone"
+msgstr "结束时区"
+
+#: src/app/components/eventModal/EventForm.js:54
+#: src/app/components/eventModal/MinimalEventForm.js:54
+msgctxt "Label"
+msgid "Calendar"
+msgstr "分类"
+
+#: src/app/components/eventModal/EventForm.js:60
+#: src/app/components/eventModal/MinimalEventForm.js:70
+msgctxt "Label"
+msgid "Title"
+msgstr "标题"
+
+#: src/app/components/eventModal/EventForm.js:69
+msgctxt "Label"
+msgid "Time"
+msgstr "时间"
+
+#: src/app/components/eventModal/EventForm.js:81
+#: src/app/components/eventModal/MinimalEventForm.js:97
+msgctxt "Label"
+msgid "Location"
+msgstr "地点"
+
+#: src/app/components/eventModal/EventForm.js:91
+msgctxt "Label"
+msgid "Notifications"
+msgstr "提醒"
+
+#: node_modules/react-components/components/input/TimeInput.js:26
+#, javascript-format
+msgctxt "Time unit"
+msgid "${ hours } hour"
+msgid_plural "${ hours } hours"
+msgstr[0] "${ hours } 小时"
+
+#: node_modules/react-components/components/input/TimeInput.js:27
+msgctxt "Time unit"
+msgid "${ minutes } minutes"
+msgid_plural "${ minutes } minutes"
+msgstr[0] "${ minutes } 分钟"
+
+#: src/app/components/eventModal/inputs/NotificationInput.js:82
+msgctxt "Time unit"
+msgid "Minute"
+msgid_plural "Minutes"
+msgstr[0] "分钟"
+
+#: src/app/components/eventModal/inputs/NotificationInput.js:86
+msgctxt "Time unit"
+msgid "Hour"
+msgid_plural "Hours"
+msgstr[0] "小时"
+
+#: src/app/components/eventModal/inputs/NotificationInput.js:89
+msgctxt "Time unit"
+msgid "Day"
+msgid_plural "Days"
+msgstr[0] "天"
+
+#: src/app/components/eventModal/inputs/NotificationInput.js:90
+msgctxt "Time unit"
+msgid "Week"
+msgid_plural "Weeks"
+msgstr[0] "周"
+
+#: node_modules/react-components/components/dropdown/DropdownActions.js:48
+msgctxt "Title"
+msgid "Open actions dropdown"
+msgstr "展开"
 
 #: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:78
 msgctxt "Title"
@@ -659,11 +690,6 @@ msgctxt "Title"
 msgid "Make a donation"
 msgstr "捐款"
 
-#: node_modules/react-components/components/dropdown/DropdownActions.js:48
-msgctxt "Title"
-msgid "Open actions dropdown"
-msgstr "展开"
-
 #: src/app/containers/setup/FreeModal.js:13
 #: src/app/containers/setup/ResetModal.js:157
 #: src/app/containers/setup/WelcomeModal.js:40
@@ -687,12 +713,12 @@ msgctxt "Title"
 msgid "Reactivate calendar keys"
 msgstr "激活日历密钥"
 
-#: src/app/containers/settings/CalendarModal.js:57
+#: src/app/containers/settings/CalendarModal.js:64
 msgctxt "Title"
 msgid "Update calendar"
 msgstr "更改分类"
 
-#: src/app/containers/settings/CalendarModal.js:57
+#: src/app/containers/settings/CalendarModal.js:64
 msgctxt "Title"
 msgid "Create calendar"
 msgstr "创建分类"
@@ -707,18 +733,18 @@ msgctxt "Title"
 msgid "Layout"
 msgstr "布局"
 
-#: src/app/containers/settings/section/CalendarsSection.js:40
+#: src/app/containers/settings/section/CalendarsSection.js:62
 msgctxt "Title"
 msgid "Delete calendar"
 msgstr "删除分类"
 
-#: src/app/containers/settings/section/CalendarsSection.js:58
+#: src/app/containers/settings/section/CalendarsSection.js:91
 msgctxt "Title"
 msgid "Calendars"
 msgstr "分类"
 
 #: src/app/components/layout/PrivateHeader.js:36
-#: src/app/containers/settings/SettingsContainer.js:63
+#: src/app/containers/settings/SettingsContainer.js:65
 msgctxt "Title"
 msgid "Settings"
 msgstr "设置"
@@ -775,6 +801,21 @@ msgctxt "Title"
 msgid "Description"
 msgstr "描述"
 
+#: node_modules/react-components/components/toggle/Toggle.js:10
+msgctxt "Toggle button"
+msgid "On"
+msgstr "开"
+
+#: node_modules/react-components/components/toggle/Toggle.js:11
+msgctxt "Toggle button"
+msgid "Off"
+msgstr "关"
+
+#: node_modules/react-components/components/miniCalendar/WeekNumbers.js:36
+msgctxt "Info"
+msgid "Week"
+msgstr "周"
+
 #: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:79
 #, javascript-format
 msgctxt "Info"
@@ -790,6 +831,12 @@ msgstr "您的所有 Proton 服务共用存储空间。"
 msgctxt "Info"
 msgid "For security reasons, please verify that you are not a robot."
 msgstr "出于安全考虑，请验证您是真人操作。"
+
+#.  The only way to get out of this one is to refresh.
+#: node_modules/react-components/containers/api/ApiProvider.js:71
+msgctxt "Info"
+msgid "Application upgrade required"
+msgstr "需要升级应用程序"
 
 #: node_modules/react-components/containers/app/LoaderPage.js:15
 #, javascript-format
@@ -940,16 +987,6 @@ msgctxt "Info"
 msgid "default"
 msgstr "首选"
 
-#: node_modules/react-components/components/miniCalendar/WeekNumbers.js:36
-msgctxt "Info"
-msgid "Week"
-msgstr "周"
-
-#: src/app/content/PrivateApp.js:57
-msgctxt "Info"
-msgid "Loading ProtonCalendar"
-msgstr "正在加载 ProtonCalendar"
-
 #: src/app/containers/setup/FreeModal.js:24
 msgctxt "Info"
 msgid "ProtonCalendar is currently in Beta and is only available to paid users of ProtonMail."
@@ -996,15 +1033,16 @@ msgctxt "Info"
 msgid "Week and month views only apply to desktop."
 msgstr "只有桌面版能查看周视图和月视图。"
 
-#: src/app/containers/settings/section/CalendarsSection.js:45
+#: src/app/containers/settings/section/CalendarsSection.js:67
 msgctxt "Info"
 msgid "Are you sure you want to delete this calendar?"
 msgstr "确定要删除此分类吗？"
 
-#: src/app/containers/settings/section/CalendarsSection.js:63
+#: src/app/containers/settings/section/CalendarsSection.js:69
+#, javascript-format
 msgctxt "Info"
-msgid "Feature coming soon"
-msgstr "此功能即将上线"
+msgid "${ calendarName } will be set as default calendar."
+msgstr "${ calendarName } 将成为默认分类。"
 
 #: src/app/containers/calendar/CalendarContainerView.js:150
 msgctxt "Info"
@@ -1066,20 +1104,20 @@ msgstr ""
 #: src/app/helpers/rrule.js:52
 msgctxt "Info"
 msgid "on day ${ monthday }"
-msgstr ""
+msgstr "按天 ${ monthday }"
 
 #: src/app/helpers/rrule.js:57
 #, javascript-format
 msgctxt "Info"
 msgid "${ countSeparator } ${ count } time"
 msgid_plural "${ countSeparator } ${ count } times"
-msgstr[0] ""
+msgstr[0] "${ countSeparator } ${ count } 次"
 
 #: src/app/helpers/rrule.js:61
 #, javascript-format
 msgctxt "Info"
 msgid "${ untilSeparator } until ${ untilString }"
-msgstr ""
+msgstr "${ untilSeparator } 至${ untilString }"
 
 #: src/app/helpers/rrule.js:74
 #: src/app/helpers/rrule.js:87
@@ -1096,7 +1134,7 @@ msgstr "每${ startDay }"
 #: src/app/helpers/rrule.js:80
 msgctxt "Info"
 msgid "Monthly ${ onDayString }"
-msgstr ""
+msgstr "每月${ onDayString }"
 
 #: src/app/helpers/rrule.js:83
 #: src/app/helpers/rrule.js:134
@@ -1107,293 +1145,349 @@ msgstr "每年"
 #: src/app/helpers/rrule.js:95
 msgctxt "Info"
 msgid "all days"
-msgstr ""
+msgstr "全天"
 
 #: src/app/helpers/rrule.js:110
 #, javascript-format
 msgctxt "Info"
 msgid "Weekly on ${ days }"
 msgid_plural "Every ${ interval } weeks on ${ days }"
-msgstr[0] ""
+msgstr[0] "每{ interval } 周的 ${ days }"
 
 #: src/app/helpers/rrule.js:123
 msgctxt "Info"
 msgid "Monthly"
 msgid_plural "Every ${ interval } months"
-msgstr[0] ""
+msgstr[0] "每{ interval } 个月"
 
-#: node_modules/react-components/containers/api/HumanVerificationModal.js:22
-msgctxt "Label"
-msgid "Captcha"
-msgstr "验证码"
+#: src/app/content/PrivateApp.js:52
+msgctxt "Info"
+msgid "Loading ProtonCalendar"
+msgstr "正在加载 ProtonCalendar"
 
-#: node_modules/react-components/containers/login/UnlockModal.js:34
-msgctxt "Label"
+#: node_modules/react-components/components/miniCalendar/LocalizedMiniCalendar.js:31
+#: src/app/components/DateCursorButtons.js:62
+msgctxt "Action"
+msgid "Next month"
+msgstr "下个月"
+
+#: node_modules/react-components/components/miniCalendar/LocalizedMiniCalendar.js:32
+msgctxt "Action"
+msgid "Prev month"
+msgstr "上个月"
+
+#: node_modules/react-components/components/modal/Confirm.js:10
+#: node_modules/react-components/components/modal/Confirm.js:12
+msgctxt "Action"
+msgid "Confirm"
+msgstr "确认"
+
+#: node_modules/react-components/components/modal/Confirm.js:11
+#: node_modules/react-components/components/modal/FormModal.js:19
+#: node_modules/react-components/containers/login/LoginForm.js:221
+#: node_modules/react-components/containers/payments/PayPal.js:137
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:101
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:143
+#: src/app/components/eventModal/CreateEventModal.js:38
+#: src/app/containers/calendar/InteractiveCalendarView.js:422
+#: src/app/containers/calendar/InteractiveCalendarView.js:443
+#: src/app/containers/settings/AskUpdateTimezoneModal.js:31
+msgctxt "Action"
 msgid "Cancel"
 msgstr "取消"
 
-#: node_modules/react-components/containers/login/UnlockModal.js:35
-msgctxt "Label"
+#: node_modules/react-components/components/modal/Header.js:11
+#: node_modules/react-components/components/modal/Header.js:13
+msgctxt "Action"
+msgid "Close modal"
+msgstr "关闭"
+
+#: node_modules/react-components/components/modal/FormModal.js:20
+#: node_modules/react-components/containers/login/LoginForm.js:244
+#: node_modules/react-components/containers/login/LoginForm.js:272
+#: node_modules/react-components/containers/support/BugModal.js:135
+msgctxt "Action"
 msgid "Submit"
-msgstr "确定"
+msgstr "提交"
 
-#: node_modules/react-components/containers/login/PasswordForm.js:28
-#: node_modules/react-components/containers/login/UnlockModal.js:41
-msgctxt "Label"
-msgid "Password"
-msgstr "密码"
+#: node_modules/react-components/containers/login/AbuseModal.js:21
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:155
+#: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:61
+#: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:63
+#: src/app/containers/setup/ResetModal.js:100
+msgctxt "Action"
+msgid "Close"
+msgstr "关闭"
 
-#: node_modules/react-components/containers/login/PasswordForm.js:10
-msgctxt "Label"
-msgid "Username"
-msgstr "用户名"
+#: node_modules/react-components/containers/api/OfflineNotification.js:10
+msgctxt "Action"
+msgid "Retry now"
+msgstr "重试"
 
-#: node_modules/react-components/containers/login/TOTPForm.js:9
-msgctxt "Label"
-msgid "Two-factor code"
-msgstr "双重验证码"
+#: node_modules/react-components/containers/login/LoginForm.js:212
+msgctxt "Action"
+msgid "Log in"
+msgstr "登录"
 
-#: node_modules/react-components/containers/login/UnlockForm.js:9
-msgctxt "Label"
-msgid "Mailbox password"
-msgstr "邮箱密码"
+#: node_modules/react-components/containers/support/AttachScreenshot.js:46
+msgctxt "Action"
+msgid "Clear"
+msgstr "移除"
 
-#: node_modules/react-components/containers/support/BugModal.js:144
-msgctxt "Label"
-msgid "Proton username"
-msgstr "Proton 用户名"
+#: node_modules/react-components/containers/support/AttachScreenshot.js:53
+msgctxt "Action"
+msgid "Add screenshot(s)"
+msgstr "添加截图"
 
-#: node_modules/react-components/containers/support/BugModal.js:156
-msgctxt "Label"
-msgid "Email address"
-msgstr "邮箱地址"
+#: node_modules/react-components/containers/support/BugModal.js:203
+msgctxt "Action"
+msgid "Hide info"
+msgstr "隐藏信息"
 
-#: node_modules/react-components/containers/support/BugModal.js:168
-msgctxt "Label"
-msgid "Category"
-msgstr "类别"
+#: node_modules/react-components/containers/support/BugModal.js:203
+msgctxt "Action"
+msgid "Show info"
+msgstr "显示信息"
 
-#: node_modules/react-components/containers/support/BugModal.js:180
-msgctxt "Label"
-msgid "What happened?"
-msgstr "问题描述"
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:102
+msgctxt "Action"
+msgid "Verify"
+msgstr "验证"
 
-#: node_modules/react-components/containers/support/BugModal.js:201
-msgctxt "Label"
-msgid "System information"
-msgstr "系统信息"
+#: node_modules/react-components/containers/payments/Bitcoin.js:54
+#: node_modules/react-components/containers/payments/PayPal.js:105
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:165
+msgctxt "Action"
+msgid "Try again"
+msgstr "重试"
 
-#: node_modules/react-components/containers/support/BugModal.js:209
-msgctxt "Label"
-msgid "Operating system"
-msgstr "操作系统"
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:171
+msgctxt "Action"
+msgid "Use a different card"
+msgstr "使用其他银行卡"
 
-#: node_modules/react-components/containers/support/BugModal.js:220
-msgctxt "Label"
-msgid "Operating system version"
-msgstr "操作系统版本"
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:172
+msgctxt "Action"
+msgid "Use a different payment method"
+msgstr "使用其他方式支付"
 
-#: node_modules/react-components/containers/support/BugModal.js:231
-msgctxt "Label"
-msgid "Browser"
-msgstr "浏览器"
+#: node_modules/react-components/containers/payments/PayPal.js:149
+#: node_modules/react-components/containers/payments/PayPal.js:178
+msgctxt "Action"
+msgid "Check out with PayPal"
+msgstr "使用 PayPal 支付"
 
-#: node_modules/react-components/containers/support/BugModal.js:242
-msgctxt "Label"
-msgid "Browser version"
-msgstr "浏览器版本"
+#: node_modules/react-components/containers/payments/PayPal.js:164
+msgctxt "Action"
+msgid "Add PayPal payment method"
+msgstr "添加 PayPal 支付方式"
 
-#: node_modules/react-components/containers/payments/BitcoinDetails.js:11
-msgctxt "Label"
-msgid "BTC amount"
-msgstr "比特币金额"
+#: node_modules/react-components/containers/payments/DonateModal.js:43
+msgctxt "Action"
+msgid "Donate"
+msgstr "捐款"
 
-#: node_modules/react-components/containers/payments/BitcoinDetails.js:20
-msgctxt "Label"
-msgid "BTC address"
-msgstr "比特币地址"
+#: node_modules/react-components/containers/heading/UserDropdown.js:84
+#: node_modules/react-components/containers/heading/UserDropdown.js:92
+msgctxt "Action"
+msgid "Settings"
+msgstr "设置"
 
-#: node_modules/react-components/containers/payments/Payment.js:74
-msgctxt "Label"
-msgid "Payment method"
-msgstr "支付方式"
+#: node_modules/react-components/containers/heading/UserDropdown.js:109
+msgctxt "Action"
+msgid "I have a question"
+msgstr "我有疑问"
 
-#: node_modules/react-components/containers/payments/DonateModal.js:48
-msgctxt "Label"
-msgid "Amount"
-msgstr "金额"
+#: node_modules/react-components/containers/heading/UserDropdown.js:119
+msgctxt "Action"
+msgid "Report bug"
+msgstr "反馈问题"
 
-#: node_modules/react-components/containers/paymentMethods/PaymentMethodDetails.js:17
-msgctxt "Label"
-msgid "Cardholder name"
-msgstr "持卡人姓名"
+#: node_modules/react-components/containers/heading/UserDropdown.js:130
+msgctxt "Action"
+msgid "Proton shop"
+msgstr "Proton 商店"
 
-#: node_modules/react-components/containers/paymentMethods/useMethods.js:70
-msgctxt "Label"
-msgid "Pay with cash"
-msgstr "现金支付"
+#: node_modules/react-components/containers/heading/UserDropdown.js:140
+msgctxt "Action"
+msgid "Support us"
+msgstr "支持我们"
 
-#: node_modules/react-components/components/button/Copy.js:21
-msgctxt "Label"
-msgid "Copied"
-msgstr "已复制"
+#: node_modules/react-components/containers/heading/UserDropdown.js:149
+msgctxt "Action"
+msgid "Logout"
+msgstr "退出账户"
 
-#: node_modules/react-components/components/button/Copy.js:21
-msgctxt "Label"
-msgid "Copy"
-msgstr "复制"
+#: src/app/containers/setup/FreeModal.js:16
+msgctxt "Action"
+msgid "Back to ProtonMail"
+msgstr "返回 ProtonMail"
 
-#: node_modules/react-components/components/input/PasswordInput.js:21
-msgctxt "Label"
-msgid "Reveal password"
-msgstr "显示密码"
+#: src/app/containers/setup/WelcomeModal.js:120
+msgctxt "Action"
+msgid "Customize calendar"
+msgstr "定制日历"
 
-#: node_modules/react-components/components/input/PasswordInput.js:21
-msgctxt "Label"
-msgid "Hide password"
-msgstr "隐藏密码"
+#: src/app/containers/setup/ResetModal.js:170
+#: src/app/containers/setup/WelcomeModal.js:124
+msgctxt "Action"
+msgid "Continue"
+msgstr "继续"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:16
-msgctxt "Label"
-msgid "Name"
-msgstr "名称"
+#: src/app/containers/settings/AskUpdateTimezoneModal.js:32
+#: src/app/containers/settings/CalendarModal.js:267
+msgctxt "Action"
+msgid "Update"
+msgstr "更改"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:30
-msgctxt "Label"
-msgid "Choose a color"
-msgstr "颜色"
+#: src/app/containers/settings/CalendarModal.js:267
+msgctxt "Action"
+msgid "Create"
+msgstr "创建"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:37
-msgctxt "Label"
-msgid "Default email"
-msgstr "首选邮箱"
+#: src/app/components/events/EventPopover.js:126
+#: src/app/containers/settings/section/CalendarsTable.js:14
+msgctxt "Action"
+msgid "Edit"
+msgstr "更改"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:55
-msgctxt "Label"
-msgid "Display"
-msgstr "显示"
+#: src/app/containers/settings/section/CalendarsTable.js:18
+msgctxt "Action"
+msgid "Set as default"
+msgstr "设为默认"
 
-#: src/app/components/eventModal/EventForm.js:91
-#: src/app/components/eventModal/MinimalEventForm.js:109
-#: src/app/containers/settings/CalendarSettingsTab.js:65
-msgctxt "Label"
-msgid "Description"
-msgstr "描述"
+#: src/app/components/eventModal/CreateEventModal.js:52
+#: src/app/components/eventModal/Notifications.js:27
+#: src/app/components/events/EventPopover.js:63
+#: src/app/containers/calendar/InteractiveCalendarView.js:441
+#: src/app/containers/settings/section/CalendarsSection.js:63
+#: src/app/containers/settings/section/CalendarsTable.js:22
+msgctxt "Action"
+msgid "Delete"
+msgstr "删除"
 
-#: src/app/containers/settings/EventSettingsTab.js:13
-msgctxt "Label"
-msgid "Default event duration"
-msgstr "预设事件持续时间"
+#: src/app/containers/settings/section/CalendarsSection.js:94
+msgctxt "Action"
+msgid "Add calendar"
+msgstr "添加分类"
 
-#: src/app/containers/settings/EventSettingsTab.js:28
-msgctxt "Label"
-msgid "Default notifications"
-msgstr "预设提醒时间"
+#: src/app/containers/settings/ViewPreferenceSelector.js:30
+msgctxt "Action"
+msgid "Select calendar view"
+msgstr "更改日历视图"
 
-#: src/app/containers/settings/EventSettingsTab.js:44
-msgctxt "Label"
-msgid "Default full day notifications"
-msgstr "预设按天提醒时间"
+#: src/app/containers/calendar/CalendarContainerView.js:110
+#: src/app/containers/settings/SettingsContainer.js:55
+msgctxt "Action"
+msgid "Upgrade"
+msgstr "升级"
 
-#: src/app/containers/settings/section/TimeSection.js:67
-msgctxt "Label"
-msgid "Time format"
-msgstr "时间格式"
+#: src/app/containers/calendar/CalendarSidebar.js:93
+msgctxt "Action"
+msgid "New event"
+msgstr "创建事件"
 
-#: src/app/containers/settings/section/LayoutSection.js:41
-msgctxt "Label"
-msgid "Default view"
-msgstr "首选视图"
+#: src/app/containers/calendar/InteractiveCalendarView.js:374
+msgctxt "Action"
+msgid "Yes"
+msgstr "是"
 
-#: src/app/containers/settings/section/LayoutSection.js:54
-msgctxt "Label"
-msgid "Week start"
-msgstr "每周第一天"
+#: src/app/containers/calendar/InteractiveCalendarView.js:376
+msgctxt "Action"
+msgid "No"
+msgstr "否"
 
-#: src/app/containers/settings/section/LayoutSection.js:65
-msgctxt "Label"
-msgid "Week numbers"
-msgstr "周序号"
+#: src/app/containers/calendar/InteractiveCalendarView.js:423
+msgctxt "Action"
+msgid "Discard"
+msgstr "放弃"
 
-#: src/app/containers/calendar/CalendarView.js:53
-msgctxt "Label"
-msgid "Week"
-msgstr "周"
+#: src/app/components/eventModal/Notifications.js:25
+msgctxt "Action"
+msgid "Remove notification"
+msgstr "取消提醒"
 
-#: src/app/components/eventModal/inputs/AllDayCheckbox.js:8
-msgctxt "Label"
-msgid "All day"
-msgstr "全天"
+#: src/app/components/eventModal/Notifications.js:33
+msgctxt "Action"
+msgid "Add notification"
+msgstr "添加提醒时间"
 
-#: src/app/components/eventModal/rows/RepeatEveryRow.js:33
-msgctxt "Label"
-msgid "Repeat every"
-msgstr ""
+#: src/app/components/eventModal/CreateEventModal.js:44
+#: src/app/components/eventModal/CreateEventPopover.js:58
+msgctxt "Action"
+msgid "Save"
+msgstr "保存"
 
-#: src/app/components/eventModal/rows/RepeatOnRow.js:32
-msgctxt "Label"
-msgid "Repeat on"
-msgstr ""
+#: src/app/components/eventModal/CreateEventPopover.js:56
+msgctxt "Action"
+msgid "More options"
+msgstr "更多选项"
 
-#.  Can get undefined through the input
-#: src/app/components/eventModal/rows/EndsRow.js:44
-msgctxt "Label"
-msgid "Ends"
-msgstr ""
+#: src/app/components/DateCursorButtons.js:53
+msgctxt "Action"
+msgid "Previous day"
+msgstr "前一天"
 
-#: src/app/components/eventModal/rows/DateTimeRow.js:167
-msgctxt "Label"
-msgid "From"
-msgstr "从"
+#: src/app/components/DateCursorButtons.js:54
+msgctxt "Action"
+msgid "Previous week"
+msgstr "前一周"
 
-#: src/app/components/eventModal/rows/DateTimeRow.js:176
-msgctxt "Label"
-msgid "To"
-msgstr "到"
+#: src/app/components/DateCursorButtons.js:55
+msgctxt "Action"
+msgid "Previous month"
+msgstr "上个月"
 
-#: src/app/components/eventModal/EventForm.js:33
-#: src/app/components/eventModal/MinimalEventForm.js:35
-msgctxt "Label"
-msgid "Frequency"
-msgstr "重复"
+#: src/app/components/DateCursorButtons.js:56
+msgctxt "Action"
+msgid "Previous year"
+msgstr "上一年"
 
-#: src/app/components/eventModal/EventForm.js:46
-msgctxt "Label"
-msgid "Start timezone"
-msgstr "起始时区"
+#: src/app/components/DateCursorButtons.js:60
+msgctxt "Action"
+msgid "Next day"
+msgstr "后一天"
 
-#: src/app/components/eventModal/EventForm.js:47
-msgctxt "Label"
-msgid "End timezone"
-msgstr "结束时区"
+#: src/app/components/DateCursorButtons.js:61
+msgctxt "Action"
+msgid "Next week"
+msgstr "下一周"
 
-#: src/app/components/eventModal/EventForm.js:55
-#: src/app/components/eventModal/MinimalEventForm.js:54
-msgctxt "Label"
-msgid "Calendar"
-msgstr "分类"
+#: src/app/components/DateCursorButtons.js:63
+msgctxt "Action"
+msgid "Next year"
+msgstr "下一年"
 
-#: src/app/components/eventModal/EventForm.js:65
-#: src/app/components/eventModal/MinimalEventForm.js:71
-msgctxt "Label"
-msgid "Title"
-msgstr "标题"
+#: src/app/components/DateCursorButtons.js:75
+msgctxt "Action"
+msgid "Today"
+msgstr "今天"
 
-#: src/app/components/eventModal/EventForm.js:74
-msgctxt "Label"
-msgid "Time"
-msgstr "时间"
+#: src/app/components/TimezoneSelector.js:23
+msgctxt "Action"
+msgid "Select timezone"
+msgstr "选择时区"
 
-#: src/app/components/eventModal/EventForm.js:86
-#: src/app/components/eventModal/MinimalEventForm.js:98
-msgctxt "Label"
-msgid "Location"
-msgstr "地点"
+#: src/app/components/events/PopoverCloseButton.js:7
+#: src/app/components/events/PopoverCloseButton.js:9
+msgctxt "Action"
+msgid "Close popover"
+msgstr "关闭对话框"
 
-#: src/app/components/eventModal/EventForm.js:96
-msgctxt "Label"
-msgid "Notifications"
-msgstr "提醒"
+#: node_modules/react-components/containers/error/GenericError.js:16
+msgctxt "Error message"
+msgid "Aaah! Something went wrong"
+msgstr "啊！出错了"
+
+#: node_modules/react-components/containers/error/GenericError.js:19
+msgctxt "Error message"
+msgid "Brace yourself till we get the error fixed."
+msgstr "别担心，我们会解决的。"
+
+#: node_modules/react-components/containers/error/GenericError.js:20
+msgctxt "Error message"
+msgid "You may also refresh the page or try again later."
+msgstr "您也可以刷新页面或稍后重试。"
 
 #: node_modules/react-components/containers/login/PasswordForm.js:22
 msgctxt "Placeholder"
@@ -1475,12 +1569,12 @@ msgctxt "Placeholder"
 msgid "Postal code"
 msgstr "邮政编码"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:23
+#: src/app/containers/settings/CalendarSettingsTab.js:24
 msgctxt "Placeholder"
 msgid "Add a calendar name"
 msgstr "填写分类名称"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:71
+#: src/app/containers/settings/CalendarSettingsTab.js:72
 msgctxt "Placeholder"
 msgid "Add a calendar description"
 msgstr "填写分类描述"
@@ -1619,37 +1713,6 @@ msgctxt "Action to select a title for the bug report modal"
 msgid "Select"
 msgstr "选择"
 
-#: node_modules/react-components/containers/support/BugModal.js:89
-msgctxt "Link"
-msgid "clearing your browser cache"
-msgstr "清除浏览器缓存"
-
-#: node_modules/react-components/containers/payments/PayPal.js:125
-msgctxt "Link"
-msgid "click here"
-msgstr "点击此处"
-
-#: node_modules/react-components/containers/heading/UpgradeButton.js:13
-#: node_modules/react-components/containers/heading/UpgradeButton.js:21
-msgctxt "Link"
-msgid "Upgrade"
-msgstr "升级"
-
-#: node_modules/react-components/components/link/LearnMore.js:7
-msgctxt "Link"
-msgid "Learn more"
-msgstr "了解详情"
-
-#: src/app/containers/settings/SettingsContainer.js:35
-msgctxt "Link"
-msgid "General"
-msgstr "常规"
-
-#: src/app/containers/settings/SettingsContainer.js:36
-msgctxt "Link"
-msgid "Calendars"
-msgstr "分类"
-
 #: node_modules/react-components/containers/support/BugModal.js:120
 msgctxt "Success"
 msgid "Bug reported"
@@ -1660,12 +1723,12 @@ msgctxt "Success"
 msgid "Your support is essential to keeping Proton running. Thank you for supporting internet privacy!"
 msgstr "您的支持对于 ProtonMail 至关重要。感谢您支持互联网隐私保护！"
 
-#: src/app/containers/settings/CalendarModal.js:227
+#: src/app/containers/settings/CalendarModal.js:240
 msgctxt "Success"
 msgid "Calendar updated"
 msgstr "分类已更改"
 
-#: src/app/containers/settings/CalendarModal.js:227
+#: src/app/containers/settings/CalendarModal.js:240
 msgctxt "Success"
 msgid "Calendar created"
 msgstr "分类已创建"
@@ -1678,7 +1741,12 @@ msgctxt "Success"
 msgid "Preference saved"
 msgstr "设置已保存"
 
-#: src/app/containers/settings/section/CalendarsSection.js:51
+#: src/app/containers/settings/section/CalendarsSection.js:41
+msgctxt "Success"
+msgid "Default calendar updated"
+msgstr "默认分类已更改"
+
+#: src/app/containers/settings/section/CalendarsSection.js:81
 msgctxt "Success"
 msgid "Calendar removed"
 msgstr "分类已删除"
@@ -1769,53 +1837,6 @@ msgctxt "Payment method option"
 msgid "Pay with Bitcoin"
 msgstr "比特币支付"
 
-#: node_modules/react-components/components/input/TimeInput.js:26
-#, javascript-format
-msgctxt "Time unit"
-msgid "${ hours } hour"
-msgid_plural "${ hours } hours"
-msgstr[0] "${ hours } 小时"
-
-#: node_modules/react-components/components/input/TimeInput.js:27
-msgctxt "Time unit"
-msgid "${ minutes } minutes"
-msgid_plural "${ minutes } minutes"
-msgstr[0] "${ minutes } 分钟"
-
-#: src/app/components/eventModal/inputs/NotificationInput.js:82
-msgctxt "Time unit"
-msgid "Minute"
-msgid_plural "Minutes"
-msgstr[0] "分钟"
-
-#: src/app/components/eventModal/inputs/NotificationInput.js:86
-msgctxt "Time unit"
-msgid "Hour"
-msgid_plural "Hours"
-msgstr[0] "小时"
-
-#: src/app/components/eventModal/inputs/NotificationInput.js:89
-msgctxt "Time unit"
-msgid "Day"
-msgid_plural "Days"
-msgstr[0] "天"
-
-#: src/app/components/eventModal/inputs/NotificationInput.js:90
-msgctxt "Time unit"
-msgid "Week"
-msgid_plural "Weeks"
-msgstr[0] "周"
-
-#: node_modules/react-components/components/toggle/Toggle.js:10
-msgctxt "Toggle button"
-msgid "On"
-msgstr "开"
-
-#: node_modules/react-components/components/toggle/Toggle.js:11
-msgctxt "Toggle button"
-msgid "Off"
-msgstr "关"
-
 #: src/app/containers/settings/section/CalendarsTable.js:8
 #: src/app/containers/setup/CalendarReactivateSection.js:11
 #: src/app/containers/setup/CalendarResetSection.js:11
@@ -1823,15 +1844,20 @@ msgctxt "Header"
 msgid "Name"
 msgstr "名称"
 
-#: src/app/containers/settings/CalendarModal.js:233
+#: src/app/containers/settings/CalendarModal.js:246
 msgctxt "Header"
 msgid "Calendar settings"
 msgstr "分类设置"
 
-#: src/app/containers/settings/CalendarModal.js:245
+#: src/app/containers/settings/CalendarModal.js:258
 msgctxt "Header"
 msgid "Event settings"
 msgstr "事件设置"
+
+#: src/app/containers/settings/section/CalendarsTable.js:8
+msgctxt "Header"
+msgid "Status"
+msgstr "状态"
 
 #: src/app/containers/settings/section/CalendarsTable.js:8
 msgctxt "Header"
@@ -1908,6 +1934,11 @@ msgctxt "Secondary timezone"
 msgid "Secondary time zone"
 msgstr "次要时区"
 
+#: src/app/containers/settings/section/CalendarsTable.js:37
+msgctxt "Key badge"
+msgid "Default"
+msgstr "默认"
+
 #: src/app/containers/settings/WeekStartSelector.js:14
 msgctxt "Week day"
 msgid "Sunday"
@@ -1936,7 +1967,7 @@ msgctxt "Calendar view"
 msgid "Month"
 msgstr "月"
 
-#: src/app/containers/settings/SettingsContainer.js:31
+#: src/app/containers/settings/SettingsContainer.js:33
 msgctxt "Page title"
 msgid "Calendar settings - ProtonCalendar"
 msgstr "日历设置 - ProtonCalendar"
@@ -1964,12 +1995,12 @@ msgstr "后"
 #: src/app/components/eventModal/inputs/NotificationInput.js:32
 msgctxt "Event trigger"
 msgid "Before"
-msgstr ""
+msgstr "之前"
 
 #: src/app/components/eventModal/inputs/NotificationInput.js:33
 msgctxt "Event trigger"
 msgid "After"
-msgstr ""
+msgstr "之后"
 
 #: src/app/components/eventModal/inputs/NotificationInput.js:50
 msgctxt "Notification type"
@@ -2016,46 +2047,46 @@ msgstr "其他"
 msgctxt "Option"
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
+msgstr[0] "天"
 
 #.  Can get undefined through the input
 #: src/app/components/eventModal/rows/RepeatEveryRow.js:16
 msgctxt "Option"
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
+msgstr[0] "周"
 
 #.  Can get undefined through the input
 #: src/app/components/eventModal/rows/RepeatEveryRow.js:17
 msgctxt "Option"
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
+msgstr[0] "月"
 
 #.  Can get undefined through the input
 #: src/app/components/eventModal/rows/RepeatEveryRow.js:18
 msgctxt "Option"
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
+msgstr[0] "年"
 
 #.  Can get undefined through the input
 #: src/app/components/eventModal/rows/EndsRow.js:54
 msgctxt "Custom frequency option"
 msgid "Never"
-msgstr ""
+msgstr "从不"
 
 #.  Can get undefined through the input
 #: src/app/components/eventModal/rows/EndsRow.js:66
 msgctxt "Custom frequency option"
 msgid "On"
-msgstr ""
+msgstr "开启"
 
 #.  Can get undefined through the input
 #: src/app/components/eventModal/rows/EndsRow.js:91
 msgctxt "Custom frequency option"
 msgid "After"
-msgstr ""
+msgstr "之后"
 
 #.  Can get undefined through the input
 #: src/app/components/eventModal/rows/EndsRow.js:105

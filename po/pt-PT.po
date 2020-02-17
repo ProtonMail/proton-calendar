@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: protonmail\n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
-"PO-Revision-Date: 2020-02-08 07:21\n"
+"PO-Revision-Date: 2020-02-16 10:20\n"
 
 #: node_modules/proton-shared/lib/helpers/humanSize.js:13
 msgctxt "file size format"
@@ -35,20 +35,35 @@ msgctxt "Error"
 msgid "Primary calendar key is not decrypted"
 msgstr "A chave de endereço principal não está desencriptada"
 
-#: node_modules/react-components/containers/api/ApiProvider.js:47
+#: node_modules/react-components/components/alert/DoNotWindowOpenAlertError.js:7
 msgctxt "Error"
-msgid "Could not connect to server."
-msgstr "Impossível ligar ao servidor."
+msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
+msgstr "O navegador que utiliza não permite que o pagamento seja completamente autorizado. Por favor, utilize outro navegador ou inicie sessão via computador."
 
-#: node_modules/react-components/containers/api/ApiProvider.js:48
+#: node_modules/react-components/components/input/EmailInput.js:9
 msgctxt "Error"
-msgid "No internet connection found"
-msgstr "Sem ligação à Internet"
+msgid "Email address invalid"
+msgstr "Endereço de email inválido"
 
-#: node_modules/react-components/containers/api/ApiProvider.js:56
+#: node_modules/react-components/components/input/Input.js:32
+msgctxt "Error"
+msgid "This field is required"
+msgstr "Este campo é requerido"
+
+#: node_modules/react-components/containers/api/OfflineNotification.js:15
+msgctxt "Error"
+msgid "Servers are unreachable."
+msgstr "Os servidores estão inacessíveis."
+
+#: node_modules/react-components/containers/api/ApiProvider.js:105
 msgctxt "Error"
 msgid "Request timed out."
 msgstr "O pedido expirou."
+
+#: node_modules/react-components/containers/api/ApiProvider.js:152
+msgctxt "Error"
+msgid "Bad app version"
+msgstr "Versão da aplicação inválida"
 
 #: node_modules/react-components/containers/login/LoginForm.js:88
 msgctxt "Error"
@@ -150,22 +165,7 @@ msgctxt "Error"
 msgid "Invalid postal code"
 msgstr "Código postal inválido"
 
-#: node_modules/react-components/components/alert/DoNotWindowOpenAlertError.js:7
-msgctxt "Error"
-msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
-msgstr "O navegador que utiliza não permite que o pagamento seja completamente autorizado. Por favor, utilize outro navegador ou inicie sessão via computador."
-
-#: node_modules/react-components/components/input/EmailInput.js:9
-msgctxt "Error"
-msgid "Email address invalid"
-msgstr "Endereço de email inválido"
-
-#: node_modules/react-components/components/input/Input.js:32
-msgctxt "Error"
-msgid "This field is required"
-msgstr "Este campo é requerido"
-
-#: src/app/containers/settings/CalendarModal.js:157
+#: src/app/containers/settings/CalendarModal.js:164
 #: src/app/containers/setup/WelcomeModal.js:59
 #: src/app/containers/setup/resetHelper.js:125
 msgctxt "Error"
@@ -182,47 +182,47 @@ msgctxt "Error"
 msgid "No valid address found."
 msgstr "Nenhum endereço válido encontrado."
 
-#: src/app/containers/settings/CalendarModal.js:38
+#: src/app/containers/settings/CalendarModal.js:45
 msgctxt "Error"
 msgid "Name required"
 msgstr "Nome requerido"
 
-#: src/app/containers/settings/CalendarModal.js:77
+#: src/app/containers/settings/CalendarModal.js:84
 msgctxt "Error"
 msgid "No valid address found"
 msgstr "Nenhum endereço válido encontrado"
 
-#: src/app/containers/settings/CalendarModal.js:98
+#: src/app/containers/settings/CalendarModal.js:105
 msgctxt "Error"
 msgid "Member address not found"
 msgstr "Endereço de membro não encontrado"
 
-#: src/app/components/eventModal/eventForm/state.js:195
+#: src/app/components/eventModal/eventForm/state.js:194
 msgctxt "Error"
 msgid "Title required"
 msgstr "Título requerido"
 
-#: src/app/components/eventModal/eventForm/state.js:202
+#: src/app/components/eventModal/eventForm/state.js:201
 msgctxt "Error"
 msgid "Start time must be before end time"
 msgstr "A hora inicial tem de ser anterior à hora final"
 
-#: src/app/components/eventModal/eventForm/state.js:206
+#: src/app/components/eventModal/eventForm/state.js:205
 msgctxt "Error"
 msgid "Interval cannot be empty"
 msgstr "O intervalo não pode estar vazio"
 
-#: src/app/components/eventModal/eventForm/state.js:211
+#: src/app/components/eventModal/eventForm/state.js:210
 msgctxt "Error"
 msgid "Ends on date cannot be empty"
 msgstr "Os finais na data não podem estar vazios"
 
-#: src/app/components/eventModal/eventForm/state.js:214
+#: src/app/components/eventModal/eventForm/state.js:213
 msgctxt "Error"
 msgid "Ends on date must be after start time"
 msgstr "Os finais na data têm de ser após a hora inicial"
 
-#: src/app/components/eventModal/eventForm/state.js:219
+#: src/app/components/eventModal/eventForm/state.js:218
 msgctxt "Error"
 msgid "Number of occurrences cannot be empty"
 msgstr "O número de ocorrências não pode estar vazio"
@@ -268,320 +268,357 @@ msgctxt "Theme"
 msgid "Dark theme"
 msgstr "Tema escuro"
 
-#: node_modules/react-components/containers/error/GenericError.js:16
-msgctxt "Error message"
-msgid "Aaah! Something went wrong"
-msgstr "Ai! Algo correu mal"
+#: node_modules/react-components/components/link/LearnMore.js:7
+msgctxt "Link"
+msgid "Learn more"
+msgstr "Saiba mais"
 
-#: node_modules/react-components/containers/error/GenericError.js:19
-msgctxt "Error message"
-msgid "Brace yourself till we get the error fixed."
-msgstr "Aguente-se até que o erro seja corrigido."
+#: node_modules/react-components/containers/support/BugModal.js:89
+msgctxt "Link"
+msgid "clearing your browser cache"
+msgstr "limpar a memória do navegador"
 
-#: node_modules/react-components/containers/error/GenericError.js:20
-msgctxt "Error message"
-msgid "You may also refresh the page or try again later."
-msgstr "Também pode actualizar a página ou tentar de novo mais tarde."
+#: node_modules/react-components/containers/payments/PayPal.js:125
+msgctxt "Link"
+msgid "click here"
+msgstr "clique aqui"
 
-#: node_modules/react-components/containers/login/AbuseModal.js:21
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:155
-#: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:61
-#: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:63
-#: src/app/containers/setup/ResetModal.js:100
-msgctxt "Action"
-msgid "Close"
-msgstr "Fechar"
-
-#: node_modules/react-components/containers/login/LoginForm.js:212
-msgctxt "Action"
-msgid "Log in"
-msgstr "Iniciar sessão"
-
-#: node_modules/react-components/components/modal/Confirm.js:11
-#: node_modules/react-components/components/modal/FormModal.js:19
-#: node_modules/react-components/containers/login/LoginForm.js:221
-#: node_modules/react-components/containers/payments/PayPal.js:137
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:101
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:143
-#: src/app/components/eventModal/CreateEventModal.js:38
-#: src/app/containers/calendar/InteractiveCalendarView.js:422
-#: src/app/containers/calendar/InteractiveCalendarView.js:443
-#: src/app/containers/settings/AskUpdateTimezoneModal.js:31
-msgctxt "Action"
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: node_modules/react-components/components/modal/FormModal.js:20
-#: node_modules/react-components/containers/login/LoginForm.js:244
-#: node_modules/react-components/containers/login/LoginForm.js:272
-#: node_modules/react-components/containers/support/BugModal.js:135
-msgctxt "Action"
-msgid "Submit"
-msgstr "Submeter"
-
-#: node_modules/react-components/containers/support/AttachScreenshot.js:46
-msgctxt "Action"
-msgid "Clear"
-msgstr "Limpar"
-
-#: node_modules/react-components/containers/support/AttachScreenshot.js:53
-msgctxt "Action"
-msgid "Add screenshot(s)"
-msgstr "Adicionar captura(s) de ecrã"
-
-#: node_modules/react-components/containers/support/BugModal.js:203
-msgctxt "Action"
-msgid "Hide info"
-msgstr "Ocultar informação"
-
-#: node_modules/react-components/containers/support/BugModal.js:203
-msgctxt "Action"
-msgid "Show info"
-msgstr "Mostrar informação"
-
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:102
-msgctxt "Action"
-msgid "Verify"
-msgstr "Verificar"
-
-#: node_modules/react-components/containers/payments/Bitcoin.js:54
-#: node_modules/react-components/containers/payments/PayPal.js:105
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:165
-msgctxt "Action"
-msgid "Try again"
-msgstr "Tentar de novo"
-
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:171
-msgctxt "Action"
-msgid "Use a different card"
-msgstr "Utilizar um cartão diferente"
-
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:172
-msgctxt "Action"
-msgid "Use a different payment method"
-msgstr "Utilizar um método de pagamento diferente"
-
-#: node_modules/react-components/containers/payments/PayPal.js:149
-#: node_modules/react-components/containers/payments/PayPal.js:178
-msgctxt "Action"
-msgid "Check out with PayPal"
-msgstr "Finalizar compra com PayPal"
-
-#: node_modules/react-components/containers/payments/PayPal.js:164
-msgctxt "Action"
-msgid "Add PayPal payment method"
-msgstr "Adicionar pagamento com PayPal"
-
-#: node_modules/react-components/containers/payments/DonateModal.js:43
-msgctxt "Action"
-msgid "Donate"
-msgstr "Doar"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:84
-#: node_modules/react-components/containers/heading/UserDropdown.js:92
-msgctxt "Action"
-msgid "Settings"
-msgstr "Definições"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:109
-msgctxt "Action"
-msgid "I have a question"
-msgstr "Tenho uma dúvida"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:119
-msgctxt "Action"
-msgid "Report bug"
-msgstr "Reportar problema"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:130
-msgctxt "Action"
-msgid "Proton shop"
-msgstr "Loja Proton"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:140
-msgctxt "Action"
-msgid "Support us"
-msgstr "Apoie-nos"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:149
-msgctxt "Action"
-msgid "Logout"
-msgstr "Terminar sessão"
-
-#: node_modules/react-components/components/miniCalendar/LocalizedMiniCalendar.js:31
-#: src/app/components/DateCursorButtons.js:62
-msgctxt "Action"
-msgid "Next month"
-msgstr "Mês seguinte"
-
-#: node_modules/react-components/components/miniCalendar/LocalizedMiniCalendar.js:32
-msgctxt "Action"
-msgid "Prev month"
-msgstr "Mês anterior"
-
-#: node_modules/react-components/components/modal/Confirm.js:10
-#: node_modules/react-components/components/modal/Confirm.js:12
-msgctxt "Action"
-msgid "Confirm"
-msgstr "Confirmar"
-
-#: node_modules/react-components/components/modal/Header.js:11
-#: node_modules/react-components/components/modal/Header.js:13
-msgctxt "Action"
-msgid "Close modal"
-msgstr "Fechar janela"
-
-#: src/app/containers/setup/FreeModal.js:16
-msgctxt "Action"
-msgid "Back to ProtonMail"
-msgstr "Voltar ao ProtonMail"
-
-#: src/app/containers/setup/WelcomeModal.js:120
-msgctxt "Action"
-msgid "Customize calendar"
-msgstr "Personalizar calendário"
-
-#: src/app/containers/setup/ResetModal.js:170
-#: src/app/containers/setup/WelcomeModal.js:124
-msgctxt "Action"
-msgid "Continue"
-msgstr "Continuar"
-
-#: src/app/containers/settings/AskUpdateTimezoneModal.js:32
-#: src/app/containers/settings/CalendarModal.js:254
-msgctxt "Action"
-msgid "Update"
-msgstr "Actualizar"
-
-#: src/app/containers/settings/CalendarModal.js:254
-msgctxt "Action"
-msgid "Create"
-msgstr "Criar"
-
-#: src/app/components/events/EventPopover.js:126
-#: src/app/containers/settings/section/CalendarsTable.js:14
-msgctxt "Action"
-msgid "Edit"
-msgstr "Editar"
-
-#: src/app/components/eventModal/CreateEventModal.js:52
-#: src/app/components/eventModal/Notifications.js:27
-#: src/app/components/events/EventPopover.js:63
-#: src/app/containers/calendar/InteractiveCalendarView.js:441
-#: src/app/containers/settings/section/CalendarsSection.js:41
-#: src/app/containers/settings/section/CalendarsTable.js:18
-msgctxt "Action"
-msgid "Delete"
-msgstr "Eliminar"
-
-#: src/app/containers/settings/section/CalendarsSection.js:61
-#: src/app/containers/settings/section/CalendarsSection.js:64
-msgctxt "Action"
-msgid "Add calendar"
-msgstr "Adicionar calendário"
-
-#: src/app/containers/settings/ViewPreferenceSelector.js:30
-msgctxt "Action"
-msgid "Select calendar view"
-msgstr "Seleccionar vista Calendário"
-
-#: src/app/containers/calendar/CalendarContainerView.js:110
-#: src/app/containers/settings/SettingsContainer.js:53
-msgctxt "Action"
+#: node_modules/react-components/containers/heading/UpgradeButton.js:13
+#: node_modules/react-components/containers/heading/UpgradeButton.js:21
+msgctxt "Link"
 msgid "Upgrade"
 msgstr "Actualizar"
 
-#: src/app/containers/calendar/CalendarSidebar.js:96
-msgctxt "Action"
-msgid "New event"
-msgstr "Novo evento"
+#: src/app/containers/settings/SettingsContainer.js:37
+msgctxt "Link"
+msgid "General"
+msgstr "Geral"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:374
-msgctxt "Action"
-msgid "Yes"
-msgstr "Sim"
+#: src/app/containers/settings/SettingsContainer.js:38
+msgctxt "Link"
+msgid "Calendars"
+msgstr "Calendários"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:376
-msgctxt "Action"
-msgid "No"
-msgstr "Não"
+#: node_modules/react-components/components/button/Copy.js:21
+msgctxt "Label"
+msgid "Copied"
+msgstr "Copiado"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:423
-msgctxt "Action"
-msgid "Discard"
-msgstr "Descartar"
+#: node_modules/react-components/components/button/Copy.js:21
+msgctxt "Label"
+msgid "Copy"
+msgstr "Copiar"
 
-#: src/app/components/eventModal/Notifications.js:25
-msgctxt "Action"
-msgid "Remove notification"
-msgstr "Remover notificação"
+#: node_modules/react-components/components/input/PasswordInput.js:21
+msgctxt "Label"
+msgid "Reveal password"
+msgstr "Mostrar senha"
 
-#: src/app/components/eventModal/Notifications.js:33
-msgctxt "Action"
-msgid "Add notification"
-msgstr "Adicionar notificação"
+#: node_modules/react-components/components/input/PasswordInput.js:21
+msgctxt "Label"
+msgid "Hide password"
+msgstr "Ocultar senha"
 
-#: src/app/components/eventModal/CreateEventModal.js:44
-#: src/app/components/eventModal/CreateEventPopover.js:58
-msgctxt "Action"
-msgid "Save"
-msgstr "Gravar"
+#: node_modules/react-components/containers/api/HumanVerificationModal.js:22
+msgctxt "Label"
+msgid "Captcha"
+msgstr "Captcha"
 
-#: src/app/components/eventModal/CreateEventPopover.js:56
-msgctxt "Action"
-msgid "More options"
-msgstr "Mais opções"
+#: node_modules/react-components/containers/login/UnlockModal.js:34
+msgctxt "Label"
+msgid "Cancel"
+msgstr "Cancelar"
 
-#: src/app/components/DateCursorButtons.js:53
-msgctxt "Action"
-msgid "Previous day"
-msgstr "Dia anterior"
+#: node_modules/react-components/containers/login/UnlockModal.js:35
+msgctxt "Label"
+msgid "Submit"
+msgstr "Submeter"
 
-#: src/app/components/DateCursorButtons.js:54
-msgctxt "Action"
-msgid "Previous week"
-msgstr "Semana anterior"
+#: node_modules/react-components/containers/login/PasswordForm.js:28
+#: node_modules/react-components/containers/login/UnlockModal.js:41
+msgctxt "Label"
+msgid "Password"
+msgstr "Senha"
 
-#: src/app/components/DateCursorButtons.js:55
-msgctxt "Action"
-msgid "Previous month"
-msgstr "Mês anterior"
+#: node_modules/react-components/containers/login/PasswordForm.js:10
+msgctxt "Label"
+msgid "Username"
+msgstr "Utilizador"
 
-#: src/app/components/DateCursorButtons.js:56
-msgctxt "Action"
-msgid "Previous year"
-msgstr "Ano anterior"
+#: node_modules/react-components/containers/login/TOTPForm.js:9
+msgctxt "Label"
+msgid "Two-factor code"
+msgstr "Código em dois passos"
 
-#: src/app/components/DateCursorButtons.js:60
-msgctxt "Action"
-msgid "Next day"
-msgstr "Dia seguinte"
+#: node_modules/react-components/containers/login/UnlockForm.js:9
+msgctxt "Label"
+msgid "Mailbox password"
+msgstr "Senha da caixa de correio"
 
-#: src/app/components/DateCursorButtons.js:61
-msgctxt "Action"
-msgid "Next week"
-msgstr "Semana seguinte"
+#: node_modules/react-components/containers/support/BugModal.js:144
+msgctxt "Label"
+msgid "Proton username"
+msgstr "Utilizador Proton"
 
-#: src/app/components/DateCursorButtons.js:63
-msgctxt "Action"
-msgid "Next year"
-msgstr "Ano seguinte"
+#: node_modules/react-components/containers/support/BugModal.js:156
+msgctxt "Label"
+msgid "Email address"
+msgstr "Endereço de email"
 
-#: src/app/components/DateCursorButtons.js:75
-msgctxt "Action"
-msgid "Today"
-msgstr "Hoje"
+#: node_modules/react-components/containers/support/BugModal.js:168
+msgctxt "Label"
+msgid "Category"
+msgstr "Categoria"
 
-#: src/app/components/TimezoneSelector.js:23
-msgctxt "Action"
-msgid "Select timezone"
-msgstr "Seleccionar fuso horário"
+#: node_modules/react-components/containers/support/BugModal.js:180
+msgctxt "Label"
+msgid "What happened?"
+msgstr "O que aconteceu?"
 
-#: src/app/components/events/PopoverCloseButton.js:7
-#: src/app/components/events/PopoverCloseButton.js:9
-msgctxt "Action"
-msgid "Close popover"
-msgstr "Fechar balão"
+#: node_modules/react-components/containers/support/BugModal.js:201
+msgctxt "Label"
+msgid "System information"
+msgstr "Informação do sistema"
+
+#: node_modules/react-components/containers/support/BugModal.js:209
+msgctxt "Label"
+msgid "Operating system"
+msgstr "Sistema operativo"
+
+#: node_modules/react-components/containers/support/BugModal.js:220
+msgctxt "Label"
+msgid "Operating system version"
+msgstr "Versão do sistema operativo"
+
+#: node_modules/react-components/containers/support/BugModal.js:231
+msgctxt "Label"
+msgid "Browser"
+msgstr "Navegador"
+
+#: node_modules/react-components/containers/support/BugModal.js:242
+msgctxt "Label"
+msgid "Browser version"
+msgstr "Versão do navegador"
+
+#: node_modules/react-components/containers/payments/BitcoinDetails.js:11
+msgctxt "Label"
+msgid "BTC amount"
+msgstr "Quantia BTC"
+
+#: node_modules/react-components/containers/payments/BitcoinDetails.js:20
+msgctxt "Label"
+msgid "BTC address"
+msgstr "Endereço BitCoin"
+
+#: node_modules/react-components/containers/payments/Payment.js:74
+msgctxt "Label"
+msgid "Payment method"
+msgstr "Método de pagamento"
+
+#: node_modules/react-components/containers/payments/DonateModal.js:48
+msgctxt "Label"
+msgid "Amount"
+msgstr "Quantia"
+
+#: node_modules/react-components/containers/paymentMethods/PaymentMethodDetails.js:17
+msgctxt "Label"
+msgid "Cardholder name"
+msgstr "Titular do cartão"
+
+#: node_modules/react-components/containers/paymentMethods/useMethods.js:70
+msgctxt "Label"
+msgid "Pay with cash"
+msgstr "Pagar em dinheiro"
+
+#: src/app/containers/settings/CalendarSettingsTab.js:16
+msgctxt "Label"
+msgid "Name"
+msgstr "Nome"
+
+#: src/app/containers/settings/CalendarSettingsTab.js:31
+msgctxt "Label"
+msgid "Choose a color"
+msgstr "Escolha uma cor"
+
+#: src/app/containers/settings/CalendarSettingsTab.js:38
+msgctxt "Label"
+msgid "Default email"
+msgstr "Email predefinido"
+
+#: src/app/containers/settings/CalendarSettingsTab.js:56
+msgctxt "Label"
+msgid "Display"
+msgstr "Mostrar"
+
+#: src/app/components/eventModal/EventForm.js:86
+#: src/app/components/eventModal/MinimalEventForm.js:108
+#: src/app/containers/settings/CalendarSettingsTab.js:66
+msgctxt "Label"
+msgid "Description"
+msgstr "Descrição"
+
+#: src/app/containers/settings/EventSettingsTab.js:13
+msgctxt "Label"
+msgid "Default event duration"
+msgstr "Duração predefinida do evento"
+
+#: src/app/containers/settings/EventSettingsTab.js:28
+msgctxt "Label"
+msgid "Default notifications"
+msgstr "Notificações predefinidas"
+
+#: src/app/containers/settings/EventSettingsTab.js:44
+msgctxt "Label"
+msgid "Default full day notifications"
+msgstr "Notificações de dia completo predefinidas"
+
+#: src/app/containers/settings/section/TimeSection.js:67
+msgctxt "Label"
+msgid "Time format"
+msgstr "Formato da hora"
+
+#: src/app/containers/settings/section/LayoutSection.js:41
+msgctxt "Label"
+msgid "Default view"
+msgstr "Vista predefinida"
+
+#: src/app/containers/settings/section/LayoutSection.js:54
+msgctxt "Label"
+msgid "Week start"
+msgstr "Início da semana"
+
+#: src/app/containers/settings/section/LayoutSection.js:65
+msgctxt "Label"
+msgid "Week numbers"
+msgstr "Números de semana"
+
+#: src/app/containers/calendar/CalendarView.js:53
+msgctxt "Label"
+msgid "Week"
+msgstr "Semana"
+
+#: src/app/components/eventModal/inputs/AllDayCheckbox.js:8
+msgctxt "Label"
+msgid "All day"
+msgstr "Todo o dia"
+
+#: src/app/components/eventModal/rows/RepeatEveryRow.js:33
+msgctxt "Label"
+msgid "Repeat every"
+msgstr "Repetir a cada"
+
+#: src/app/components/eventModal/rows/RepeatOnRow.js:32
+msgctxt "Label"
+msgid "Repeat on"
+msgstr "Repetir a"
+
+#.  Can get undefined through the input
+#: src/app/components/eventModal/rows/EndsRow.js:44
+msgctxt "Label"
+msgid "Ends"
+msgstr "Termina"
+
+#: src/app/components/eventModal/rows/DateTimeRow.js:167
+msgctxt "Label"
+msgid "From"
+msgstr "De"
+
+#: src/app/components/eventModal/rows/DateTimeRow.js:176
+msgctxt "Label"
+msgid "To"
+msgstr "Para"
+
+#: src/app/components/eventModal/EventForm.js:33
+#: src/app/components/eventModal/MinimalEventForm.js:35
+msgctxt "Label"
+msgid "Frequency"
+msgstr "Frequência"
+
+#: src/app/components/eventModal/EventForm.js:46
+msgctxt "Label"
+msgid "Start timezone"
+msgstr "Fuso horário inicial"
+
+#: src/app/components/eventModal/EventForm.js:47
+msgctxt "Label"
+msgid "End timezone"
+msgstr "Fuso horário final"
+
+#: src/app/components/eventModal/EventForm.js:54
+#: src/app/components/eventModal/MinimalEventForm.js:54
+msgctxt "Label"
+msgid "Calendar"
+msgstr "Calendário"
+
+#: src/app/components/eventModal/EventForm.js:60
+#: src/app/components/eventModal/MinimalEventForm.js:70
+msgctxt "Label"
+msgid "Title"
+msgstr "Título"
+
+#: src/app/components/eventModal/EventForm.js:69
+msgctxt "Label"
+msgid "Time"
+msgstr "Hora"
+
+#: src/app/components/eventModal/EventForm.js:81
+#: src/app/components/eventModal/MinimalEventForm.js:97
+msgctxt "Label"
+msgid "Location"
+msgstr "Localização"
+
+#: src/app/components/eventModal/EventForm.js:91
+msgctxt "Label"
+msgid "Notifications"
+msgstr "Notificações"
+
+#: node_modules/react-components/components/input/TimeInput.js:26
+#, javascript-format
+msgctxt "Time unit"
+msgid "${ hours } hour"
+msgid_plural "${ hours } hours"
+msgstr[0] "${ hours } hora"
+msgstr[1] "${ hours } horas"
+
+#: node_modules/react-components/components/input/TimeInput.js:27
+msgctxt "Time unit"
+msgid "${ minutes } minutes"
+msgid_plural "${ minutes } minutes"
+msgstr[0] "${ minutes } minuto"
+msgstr[1] "${ minutes } minutos"
+
+#: src/app/components/eventModal/inputs/NotificationInput.js:82
+msgctxt "Time unit"
+msgid "Minute"
+msgid_plural "Minutes"
+msgstr[0] "Minuto"
+msgstr[1] "Minutos"
+
+#: src/app/components/eventModal/inputs/NotificationInput.js:86
+msgctxt "Time unit"
+msgid "Hour"
+msgid_plural "Hours"
+msgstr[0] "Hora"
+msgstr[1] "Horas"
+
+#: src/app/components/eventModal/inputs/NotificationInput.js:89
+msgctxt "Time unit"
+msgid "Day"
+msgid_plural "Days"
+msgstr[0] "Dia"
+msgstr[1] "Dias"
+
+#: src/app/components/eventModal/inputs/NotificationInput.js:90
+msgctxt "Time unit"
+msgid "Week"
+msgid_plural "Weeks"
+msgstr[0] "Semana"
+msgstr[1] "Semanas"
+
+#: node_modules/react-components/components/dropdown/DropdownActions.js:48
+msgctxt "Title"
+msgid "Open actions dropdown"
+msgstr "Abrir lista de acções"
 
 #: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:78
 msgctxt "Title"
@@ -659,11 +696,6 @@ msgctxt "Title"
 msgid "Make a donation"
 msgstr "Fazer um donativo"
 
-#: node_modules/react-components/components/dropdown/DropdownActions.js:48
-msgctxt "Title"
-msgid "Open actions dropdown"
-msgstr "Abrir lista de acções"
-
 #: src/app/containers/setup/FreeModal.js:13
 #: src/app/containers/setup/ResetModal.js:157
 #: src/app/containers/setup/WelcomeModal.js:40
@@ -687,12 +719,12 @@ msgctxt "Title"
 msgid "Reactivate calendar keys"
 msgstr "Reactivar chaves do calendário"
 
-#: src/app/containers/settings/CalendarModal.js:57
+#: src/app/containers/settings/CalendarModal.js:64
 msgctxt "Title"
 msgid "Update calendar"
 msgstr "Actualizar calendário"
 
-#: src/app/containers/settings/CalendarModal.js:57
+#: src/app/containers/settings/CalendarModal.js:64
 msgctxt "Title"
 msgid "Create calendar"
 msgstr "Criar calendário"
@@ -707,18 +739,18 @@ msgctxt "Title"
 msgid "Layout"
 msgstr "Disposição"
 
-#: src/app/containers/settings/section/CalendarsSection.js:40
+#: src/app/containers/settings/section/CalendarsSection.js:62
 msgctxt "Title"
 msgid "Delete calendar"
 msgstr "Eliminar calendário"
 
-#: src/app/containers/settings/section/CalendarsSection.js:58
+#: src/app/containers/settings/section/CalendarsSection.js:91
 msgctxt "Title"
 msgid "Calendars"
 msgstr "Calendários"
 
 #: src/app/components/layout/PrivateHeader.js:36
-#: src/app/containers/settings/SettingsContainer.js:63
+#: src/app/containers/settings/SettingsContainer.js:65
 msgctxt "Title"
 msgid "Settings"
 msgstr "Definições"
@@ -775,6 +807,21 @@ msgctxt "Title"
 msgid "Description"
 msgstr "Descrição"
 
+#: node_modules/react-components/components/toggle/Toggle.js:10
+msgctxt "Toggle button"
+msgid "On"
+msgstr "On"
+
+#: node_modules/react-components/components/toggle/Toggle.js:11
+msgctxt "Toggle button"
+msgid "Off"
+msgstr "Off"
+
+#: node_modules/react-components/components/miniCalendar/WeekNumbers.js:36
+msgctxt "Info"
+msgid "Week"
+msgstr "Semana"
+
 #: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:79
 #, javascript-format
 msgctxt "Info"
@@ -790,6 +837,12 @@ msgstr "O seu espaço de armazenamento é partilhado entre todos os produtos Pro
 msgctxt "Info"
 msgid "For security reasons, please verify that you are not a robot."
 msgstr "Por motivos de segurança, por favor demonstre que não é um robô."
+
+#.  The only way to get out of this one is to refresh.
+#: node_modules/react-components/containers/api/ApiProvider.js:71
+msgctxt "Info"
+msgid "Application upgrade required"
+msgstr "Actualização da aplicação requerida"
 
 #: node_modules/react-components/containers/app/LoaderPage.js:15
 #, javascript-format
@@ -940,16 +993,6 @@ msgctxt "Info"
 msgid "default"
 msgstr "predefinição"
 
-#: node_modules/react-components/components/miniCalendar/WeekNumbers.js:36
-msgctxt "Info"
-msgid "Week"
-msgstr "Semana"
-
-#: src/app/content/PrivateApp.js:57
-msgctxt "Info"
-msgid "Loading ProtonCalendar"
-msgstr "A carregar o ProtonCalendar"
-
 #: src/app/containers/setup/FreeModal.js:24
 msgctxt "Info"
 msgid "ProtonCalendar is currently in Beta and is only available to paid users of ProtonMail."
@@ -996,15 +1039,16 @@ msgctxt "Info"
 msgid "Week and month views only apply to desktop."
 msgstr "As vistas Semana e Mês só se aplicam ao computador."
 
-#: src/app/containers/settings/section/CalendarsSection.js:45
+#: src/app/containers/settings/section/CalendarsSection.js:67
 msgctxt "Info"
 msgid "Are you sure you want to delete this calendar?"
 msgstr "Tem a certeza de que deseja eliminar este calendário?"
 
-#: src/app/containers/settings/section/CalendarsSection.js:63
+#: src/app/containers/settings/section/CalendarsSection.js:69
+#, javascript-format
 msgctxt "Info"
-msgid "Feature coming soon"
-msgstr "Funcionalidade a disponibilizar em breve"
+msgid "${ calendarName } will be set as default calendar."
+msgstr "${ calendarName } será o calendário predefinido."
 
 #: src/app/containers/calendar/CalendarContainerView.js:150
 msgctxt "Info"
@@ -1125,278 +1169,334 @@ msgid_plural "Every ${ interval } months"
 msgstr[0] "Mensalmente"
 msgstr[1] "Cada ${ interval } meses"
 
-#: node_modules/react-components/containers/api/HumanVerificationModal.js:22
-msgctxt "Label"
-msgid "Captcha"
-msgstr "Captcha"
+#: src/app/content/PrivateApp.js:52
+msgctxt "Info"
+msgid "Loading ProtonCalendar"
+msgstr "A carregar o ProtonCalendar"
 
-#: node_modules/react-components/containers/login/UnlockModal.js:34
-msgctxt "Label"
+#: node_modules/react-components/components/miniCalendar/LocalizedMiniCalendar.js:31
+#: src/app/components/DateCursorButtons.js:62
+msgctxt "Action"
+msgid "Next month"
+msgstr "Mês seguinte"
+
+#: node_modules/react-components/components/miniCalendar/LocalizedMiniCalendar.js:32
+msgctxt "Action"
+msgid "Prev month"
+msgstr "Mês anterior"
+
+#: node_modules/react-components/components/modal/Confirm.js:10
+#: node_modules/react-components/components/modal/Confirm.js:12
+msgctxt "Action"
+msgid "Confirm"
+msgstr "Confirmar"
+
+#: node_modules/react-components/components/modal/Confirm.js:11
+#: node_modules/react-components/components/modal/FormModal.js:19
+#: node_modules/react-components/containers/login/LoginForm.js:221
+#: node_modules/react-components/containers/payments/PayPal.js:137
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:101
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:143
+#: src/app/components/eventModal/CreateEventModal.js:38
+#: src/app/containers/calendar/InteractiveCalendarView.js:422
+#: src/app/containers/calendar/InteractiveCalendarView.js:443
+#: src/app/containers/settings/AskUpdateTimezoneModal.js:31
+msgctxt "Action"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: node_modules/react-components/containers/login/UnlockModal.js:35
-msgctxt "Label"
+#: node_modules/react-components/components/modal/Header.js:11
+#: node_modules/react-components/components/modal/Header.js:13
+msgctxt "Action"
+msgid "Close modal"
+msgstr "Fechar janela"
+
+#: node_modules/react-components/components/modal/FormModal.js:20
+#: node_modules/react-components/containers/login/LoginForm.js:244
+#: node_modules/react-components/containers/login/LoginForm.js:272
+#: node_modules/react-components/containers/support/BugModal.js:135
+msgctxt "Action"
 msgid "Submit"
 msgstr "Submeter"
 
-#: node_modules/react-components/containers/login/PasswordForm.js:28
-#: node_modules/react-components/containers/login/UnlockModal.js:41
-msgctxt "Label"
-msgid "Password"
-msgstr "Senha"
+#: node_modules/react-components/containers/login/AbuseModal.js:21
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:155
+#: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:61
+#: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:63
+#: src/app/containers/setup/ResetModal.js:100
+msgctxt "Action"
+msgid "Close"
+msgstr "Fechar"
 
-#: node_modules/react-components/containers/login/PasswordForm.js:10
-msgctxt "Label"
-msgid "Username"
-msgstr "Utilizador"
+#: node_modules/react-components/containers/api/OfflineNotification.js:10
+msgctxt "Action"
+msgid "Retry now"
+msgstr "Repetir agora"
 
-#: node_modules/react-components/containers/login/TOTPForm.js:9
-msgctxt "Label"
-msgid "Two-factor code"
-msgstr "Código em dois passos"
+#: node_modules/react-components/containers/login/LoginForm.js:212
+msgctxt "Action"
+msgid "Log in"
+msgstr "Iniciar sessão"
 
-#: node_modules/react-components/containers/login/UnlockForm.js:9
-msgctxt "Label"
-msgid "Mailbox password"
-msgstr "Senha da caixa de correio"
+#: node_modules/react-components/containers/support/AttachScreenshot.js:46
+msgctxt "Action"
+msgid "Clear"
+msgstr "Limpar"
 
-#: node_modules/react-components/containers/support/BugModal.js:144
-msgctxt "Label"
-msgid "Proton username"
-msgstr "Utilizador Proton"
+#: node_modules/react-components/containers/support/AttachScreenshot.js:53
+msgctxt "Action"
+msgid "Add screenshot(s)"
+msgstr "Adicionar captura(s) de ecrã"
 
-#: node_modules/react-components/containers/support/BugModal.js:156
-msgctxt "Label"
-msgid "Email address"
-msgstr "Endereço de email"
+#: node_modules/react-components/containers/support/BugModal.js:203
+msgctxt "Action"
+msgid "Hide info"
+msgstr "Ocultar informação"
 
-#: node_modules/react-components/containers/support/BugModal.js:168
-msgctxt "Label"
-msgid "Category"
-msgstr "Categoria"
+#: node_modules/react-components/containers/support/BugModal.js:203
+msgctxt "Action"
+msgid "Show info"
+msgstr "Mostrar informação"
 
-#: node_modules/react-components/containers/support/BugModal.js:180
-msgctxt "Label"
-msgid "What happened?"
-msgstr "O que aconteceu?"
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:102
+msgctxt "Action"
+msgid "Verify"
+msgstr "Verificar"
 
-#: node_modules/react-components/containers/support/BugModal.js:201
-msgctxt "Label"
-msgid "System information"
-msgstr "Informação do sistema"
+#: node_modules/react-components/containers/payments/Bitcoin.js:54
+#: node_modules/react-components/containers/payments/PayPal.js:105
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:165
+msgctxt "Action"
+msgid "Try again"
+msgstr "Tentar de novo"
 
-#: node_modules/react-components/containers/support/BugModal.js:209
-msgctxt "Label"
-msgid "Operating system"
-msgstr "Sistema operativo"
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:171
+msgctxt "Action"
+msgid "Use a different card"
+msgstr "Utilizar um cartão diferente"
 
-#: node_modules/react-components/containers/support/BugModal.js:220
-msgctxt "Label"
-msgid "Operating system version"
-msgstr "Versão do sistema operativo"
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:172
+msgctxt "Action"
+msgid "Use a different payment method"
+msgstr "Utilizar um método de pagamento diferente"
 
-#: node_modules/react-components/containers/support/BugModal.js:231
-msgctxt "Label"
-msgid "Browser"
-msgstr "Navegador"
+#: node_modules/react-components/containers/payments/PayPal.js:149
+#: node_modules/react-components/containers/payments/PayPal.js:178
+msgctxt "Action"
+msgid "Check out with PayPal"
+msgstr "Finalizar compra com PayPal"
 
-#: node_modules/react-components/containers/support/BugModal.js:242
-msgctxt "Label"
-msgid "Browser version"
-msgstr "Versão do navegador"
+#: node_modules/react-components/containers/payments/PayPal.js:164
+msgctxt "Action"
+msgid "Add PayPal payment method"
+msgstr "Adicionar pagamento com PayPal"
 
-#: node_modules/react-components/containers/payments/BitcoinDetails.js:11
-msgctxt "Label"
-msgid "BTC amount"
-msgstr "Quantia BTC"
+#: node_modules/react-components/containers/payments/DonateModal.js:43
+msgctxt "Action"
+msgid "Donate"
+msgstr "Doar"
 
-#: node_modules/react-components/containers/payments/BitcoinDetails.js:20
-msgctxt "Label"
-msgid "BTC address"
-msgstr "Endereço BitCoin"
+#: node_modules/react-components/containers/heading/UserDropdown.js:84
+#: node_modules/react-components/containers/heading/UserDropdown.js:92
+msgctxt "Action"
+msgid "Settings"
+msgstr "Definições"
 
-#: node_modules/react-components/containers/payments/Payment.js:74
-msgctxt "Label"
-msgid "Payment method"
-msgstr "Método de pagamento"
+#: node_modules/react-components/containers/heading/UserDropdown.js:109
+msgctxt "Action"
+msgid "I have a question"
+msgstr "Tenho uma dúvida"
 
-#: node_modules/react-components/containers/payments/DonateModal.js:48
-msgctxt "Label"
-msgid "Amount"
-msgstr "Quantia"
+#: node_modules/react-components/containers/heading/UserDropdown.js:119
+msgctxt "Action"
+msgid "Report bug"
+msgstr "Reportar problema"
 
-#: node_modules/react-components/containers/paymentMethods/PaymentMethodDetails.js:17
-msgctxt "Label"
-msgid "Cardholder name"
-msgstr "Titular do cartão"
+#: node_modules/react-components/containers/heading/UserDropdown.js:130
+msgctxt "Action"
+msgid "Proton shop"
+msgstr "Loja Proton"
 
-#: node_modules/react-components/containers/paymentMethods/useMethods.js:70
-msgctxt "Label"
-msgid "Pay with cash"
-msgstr "Pagar em dinheiro"
+#: node_modules/react-components/containers/heading/UserDropdown.js:140
+msgctxt "Action"
+msgid "Support us"
+msgstr "Apoie-nos"
 
-#: node_modules/react-components/components/button/Copy.js:21
-msgctxt "Label"
-msgid "Copied"
-msgstr "Copiado"
+#: node_modules/react-components/containers/heading/UserDropdown.js:149
+msgctxt "Action"
+msgid "Logout"
+msgstr "Terminar sessão"
 
-#: node_modules/react-components/components/button/Copy.js:21
-msgctxt "Label"
-msgid "Copy"
-msgstr "Copiar"
+#: src/app/containers/setup/FreeModal.js:16
+msgctxt "Action"
+msgid "Back to ProtonMail"
+msgstr "Voltar ao ProtonMail"
 
-#: node_modules/react-components/components/input/PasswordInput.js:21
-msgctxt "Label"
-msgid "Reveal password"
-msgstr "Mostrar senha"
+#: src/app/containers/setup/WelcomeModal.js:120
+msgctxt "Action"
+msgid "Customize calendar"
+msgstr "Personalizar calendário"
 
-#: node_modules/react-components/components/input/PasswordInput.js:21
-msgctxt "Label"
-msgid "Hide password"
-msgstr "Ocultar senha"
+#: src/app/containers/setup/ResetModal.js:170
+#: src/app/containers/setup/WelcomeModal.js:124
+msgctxt "Action"
+msgid "Continue"
+msgstr "Continuar"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:16
-msgctxt "Label"
-msgid "Name"
-msgstr "Nome"
+#: src/app/containers/settings/AskUpdateTimezoneModal.js:32
+#: src/app/containers/settings/CalendarModal.js:267
+msgctxt "Action"
+msgid "Update"
+msgstr "Actualizar"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:30
-msgctxt "Label"
-msgid "Choose a color"
-msgstr "Escolha uma cor"
+#: src/app/containers/settings/CalendarModal.js:267
+msgctxt "Action"
+msgid "Create"
+msgstr "Criar"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:37
-msgctxt "Label"
-msgid "Default email"
-msgstr "Email predefinido"
+#: src/app/components/events/EventPopover.js:126
+#: src/app/containers/settings/section/CalendarsTable.js:14
+msgctxt "Action"
+msgid "Edit"
+msgstr "Editar"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:55
-msgctxt "Label"
-msgid "Display"
-msgstr "Mostrar"
+#: src/app/containers/settings/section/CalendarsTable.js:18
+msgctxt "Action"
+msgid "Set as default"
+msgstr "Predefinir"
 
-#: src/app/components/eventModal/EventForm.js:91
-#: src/app/components/eventModal/MinimalEventForm.js:109
-#: src/app/containers/settings/CalendarSettingsTab.js:65
-msgctxt "Label"
-msgid "Description"
-msgstr "Descrição"
+#: src/app/components/eventModal/CreateEventModal.js:52
+#: src/app/components/eventModal/Notifications.js:27
+#: src/app/components/events/EventPopover.js:63
+#: src/app/containers/calendar/InteractiveCalendarView.js:441
+#: src/app/containers/settings/section/CalendarsSection.js:63
+#: src/app/containers/settings/section/CalendarsTable.js:22
+msgctxt "Action"
+msgid "Delete"
+msgstr "Eliminar"
 
-#: src/app/containers/settings/EventSettingsTab.js:13
-msgctxt "Label"
-msgid "Default event duration"
-msgstr "Duração predefinida do evento"
+#: src/app/containers/settings/section/CalendarsSection.js:94
+msgctxt "Action"
+msgid "Add calendar"
+msgstr "Adicionar calendário"
 
-#: src/app/containers/settings/EventSettingsTab.js:28
-msgctxt "Label"
-msgid "Default notifications"
-msgstr "Notificações predefinidas"
+#: src/app/containers/settings/ViewPreferenceSelector.js:30
+msgctxt "Action"
+msgid "Select calendar view"
+msgstr "Seleccionar vista Calendário"
 
-#: src/app/containers/settings/EventSettingsTab.js:44
-msgctxt "Label"
-msgid "Default full day notifications"
-msgstr "Notificações de dia completo predefinidas"
+#: src/app/containers/calendar/CalendarContainerView.js:110
+#: src/app/containers/settings/SettingsContainer.js:55
+msgctxt "Action"
+msgid "Upgrade"
+msgstr "Actualizar"
 
-#: src/app/containers/settings/section/TimeSection.js:67
-msgctxt "Label"
-msgid "Time format"
-msgstr "Formato da hora"
+#: src/app/containers/calendar/CalendarSidebar.js:93
+msgctxt "Action"
+msgid "New event"
+msgstr "Novo evento"
 
-#: src/app/containers/settings/section/LayoutSection.js:41
-msgctxt "Label"
-msgid "Default view"
-msgstr "Vista predefinida"
+#: src/app/containers/calendar/InteractiveCalendarView.js:374
+msgctxt "Action"
+msgid "Yes"
+msgstr "Sim"
 
-#: src/app/containers/settings/section/LayoutSection.js:54
-msgctxt "Label"
-msgid "Week start"
-msgstr "Início da semana"
+#: src/app/containers/calendar/InteractiveCalendarView.js:376
+msgctxt "Action"
+msgid "No"
+msgstr "Não"
 
-#: src/app/containers/settings/section/LayoutSection.js:65
-msgctxt "Label"
-msgid "Week numbers"
-msgstr "Números de semana"
+#: src/app/containers/calendar/InteractiveCalendarView.js:423
+msgctxt "Action"
+msgid "Discard"
+msgstr "Descartar"
 
-#: src/app/containers/calendar/CalendarView.js:53
-msgctxt "Label"
-msgid "Week"
-msgstr "Semana"
+#: src/app/components/eventModal/Notifications.js:25
+msgctxt "Action"
+msgid "Remove notification"
+msgstr "Remover notificação"
 
-#: src/app/components/eventModal/inputs/AllDayCheckbox.js:8
-msgctxt "Label"
-msgid "All day"
-msgstr "Todo o dia"
+#: src/app/components/eventModal/Notifications.js:33
+msgctxt "Action"
+msgid "Add notification"
+msgstr "Adicionar notificação"
 
-#: src/app/components/eventModal/rows/RepeatEveryRow.js:33
-msgctxt "Label"
-msgid "Repeat every"
-msgstr "Repetir a cada"
+#: src/app/components/eventModal/CreateEventModal.js:44
+#: src/app/components/eventModal/CreateEventPopover.js:58
+msgctxt "Action"
+msgid "Save"
+msgstr "Gravar"
 
-#: src/app/components/eventModal/rows/RepeatOnRow.js:32
-msgctxt "Label"
-msgid "Repeat on"
-msgstr "Repetir a"
+#: src/app/components/eventModal/CreateEventPopover.js:56
+msgctxt "Action"
+msgid "More options"
+msgstr "Mais opções"
 
-#.  Can get undefined through the input
-#: src/app/components/eventModal/rows/EndsRow.js:44
-msgctxt "Label"
-msgid "Ends"
-msgstr "Termina"
+#: src/app/components/DateCursorButtons.js:53
+msgctxt "Action"
+msgid "Previous day"
+msgstr "Dia anterior"
 
-#: src/app/components/eventModal/rows/DateTimeRow.js:167
-msgctxt "Label"
-msgid "From"
-msgstr "De"
+#: src/app/components/DateCursorButtons.js:54
+msgctxt "Action"
+msgid "Previous week"
+msgstr "Semana anterior"
 
-#: src/app/components/eventModal/rows/DateTimeRow.js:176
-msgctxt "Label"
-msgid "To"
-msgstr "Para"
+#: src/app/components/DateCursorButtons.js:55
+msgctxt "Action"
+msgid "Previous month"
+msgstr "Mês anterior"
 
-#: src/app/components/eventModal/EventForm.js:33
-#: src/app/components/eventModal/MinimalEventForm.js:35
-msgctxt "Label"
-msgid "Frequency"
-msgstr "Frequência"
+#: src/app/components/DateCursorButtons.js:56
+msgctxt "Action"
+msgid "Previous year"
+msgstr "Ano anterior"
 
-#: src/app/components/eventModal/EventForm.js:46
-msgctxt "Label"
-msgid "Start timezone"
-msgstr "Fuso horário inicial"
+#: src/app/components/DateCursorButtons.js:60
+msgctxt "Action"
+msgid "Next day"
+msgstr "Dia seguinte"
 
-#: src/app/components/eventModal/EventForm.js:47
-msgctxt "Label"
-msgid "End timezone"
-msgstr "Fuso horário final"
+#: src/app/components/DateCursorButtons.js:61
+msgctxt "Action"
+msgid "Next week"
+msgstr "Semana seguinte"
 
-#: src/app/components/eventModal/EventForm.js:55
-#: src/app/components/eventModal/MinimalEventForm.js:54
-msgctxt "Label"
-msgid "Calendar"
-msgstr "Calendário"
+#: src/app/components/DateCursorButtons.js:63
+msgctxt "Action"
+msgid "Next year"
+msgstr "Ano seguinte"
 
-#: src/app/components/eventModal/EventForm.js:65
-#: src/app/components/eventModal/MinimalEventForm.js:71
-msgctxt "Label"
-msgid "Title"
-msgstr "Título"
+#: src/app/components/DateCursorButtons.js:75
+msgctxt "Action"
+msgid "Today"
+msgstr "Hoje"
 
-#: src/app/components/eventModal/EventForm.js:74
-msgctxt "Label"
-msgid "Time"
-msgstr "Hora"
+#: src/app/components/TimezoneSelector.js:23
+msgctxt "Action"
+msgid "Select timezone"
+msgstr "Seleccionar fuso horário"
 
-#: src/app/components/eventModal/EventForm.js:86
-#: src/app/components/eventModal/MinimalEventForm.js:98
-msgctxt "Label"
-msgid "Location"
-msgstr "Localização"
+#: src/app/components/events/PopoverCloseButton.js:7
+#: src/app/components/events/PopoverCloseButton.js:9
+msgctxt "Action"
+msgid "Close popover"
+msgstr "Fechar balão"
 
-#: src/app/components/eventModal/EventForm.js:96
-msgctxt "Label"
-msgid "Notifications"
-msgstr "Notificações"
+#: node_modules/react-components/containers/error/GenericError.js:16
+msgctxt "Error message"
+msgid "Aaah! Something went wrong"
+msgstr "Ai! Algo correu mal"
+
+#: node_modules/react-components/containers/error/GenericError.js:19
+msgctxt "Error message"
+msgid "Brace yourself till we get the error fixed."
+msgstr "Aguente-se até que o erro seja corrigido."
+
+#: node_modules/react-components/containers/error/GenericError.js:20
+msgctxt "Error message"
+msgid "You may also refresh the page or try again later."
+msgstr "Também pode actualizar a página ou tentar de novo mais tarde."
 
 #: node_modules/react-components/containers/login/PasswordForm.js:22
 msgctxt "Placeholder"
@@ -1478,12 +1578,12 @@ msgctxt "Placeholder"
 msgid "Postal code"
 msgstr "Código postal"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:23
+#: src/app/containers/settings/CalendarSettingsTab.js:24
 msgctxt "Placeholder"
 msgid "Add a calendar name"
 msgstr "Adicionar nome do calendário"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:71
+#: src/app/containers/settings/CalendarSettingsTab.js:72
 msgctxt "Placeholder"
 msgid "Add a calendar description"
 msgstr "Adicionar descrição do calendário"
@@ -1622,37 +1722,6 @@ msgctxt "Action to select a title for the bug report modal"
 msgid "Select"
 msgstr "Seleccionar"
 
-#: node_modules/react-components/containers/support/BugModal.js:89
-msgctxt "Link"
-msgid "clearing your browser cache"
-msgstr "limpar a memória do navegador"
-
-#: node_modules/react-components/containers/payments/PayPal.js:125
-msgctxt "Link"
-msgid "click here"
-msgstr "clique aqui"
-
-#: node_modules/react-components/containers/heading/UpgradeButton.js:13
-#: node_modules/react-components/containers/heading/UpgradeButton.js:21
-msgctxt "Link"
-msgid "Upgrade"
-msgstr "Actualizar"
-
-#: node_modules/react-components/components/link/LearnMore.js:7
-msgctxt "Link"
-msgid "Learn more"
-msgstr "Saiba mais"
-
-#: src/app/containers/settings/SettingsContainer.js:35
-msgctxt "Link"
-msgid "General"
-msgstr "Geral"
-
-#: src/app/containers/settings/SettingsContainer.js:36
-msgctxt "Link"
-msgid "Calendars"
-msgstr "Calendários"
-
 #: node_modules/react-components/containers/support/BugModal.js:120
 msgctxt "Success"
 msgid "Bug reported"
@@ -1663,12 +1732,12 @@ msgctxt "Success"
 msgid "Your support is essential to keeping Proton running. Thank you for supporting internet privacy!"
 msgstr "O seu apoio é essencial para manter o Proton a funcionar. Obrigado por suportar a privacidade na Internet!"
 
-#: src/app/containers/settings/CalendarModal.js:227
+#: src/app/containers/settings/CalendarModal.js:240
 msgctxt "Success"
 msgid "Calendar updated"
 msgstr "Calendário actualizado"
 
-#: src/app/containers/settings/CalendarModal.js:227
+#: src/app/containers/settings/CalendarModal.js:240
 msgctxt "Success"
 msgid "Calendar created"
 msgstr "Calendário criado"
@@ -1681,7 +1750,12 @@ msgctxt "Success"
 msgid "Preference saved"
 msgstr "Preferência gravada"
 
-#: src/app/containers/settings/section/CalendarsSection.js:51
+#: src/app/containers/settings/section/CalendarsSection.js:41
+msgctxt "Success"
+msgid "Default calendar updated"
+msgstr "Calendário predefinido actualizado"
+
+#: src/app/containers/settings/section/CalendarsSection.js:81
 msgctxt "Success"
 msgid "Calendar removed"
 msgstr "Calendário removido"
@@ -1772,59 +1846,6 @@ msgctxt "Payment method option"
 msgid "Pay with Bitcoin"
 msgstr "Pagar com Bitcoin"
 
-#: node_modules/react-components/components/input/TimeInput.js:26
-#, javascript-format
-msgctxt "Time unit"
-msgid "${ hours } hour"
-msgid_plural "${ hours } hours"
-msgstr[0] "${ hours } hora"
-msgstr[1] "${ hours } horas"
-
-#: node_modules/react-components/components/input/TimeInput.js:27
-msgctxt "Time unit"
-msgid "${ minutes } minutes"
-msgid_plural "${ minutes } minutes"
-msgstr[0] "${ minutes } minuto"
-msgstr[1] "${ minutes } minutos"
-
-#: src/app/components/eventModal/inputs/NotificationInput.js:82
-msgctxt "Time unit"
-msgid "Minute"
-msgid_plural "Minutes"
-msgstr[0] "Minuto"
-msgstr[1] "Minutos"
-
-#: src/app/components/eventModal/inputs/NotificationInput.js:86
-msgctxt "Time unit"
-msgid "Hour"
-msgid_plural "Hours"
-msgstr[0] "Hora"
-msgstr[1] "Horas"
-
-#: src/app/components/eventModal/inputs/NotificationInput.js:89
-msgctxt "Time unit"
-msgid "Day"
-msgid_plural "Days"
-msgstr[0] "Dia"
-msgstr[1] "Dias"
-
-#: src/app/components/eventModal/inputs/NotificationInput.js:90
-msgctxt "Time unit"
-msgid "Week"
-msgid_plural "Weeks"
-msgstr[0] "Semana"
-msgstr[1] "Semanas"
-
-#: node_modules/react-components/components/toggle/Toggle.js:10
-msgctxt "Toggle button"
-msgid "On"
-msgstr "On"
-
-#: node_modules/react-components/components/toggle/Toggle.js:11
-msgctxt "Toggle button"
-msgid "Off"
-msgstr "Off"
-
 #: src/app/containers/settings/section/CalendarsTable.js:8
 #: src/app/containers/setup/CalendarReactivateSection.js:11
 #: src/app/containers/setup/CalendarResetSection.js:11
@@ -1832,15 +1853,20 @@ msgctxt "Header"
 msgid "Name"
 msgstr "Nome"
 
-#: src/app/containers/settings/CalendarModal.js:233
+#: src/app/containers/settings/CalendarModal.js:246
 msgctxt "Header"
 msgid "Calendar settings"
 msgstr "Definições do calendário"
 
-#: src/app/containers/settings/CalendarModal.js:245
+#: src/app/containers/settings/CalendarModal.js:258
 msgctxt "Header"
 msgid "Event settings"
 msgstr "Definições de evento"
+
+#: src/app/containers/settings/section/CalendarsTable.js:8
+msgctxt "Header"
+msgid "Status"
+msgstr "Estado"
 
 #: src/app/containers/settings/section/CalendarsTable.js:8
 msgctxt "Header"
@@ -1917,6 +1943,11 @@ msgctxt "Secondary timezone"
 msgid "Secondary time zone"
 msgstr "Fuso horário secundário"
 
+#: src/app/containers/settings/section/CalendarsTable.js:37
+msgctxt "Key badge"
+msgid "Default"
+msgstr "Predefinição"
+
 #: src/app/containers/settings/WeekStartSelector.js:14
 msgctxt "Week day"
 msgid "Sunday"
@@ -1945,7 +1976,7 @@ msgctxt "Calendar view"
 msgid "Month"
 msgstr "Mês"
 
-#: src/app/containers/settings/SettingsContainer.js:31
+#: src/app/containers/settings/SettingsContainer.js:33
 msgctxt "Page title"
 msgid "Calendar settings - ProtonCalendar"
 msgstr "Definições do calendário - ProtonCalendar"

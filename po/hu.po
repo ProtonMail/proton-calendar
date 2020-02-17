@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: protonmail\n"
 "Language-Team: Hungarian\n"
 "Language: hu_HU\n"
-"PO-Revision-Date: 2020-02-07 07:20\n"
+"PO-Revision-Date: 2020-02-14 16:22\n"
 
 #: node_modules/proton-shared/lib/helpers/humanSize.js:13
 msgctxt "file size format"
@@ -35,25 +35,40 @@ msgctxt "Error"
 msgid "Primary calendar key is not decrypted"
 msgstr "Elsődleges naptár kulcsa nincs visszafejtve"
 
-#: node_modules/react-components/containers/api/ApiProvider.js:47
+#: node_modules/react-components/components/alert/DoNotWindowOpenAlertError.js:7
 msgctxt "Error"
-msgid "Could not connect to server."
-msgstr "Nem sikerült a szerverhez csatlakozni."
+msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
+msgstr "Az Ön által használt böngésző nem támogatja a kívánt fizetési módot. Kérjük, használjon másik böngészőt, vagy jelentkezzen be egy számítógépről."
 
-#: node_modules/react-components/containers/api/ApiProvider.js:48
+#: node_modules/react-components/components/input/EmailInput.js:9
 msgctxt "Error"
-msgid "No internet connection found"
-msgstr "Nincs internet kapcsolat"
+msgid "Email address invalid"
+msgstr "Érvénytelen e-mail cím"
 
-#: node_modules/react-components/containers/api/ApiProvider.js:56
+#: node_modules/react-components/components/input/Input.js:32
+msgctxt "Error"
+msgid "This field is required"
+msgstr "A mező kitöltése kötelező"
+
+#: node_modules/react-components/containers/api/OfflineNotification.js:15
+msgctxt "Error"
+msgid "Servers are unreachable."
+msgstr "A szerverek nem érhetők el."
+
+#: node_modules/react-components/containers/api/ApiProvider.js:105
 msgctxt "Error"
 msgid "Request timed out."
 msgstr "A kérés túllépte az időkorlátot."
 
+#: node_modules/react-components/containers/api/ApiProvider.js:152
+msgctxt "Error"
+msgid "Bad app version"
+msgstr "Hibás alkalmazás verzió"
+
 #: node_modules/react-components/containers/login/LoginForm.js:88
 msgctxt "Error"
 msgid "Wrong mailbox password"
-msgstr ""
+msgstr "Hibás e-mail titkosítási jelszó"
 
 #: node_modules/react-components/containers/payments/paymentTokenHelper.js:32
 #: node_modules/react-components/containers/payments/paymentTokenHelper.js:128
@@ -150,22 +165,7 @@ msgctxt "Error"
 msgid "Invalid postal code"
 msgstr "Érvénytelen irányítószám"
 
-#: node_modules/react-components/components/alert/DoNotWindowOpenAlertError.js:7
-msgctxt "Error"
-msgid "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
-msgstr "Az Ön által használt böngésző nem támogatja a kívánt fizetési módot. Kérjük, használjon másik böngészőt, vagy jelentkezzen be egy számítógépről."
-
-#: node_modules/react-components/components/input/EmailInput.js:9
-msgctxt "Error"
-msgid "Email address invalid"
-msgstr "Érvénytelen e-mail cím"
-
-#: node_modules/react-components/components/input/Input.js:32
-msgctxt "Error"
-msgid "This field is required"
-msgstr "A mező kitöltése kötelező"
-
-#: src/app/containers/settings/CalendarModal.js:157
+#: src/app/containers/settings/CalendarModal.js:164
 #: src/app/containers/setup/WelcomeModal.js:59
 #: src/app/containers/setup/resetHelper.js:125
 msgctxt "Error"
@@ -182,50 +182,50 @@ msgctxt "Error"
 msgid "No valid address found."
 msgstr "Nincs érvényes cím."
 
-#: src/app/containers/settings/CalendarModal.js:38
+#: src/app/containers/settings/CalendarModal.js:45
 msgctxt "Error"
 msgid "Name required"
 msgstr "Név megadása kötelező"
 
-#: src/app/containers/settings/CalendarModal.js:77
+#: src/app/containers/settings/CalendarModal.js:84
 msgctxt "Error"
 msgid "No valid address found"
 msgstr "Nincs érvényes cím"
 
-#: src/app/containers/settings/CalendarModal.js:98
+#: src/app/containers/settings/CalendarModal.js:105
 msgctxt "Error"
 msgid "Member address not found"
 msgstr "Tag címe nem található"
 
-#: src/app/components/eventModal/eventForm/state.js:195
+#: src/app/components/eventModal/eventForm/state.js:194
 msgctxt "Error"
 msgid "Title required"
 msgstr "Cím megadása kötelező"
 
-#: src/app/components/eventModal/eventForm/state.js:202
+#: src/app/components/eventModal/eventForm/state.js:201
 msgctxt "Error"
 msgid "Start time must be before end time"
 msgstr "A kezdési időnek meg kell előznie a befejezési időt"
 
-#: src/app/components/eventModal/eventForm/state.js:206
+#: src/app/components/eventModal/eventForm/state.js:205
 msgctxt "Error"
 msgid "Interval cannot be empty"
-msgstr ""
+msgstr "Az intervallum nem lehet üres"
 
-#: src/app/components/eventModal/eventForm/state.js:211
+#: src/app/components/eventModal/eventForm/state.js:210
 msgctxt "Error"
 msgid "Ends on date cannot be empty"
-msgstr ""
+msgstr "A befejező dátum szükséges"
 
-#: src/app/components/eventModal/eventForm/state.js:214
+#: src/app/components/eventModal/eventForm/state.js:213
 msgctxt "Error"
 msgid "Ends on date must be after start time"
-msgstr ""
+msgstr "A befejező dátum nem lehet korábbi, mint a kezdő dátum"
 
-#: src/app/components/eventModal/eventForm/state.js:219
+#: src/app/components/eventModal/eventForm/state.js:218
 msgctxt "Error"
 msgid "Number of occurrences cannot be empty"
-msgstr ""
+msgstr "Az ismétlődések száma nem lehet üres"
 
 #: src/app/components/events/EventPopover.js:75
 msgctxt "Error"
@@ -268,320 +268,357 @@ msgctxt "Theme"
 msgid "Dark theme"
 msgstr "Sötét téma"
 
-#: node_modules/react-components/containers/error/GenericError.js:16
-msgctxt "Error message"
-msgid "Aaah! Something went wrong"
-msgstr "Valami nem stimmel"
+#: node_modules/react-components/components/link/LearnMore.js:7
+msgctxt "Link"
+msgid "Learn more"
+msgstr "További információk"
 
-#: node_modules/react-components/containers/error/GenericError.js:19
-msgctxt "Error message"
-msgid "Brace yourself till we get the error fixed."
-msgstr "Kérjük várjon, amíg a hibát elhárítjuk."
+#: node_modules/react-components/containers/support/BugModal.js:89
+msgctxt "Link"
+msgid "clearing your browser cache"
+msgstr "böngésző gyorsítótárának ürítése"
 
-#: node_modules/react-components/containers/error/GenericError.js:20
-msgctxt "Error message"
-msgid "You may also refresh the page or try again later."
-msgstr "Megpróbálhatja frissíteni az oldalt vagy később újra próbálni."
+#: node_modules/react-components/containers/payments/PayPal.js:125
+msgctxt "Link"
+msgid "click here"
+msgstr "kattintson ide"
 
-#: node_modules/react-components/containers/login/AbuseModal.js:21
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:155
-#: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:61
-#: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:63
-#: src/app/containers/setup/ResetModal.js:100
-msgctxt "Action"
-msgid "Close"
-msgstr "Bezárás"
-
-#: node_modules/react-components/containers/login/LoginForm.js:212
-msgctxt "Action"
-msgid "Log in"
-msgstr "Belépés"
-
-#: node_modules/react-components/components/modal/Confirm.js:11
-#: node_modules/react-components/components/modal/FormModal.js:19
-#: node_modules/react-components/containers/login/LoginForm.js:221
-#: node_modules/react-components/containers/payments/PayPal.js:137
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:101
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:143
-#: src/app/components/eventModal/CreateEventModal.js:38
-#: src/app/containers/calendar/InteractiveCalendarView.js:422
-#: src/app/containers/calendar/InteractiveCalendarView.js:443
-#: src/app/containers/settings/AskUpdateTimezoneModal.js:31
-msgctxt "Action"
-msgid "Cancel"
-msgstr "Mégsem"
-
-#: node_modules/react-components/components/modal/FormModal.js:20
-#: node_modules/react-components/containers/login/LoginForm.js:244
-#: node_modules/react-components/containers/login/LoginForm.js:272
-#: node_modules/react-components/containers/support/BugModal.js:135
-msgctxt "Action"
-msgid "Submit"
-msgstr "Küldés"
-
-#: node_modules/react-components/containers/support/AttachScreenshot.js:46
-msgctxt "Action"
-msgid "Clear"
-msgstr "Törlés"
-
-#: node_modules/react-components/containers/support/AttachScreenshot.js:53
-msgctxt "Action"
-msgid "Add screenshot(s)"
-msgstr "Képernyőkép hozzáadása"
-
-#: node_modules/react-components/containers/support/BugModal.js:203
-msgctxt "Action"
-msgid "Hide info"
-msgstr "Információ elrejtése"
-
-#: node_modules/react-components/containers/support/BugModal.js:203
-msgctxt "Action"
-msgid "Show info"
-msgstr "Információ mutatása"
-
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:102
-msgctxt "Action"
-msgid "Verify"
-msgstr "Ellenőrzés"
-
-#: node_modules/react-components/containers/payments/Bitcoin.js:54
-#: node_modules/react-components/containers/payments/PayPal.js:105
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:165
-msgctxt "Action"
-msgid "Try again"
-msgstr "Próbálja újra"
-
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:171
-msgctxt "Action"
-msgid "Use a different card"
-msgstr "Másik bankkártya használata"
-
-#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:172
-msgctxt "Action"
-msgid "Use a different payment method"
-msgstr "Más fizetési mód választása"
-
-#: node_modules/react-components/containers/payments/PayPal.js:149
-#: node_modules/react-components/containers/payments/PayPal.js:178
-msgctxt "Action"
-msgid "Check out with PayPal"
-msgstr "Fizetés Paypal használatával"
-
-#: node_modules/react-components/containers/payments/PayPal.js:164
-msgctxt "Action"
-msgid "Add PayPal payment method"
-msgstr "PayPal fizetési mód hozzáadása"
-
-#: node_modules/react-components/containers/payments/DonateModal.js:43
-msgctxt "Action"
-msgid "Donate"
-msgstr "Adományozás"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:84
-#: node_modules/react-components/containers/heading/UserDropdown.js:92
-msgctxt "Action"
-msgid "Settings"
-msgstr "Beállítások"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:109
-msgctxt "Action"
-msgid "I have a question"
-msgstr "Kérdésem van"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:119
-msgctxt "Action"
-msgid "Report bug"
-msgstr "Hiba jelentése"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:130
-msgctxt "Action"
-msgid "Proton shop"
-msgstr "Proton üzlet"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:140
-msgctxt "Action"
-msgid "Support us"
-msgstr "Támogasson bennünket"
-
-#: node_modules/react-components/containers/heading/UserDropdown.js:149
-msgctxt "Action"
-msgid "Logout"
-msgstr "Kilépés"
-
-#: node_modules/react-components/components/miniCalendar/LocalizedMiniCalendar.js:31
-#: src/app/components/DateCursorButtons.js:62
-msgctxt "Action"
-msgid "Next month"
-msgstr "Következő hónap"
-
-#: node_modules/react-components/components/miniCalendar/LocalizedMiniCalendar.js:32
-msgctxt "Action"
-msgid "Prev month"
-msgstr "Előző hónap"
-
-#: node_modules/react-components/components/modal/Confirm.js:10
-#: node_modules/react-components/components/modal/Confirm.js:12
-msgctxt "Action"
-msgid "Confirm"
-msgstr "Megerősítés"
-
-#: node_modules/react-components/components/modal/Header.js:11
-#: node_modules/react-components/components/modal/Header.js:13
-msgctxt "Action"
-msgid "Close modal"
-msgstr "Ablak bezárása"
-
-#: src/app/containers/setup/FreeModal.js:16
-msgctxt "Action"
-msgid "Back to ProtonMail"
-msgstr "Vissza a ProtonMailre"
-
-#: src/app/containers/setup/WelcomeModal.js:120
-msgctxt "Action"
-msgid "Customize calendar"
-msgstr "Naptár testreszabása"
-
-#: src/app/containers/setup/ResetModal.js:170
-#: src/app/containers/setup/WelcomeModal.js:124
-msgctxt "Action"
-msgid "Continue"
-msgstr "Tovább"
-
-#: src/app/containers/settings/AskUpdateTimezoneModal.js:32
-#: src/app/containers/settings/CalendarModal.js:254
-msgctxt "Action"
-msgid "Update"
-msgstr "Mentés"
-
-#: src/app/containers/settings/CalendarModal.js:254
-msgctxt "Action"
-msgid "Create"
-msgstr "Létrehozás"
-
-#: src/app/components/events/EventPopover.js:126
-#: src/app/containers/settings/section/CalendarsTable.js:14
-msgctxt "Action"
-msgid "Edit"
-msgstr "Szerkesztés"
-
-#: src/app/components/eventModal/CreateEventModal.js:52
-#: src/app/components/eventModal/Notifications.js:27
-#: src/app/components/events/EventPopover.js:63
-#: src/app/containers/calendar/InteractiveCalendarView.js:441
-#: src/app/containers/settings/section/CalendarsSection.js:41
-#: src/app/containers/settings/section/CalendarsTable.js:18
-msgctxt "Action"
-msgid "Delete"
-msgstr "Törlés"
-
-#: src/app/containers/settings/section/CalendarsSection.js:61
-#: src/app/containers/settings/section/CalendarsSection.js:64
-msgctxt "Action"
-msgid "Add calendar"
-msgstr "Naptár hozzáadása"
-
-#: src/app/containers/settings/ViewPreferenceSelector.js:30
-msgctxt "Action"
-msgid "Select calendar view"
-msgstr "Naptár nézet kiválasztása"
-
-#: src/app/containers/calendar/CalendarContainerView.js:110
-#: src/app/containers/settings/SettingsContainer.js:53
-msgctxt "Action"
+#: node_modules/react-components/containers/heading/UpgradeButton.js:13
+#: node_modules/react-components/containers/heading/UpgradeButton.js:21
+msgctxt "Link"
 msgid "Upgrade"
 msgstr "Váltás nagyobb csomagra"
 
-#: src/app/containers/calendar/CalendarSidebar.js:96
-msgctxt "Action"
-msgid "New event"
-msgstr "Új esemény"
+#: src/app/containers/settings/SettingsContainer.js:37
+msgctxt "Link"
+msgid "General"
+msgstr "Általános"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:374
-msgctxt "Action"
-msgid "Yes"
-msgstr "Igen"
+#: src/app/containers/settings/SettingsContainer.js:38
+msgctxt "Link"
+msgid "Calendars"
+msgstr "Naptárak"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:376
-msgctxt "Action"
-msgid "No"
-msgstr "Nem"
+#: node_modules/react-components/components/button/Copy.js:21
+msgctxt "Label"
+msgid "Copied"
+msgstr "Másolva"
 
-#: src/app/containers/calendar/InteractiveCalendarView.js:423
-msgctxt "Action"
-msgid "Discard"
-msgstr "Elvetés"
+#: node_modules/react-components/components/button/Copy.js:21
+msgctxt "Label"
+msgid "Copy"
+msgstr "Másolás"
 
-#: src/app/components/eventModal/Notifications.js:25
-msgctxt "Action"
-msgid "Remove notification"
-msgstr "Emlékeztető törlése"
+#: node_modules/react-components/components/input/PasswordInput.js:21
+msgctxt "Label"
+msgid "Reveal password"
+msgstr "Jelszó felfedése"
 
-#: src/app/components/eventModal/Notifications.js:33
-msgctxt "Action"
-msgid "Add notification"
-msgstr "Új emlékeztető"
+#: node_modules/react-components/components/input/PasswordInput.js:21
+msgctxt "Label"
+msgid "Hide password"
+msgstr "Jelszó elrejtése"
 
-#: src/app/components/eventModal/CreateEventModal.js:44
-#: src/app/components/eventModal/CreateEventPopover.js:58
-msgctxt "Action"
-msgid "Save"
-msgstr "Mentés"
+#: node_modules/react-components/containers/api/HumanVerificationModal.js:22
+msgctxt "Label"
+msgid "Captcha"
+msgstr "CAPTCHA kód"
 
-#: src/app/components/eventModal/CreateEventPopover.js:56
-msgctxt "Action"
-msgid "More options"
-msgstr "További lehetőségek"
+#: node_modules/react-components/containers/login/UnlockModal.js:34
+msgctxt "Label"
+msgid "Cancel"
+msgstr "Mégsem"
 
-#: src/app/components/DateCursorButtons.js:53
-msgctxt "Action"
-msgid "Previous day"
-msgstr "Előző nap"
+#: node_modules/react-components/containers/login/UnlockModal.js:35
+msgctxt "Label"
+msgid "Submit"
+msgstr "Küldés"
 
-#: src/app/components/DateCursorButtons.js:54
-msgctxt "Action"
-msgid "Previous week"
-msgstr "Előző hét"
+#: node_modules/react-components/containers/login/PasswordForm.js:28
+#: node_modules/react-components/containers/login/UnlockModal.js:41
+msgctxt "Label"
+msgid "Password"
+msgstr "Jelszó"
 
-#: src/app/components/DateCursorButtons.js:55
-msgctxt "Action"
-msgid "Previous month"
-msgstr "Előző hónap"
+#: node_modules/react-components/containers/login/PasswordForm.js:10
+msgctxt "Label"
+msgid "Username"
+msgstr "Felhasználónév"
 
-#: src/app/components/DateCursorButtons.js:56
-msgctxt "Action"
-msgid "Previous year"
-msgstr "Előző év"
+#: node_modules/react-components/containers/login/TOTPForm.js:9
+msgctxt "Label"
+msgid "Two-factor code"
+msgstr "Kétlépcsős azonosító kód"
 
-#: src/app/components/DateCursorButtons.js:60
-msgctxt "Action"
-msgid "Next day"
-msgstr "Következő nap"
+#: node_modules/react-components/containers/login/UnlockForm.js:9
+msgctxt "Label"
+msgid "Mailbox password"
+msgstr "E-mail titkosítási jelszó"
 
-#: src/app/components/DateCursorButtons.js:61
-msgctxt "Action"
-msgid "Next week"
-msgstr "Következő hét"
+#: node_modules/react-components/containers/support/BugModal.js:144
+msgctxt "Label"
+msgid "Proton username"
+msgstr "Proton felhasználónév"
 
-#: src/app/components/DateCursorButtons.js:63
-msgctxt "Action"
-msgid "Next year"
-msgstr "Következő év"
+#: node_modules/react-components/containers/support/BugModal.js:156
+msgctxt "Label"
+msgid "Email address"
+msgstr "E-mail cím"
 
-#: src/app/components/DateCursorButtons.js:75
-msgctxt "Action"
-msgid "Today"
-msgstr "Ma"
+#: node_modules/react-components/containers/support/BugModal.js:168
+msgctxt "Label"
+msgid "Category"
+msgstr "Kategória"
 
-#: src/app/components/TimezoneSelector.js:23
-msgctxt "Action"
-msgid "Select timezone"
-msgstr "Időzóna kiválasztása"
+#: node_modules/react-components/containers/support/BugModal.js:180
+msgctxt "Label"
+msgid "What happened?"
+msgstr "Mi történt?"
 
-#: src/app/components/events/PopoverCloseButton.js:7
-#: src/app/components/events/PopoverCloseButton.js:9
-msgctxt "Action"
-msgid "Close popover"
-msgstr "Ablak bezárása"
+#: node_modules/react-components/containers/support/BugModal.js:201
+msgctxt "Label"
+msgid "System information"
+msgstr "Rendszerinformáció"
+
+#: node_modules/react-components/containers/support/BugModal.js:209
+msgctxt "Label"
+msgid "Operating system"
+msgstr "Operációs rendszer"
+
+#: node_modules/react-components/containers/support/BugModal.js:220
+msgctxt "Label"
+msgid "Operating system version"
+msgstr "Az operációs rendszer verziója"
+
+#: node_modules/react-components/containers/support/BugModal.js:231
+msgctxt "Label"
+msgid "Browser"
+msgstr "Böngésző"
+
+#: node_modules/react-components/containers/support/BugModal.js:242
+msgctxt "Label"
+msgid "Browser version"
+msgstr "Böngésző verziója"
+
+#: node_modules/react-components/containers/payments/BitcoinDetails.js:11
+msgctxt "Label"
+msgid "BTC amount"
+msgstr "BTC összeg"
+
+#: node_modules/react-components/containers/payments/BitcoinDetails.js:20
+msgctxt "Label"
+msgid "BTC address"
+msgstr "BTC cím"
+
+#: node_modules/react-components/containers/payments/Payment.js:74
+msgctxt "Label"
+msgid "Payment method"
+msgstr "Fizetési mód"
+
+#: node_modules/react-components/containers/payments/DonateModal.js:48
+msgctxt "Label"
+msgid "Amount"
+msgstr "Összeg"
+
+#: node_modules/react-components/containers/paymentMethods/PaymentMethodDetails.js:17
+msgctxt "Label"
+msgid "Cardholder name"
+msgstr "Kártyatulajdonos neve"
+
+#: node_modules/react-components/containers/paymentMethods/useMethods.js:70
+msgctxt "Label"
+msgid "Pay with cash"
+msgstr "Készpénzes fizetés"
+
+#: src/app/containers/settings/CalendarSettingsTab.js:16
+msgctxt "Label"
+msgid "Name"
+msgstr "Név"
+
+#: src/app/containers/settings/CalendarSettingsTab.js:31
+msgctxt "Label"
+msgid "Choose a color"
+msgstr "Szín választása"
+
+#: src/app/containers/settings/CalendarSettingsTab.js:38
+msgctxt "Label"
+msgid "Default email"
+msgstr "Alapértelmezett email"
+
+#: src/app/containers/settings/CalendarSettingsTab.js:56
+msgctxt "Label"
+msgid "Display"
+msgstr "Megjelenítés"
+
+#: src/app/components/eventModal/EventForm.js:86
+#: src/app/components/eventModal/MinimalEventForm.js:108
+#: src/app/containers/settings/CalendarSettingsTab.js:66
+msgctxt "Label"
+msgid "Description"
+msgstr "Leírás"
+
+#: src/app/containers/settings/EventSettingsTab.js:13
+msgctxt "Label"
+msgid "Default event duration"
+msgstr "Események alapértelmezett hossza"
+
+#: src/app/containers/settings/EventSettingsTab.js:28
+msgctxt "Label"
+msgid "Default notifications"
+msgstr "Alapértelmezett emlékeztetők"
+
+#: src/app/containers/settings/EventSettingsTab.js:44
+msgctxt "Label"
+msgid "Default full day notifications"
+msgstr "Alapértelmezett emlékeztetők (egész napos)"
+
+#: src/app/containers/settings/section/TimeSection.js:67
+msgctxt "Label"
+msgid "Time format"
+msgstr "Idő formátum"
+
+#: src/app/containers/settings/section/LayoutSection.js:41
+msgctxt "Label"
+msgid "Default view"
+msgstr "Alapértelmezett nézet"
+
+#: src/app/containers/settings/section/LayoutSection.js:54
+msgctxt "Label"
+msgid "Week start"
+msgstr "Hét kezdőnapja"
+
+#: src/app/containers/settings/section/LayoutSection.js:65
+msgctxt "Label"
+msgid "Week numbers"
+msgstr "Hét száma"
+
+#: src/app/containers/calendar/CalendarView.js:53
+msgctxt "Label"
+msgid "Week"
+msgstr "Hét"
+
+#: src/app/components/eventModal/inputs/AllDayCheckbox.js:8
+msgctxt "Label"
+msgid "All day"
+msgstr "Egész nap"
+
+#: src/app/components/eventModal/rows/RepeatEveryRow.js:33
+msgctxt "Label"
+msgid "Repeat every"
+msgstr "Ismétlődik minden"
+
+#: src/app/components/eventModal/rows/RepeatOnRow.js:32
+msgctxt "Label"
+msgid "Repeat on"
+msgstr "Ismételődés"
+
+#.  Can get undefined through the input
+#: src/app/components/eventModal/rows/EndsRow.js:44
+msgctxt "Label"
+msgid "Ends"
+msgstr "Befejező dátum"
+
+#: src/app/components/eventModal/rows/DateTimeRow.js:167
+msgctxt "Label"
+msgid "From"
+msgstr "Kezdet"
+
+#: src/app/components/eventModal/rows/DateTimeRow.js:176
+msgctxt "Label"
+msgid "To"
+msgstr "Befejezés"
+
+#: src/app/components/eventModal/EventForm.js:33
+#: src/app/components/eventModal/MinimalEventForm.js:35
+msgctxt "Label"
+msgid "Frequency"
+msgstr "Gyakoriság"
+
+#: src/app/components/eventModal/EventForm.js:46
+msgctxt "Label"
+msgid "Start timezone"
+msgstr "Kezdő időzóna"
+
+#: src/app/components/eventModal/EventForm.js:47
+msgctxt "Label"
+msgid "End timezone"
+msgstr "Befejező időzóna"
+
+#: src/app/components/eventModal/EventForm.js:54
+#: src/app/components/eventModal/MinimalEventForm.js:54
+msgctxt "Label"
+msgid "Calendar"
+msgstr "Naptár"
+
+#: src/app/components/eventModal/EventForm.js:60
+#: src/app/components/eventModal/MinimalEventForm.js:70
+msgctxt "Label"
+msgid "Title"
+msgstr "Megnevezés"
+
+#: src/app/components/eventModal/EventForm.js:69
+msgctxt "Label"
+msgid "Time"
+msgstr "Időpont"
+
+#: src/app/components/eventModal/EventForm.js:81
+#: src/app/components/eventModal/MinimalEventForm.js:97
+msgctxt "Label"
+msgid "Location"
+msgstr "Hely"
+
+#: src/app/components/eventModal/EventForm.js:91
+msgctxt "Label"
+msgid "Notifications"
+msgstr "Emlékeztetők"
+
+#: node_modules/react-components/components/input/TimeInput.js:26
+#, javascript-format
+msgctxt "Time unit"
+msgid "${ hours } hour"
+msgid_plural "${ hours } hours"
+msgstr[0] "${ hours } óra"
+msgstr[1] "${ hours } óra"
+
+#: node_modules/react-components/components/input/TimeInput.js:27
+msgctxt "Time unit"
+msgid "${ minutes } minutes"
+msgid_plural "${ minutes } minutes"
+msgstr[0] "${ minutes } perc"
+msgstr[1] "${ minutes } perc"
+
+#: src/app/components/eventModal/inputs/NotificationInput.js:82
+msgctxt "Time unit"
+msgid "Minute"
+msgid_plural "Minutes"
+msgstr[0] "Perc"
+msgstr[1] "Perc"
+
+#: src/app/components/eventModal/inputs/NotificationInput.js:86
+msgctxt "Time unit"
+msgid "Hour"
+msgid_plural "Hours"
+msgstr[0] "Óra"
+msgstr[1] "Óra"
+
+#: src/app/components/eventModal/inputs/NotificationInput.js:89
+msgctxt "Time unit"
+msgid "Day"
+msgid_plural "Days"
+msgstr[0] "Nap"
+msgstr[1] "Nap"
+
+#: src/app/components/eventModal/inputs/NotificationInput.js:90
+msgctxt "Time unit"
+msgid "Week"
+msgid_plural "Weeks"
+msgstr[0] "Hét"
+msgstr[1] "Hét"
+
+#: node_modules/react-components/components/dropdown/DropdownActions.js:48
+msgctxt "Title"
+msgid "Open actions dropdown"
+msgstr "Műveletek legördülő megnyitása"
 
 #: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:78
 msgctxt "Title"
@@ -659,11 +696,6 @@ msgctxt "Title"
 msgid "Make a donation"
 msgstr "Adományozás"
 
-#: node_modules/react-components/components/dropdown/DropdownActions.js:48
-msgctxt "Title"
-msgid "Open actions dropdown"
-msgstr "Műveletek legördülő megnyitása"
-
 #: src/app/containers/setup/FreeModal.js:13
 #: src/app/containers/setup/ResetModal.js:157
 #: src/app/containers/setup/WelcomeModal.js:40
@@ -687,12 +719,12 @@ msgctxt "Title"
 msgid "Reactivate calendar keys"
 msgstr "Naptár kulcsok újraaktiválása"
 
-#: src/app/containers/settings/CalendarModal.js:57
+#: src/app/containers/settings/CalendarModal.js:64
 msgctxt "Title"
 msgid "Update calendar"
 msgstr "Naptár beállításai"
 
-#: src/app/containers/settings/CalendarModal.js:57
+#: src/app/containers/settings/CalendarModal.js:64
 msgctxt "Title"
 msgid "Create calendar"
 msgstr "Naptár létrehozása"
@@ -707,18 +739,18 @@ msgctxt "Title"
 msgid "Layout"
 msgstr "Elrendezés"
 
-#: src/app/containers/settings/section/CalendarsSection.js:40
+#: src/app/containers/settings/section/CalendarsSection.js:62
 msgctxt "Title"
 msgid "Delete calendar"
 msgstr "Naptár törlése"
 
-#: src/app/containers/settings/section/CalendarsSection.js:58
+#: src/app/containers/settings/section/CalendarsSection.js:91
 msgctxt "Title"
 msgid "Calendars"
 msgstr "Naptárak"
 
 #: src/app/components/layout/PrivateHeader.js:36
-#: src/app/containers/settings/SettingsContainer.js:63
+#: src/app/containers/settings/SettingsContainer.js:65
 msgctxt "Title"
 msgid "Settings"
 msgstr "Beállítások"
@@ -775,6 +807,21 @@ msgctxt "Title"
 msgid "Description"
 msgstr "Leírás"
 
+#: node_modules/react-components/components/toggle/Toggle.js:10
+msgctxt "Toggle button"
+msgid "On"
+msgstr "Be"
+
+#: node_modules/react-components/components/toggle/Toggle.js:11
+msgctxt "Toggle button"
+msgid "Off"
+msgstr "Ki"
+
+#: node_modules/react-components/components/miniCalendar/WeekNumbers.js:36
+msgctxt "Info"
+msgid "Week"
+msgstr "Hét"
+
 #: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:79
 #, javascript-format
 msgctxt "Info"
@@ -790,6 +837,12 @@ msgstr "A tárhelyen az összes Proton termék osztozik."
 msgctxt "Info"
 msgid "For security reasons, please verify that you are not a robot."
 msgstr "Biztonsági okokból, kérjük, igazolja, hogy nem egy robot."
+
+#.  The only way to get out of this one is to refresh.
+#: node_modules/react-components/containers/api/ApiProvider.js:71
+msgctxt "Info"
+msgid "Application upgrade required"
+msgstr "Az alkalmazás frissítése szükséges"
 
 #: node_modules/react-components/containers/app/LoaderPage.js:15
 #, javascript-format
@@ -913,7 +966,7 @@ msgstr "Ahhoz, hogy felvehesse fizetési módként, a PayPal számlájához hozz
 #, javascript-format
 msgctxt "Info"
 msgid "Amount below minimum (${ amount })."
-msgstr ""
+msgstr "Az összeg a minimum alatt. (${ amount })."
 
 #: node_modules/react-components/containers/payments/Bitcoin.js:66
 msgctxt "Info"
@@ -939,16 +992,6 @@ msgstr "Lejárt"
 msgctxt "Info"
 msgid "default"
 msgstr "alapértelmezett"
-
-#: node_modules/react-components/components/miniCalendar/WeekNumbers.js:36
-msgctxt "Info"
-msgid "Week"
-msgstr "Hét"
-
-#: src/app/content/PrivateApp.js:57
-msgctxt "Info"
-msgid "Loading ProtonCalendar"
-msgstr "ProtonCalendar betöltése"
 
 #: src/app/containers/setup/FreeModal.js:24
 msgctxt "Info"
@@ -996,15 +1039,16 @@ msgctxt "Info"
 msgid "Week and month views only apply to desktop."
 msgstr "A heti és havi nézet csak számítógépen érhető el."
 
-#: src/app/containers/settings/section/CalendarsSection.js:45
+#: src/app/containers/settings/section/CalendarsSection.js:67
 msgctxt "Info"
 msgid "Are you sure you want to delete this calendar?"
 msgstr "Biztos, hogy törölni szeretné ezt a naptárat?"
 
-#: src/app/containers/settings/section/CalendarsSection.js:63
+#: src/app/containers/settings/section/CalendarsSection.js:69
+#, javascript-format
 msgctxt "Info"
-msgid "Feature coming soon"
-msgstr "A funkció hamarosan érkezik"
+msgid "${ calendarName } will be set as default calendar."
+msgstr "${ calendarName } lesz az alapértelmezett naptár."
 
 #: src/app/containers/calendar/CalendarContainerView.js:150
 msgctxt "Info"
@@ -1097,7 +1141,7 @@ msgstr "Hetente ekkor: ${ startDay }"
 #: src/app/helpers/rrule.js:80
 msgctxt "Info"
 msgid "Monthly ${ onDayString }"
-msgstr ""
+msgstr "Havonta: ${ onDayString }"
 
 #: src/app/helpers/rrule.js:83
 #: src/app/helpers/rrule.js:134
@@ -1108,295 +1152,351 @@ msgstr "Évente"
 #: src/app/helpers/rrule.js:95
 msgctxt "Info"
 msgid "all days"
-msgstr ""
+msgstr "minden nap"
 
 #: src/app/helpers/rrule.js:110
 #, javascript-format
 msgctxt "Info"
 msgid "Weekly on ${ days }"
 msgid_plural "Every ${ interval } weeks on ${ days }"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hetente ekkor: ${ days }"
+msgstr[1] "Minden ${ interval }. héten ekkor: ${ days }"
 
 #: src/app/helpers/rrule.js:123
 msgctxt "Info"
 msgid "Monthly"
 msgid_plural "Every ${ interval } months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Havonta"
+msgstr[1] "Minden ${ interval }. hónapban"
 
-#: node_modules/react-components/containers/api/HumanVerificationModal.js:22
-msgctxt "Label"
-msgid "Captcha"
-msgstr "CAPTCHA kód"
+#: src/app/content/PrivateApp.js:52
+msgctxt "Info"
+msgid "Loading ProtonCalendar"
+msgstr "ProtonCalendar betöltése"
 
-#: node_modules/react-components/containers/login/UnlockModal.js:34
-msgctxt "Label"
+#: node_modules/react-components/components/miniCalendar/LocalizedMiniCalendar.js:31
+#: src/app/components/DateCursorButtons.js:62
+msgctxt "Action"
+msgid "Next month"
+msgstr "Következő hónap"
+
+#: node_modules/react-components/components/miniCalendar/LocalizedMiniCalendar.js:32
+msgctxt "Action"
+msgid "Prev month"
+msgstr "Előző hónap"
+
+#: node_modules/react-components/components/modal/Confirm.js:10
+#: node_modules/react-components/components/modal/Confirm.js:12
+msgctxt "Action"
+msgid "Confirm"
+msgstr "Megerősítés"
+
+#: node_modules/react-components/components/modal/Confirm.js:11
+#: node_modules/react-components/components/modal/FormModal.js:19
+#: node_modules/react-components/containers/login/LoginForm.js:221
+#: node_modules/react-components/containers/payments/PayPal.js:137
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:101
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:143
+#: src/app/components/eventModal/CreateEventModal.js:38
+#: src/app/containers/calendar/InteractiveCalendarView.js:422
+#: src/app/containers/calendar/InteractiveCalendarView.js:443
+#: src/app/containers/settings/AskUpdateTimezoneModal.js:31
+msgctxt "Action"
 msgid "Cancel"
 msgstr "Mégsem"
 
-#: node_modules/react-components/containers/login/UnlockModal.js:35
-msgctxt "Label"
+#: node_modules/react-components/components/modal/Header.js:11
+#: node_modules/react-components/components/modal/Header.js:13
+msgctxt "Action"
+msgid "Close modal"
+msgstr "Ablak bezárása"
+
+#: node_modules/react-components/components/modal/FormModal.js:20
+#: node_modules/react-components/containers/login/LoginForm.js:244
+#: node_modules/react-components/containers/login/LoginForm.js:272
+#: node_modules/react-components/containers/support/BugModal.js:135
+msgctxt "Action"
 msgid "Submit"
 msgstr "Küldés"
 
-#: node_modules/react-components/containers/login/PasswordForm.js:28
-#: node_modules/react-components/containers/login/UnlockModal.js:41
-msgctxt "Label"
-msgid "Password"
-msgstr "Jelszó"
+#: node_modules/react-components/containers/login/AbuseModal.js:21
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:155
+#: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:61
+#: node_modules/react-components/containers/sidebar/StorageSpaceStatus.js:63
+#: src/app/containers/setup/ResetModal.js:100
+msgctxt "Action"
+msgid "Close"
+msgstr "Bezárás"
 
-#: node_modules/react-components/containers/login/PasswordForm.js:10
-msgctxt "Label"
-msgid "Username"
-msgstr "Felhasználónév"
+#: node_modules/react-components/containers/api/OfflineNotification.js:10
+msgctxt "Action"
+msgid "Retry now"
+msgstr "Újra"
 
-#: node_modules/react-components/containers/login/TOTPForm.js:9
-msgctxt "Label"
-msgid "Two-factor code"
-msgstr "Kétlépcsős azonosító kód"
+#: node_modules/react-components/containers/login/LoginForm.js:212
+msgctxt "Action"
+msgid "Log in"
+msgstr "Belépés"
 
-#: node_modules/react-components/containers/login/UnlockForm.js:9
-msgctxt "Label"
-msgid "Mailbox password"
-msgstr "E-mail titkosítási jelszó"
+#: node_modules/react-components/containers/support/AttachScreenshot.js:46
+msgctxt "Action"
+msgid "Clear"
+msgstr "Törlés"
 
-#: node_modules/react-components/containers/support/BugModal.js:144
-msgctxt "Label"
-msgid "Proton username"
-msgstr "Proton felhasználónév"
+#: node_modules/react-components/containers/support/AttachScreenshot.js:53
+msgctxt "Action"
+msgid "Add screenshot(s)"
+msgstr "Képernyőkép hozzáadása"
 
-#: node_modules/react-components/containers/support/BugModal.js:156
-msgctxt "Label"
-msgid "Email address"
-msgstr "E-mail cím"
+#: node_modules/react-components/containers/support/BugModal.js:203
+msgctxt "Action"
+msgid "Hide info"
+msgstr "Információ elrejtése"
 
-#: node_modules/react-components/containers/support/BugModal.js:168
-msgctxt "Label"
-msgid "Category"
-msgstr "Kategória"
+#: node_modules/react-components/containers/support/BugModal.js:203
+msgctxt "Action"
+msgid "Show info"
+msgstr "Információ mutatása"
 
-#: node_modules/react-components/containers/support/BugModal.js:180
-msgctxt "Label"
-msgid "What happened?"
-msgstr "Mi történt?"
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:102
+msgctxt "Action"
+msgid "Verify"
+msgstr "Ellenőrzés"
 
-#: node_modules/react-components/containers/support/BugModal.js:201
-msgctxt "Label"
-msgid "System information"
-msgstr "Rendszerinformáció"
+#: node_modules/react-components/containers/payments/Bitcoin.js:54
+#: node_modules/react-components/containers/payments/PayPal.js:105
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:165
+msgctxt "Action"
+msgid "Try again"
+msgstr "Próbálja újra"
 
-#: node_modules/react-components/containers/support/BugModal.js:209
-msgctxt "Label"
-msgid "Operating system"
-msgstr "Operációs rendszer"
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:171
+msgctxt "Action"
+msgid "Use a different card"
+msgstr "Másik bankkártya használata"
 
-#: node_modules/react-components/containers/support/BugModal.js:220
-msgctxt "Label"
-msgid "Operating system version"
-msgstr "Az operációs rendszer verziója"
+#: node_modules/react-components/containers/payments/PaymentVerificationModal.js:172
+msgctxt "Action"
+msgid "Use a different payment method"
+msgstr "Más fizetési mód választása"
 
-#: node_modules/react-components/containers/support/BugModal.js:231
-msgctxt "Label"
-msgid "Browser"
-msgstr "Böngésző"
+#: node_modules/react-components/containers/payments/PayPal.js:149
+#: node_modules/react-components/containers/payments/PayPal.js:178
+msgctxt "Action"
+msgid "Check out with PayPal"
+msgstr "Fizetés Paypal használatával"
 
-#: node_modules/react-components/containers/support/BugModal.js:242
-msgctxt "Label"
-msgid "Browser version"
-msgstr "Böngésző verziója"
+#: node_modules/react-components/containers/payments/PayPal.js:164
+msgctxt "Action"
+msgid "Add PayPal payment method"
+msgstr "PayPal fizetési mód hozzáadása"
 
-#: node_modules/react-components/containers/payments/BitcoinDetails.js:11
-msgctxt "Label"
-msgid "BTC amount"
-msgstr ""
+#: node_modules/react-components/containers/payments/DonateModal.js:43
+msgctxt "Action"
+msgid "Donate"
+msgstr "Adományozás"
 
-#: node_modules/react-components/containers/payments/BitcoinDetails.js:20
-msgctxt "Label"
-msgid "BTC address"
-msgstr "BTC cím"
+#: node_modules/react-components/containers/heading/UserDropdown.js:84
+#: node_modules/react-components/containers/heading/UserDropdown.js:92
+msgctxt "Action"
+msgid "Settings"
+msgstr "Beállítások"
 
-#: node_modules/react-components/containers/payments/Payment.js:74
-msgctxt "Label"
-msgid "Payment method"
-msgstr "Fizetési mód"
+#: node_modules/react-components/containers/heading/UserDropdown.js:109
+msgctxt "Action"
+msgid "I have a question"
+msgstr "Kérdésem van"
 
-#: node_modules/react-components/containers/payments/DonateModal.js:48
-msgctxt "Label"
-msgid "Amount"
-msgstr "Összeg"
+#: node_modules/react-components/containers/heading/UserDropdown.js:119
+msgctxt "Action"
+msgid "Report bug"
+msgstr "Hiba jelentése"
 
-#: node_modules/react-components/containers/paymentMethods/PaymentMethodDetails.js:17
-msgctxt "Label"
-msgid "Cardholder name"
-msgstr "Kártyatulajdonos neve"
+#: node_modules/react-components/containers/heading/UserDropdown.js:130
+msgctxt "Action"
+msgid "Proton shop"
+msgstr "Proton üzlet"
 
-#: node_modules/react-components/containers/paymentMethods/useMethods.js:70
-msgctxt "Label"
-msgid "Pay with cash"
-msgstr "Készpénzes fizetés"
+#: node_modules/react-components/containers/heading/UserDropdown.js:140
+msgctxt "Action"
+msgid "Support us"
+msgstr "Támogasson bennünket"
 
-#: node_modules/react-components/components/button/Copy.js:21
-msgctxt "Label"
-msgid "Copied"
-msgstr "Másolva"
+#: node_modules/react-components/containers/heading/UserDropdown.js:149
+msgctxt "Action"
+msgid "Logout"
+msgstr "Kilépés"
 
-#: node_modules/react-components/components/button/Copy.js:21
-msgctxt "Label"
-msgid "Copy"
-msgstr "Másolás"
+#: src/app/containers/setup/FreeModal.js:16
+msgctxt "Action"
+msgid "Back to ProtonMail"
+msgstr "Vissza a ProtonMailre"
 
-#: node_modules/react-components/components/input/PasswordInput.js:21
-msgctxt "Label"
-msgid "Reveal password"
-msgstr "Jelszó felfedése"
+#: src/app/containers/setup/WelcomeModal.js:120
+msgctxt "Action"
+msgid "Customize calendar"
+msgstr "Naptár testreszabása"
 
-#: node_modules/react-components/components/input/PasswordInput.js:21
-msgctxt "Label"
-msgid "Hide password"
-msgstr "Jelszó elrejtése"
+#: src/app/containers/setup/ResetModal.js:170
+#: src/app/containers/setup/WelcomeModal.js:124
+msgctxt "Action"
+msgid "Continue"
+msgstr "Tovább"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:16
-msgctxt "Label"
-msgid "Name"
-msgstr "Név"
+#: src/app/containers/settings/AskUpdateTimezoneModal.js:32
+#: src/app/containers/settings/CalendarModal.js:267
+msgctxt "Action"
+msgid "Update"
+msgstr "Mentés"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:30
-msgctxt "Label"
-msgid "Choose a color"
-msgstr "Szín választása"
+#: src/app/containers/settings/CalendarModal.js:267
+msgctxt "Action"
+msgid "Create"
+msgstr "Létrehozás"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:37
-msgctxt "Label"
-msgid "Default email"
-msgstr "Alapértelmezett email"
+#: src/app/components/events/EventPopover.js:126
+#: src/app/containers/settings/section/CalendarsTable.js:14
+msgctxt "Action"
+msgid "Edit"
+msgstr "Szerkesztés"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:55
-msgctxt "Label"
-msgid "Display"
-msgstr "Megjelenítés"
+#: src/app/containers/settings/section/CalendarsTable.js:18
+msgctxt "Action"
+msgid "Set as default"
+msgstr "Beállítás alapértelmezettként"
 
-#: src/app/components/eventModal/EventForm.js:91
-#: src/app/components/eventModal/MinimalEventForm.js:109
-#: src/app/containers/settings/CalendarSettingsTab.js:65
-msgctxt "Label"
-msgid "Description"
-msgstr "Leírás"
+#: src/app/components/eventModal/CreateEventModal.js:52
+#: src/app/components/eventModal/Notifications.js:27
+#: src/app/components/events/EventPopover.js:63
+#: src/app/containers/calendar/InteractiveCalendarView.js:441
+#: src/app/containers/settings/section/CalendarsSection.js:63
+#: src/app/containers/settings/section/CalendarsTable.js:22
+msgctxt "Action"
+msgid "Delete"
+msgstr "Törlés"
 
-#: src/app/containers/settings/EventSettingsTab.js:13
-msgctxt "Label"
-msgid "Default event duration"
-msgstr "Események alapértelmezett hossza"
+#: src/app/containers/settings/section/CalendarsSection.js:94
+msgctxt "Action"
+msgid "Add calendar"
+msgstr "Naptár hozzáadása"
 
-#: src/app/containers/settings/EventSettingsTab.js:28
-msgctxt "Label"
-msgid "Default notifications"
-msgstr "Alapértelmezett emlékeztetők"
+#: src/app/containers/settings/ViewPreferenceSelector.js:30
+msgctxt "Action"
+msgid "Select calendar view"
+msgstr "Naptár nézet kiválasztása"
 
-#: src/app/containers/settings/EventSettingsTab.js:44
-msgctxt "Label"
-msgid "Default full day notifications"
-msgstr "Alapértelmezett emlékeztetők (egész napos)"
+#: src/app/containers/calendar/CalendarContainerView.js:110
+#: src/app/containers/settings/SettingsContainer.js:55
+msgctxt "Action"
+msgid "Upgrade"
+msgstr "Váltás nagyobb csomagra"
 
-#: src/app/containers/settings/section/TimeSection.js:67
-msgctxt "Label"
-msgid "Time format"
-msgstr "Idő formátum"
+#: src/app/containers/calendar/CalendarSidebar.js:93
+msgctxt "Action"
+msgid "New event"
+msgstr "Új esemény"
 
-#: src/app/containers/settings/section/LayoutSection.js:41
-msgctxt "Label"
-msgid "Default view"
-msgstr "Alapértelmezett nézet"
+#: src/app/containers/calendar/InteractiveCalendarView.js:374
+msgctxt "Action"
+msgid "Yes"
+msgstr "Igen"
 
-#: src/app/containers/settings/section/LayoutSection.js:54
-msgctxt "Label"
-msgid "Week start"
-msgstr "Hét kezdőnapja"
+#: src/app/containers/calendar/InteractiveCalendarView.js:376
+msgctxt "Action"
+msgid "No"
+msgstr "Nem"
 
-#: src/app/containers/settings/section/LayoutSection.js:65
-msgctxt "Label"
-msgid "Week numbers"
-msgstr "Hét száma"
+#: src/app/containers/calendar/InteractiveCalendarView.js:423
+msgctxt "Action"
+msgid "Discard"
+msgstr "Elvetés"
 
-#: src/app/containers/calendar/CalendarView.js:53
-msgctxt "Label"
-msgid "Week"
-msgstr "Hét"
+#: src/app/components/eventModal/Notifications.js:25
+msgctxt "Action"
+msgid "Remove notification"
+msgstr "Emlékeztető törlése"
 
-#: src/app/components/eventModal/inputs/AllDayCheckbox.js:8
-msgctxt "Label"
-msgid "All day"
-msgstr "Egész nap"
+#: src/app/components/eventModal/Notifications.js:33
+msgctxt "Action"
+msgid "Add notification"
+msgstr "Új emlékeztető"
 
-#: src/app/components/eventModal/rows/RepeatEveryRow.js:33
-msgctxt "Label"
-msgid "Repeat every"
-msgstr ""
+#: src/app/components/eventModal/CreateEventModal.js:44
+#: src/app/components/eventModal/CreateEventPopover.js:58
+msgctxt "Action"
+msgid "Save"
+msgstr "Mentés"
 
-#: src/app/components/eventModal/rows/RepeatOnRow.js:32
-msgctxt "Label"
-msgid "Repeat on"
-msgstr ""
+#: src/app/components/eventModal/CreateEventPopover.js:56
+msgctxt "Action"
+msgid "More options"
+msgstr "További lehetőségek"
 
-#.  Can get undefined through the input
-#: src/app/components/eventModal/rows/EndsRow.js:44
-msgctxt "Label"
-msgid "Ends"
-msgstr ""
+#: src/app/components/DateCursorButtons.js:53
+msgctxt "Action"
+msgid "Previous day"
+msgstr "Előző nap"
 
-#: src/app/components/eventModal/rows/DateTimeRow.js:167
-msgctxt "Label"
-msgid "From"
-msgstr "Kezdet"
+#: src/app/components/DateCursorButtons.js:54
+msgctxt "Action"
+msgid "Previous week"
+msgstr "Előző hét"
 
-#: src/app/components/eventModal/rows/DateTimeRow.js:176
-msgctxt "Label"
-msgid "To"
-msgstr "Befejezés"
+#: src/app/components/DateCursorButtons.js:55
+msgctxt "Action"
+msgid "Previous month"
+msgstr "Előző hónap"
 
-#: src/app/components/eventModal/EventForm.js:33
-#: src/app/components/eventModal/MinimalEventForm.js:35
-msgctxt "Label"
-msgid "Frequency"
-msgstr "Gyakoriság"
+#: src/app/components/DateCursorButtons.js:56
+msgctxt "Action"
+msgid "Previous year"
+msgstr "Előző év"
 
-#: src/app/components/eventModal/EventForm.js:46
-msgctxt "Label"
-msgid "Start timezone"
-msgstr "Kezdő időzóna"
+#: src/app/components/DateCursorButtons.js:60
+msgctxt "Action"
+msgid "Next day"
+msgstr "Következő nap"
 
-#: src/app/components/eventModal/EventForm.js:47
-msgctxt "Label"
-msgid "End timezone"
-msgstr "Befejező időzóna"
+#: src/app/components/DateCursorButtons.js:61
+msgctxt "Action"
+msgid "Next week"
+msgstr "Következő hét"
 
-#: src/app/components/eventModal/EventForm.js:55
-#: src/app/components/eventModal/MinimalEventForm.js:54
-msgctxt "Label"
-msgid "Calendar"
-msgstr "Naptár"
+#: src/app/components/DateCursorButtons.js:63
+msgctxt "Action"
+msgid "Next year"
+msgstr "Következő év"
 
-#: src/app/components/eventModal/EventForm.js:65
-#: src/app/components/eventModal/MinimalEventForm.js:71
-msgctxt "Label"
-msgid "Title"
-msgstr "Megnevezés"
+#: src/app/components/DateCursorButtons.js:75
+msgctxt "Action"
+msgid "Today"
+msgstr "Ma"
 
-#: src/app/components/eventModal/EventForm.js:74
-msgctxt "Label"
-msgid "Time"
-msgstr "Időpont"
+#: src/app/components/TimezoneSelector.js:23
+msgctxt "Action"
+msgid "Select timezone"
+msgstr "Időzóna kiválasztása"
 
-#: src/app/components/eventModal/EventForm.js:86
-#: src/app/components/eventModal/MinimalEventForm.js:98
-msgctxt "Label"
-msgid "Location"
-msgstr "Hely"
+#: src/app/components/events/PopoverCloseButton.js:7
+#: src/app/components/events/PopoverCloseButton.js:9
+msgctxt "Action"
+msgid "Close popover"
+msgstr "Ablak bezárása"
 
-#: src/app/components/eventModal/EventForm.js:96
-msgctxt "Label"
-msgid "Notifications"
-msgstr "Emlékeztetők"
+#: node_modules/react-components/containers/error/GenericError.js:16
+msgctxt "Error message"
+msgid "Aaah! Something went wrong"
+msgstr "Valami nem stimmel"
+
+#: node_modules/react-components/containers/error/GenericError.js:19
+msgctxt "Error message"
+msgid "Brace yourself till we get the error fixed."
+msgstr "Kérjük várjon, amíg a hibát elhárítjuk."
+
+#: node_modules/react-components/containers/error/GenericError.js:20
+msgctxt "Error message"
+msgid "You may also refresh the page or try again later."
+msgstr "Megpróbálhatja frissíteni az oldalt vagy később újra próbálni."
 
 #: node_modules/react-components/containers/login/PasswordForm.js:22
 msgctxt "Placeholder"
@@ -1478,12 +1578,12 @@ msgctxt "Placeholder"
 msgid "Postal code"
 msgstr "Irányítószám"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:23
+#: src/app/containers/settings/CalendarSettingsTab.js:24
 msgctxt "Placeholder"
 msgid "Add a calendar name"
 msgstr "Adja meg a naptár nevét"
 
-#: src/app/containers/settings/CalendarSettingsTab.js:71
+#: src/app/containers/settings/CalendarSettingsTab.js:72
 msgctxt "Placeholder"
 msgid "Add a calendar description"
 msgstr "Adja meg a naptár leírását"
@@ -1622,37 +1722,6 @@ msgctxt "Action to select a title for the bug report modal"
 msgid "Select"
 msgstr "Válasszon"
 
-#: node_modules/react-components/containers/support/BugModal.js:89
-msgctxt "Link"
-msgid "clearing your browser cache"
-msgstr "böngésző gyorsítótárának ürítése"
-
-#: node_modules/react-components/containers/payments/PayPal.js:125
-msgctxt "Link"
-msgid "click here"
-msgstr "kattintson ide"
-
-#: node_modules/react-components/containers/heading/UpgradeButton.js:13
-#: node_modules/react-components/containers/heading/UpgradeButton.js:21
-msgctxt "Link"
-msgid "Upgrade"
-msgstr "Váltás nagyobb csomagra"
-
-#: node_modules/react-components/components/link/LearnMore.js:7
-msgctxt "Link"
-msgid "Learn more"
-msgstr "További információk"
-
-#: src/app/containers/settings/SettingsContainer.js:35
-msgctxt "Link"
-msgid "General"
-msgstr "Általános"
-
-#: src/app/containers/settings/SettingsContainer.js:36
-msgctxt "Link"
-msgid "Calendars"
-msgstr "Naptárak"
-
 #: node_modules/react-components/containers/support/BugModal.js:120
 msgctxt "Success"
 msgid "Bug reported"
@@ -1663,12 +1732,12 @@ msgctxt "Success"
 msgid "Your support is essential to keeping Proton running. Thank you for supporting internet privacy!"
 msgstr "A támogatása elengedhetetlen, hogy a Proton működhessen. Köszönjük, hogy támogatja a személyes adatok védelmét az interneten!"
 
-#: src/app/containers/settings/CalendarModal.js:227
+#: src/app/containers/settings/CalendarModal.js:240
 msgctxt "Success"
 msgid "Calendar updated"
 msgstr "Naptár frissítve"
 
-#: src/app/containers/settings/CalendarModal.js:227
+#: src/app/containers/settings/CalendarModal.js:240
 msgctxt "Success"
 msgid "Calendar created"
 msgstr "Naptár létrehozva"
@@ -1681,7 +1750,12 @@ msgctxt "Success"
 msgid "Preference saved"
 msgstr "Beállítások mentve"
 
-#: src/app/containers/settings/section/CalendarsSection.js:51
+#: src/app/containers/settings/section/CalendarsSection.js:41
+msgctxt "Success"
+msgid "Default calendar updated"
+msgstr "Alapértelmezett naptár frissítve"
+
+#: src/app/containers/settings/section/CalendarsSection.js:81
 msgctxt "Success"
 msgid "Calendar removed"
 msgstr "Naptár törölve"
@@ -1772,59 +1846,6 @@ msgctxt "Payment method option"
 msgid "Pay with Bitcoin"
 msgstr "Fizetés Bitcoinnal"
 
-#: node_modules/react-components/components/input/TimeInput.js:26
-#, javascript-format
-msgctxt "Time unit"
-msgid "${ hours } hour"
-msgid_plural "${ hours } hours"
-msgstr[0] "${ hours } óra"
-msgstr[1] "${ hours } óra"
-
-#: node_modules/react-components/components/input/TimeInput.js:27
-msgctxt "Time unit"
-msgid "${ minutes } minutes"
-msgid_plural "${ minutes } minutes"
-msgstr[0] "${ minutes } perc"
-msgstr[1] "${ minutes } perc"
-
-#: src/app/components/eventModal/inputs/NotificationInput.js:82
-msgctxt "Time unit"
-msgid "Minute"
-msgid_plural "Minutes"
-msgstr[0] "Perc"
-msgstr[1] "Perc"
-
-#: src/app/components/eventModal/inputs/NotificationInput.js:86
-msgctxt "Time unit"
-msgid "Hour"
-msgid_plural "Hours"
-msgstr[0] "Óra"
-msgstr[1] "Óra"
-
-#: src/app/components/eventModal/inputs/NotificationInput.js:89
-msgctxt "Time unit"
-msgid "Day"
-msgid_plural "Days"
-msgstr[0] "Nap"
-msgstr[1] "Nap"
-
-#: src/app/components/eventModal/inputs/NotificationInput.js:90
-msgctxt "Time unit"
-msgid "Week"
-msgid_plural "Weeks"
-msgstr[0] "Hét"
-msgstr[1] "Hét"
-
-#: node_modules/react-components/components/toggle/Toggle.js:10
-msgctxt "Toggle button"
-msgid "On"
-msgstr "Be"
-
-#: node_modules/react-components/components/toggle/Toggle.js:11
-msgctxt "Toggle button"
-msgid "Off"
-msgstr "Ki"
-
 #: src/app/containers/settings/section/CalendarsTable.js:8
 #: src/app/containers/setup/CalendarReactivateSection.js:11
 #: src/app/containers/setup/CalendarResetSection.js:11
@@ -1832,15 +1853,20 @@ msgctxt "Header"
 msgid "Name"
 msgstr "Név"
 
-#: src/app/containers/settings/CalendarModal.js:233
+#: src/app/containers/settings/CalendarModal.js:246
 msgctxt "Header"
 msgid "Calendar settings"
 msgstr "Naptár beállításai"
 
-#: src/app/containers/settings/CalendarModal.js:245
+#: src/app/containers/settings/CalendarModal.js:258
 msgctxt "Header"
 msgid "Event settings"
 msgstr "Események beállításai"
+
+#: src/app/containers/settings/section/CalendarsTable.js:8
+msgctxt "Header"
+msgid "Status"
+msgstr "Állapot"
 
 #: src/app/containers/settings/section/CalendarsTable.js:8
 msgctxt "Header"
@@ -1917,6 +1943,11 @@ msgctxt "Secondary timezone"
 msgid "Secondary time zone"
 msgstr "Másodlagos időzóna"
 
+#: src/app/containers/settings/section/CalendarsTable.js:37
+msgctxt "Key badge"
+msgid "Default"
+msgstr "Alapértelmezett"
+
 #: src/app/containers/settings/WeekStartSelector.js:14
 msgctxt "Week day"
 msgid "Sunday"
@@ -1945,7 +1976,7 @@ msgctxt "Calendar view"
 msgid "Month"
 msgstr "Hónap"
 
-#: src/app/containers/settings/SettingsContainer.js:31
+#: src/app/containers/settings/SettingsContainer.js:33
 msgctxt "Page title"
 msgid "Calendar settings - ProtonCalendar"
 msgstr "Naptár beállítások - ProtonCalendar"
@@ -1998,7 +2029,7 @@ msgstr "Ne ismétlődjön"
 #: src/app/components/eventModal/inputs/FrequencyInput.js:13
 msgctxt "Option"
 msgid "Every day"
-msgstr ""
+msgstr "Minden nap"
 
 #: src/app/components/eventModal/inputs/FrequencyInput.js:14
 msgctxt "Option"
@@ -2018,95 +2049,95 @@ msgstr "Minden évben"
 #: src/app/components/eventModal/inputs/FrequencyInput.js:17
 msgctxt "Option"
 msgid "Custom"
-msgstr ""
+msgstr "Egyéni"
 
 #.  Can get undefined through the input
 #: src/app/components/eventModal/rows/RepeatEveryRow.js:15
 msgctxt "Option"
 msgid "Day"
 msgid_plural "Days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Nap"
+msgstr[1] "Nap"
 
 #.  Can get undefined through the input
 #: src/app/components/eventModal/rows/RepeatEveryRow.js:16
 msgctxt "Option"
 msgid "Week"
 msgid_plural "Weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hét"
+msgstr[1] "Hét"
 
 #.  Can get undefined through the input
 #: src/app/components/eventModal/rows/RepeatEveryRow.js:17
 msgctxt "Option"
 msgid "Month"
 msgid_plural "Months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hónap"
+msgstr[1] "Hónap"
 
 #.  Can get undefined through the input
 #: src/app/components/eventModal/rows/RepeatEveryRow.js:18
 msgctxt "Option"
 msgid "Year"
 msgid_plural "Years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Év"
+msgstr[1] "Év"
 
 #.  Can get undefined through the input
 #: src/app/components/eventModal/rows/EndsRow.js:54
 msgctxt "Custom frequency option"
 msgid "Never"
-msgstr ""
+msgstr "Soha"
 
 #.  Can get undefined through the input
 #: src/app/components/eventModal/rows/EndsRow.js:66
 msgctxt "Custom frequency option"
 msgid "On"
-msgstr ""
+msgstr "Be"
 
 #.  Can get undefined through the input
 #: src/app/components/eventModal/rows/EndsRow.js:91
 msgctxt "Custom frequency option"
 msgid "After"
-msgstr ""
+msgstr "Utána"
 
 #.  Can get undefined through the input
 #: src/app/components/eventModal/rows/EndsRow.js:105
 msgctxt "Custom frequency option"
 msgid "Occurrence"
 msgid_plural "Occurrences"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Esemény"
+msgstr[1] "Események"
 
 #: src/app/helpers/rrule.js:20
 msgctxt "Ordinal number"
 msgid "first"
-msgstr ""
+msgstr "első"
 
 #: src/app/helpers/rrule.js:23
 msgctxt "Ordinal number"
 msgid "second"
-msgstr ""
+msgstr "második"
 
 #: src/app/helpers/rrule.js:26
 msgctxt "Ordinal number"
 msgid "third"
-msgstr ""
+msgstr "harmadik"
 
 #: src/app/helpers/rrule.js:29
 msgctxt "Ordinal number"
 msgid "fourth"
-msgstr ""
+msgstr "negyedik"
 
 #: src/app/helpers/rrule.js:32
 msgctxt "Ordinal number"
 msgid "fifth"
-msgstr ""
+msgstr "ötödik"
 
 #: src/app/helpers/rrule.js:35
 msgctxt "Ordinal number"
 msgid "last"
-msgstr ""
+msgstr "utolsó"
 
 #: src/app/helpers/notifications.js:9
 #, javascript-format
