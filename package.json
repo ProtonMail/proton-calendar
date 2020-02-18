@@ -14,8 +14,7 @@
         "postversion": "git update-index --assume-unchanged package-lock.json && git push --tags",
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
-        "i18n:getlatest": "proton-i18n upgrade",
-        "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin -u --verbose",
+        "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
         "test": "jest",
         "deploy": "proton-bundler",
         "deploy:standalone": "proton-bundler --appMode standalone",
@@ -23,7 +22,8 @@
         "build:standalone": "cross-env NODE_ENV=production proton-pack compile --appMode=standalone",
         "deploy:prod": "proton-bundler --remote --branch=deploy-prod",
         "bundle": "cross-env NODE_ENV_DIST=bundle-only proton-bundler",
-        "check-types": "tsc"
+        "check-types": "tsc",
+        "postinstall": "proton-i18n post-install"
     },
     "repository": {
         "type": "git",
@@ -48,8 +48,8 @@
         "jest": "^24.9.0",
         "lint-staged": "^8.1.7",
         "prettier": "^1.17.1",
-        "proton-bundler": "github:ProtonMail/proton-bundler#semver:^1.2.0",
-        "proton-i18n": "github:ProtonMail/proton-i18n#semver:^1.4.0",
+        "proton-bundler": "github:ProtonMail/proton-bundler#semver:^1.9.0",
+        "proton-i18n": "github:ProtonMail/proton-i18n#semver:^2.0.0",
         "typescript": "^3.6.3"
     },
     "dependencies": {
