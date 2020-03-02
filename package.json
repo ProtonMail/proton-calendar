@@ -16,12 +16,12 @@
         "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
         "test": "jest",
-        "deploy": "proton-bundler",
-        "deploy:standalone": "proton-bundler --appMode standalone",
+        "deploy": "proton-bundler --git",
+        "deploy:standalone": "proton-bundler --git --appMode standalone",
         "build": "cross-env NODE_ENV=production proton-pack compile $npm_package_config_publicPathFlag",
         "build:standalone": "cross-env NODE_ENV=production proton-pack compile --appMode=standalone",
         "deploy:prod": "proton-bundler --remote --branch=deploy-prod",
-        "bundle": "cross-env NODE_ENV_DIST=bundle-only proton-bundler",
+        "bundle": "proton-bundler",
         "check-types": "tsc",
         "postinstall": "proton-i18n post-install"
     },
@@ -37,9 +37,9 @@
     },
     "homepage": "https://github.com/ProtonMail/proton-calendar#readme",
     "devDependencies": {
+        "@babel/preset-typescript": "^7.6.0",
         "@testing-library/jest-dom": "^4.0.0",
         "@testing-library/react": "^8.0.7",
-        "@babel/preset-typescript": "^7.6.0",
         "@types/jest": "^24.0.18",
         "@typescript-eslint/eslint-plugin": "^2.3.2",
         "@typescript-eslint/parser": "^2.3.2",
@@ -48,7 +48,7 @@
         "jest": "^24.9.0",
         "lint-staged": "^8.1.7",
         "prettier": "^1.17.1",
-        "proton-bundler": "github:ProtonMail/proton-bundler#semver:^1.9.0",
+        "proton-bundler": "github:ProtonMail/proton-bundler#semver:^2.0.0",
         "proton-i18n": "github:ProtonMail/proton-i18n#semver:^2.0.0",
         "typescript": "^3.6.3"
     },
@@ -59,6 +59,7 @@
         "interval-tree": "github:ProtonMail/interval-tree#semver:^1.0.0",
         "proton-pack": "github:ProtonMail/proton-pack#semver:^3.0.0",
         "proton-shared": "github:ProtonMail/proton-shared#master",
+        "proton-version": "github:ProtonMail/proton-version#semver:^1.0.0",
         "react": "^16.8.6",
         "react-components": "github:ProtonMail/react-components#master",
         "react-dom": "^16.8.6",
@@ -66,8 +67,7 @@
         "react-router-dom": "^4.3.1",
         "tinycolor2": "^1.4.1",
         "ttag": "^1.7.5",
-        "yetch": "^1.1.0",
-        "proton-version": "github:ProtonMail/proton-version#semver:^1.0.0"
+        "yetch": "^1.1.0"
     },
     "lint-staged": {
         "(*.ts|*.tsx|*.js)": [
