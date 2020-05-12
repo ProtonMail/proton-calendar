@@ -42,7 +42,7 @@ Based on [proton-bundler](https://github.com/ProtonMail/proton-bundler)
 
 ### Deploy to prod
 
-`$ npm run deploy:prod` 
+`$ npm run deploy:prod`
 
 > Build from master post git clone into /tmp. `--no-remote` build from local.
 
