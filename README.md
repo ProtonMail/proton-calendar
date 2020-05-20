@@ -1,5 +1,3 @@
-[![CircleCI](https://circleci.com/gh/ProtonMail/proton-calendar.svg?style=svg)](https://circleci.com/gh/ProtonMail/proton-calendar)
-
 # Proton Calendar
 
 Proton Calendar built with React.
