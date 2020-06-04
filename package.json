@@ -57,6 +57,7 @@
         "abortcontroller-polyfill": "^1.2.1",
         "date-fns": "^2.5.0",
         "design-system": "github:ProtonMail/design-system#master",
+        "dompurify": "^2.0.7",
         "interval-tree": "github:ProtonMail/interval-tree#semver:^1.0.0",
         "proton-pack": "github:ProtonMail/proton-pack#semver:^3.0.0",
         "proton-shared": "github:ProtonMail/proton-shared#master",
