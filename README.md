@@ -3,84 +3,101 @@
 Proton Calendar built with React.
 
 
-
 >**⚠ If you use Windows plz follow this document before anything else [how to prepare Windows](https://github.com/ProtonMail/proton-shared/wiki/setup-windows)**
 
 
 
 ## Basic installation
 
+> :warning: if you are a proton dev, you will need the file `appConfig.json`
+
 To set up the project, follow the steps below:
 
-1. Create a file `appConfig.json` at the root of your project. To set up the dev env config for this app, add the clientiD `<clientID>` inside appConfig.json (cf. [How to dev](https://github.com/ProtonMail/proton-pack#dev-env))
+1. Clone the repository
+2. `$ npm ci`
+3. `$ npm start`
 
-```json
-{
-    "appConfig": {
-        "clientId": "WebSettings"
-    }
-}
-```
+It's going to create a server available on https://localhost:8080
 
-2. `npm install`
-
-3. `npm start`
-
->:warning: Do not commit appConfig.json . Notice it's already inside .gitignore
-
-## How to deploy
-
-- `$ npm run deploy -- --branch=<deploy-X> --api=<target>`
-_Deploy the app as /calendar_
-
-- `$ npm run deploy:standalone -- --branch=<deploy-X> --api=<target>`
-_Deploy the app as deploy + /login_
-
-Based on [proton-bundler](https://github.com/ProtonMail/proton-bundler)
-
-### Deploy to prod
-
-`$ npm run deploy:prod`
-
-> Build from master post git clone into /tmp. `--no-remote` build from local.
-
-
-## I18N
-
-### Upgrade translations [App  to crowdin]
-
-You can sync them via `$ npm run i18n:upgrade`, it will:
-- Extract translations
-- Push them to crowndin
-- Create a commit with them on the repo
-
-### Sync translations inside the app [Crowdin to our App]
-
-To get latest translations available on crowdin, you can run `$ npm run i18n:getlatest`.
-It will:
-- Get list of translations available (default same as proton-i18n crowdin --list --type --limit=95)
-- Upgrade our translations with ones from crowdin
-- Store a cache of translations available in the app
-- Export translations as JSON
-- Commit everything
-
-> :warning: If you want to get only a **custom** list of translations, configure it inside `po/i18n.txt` and run `$ npm run i18n:getlatest -- --custom`
-
-## :rocket: Create a new version (before deploy)
-
-This command will:
-
-- Manage dependencies (detect and update the lock)
-- Take care of active npm links
-- run npm version
+cf:
 
 ```sh
-$ npx proton-version <patch|minor|major>
+$ npm start
+
+> proton-calendar@4.0.0-beta.5 start /tmp/proton-calendar
+> proton-pack dev-server $npm_package_config_publicPathFlag --appMode=standalone
+
+[proton-pack] Missing file appConfig.json.
+[proton-pack] [DEPREACTION NOTICE] Please rename your file env.json to appConfig.json.
+[proton-pack] Missing file env.json.
+[proton-pack] ✓ generated /tmp/proton-calendar/src/app/config.ts
+➙ Dev server: http://localhost:8081/calendar/
+➙ Dev server: http://192.168.1.88:8081/calendar/
+➙ API: https://mail.protonmail.com/api
+
+
+ℹ ｢wds｣: Project is running at http://localhost/
+ℹ ｢wds｣: webpack output is served from /calendar/
+ℹ ｢wds｣: Content not from webpack is served from /tmp/proton-calendar/dist
+ℹ ｢wds｣: 404s will fallback to /calendar/
+ℹ ｢wdm｣:    3196 modules
+ℹ ｢wdm｣: Compiled successfully.
 ```
-> Default is patch
 
-If you want to force the update of all dependencies add the flag `--all`;
+> Here on the port 8081 as the 8080 was not available. We auto detect what is available.
 
-By default it provides a prompt and ask you what you want to update etc.
 
-> If you have an active `npm link` it will remove it from your node_modules.
+## Commands
+
+- `$ npm start`
+
+Run develop server with a login page (mode standalone). It's going to run a server on the port **8080** if available. 
+> If it is not available we auto detect what is available
+
+- `$ npm test`
+
+Run the tests
+
+- `$ npm run lint`
+
+Lint the sources via eslint
+
+- `$ npm run pretty`
+
+Prettier sources (we have a hook post commit to run it)
+
+- `$ npm run check-types`
+
+Validate TS types
+
+- `$ npm run bundle`
+
+Create a bundle ready to deploy (prepare app + build + minify)
+
+[more informations](https://github.com/ProtonMail/proton-bundler)
+
+- `$ npm run build`
+
+Build the app (build + minify). Bundle will run this command.
+
+- `$ npm run build:standalone`
+
+Same as the previous one BUT with a login page. When we deploy live,the login state is on another app.But when we only deploy this app when we dev, we need to be able to login. 
+
+- `$ npm run deploy` and `$ npm run deploy:standalone`
+
+It's to deploy to a branch `deploy-branch`. A bundle based on `build` or `build:standalone`.
+
+Flags:
+  - `--api <key>`: type of api to use for deploy ex: blue,dev,proxy,prod
+  - `--branch  <deploy-branch>`: target for the subdomain to deploy
+
+[more informations](https://github.com/ProtonMail/proton-bundler)
+
+- `$ npm run i18n:validate**`
+
+Validate translations (context, format etc.)
+
+## Create a new version
+
+We use the command [npm version](https://docs.npmjs.com/cli/version)
