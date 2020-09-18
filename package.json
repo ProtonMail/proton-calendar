@@ -23,8 +23,7 @@
         "build:standalone": "cross-env NODE_ENV=production proton-pack compile --appMode=standalone",
         "deploy:prod": "proton-bundler --remote --branch=deploy-prod",
         "bundle": "proton-bundler",
-        "check-types": "tsc",
-        "postinstall": "proton-i18n post-install"
+        "check-types": "tsc"
     },
     "repository": {
         "type": "git",
@@ -62,6 +61,7 @@
         "interval-tree": "github:ProtonMail/interval-tree#semver:^1.0.0",
         "proton-pack": "github:ProtonMail/proton-pack#semver:^3.0.0",
         "proton-shared": "github:ProtonMail/proton-shared#master",
+        "proton-translations": "github:ProtonMail/proton-translations#fe-calendar",
         "proton-version": "github:ProtonMail/proton-version#semver:^1.0.0",
         "react-components": "github:ProtonMail/react-components#master",
         "tinycolor2": "^1.4.1",
