@@ -1,16 +1,30 @@
+import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
+import { getTimezonedFrequencyString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import React, { useMemo, useState } from 'react';
-import { c } from 'ttag';
-import { Icon, Info, Tabs } from 'react-components';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
-import { getTimezonedFrequencyString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
-
-import { sanitizeDescription } from '../../helpers/sanitize';
-import PopoverNotification from './PopoverNotification';
+import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import React, { useMemo, useState } from 'react';
+import { Icon, Info, Tabs, Tooltip } from 'react-components';
+import { c, msgid } from 'ttag';
+import { sanitizeDescription, buildMSTeamsLinks } from '../../helpers/sanitize';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
-import { EventModelReadView } from '../../interfaces/EventModel';
 import { sortNotifications } from '../../containers/calendar/sortNotifications';
+import { EventModelReadView } from '../../interfaces/EventModel';
+import ParticipantStatusIcon from './ParticipantStatusIcon';
+import PopoverNotification from './PopoverNotification';
+
+type AttendeeViewModel = {
+    title: string;
+    text: string;
+    icon: JSX.Element | null;
+    partstat: ICAL_ATTENDEE_STATUS;
+};
+type GroupedAttendees = {
+    [key: string]: AttendeeViewModel[];
+};
+const { ACCEPTED, DECLINED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 
 interface Props {
     Calendar: tsCalendar;
@@ -20,6 +34,7 @@ interface Props {
     weekStartsOn: WeekStartsOn;
     model: EventModelReadView;
     formatTime: (date: Date) => string;
+    contactEmailMap: SimpleMap<ContactEmail>;
 }
 const PopoverEventContent = ({
     Calendar,
@@ -31,13 +46,16 @@ const PopoverEventContent = ({
     weekStartsOn,
     model,
     formatTime,
+    contactEmailMap,
 }: Props) => {
     const [tab, setTab] = useState(0);
     const { Name: calendarName, Color } = Calendar;
+    const numberOfParticipants = model.attendees.length;
 
     const trimmedLocation = model.location.trim();
     const htmlString = useMemo(() => {
-        return sanitizeDescription(model.description.trim());
+        const description = buildMSTeamsLinks(model.description.trim());
+        return sanitizeDescription(description);
     }, [model.description]);
 
     const frequencyString = useMemo(() => {
@@ -120,18 +138,67 @@ const PopoverEventContent = ({
         </>
     );
 
-    return (
-        <Tabs
-            value={tab}
-            onChange={setTab}
-            tabs={[
-                {
-                    title: c('Title').t`Event details`,
-                    content: eventDetailsContent,
+    const tabs = [
+        {
+            title: c('Title').t`Event details`,
+            content: eventDetailsContent,
+        },
+    ];
+
+    if (numberOfParticipants) {
+        const attendees = model.attendees
+            .map((attendee) => {
+                const contact = attendee.email && contactEmailMap[attendee.email];
+                const name = contact ? contact.Name : attendee.email;
+                return {
+                    title: contact ? `${contact.Name} <${contact.Email}>` : attendee.email,
+                    text: name,
+                    icon: <ParticipantStatusIcon name={name} partstat={attendee.partstat} />,
+                    partstat: attendee.partstat,
+                };
+            })
+            .reduce<GroupedAttendees>(
+                (acc, item) => {
+                    if (Object.prototype.hasOwnProperty.call(acc, item.partstat)) {
+                        acc[item.partstat as keyof typeof acc].push(item);
+                    } else {
+                        acc.other.push(item);
+                    }
+                    return acc;
                 },
-            ]}
-        />
-    );
+                {
+                    [ACCEPTED]: [],
+                    [DECLINED]: [],
+                    [TENTATIVE]: [],
+                    other: [],
+                }
+            );
+        tabs.push({
+            title: c('Event form').ngettext(
+                msgid`${numberOfParticipants} participant`,
+                `${numberOfParticipants} participants`,
+                numberOfParticipants
+            ),
+            content: (
+                <>
+                    {[...attendees[ACCEPTED], ...attendees[TENTATIVE], ...attendees[DECLINED], ...attendees.other].map(
+                        ({ icon, text, title }) => (
+                            <div className="mb0-25 flex flex-nowrap">
+                                <span className="flex-item-noshrink">{icon}</span>
+                                <span className="flex-item-fluid">
+                                    <Tooltip className="mw100 inbl ellipsis" title={title}>
+                                        {text}
+                                    </Tooltip>
+                                </span>
+                            </div>
+                        )
+                    )}
+                </>
+            ),
+        });
+    }
+
+    return <Tabs value={tab} onChange={setTab} tabs={tabs} />;
 };
 
 export default PopoverEventContent;
