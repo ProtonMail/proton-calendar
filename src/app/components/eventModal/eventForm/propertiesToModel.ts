@@ -1,6 +1,10 @@
+import { MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
+import { EVENT_VERIFICATION_STATUS } from 'proton-shared/lib/calendar/interface';
 import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import { getEventStatus } from 'proton-shared/lib/calendar/vcalHelper';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { truncate } from 'proton-shared/lib/helpers/string';
+import { DecryptedVeventResult } from 'proton-shared/lib/interfaces/calendar';
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { EventModelView } from '../../../interfaces/EventModel';
 import { propertiesToAttendeeModel } from './propertiesToAttendeeModel';
 import propertiesToDateTimeModel from './propertiesToDateTimeModel';
@@ -14,7 +18,11 @@ const DEFAULT_TIME = {
 };
 
 export const propertiesToModel = (
-    component: VcalVeventComponent,
+    {
+        veventComponent,
+        verificationStatus = EVENT_VERIFICATION_STATUS.NOT_VERIFIED,
+        selfAttendeeData,
+    }: RequireSome<Partial<DecryptedVeventResult>, 'veventComponent'>,
     isAllDay: boolean,
     isOrganizer: boolean,
     tzid: string
@@ -29,20 +37,27 @@ export const propertiesToModel = (
         attendee,
         organizer,
         ...rest
-    } = component;
+    } = veventComponent;
 
-    const { start, end } = propertiesToDateTimeModel(dtstart, getDtendProperty(component), isAllDay, tzid);
+    const { start, end } = propertiesToDateTimeModel(dtstart, getDtendProperty(veventComponent), isAllDay, tzid);
+    const { selfAttendeeIndex, selfAddress } = selfAttendeeData || {};
+    const titleString = summary?.value ?? '';
+    const locationString = location?.value ?? '';
+    const descriptionString = description?.value ?? '';
 
     return {
         uid: uid ? uid.value : undefined,
-        frequencyModel: propertiesToFrequencyModel(rrule, start),
-        title: summary?.value ?? '',
-        location: location?.value ?? '',
-        description: description?.value ?? '',
+        frequencyModel: propertiesToFrequencyModel(rrule, start, !isOrganizer),
+        title: truncate(titleString.trim(), MAX_LENGTHS.TITLE),
+        location: truncate(locationString.trim(), MAX_LENGTHS.LOCATION),
+        description: truncate(descriptionString.trim(), MAX_LENGTHS.EVENT_DESCRIPTION),
         attendees: propertiesToAttendeeModel(attendee),
         organizer: propertiesToOrganizerModel(organizer),
         isOrganizer,
-        status: getEventStatus(component),
+        status: getEventStatus(veventComponent),
+        verificationStatus,
+        selfAttendeeIndex,
+        selfAddress,
         start,
         end,
         rest,

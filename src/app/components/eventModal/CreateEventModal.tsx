@@ -1,17 +1,23 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from 'proton-shared/lib/calendar/constants';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { noop } from 'proton-shared/lib/helpers/function';
+import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
 import { Address } from 'proton-shared/lib/interfaces';
 import React from 'react';
-import { FormModal, PrimaryButton, Button } from 'react-components';
+import { Button, FormModal, PrimaryButton } from 'react-components';
 import { c } from 'ttag';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { findUserAttendeeModel } from '../../helpers/attendees';
+import {
+    INVITE_ACTION_TYPES,
+    InviteActions,
+    NO_INVITE_ACTION,
+} from '../../containers/calendar/eventActions/inviteActions';
 
-import validateEventModel from './eventForm/validateEventModel';
+import { EventModel } from '../../interfaces/EventModel';
 
 import EventForm from './EventForm';
-import { useForm, ACTION } from './hooks/useForm';
-import { EventModel } from '../../interfaces/EventModel';
+
+import validateEventModel from './eventForm/validateEventModel';
+import { ACTION, useForm } from './hooks/useForm';
 
 interface Props {
     isNarrow: boolean;
@@ -21,7 +27,7 @@ interface Props {
     model: EventModel;
     addresses: Address[];
     onSave: (value: EventModel) => Promise<void>;
-    onDelete: (isInvitation?: boolean, sendCancellationNotice?: boolean) => Promise<void>;
+    onDelete: (inviteActions: InviteActions) => Promise<void>;
     onClose: () => void;
     setModel: (value: EventModel) => void;
     tzid: string;
@@ -50,13 +56,15 @@ const CreateEventModal = ({
         onDelete,
     });
     const isCancelled = model.status === ICAL_EVENT_STATUS.CANCELLED;
-    const { userAttendee, userAddress } = findUserAttendeeModel(model.attendees, addresses);
-    const isAddressDisabled = userAddress ? userAddress.Status === 0 : true;
-    const userPartstat = userAttendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
+    const { selfAddress, selfAttendeeIndex } = model;
+    const selfAttendee = selfAttendeeIndex !== undefined ? model.attendees[selfAttendeeIndex] : undefined;
+    const isSelfAddressDisabled = selfAddress ? selfAddress.Status === 0 : true;
+    const userPartstat = selfAttendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
     const sendCancellationNotice =
-        !isAddressDisabled &&
+        !isSelfAddressDisabled &&
         !isCancelled &&
         [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE].includes(userPartstat);
+    const modalTitle = isCreateEvent ? c('Title').t`Create event` : c('Title').t`Edit event`;
 
     // Can't use default close button in FormModal because button type reset resets selects
     const closeButton = (
@@ -75,8 +83,11 @@ const CreateEventModal = ({
             {c('Action').t`Save`}
         </PrimaryButton>
     );
+    const inviteActions = model.isOrganizer
+        ? NO_INVITE_ACTION
+        : { type: INVITE_ACTION_TYPES.DECLINE, sendCancellationNotice };
 
-    const handleDeleteWithNotice = () => handleDelete(!model.isOrganizer, sendCancellationNotice);
+    const handleDeleteWithNotice = () => handleDelete(inviteActions);
     const submit = isCreateEvent ? (
         submitButton
     ) : (
@@ -93,8 +104,8 @@ const CreateEventModal = ({
 
     return (
         <FormModal
-            displayTitle={false}
-            title={c('Title').t`Create event`}
+            displayTitle={!model.isOrganizer}
+            title={model.isOrganizer ? modalTitle : getDisplayTitle(model.title)}
             loading={loadingAction}
             onSubmit={loadingAction ? noop : handleSubmit}
             submit={submit}

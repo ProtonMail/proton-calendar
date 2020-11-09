@@ -55,8 +55,10 @@ const PopoverEventContent = ({
     const isInvitation = !model.isOrganizer;
     const { organizer } = model;
     const organizerContact = organizer.email && contactEmailMap[organizer.email];
-    const organizerName = organizerContact ? organizerContact.Name : organizer.cn;
-    const organizerTitle = organizerContact ? `${organizerContact.Name} <${organizerContact.Email}>` : organizer.cn;
+    const organizerName = organizerContact ? organizerContact.Name : organizer.cn || organizer.email;
+    const organizerTitle = organizerContact
+        ? `${organizerContact.Name} <${organizerContact.Email}>`
+        : organizer.cn || organizer.email;
     const organizerString = c('Event info').t`Organized by:`;
     const trimmedLocation = model.location.trim();
     const htmlString = useMemo(() => {
@@ -65,7 +67,7 @@ const PopoverEventContent = ({
     }, [model.description]);
 
     const frequencyString = useMemo(() => {
-        const [eventComponent] = eventReadResult?.result || [];
+        const [{ veventComponent: eventComponent }] = eventReadResult?.result || [{}];
         if (!eventComponent) {
             return;
         }
@@ -113,7 +115,7 @@ const PopoverEventContent = ({
             {trimmedLocation ? (
                 <div className={wrapClassName}>
                     <Icon name="address" className={iconClassName} />
-                    <span className="break">{trimmedLocation}</span>
+                    <span className="hyphens scroll-if-needed">{trimmedLocation}</span>
                 </div>
             ) : null}
             {isInvitation ? (
@@ -133,12 +135,6 @@ const PopoverEventContent = ({
                     {calendarString}
                 </div>
             ) : null}
-            {htmlString ? (
-                <div className={wrapClassName}>
-                    <Icon name="text-align-left" className={iconClassName} />
-                    <div className="break mt0 mb0 pre-wrap" dangerouslySetInnerHTML={{ __html: htmlString }} />
-                </div>
-            ) : null}
             {Array.isArray(model.notifications) && model.notifications.length ? (
                 <div className={wrapClassName}>
                     <Icon name="notifications-enabled" className={iconClassName} />
@@ -150,6 +146,12 @@ const PopoverEventContent = ({
                             );
                         })}
                     </div>
+                </div>
+            ) : null}
+            {htmlString ? (
+                <div className={wrapClassName}>
+                    <Icon name="text-align-left" className={iconClassName} />
+                    <div className="break mt0 mb0 pre-wrap" dangerouslySetInnerHTML={{ __html: htmlString }} />
                 </div>
             ) : null}
         </>
@@ -215,7 +217,7 @@ const PopoverEventContent = ({
         });
     }
 
-    return <Tabs value={tab} onChange={setTab} tabs={tabs} />;
+    return <Tabs value={tab} onChange={setTab} tabs={tabs} stickyTabs />;
 };
 
 export default PopoverEventContent;

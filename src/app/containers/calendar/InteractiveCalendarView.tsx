@@ -4,7 +4,7 @@ import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar
 import { ICAL_ATTENDEE_STATUS, MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from 'proton-shared/lib/calendar/constants';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
 import getMemberAndAddress from 'proton-shared/lib/calendar/integration/getMemberAndAddress';
-import { createReplyIcs, findUserAttendee } from 'proton-shared/lib/calendar/integration/invite';
+import { createReplyIcs, getSelfAttendeeData } from 'proton-shared/lib/calendar/integration/invite';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import { getHasAttendee, getProdId } from 'proton-shared/lib/calendar/vcalHelper';
 import { API_CODES } from 'proton-shared/lib/constants';
@@ -175,6 +175,7 @@ const InteractiveCalendarView = ({
     const sendIcs = useSendIcs();
     const config = useConfig();
     const prodId = useMemo(() => getProdId(config), [config]);
+    const isSavingEvent = useRef(false);
 
     const [eventModalID, setEventModalID] = useState();
 
@@ -243,7 +244,7 @@ const InteractiveCalendarView = ({
     }, [temporaryEvent, sortedEvents]);
 
     const handleSetTemporaryEventModel = (model: EventModel) => {
-        if (!temporaryEvent) {
+        if (!temporaryEvent || isSavingEvent.current) {
             return;
         }
         const newTemporaryEvent = getTemporaryEvent(temporaryEvent, model, tzid);
@@ -309,7 +310,7 @@ const InteractiveCalendarView = ({
             ? calendarsEventsCacheRef.current.getCachedEvent(calendarID, parentEventID)
             : undefined;
         if (!parentEvent) {
-            throw new Error('Missing parent event');
+            return undefined;
         }
         return getComponentFromCalendarEvent(parentEvent);
     };
@@ -333,7 +334,7 @@ const InteractiveCalendarView = ({
         const { Members = [], CalendarSettings } = readCalendarBootstrap(calendarData.ID);
         const [Member, Address] = getMemberAndAddress(activeAddresses, Members, eventData.Author);
 
-        const [veventComponent, personalMap] = eventReadResult.result;
+        const [{ veventComponent, verificationStatus }, personalMap] = eventReadResult.result;
 
         const veventComponentParentPartial = veventComponent['recurrence-id']
             ? getVeventComponentParent(veventComponent.uid.value, eventData.CalendarID)
@@ -348,6 +349,7 @@ const InteractiveCalendarView = ({
             Member,
             Address,
             isAllDay: false,
+            verificationStatus,
             tzid,
         });
         const originalOrOccurrenceEvent = eventRecurrence
@@ -355,15 +357,16 @@ const InteractiveCalendarView = ({
             : veventComponent;
         const eventResult = getExistingEvent({
             veventComponent: originalOrOccurrenceEvent,
-            veventValarmComponent: personalMap[Member.ID],
+            veventValarmComponent: personalMap[Member.ID]?.veventComponent,
             veventComponentParentPartial,
             tzid,
             isOrganizer: !!eventData.IsOrganizer,
+            addresses,
         });
         if (partstat && addresses) {
             return {
                 ...createResult,
-                ...modifyEventModelPartstat(eventResult, partstat, addresses, CalendarSettings),
+                ...modifyEventModelPartstat(eventResult, partstat, CalendarSettings),
             };
         }
         return {
@@ -373,6 +376,9 @@ const InteractiveCalendarView = ({
     };
 
     const handleMouseDown = (mouseDownAction: MouseDownAction) => {
+        if (isSavingEvent.current) {
+            return;
+        }
         if (isEventDownAction(mouseDownAction)) {
             const { event, type } = mouseDownAction.payload;
 
@@ -384,7 +390,7 @@ const InteractiveCalendarView = ({
             const targetCalendar = (event && event.data && event.data.calendarData) || undefined;
 
             const isAllowedToTouchEvent = true;
-            const vevent = event.data.eventReadResult?.result?.[0];
+            const vevent = event.data.eventReadResult?.result?.[0]?.veventComponent;
             const hasAttendees = !!vevent && getHasAttendee(vevent);
             let isAllowedToMoveEvent = getIsCalendarProbablyActive(targetCalendar) && !hasAttendees;
 
@@ -602,24 +608,24 @@ const InteractiveCalendarView = ({
             if (!vevent) {
                 throw new Error('Cannot build reply ics without the event component');
             }
-            const { userAttendee, userAddress } = findUserAttendee(vevent.attendee, addresses);
+            const { selfAttendee, selfAddress } = getSelfAttendeeData(vevent.attendee || [], addresses);
             const { organizer } = vevent;
-            if (!userAttendee || !userAddress || !organizer) {
+            if (!selfAttendee || !selfAddress || !organizer) {
                 throw new Error('Missing invitation data');
             }
             const organizerEmail = getAttendeeEmail(organizer);
             const ics = createReplyIcs({
                 prodId,
                 vevent: pick(vevent, ['uid', 'dtstart', 'dtend', 'sequence', 'recurrence-id', 'organizer']),
-                emailTo: userAttendee.value,
+                emailTo: selfAttendee.value,
                 partstat,
             });
             await sendIcs({
                 ics,
-                addressID: userAddress.ID,
+                addressID: selfAddress.ID,
                 from: {
-                    Address: userAddress.Email,
-                    Name: userAddress.DisplayName || userAddress.Email,
+                    Address: selfAddress.Email,
+                    Name: selfAddress.DisplayName || selfAddress.Email,
                 },
                 to: [{ Address: organizerEmail, Name: organizer.parameters?.cn || organizerEmail }],
                 subject: formatSubject(`Invitation: ${getDisplayTitle(vevent.summary?.value)}`, RE_PREFIX),
@@ -663,14 +669,12 @@ const InteractiveCalendarView = ({
     const handleDeleteConfirmation = ({
         type,
         data,
-        isInvitation,
-        sendCancellationNotice = false,
+        inviteActions,
         veventComponent,
     }: {
         type: DELETE_CONFIRMATION_TYPES;
         data?: RECURRING_TYPES[];
-        isInvitation: boolean;
-        sendCancellationNotice?: boolean;
+        inviteActions?: InviteActions;
         veventComponent?: VcalVeventComponent;
     }): Promise<RECURRING_TYPES> => {
         return new Promise((resolve, reject) => {
@@ -680,7 +684,7 @@ const InteractiveCalendarView = ({
                         onClose={reject}
                         onConfirm={resolve}
                         onDecline={() => handleSendReplyIcs(ICAL_ATTENDEE_STATUS.DECLINED, veventComponent)}
-                        decline={sendCancellationNotice}
+                        inviteActions={inviteActions}
                     />
                 );
             }
@@ -688,8 +692,7 @@ const InteractiveCalendarView = ({
                 return createModal(
                     <DeleteRecurringConfirmModal
                         types={data}
-                        isInvitation={isInvitation}
-                        decline={sendCancellationNotice}
+                        inviteActions={inviteActions}
                         onClose={reject}
                         onConfirm={resolve}
                         onDecline={() => handleSendReplyIcs(ICAL_ATTENDEE_STATUS.DECLINED, veventComponent)}
@@ -716,6 +719,9 @@ const InteractiveCalendarView = ({
     };
 
     const handleConfirmDeleteTemporary = ({ ask = false } = {}) => {
+        if (isSavingEvent.current) {
+            return Promise.reject(new Error('Keep event'));
+        }
         if (isInTemporaryBlocking) {
             if (!ask) {
                 return Promise.reject(new Error('Keep event'));
@@ -726,6 +732,9 @@ const InteractiveCalendarView = ({
     };
 
     const handleEditEvent = (temporaryEvent: CalendarViewEventTemporaryEvent) => {
+        if (isSavingEvent.current) {
+            return;
+        }
         // Close the popover only
         setInteractiveData({ temporaryEvent });
         setEventModalID(createModal());
@@ -801,11 +810,9 @@ const InteractiveCalendarView = ({
         createNotification({ text: texts.success });
     };
 
-    const handleSaveEvent = async (
-        temporaryEvent: CalendarViewEventTemporaryEvent,
-        inviteActions: InviteActions = { type: INVITE_ACTION_TYPES.NONE }
-    ) => {
+    const handleSaveEvent = async (temporaryEvent: CalendarViewEventTemporaryEvent, inviteActions?: InviteActions) => {
         try {
+            isSavingEvent.current = true;
             const syncActions = await getSaveEventActions({
                 temporaryEvent,
                 weekStartsOn,
@@ -820,14 +827,12 @@ const InteractiveCalendarView = ({
             await handleSyncActions(syncActions);
         } catch (e) {
             createNotification({ text: e.message, type: 'error' });
+        } finally {
+            isSavingEvent.current = false;
         }
     };
 
-    const handleDeleteEvent = async (
-        targetEvent: CalendarViewEvent,
-        isInvitation = false,
-        sendCancellationNotice = false
-    ) => {
+    const handleDeleteEvent = async (targetEvent: CalendarViewEvent, inviteActions?: InviteActions) => {
         try {
             const syncActions = await getDeleteEventActions({
                 targetEvent,
@@ -836,8 +841,7 @@ const InteractiveCalendarView = ({
                 api,
                 getEventDecrypted,
                 getCalendarBootstrap: readCalendarBootstrap,
-                isInvitation,
-                sendCancellationNotice,
+                inviteActions,
             });
             await handleSyncActions(syncActions);
         } catch (e) {
@@ -1002,10 +1006,9 @@ const InteractiveCalendarView = ({
                             weekStartsOn={weekStartsOn}
                             contactEmailMap={contactEmailMap}
                             formatTime={formatTime}
-                            addresses={addresses}
-                            onDelete={(calendarEvent, isInvitation, sendCancellationNotice) => {
+                            onDelete={(calendarEvent, inviteActions) => {
                                 return (
-                                    handleDeleteEvent(targetEvent, isInvitation, sendCancellationNotice)
+                                    handleDeleteEvent(targetEvent, inviteActions)
                                         // Also close the more popover to avoid this event showing there
                                         .then(closeAllPopovers)
                                         .catch(noop)
@@ -1101,11 +1104,11 @@ const InteractiveCalendarView = ({
                             .then(() => hideModal(eventModalID))
                             .catch(noop);
                     }}
-                    onDelete={(isInvitation, sendCancellationNotice) => {
+                    onDelete={(inviteActions) => {
                         if (!temporaryEvent?.data?.eventData || !temporaryEvent.tmpOriginalTarget) {
                             return;
                         }
-                        return handleDeleteEvent(temporaryEvent.tmpOriginalTarget, isInvitation, sendCancellationNotice)
+                        return handleDeleteEvent(temporaryEvent.tmpOriginalTarget, inviteActions)
                             .then(() => hideModal(eventModalID))
                             .catch(noop);
                     }}

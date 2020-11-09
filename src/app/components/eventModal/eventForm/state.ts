@@ -7,9 +7,11 @@ import {
     WEEKLY_TYPE,
     YEARLY_TYPE,
 } from 'proton-shared/lib/calendar/constants';
+import { getSelfAttendeeData } from 'proton-shared/lib/calendar/integration/invite';
+import { EVENT_VERIFICATION_STATUS } from 'proton-shared/lib/calendar/interface';
 import { getIsAllDay, getRecurrenceId } from 'proton-shared/lib/calendar/vcalHelper';
 import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
-import { Address as tsAddress } from 'proton-shared/lib/interfaces';
+import { Address, Address as tsAddress } from 'proton-shared/lib/interfaces';
 import {
     Calendar as tsCalendar,
     CalendarSettings as tsCalendarSettings,
@@ -128,6 +130,7 @@ interface GetInitialModelArguments {
     Addresses: tsAddress[];
     Address: tsAddress;
     isAllDay: boolean;
+    verificationStatus?: EVENT_VERIFICATION_STATUS;
     tzid: string;
 }
 
@@ -141,6 +144,7 @@ export const getInitialModel = ({
     Addresses,
     Address,
     isAllDay,
+    verificationStatus = EVENT_VERIFICATION_STATUS.NOT_VERIFIED,
     tzid,
 }: GetInitialModelArguments): EventModel => {
     const { DefaultEventDuration: defaultEventDuration = DEFAULT_EVENT_DURATION } = CalendarSettings;
@@ -160,6 +164,7 @@ export const getInitialModel = ({
         initialDate,
         initialTzid: tzid,
         isAllDay,
+        verificationStatus,
         isOrganizer: true,
         organizer: { email: memberEmail, cn: memberEmail },
         status: ICAL_EVENT_STATUS.CONFIRMED,
@@ -181,7 +186,12 @@ const getParentMerge = (
     tzid: string
 ) => {
     const isAllDay = getIsAllDay(veventComponentParentPartial);
-    const parentModel = propertiesToModel(veventComponentParentPartial, isAllDay, isOrganizer, tzid);
+    const parentModel = propertiesToModel(
+        { veventComponent: veventComponentParentPartial },
+        isAllDay,
+        isOrganizer,
+        tzid
+    );
     const { frequencyModel, start } = parentModel;
     return {
         frequencyModel: getFrequencyModelChange(start, recurrenceStart, frequencyModel),
@@ -194,6 +204,7 @@ interface GetExistingEventArguments {
     veventComponentParentPartial?: SharedVcalVeventComponent;
     isOrganizer: boolean;
     tzid: string;
+    addresses?: Address[];
 }
 
 export const getExistingEvent = ({
@@ -202,11 +213,13 @@ export const getExistingEvent = ({
     veventComponentParentPartial,
     isOrganizer,
     tzid,
+    addresses = [],
 }: GetExistingEventArguments): Partial<EventModel> => {
     const isAllDay = getIsAllDay(veventComponent);
     const recurrenceId = getRecurrenceId(veventComponent);
+    const selfAttendeeData = getSelfAttendeeData(veventComponent.attendee, addresses);
 
-    const newModel = propertiesToModel(veventComponent, isAllDay, isOrganizer, tzid);
+    const newModel = propertiesToModel({ veventComponent, selfAttendeeData }, isAllDay, isOrganizer, tzid);
     const strippedDescription = stripAllTags(newModel.description);
 
     // Email notifications are not supported atm.
