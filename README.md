@@ -51,7 +51,7 @@ $ npm start
 
 - `$ npm start`
 
-Run develop server with a login page (mode standalone). It's going to run a server on the port **8080** if available. 
+Run develop server with a login page (mode standalone). It's going to run a server on the port **8080** if available.
 > If it is not available we auto detect what is available
 
 - `$ npm test`
@@ -82,7 +82,7 @@ Build the app (build + minify). Bundle will run this command.
 
 - `$ npm run build:standalone`
 
-Same as the previous one BUT with a login page. When we deploy live,the login state is on another app.But when we only deploy this app when we dev, we need to be able to login. 
+Same as the previous one BUT with a login page. When we deploy live,the login state is on another app.But when we only deploy this app when we dev, we need to be able to login.
 
 - `$ npm run deploy` and `$ npm run deploy:standalone`
 
@@ -101,3 +101,8 @@ Validate translations (context, format etc.)
 ## Create a new version
 
 We use the command [npm version](https://docs.npmjs.com/cli/version)
+
+## Help us to translate the project
+
+You can help us to translate the application on [crowdin](https://crowdin.com/project/protonmail)
+
