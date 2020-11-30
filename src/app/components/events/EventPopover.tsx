@@ -8,7 +8,6 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import {
     Alert,
@@ -28,12 +27,17 @@ import InviteButtons from 'react-components/components/calendar/InviteButtons';
 import { c } from 'ttag';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../containers/calendar/eventActions/inviteActions';
 import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
-import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
+import {
+    CalendarViewEvent,
+    CalendarViewEventTemporaryEvent,
+    DisplayNameEmail,
+} from '../../containers/calendar/interface';
 import { EnDash } from '../EnDash';
 import { getEventErrorMessage } from './error';
 import getEventInformation from './getEventInformation';
 
 import PopoverEventContent from './PopoverEventContent';
+import PopoverContainer from './PopoverContainer';
 import PopoverFooter from './PopoverFooter';
 import PopoverHeader from './PopoverHeader';
 import useReadEvent from './useReadEvent';
@@ -111,7 +115,7 @@ interface Props {
     tzid: string;
     weekStartsOn: WeekStartsOn;
     isNarrow: boolean;
-    contactEmailMap: SimpleMap<ContactEmail>;
+    displayNameEmailMap: SimpleMap<DisplayNameEmail>;
 }
 
 const EventPopover = ({
@@ -127,7 +131,7 @@ const EventPopover = ({
     tzid,
     weekStartsOn,
     isNarrow,
-    contactEmailMap,
+    displayNameEmailMap,
 }: Props) => {
     const [loadingAction, withLoadingAction] = useLoading();
 
@@ -243,26 +247,26 @@ const EventPopover = ({
 
     if (eventReadError) {
         return (
-            <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
+            <PopoverContainer style={mergedStyle} className={mergedClassName} ref={popoverRef}>
                 <PopoverHeader onClose={onClose} className="flex-item-noshrink">
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
                 <Alert type="error">{getEventErrorMessage(eventReadError)}</Alert>
                 <PopoverFooter>{deleteButton}</PopoverFooter>
-            </div>
+            </PopoverContainer>
         );
     }
 
     if (isEventReadLoading) {
         return (
-            <div style={mergedStyle} className="eventpopover p1" ref={popoverRef}>
+            <PopoverContainer style={mergedStyle} className="eventpopover p1" ref={popoverRef}>
                 <Loader />
-            </div>
+            </PopoverContainer>
         );
     }
 
     return (
-        <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
+        <PopoverContainer style={mergedStyle} className={mergedClassName} ref={popoverRef}>
             <PopoverHeader className="flex-item-noshrink" onClose={onClose}>
                 <div className="color-subheader">{dateHeader}</div>
                 {isCancelled && (
@@ -276,6 +280,7 @@ const EventPopover = ({
             </PopoverHeader>
             <div className="scroll-if-needed mb1">
                 <PopoverEventContent
+                    key={targetEvent.id}
                     Calendar={calendarData}
                     isCalendarDisabled={isCalendarDisabled}
                     event={targetEvent}
@@ -283,7 +288,7 @@ const EventPopover = ({
                     weekStartsOn={weekStartsOn}
                     model={model}
                     formatTime={formatTime}
-                    contactEmailMap={contactEmailMap}
+                    displayNameEmailMap={displayNameEmailMap}
                 />
             </div>
             <PopoverFooter className="flex-item-noshrink" key={targetEvent.id}>
@@ -309,7 +314,7 @@ const EventPopover = ({
                     </>
                 )}
             </PopoverFooter>
-        </div>
+        </PopoverContainer>
     );
 };
 
