@@ -10,7 +10,7 @@ import { getProdId } from 'proton-shared/lib/calendar/vcalHelper';
 import { API_CODES } from 'proton-shared/lib/constants';
 import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
-import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
+import { canonizeEmailByGuess, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit, pick } from 'proton-shared/lib/helpers/object';
@@ -122,6 +122,7 @@ import {
     TimeGridRef,
 } from './interface';
 import { getInitialTargetEventData } from './targetEventHelper';
+import DuplicateAttendeesModal from './confirmationModals/DuplicateAttendeesModal';
 
 const getNormalizedTime = (isAllDay: boolean, initial: DateTimeModel, dateFromCalendar: Date) => {
     if (!isAllDay) {
@@ -201,14 +202,14 @@ const InteractiveCalendarView = ({
     const contacts = (useContactEmails()[0] as ContactEmail[]) || [];
     const displayNameEmailMap = useMemo(() => {
         const result = contacts.reduce<SimpleMap<DisplayNameEmail>>((acc, { Email, Name }) => {
-            const normalizedEmail = normalizeEmail(Email);
-            if (!acc[normalizedEmail]) {
-                acc[normalizedEmail] = { displayName: Name, displayEmail: Email };
+            const canonicalEmail = canonizeEmailByGuess(Email);
+            if (!acc[canonicalEmail]) {
+                acc[canonicalEmail] = { displayName: Name, displayEmail: Email };
             }
             return acc;
         }, {});
         addresses.forEach(({ DisplayName, Email }) => {
-            const normalizedEmail = normalizeInternalEmail(Email);
+            const normalizedEmail = canonizeInternalEmail(Email);
             if (!result[normalizedEmail]) {
                 result[normalizedEmail] = { displayName: DisplayName, displayEmail: Email };
             }
@@ -538,10 +539,10 @@ const InteractiveCalendarView = ({
             if (!newTemporaryModel) {
                 return;
             }
-            const { start: initialStart, end: initialEnd } = newTemporaryModel;
+            const { start: initialStart, end: initialEnd, isAllDay } = newTemporaryModel;
             let newTemporaryEvent = temporaryEvent || getCreateTemporaryEvent(defaultCalendar, newTemporaryModel, tzid);
 
-            const eventDuration = +getTimeInUtc(initialEnd, false) - +getTimeInUtc(initialStart, false);
+            const eventDuration = +getTimeInUtc(initialEnd, isAllDay) - +getTimeInUtc(initialStart, isAllDay);
 
             return (mouseUpAction: MouseUpAction) => {
                 if (
@@ -887,6 +888,12 @@ const InteractiveCalendarView = ({
         await call();
     };
 
+    const handleDuplicateAttendees = async (duplicateAttendees: string[][]) => {
+        return new Promise<void>((_resolve, reject) =>
+            createModal(<DuplicateAttendeesModal duplicateAttendees={duplicateAttendees} onClose={reject} />)
+        );
+    };
+
     const handleSaveEvent = async (temporaryEvent: CalendarViewEventTemporaryEvent, inviteActions: InviteActions) => {
         try {
             isSavingEvent.current = true;
@@ -897,6 +904,7 @@ const InteractiveCalendarView = ({
                 inviteActions,
                 api,
                 onSaveConfirmation: handleSaveConfirmation,
+                onDuplicateAttendees: handleDuplicateAttendees,
                 getEventDecrypted,
                 getCalendarBootstrap: readCalendarBootstrap,
                 getCanonicalEmails,
@@ -1041,7 +1049,7 @@ const InteractiveCalendarView = ({
                 once
                 when={targetEvent ? targetEvent.start : undefined}
             >
-                {({ style, ref }: PopoverRenderData) => {
+                {({ style, ref, textareaMaxHeight }: PopoverRenderData) => {
                     if (!targetEvent) {
                         return null;
                     }
@@ -1070,6 +1078,7 @@ const InteractiveCalendarView = ({
                                     }
                                     handleEditEvent(temporaryEvent);
                                 }}
+                                textareaMaxHeight={textareaMaxHeight}
                                 onClose={() => {
                                     return handleConfirmDeleteTemporary({ ask: true })
                                         .then(closeAllPopovers)

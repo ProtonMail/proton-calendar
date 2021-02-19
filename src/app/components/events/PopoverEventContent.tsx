@@ -1,7 +1,8 @@
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { getTimezonedFrequencyString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
+import { canonizeEmailByGuess, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
+import { getInitials } from 'proton-shared/lib/helpers/string';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
@@ -9,22 +10,26 @@ import React, { useMemo, useState } from 'react';
 import { Icon, Info, Tabs, Tooltip } from 'react-components';
 import { c, msgid } from 'ttag';
 import { getOrganizerDisplayData } from '../../helpers/attendees';
-import { sanitizeDescription, buildMSTeamsLinks } from '../../helpers/sanitize';
+import { sanitizeDescription } from '../../helpers/sanitize';
 import {
     CalendarViewEvent,
     CalendarViewEventTemporaryEvent,
     DisplayNameEmail,
 } from '../../containers/calendar/interface';
-import { sortNotifications } from '../../containers/calendar/sortNotifications';
 import { EventModelReadView } from '../../interfaces/EventModel';
-import ParticipantStatusIcon from './ParticipantStatusIcon';
+import AttendeeStatusIcon from './AttendeeStatusIcon';
 import PopoverNotification from './PopoverNotification';
+import Participant from './Participant';
+import getAttendanceTooltip from './getAttendanceTooltip';
+import urlify from '../../helpers/urlify';
 
 type AttendeeViewModel = {
     title: string;
     text: string;
     icon: JSX.Element | null;
     partstat: ICAL_ATTENDEE_STATUS;
+    initials: string;
+    tooltip: string;
 };
 type GroupedAttendees = {
     [key: string]: AttendeeViewModel[];
@@ -66,9 +71,9 @@ const PopoverEventContent = ({
         displayNameEmailMap
     );
     const organizerString = c('Event info').t`Organized by:`;
-    const trimmedLocation = model.location.trim();
+    const trimmedLocation = useMemo(() => sanitizeDescription(urlify(model.location.trim())), [model.location]);
     const htmlString = useMemo(() => {
-        const description = buildMSTeamsLinks(model.description.trim());
+        const description = urlify(model.description.trim());
         return sanitizeDescription(description);
     }, [model.description]);
 
@@ -86,22 +91,22 @@ const PopoverEventContent = ({
 
     const calendarString = useMemo(() => {
         if (isCalendarDisabled) {
-            const disabledText = <span className="italic">({c('Disabled calendar').t`Disabled`})</span>;
+            const disabledText = <span className="text-italic">({c('Disabled calendar').t`Disabled`})</span>;
             const tooltipText = c('Disabled calendar')
                 .t`The event belongs to a disabled calendar and you cannot modify it. Please enable your email address again to enable the calendar.`;
             return (
                 <>
-                    <span className="ellipsis flex-item-fluid-auto flex-item-nogrow mr0-5" title={calendarName}>
+                    <span className="text-ellipsis flex-item-fluid-auto flex-item-nogrow mr0-5" title={calendarName}>
                         {calendarName}
                     </span>
-                    <span className="no-wrap flex-item-noshrink">
+                    <span className="text-no-wrap flex-item-noshrink">
                         {disabledText} <Info title={tooltipText} />
                     </span>
                 </>
             );
         }
         return (
-            <span className="ellipsis" title={calendarName}>
+            <span className="text-ellipsis" title={calendarName}>
                 {calendarName}
             </span>
         );
@@ -121,7 +126,10 @@ const PopoverEventContent = ({
             {trimmedLocation ? (
                 <div className={wrapClassName}>
                     <Icon name="address" className={iconClassName} />
-                    <span className="hyphens scroll-if-needed">{trimmedLocation}</span>
+                    <span
+                        className="text-hyphens scroll-if-needed"
+                        dangerouslySetInnerHTML={{ __html: trimmedLocation }}
+                    />
                 </div>
             ) : null}
             {hasOrganizer && (isInvitation || numberOfParticipants) ? (
@@ -129,7 +137,7 @@ const PopoverEventContent = ({
                     <Icon name="contact" className={iconClassName} />
                     <span className="mr0-5r">{organizerString}</span>
                     <span className="flex-item-fluid">
-                        <Tooltip className="mw100 inbl ellipsis" title={organizerTitle}>
+                        <Tooltip className="max-w100 inline-block text-ellipsis" title={organizerTitle}>
                             {organizerName}
                         </Tooltip>
                     </span>
@@ -141,23 +149,27 @@ const PopoverEventContent = ({
                     {calendarString}
                 </div>
             ) : null}
-            {Array.isArray(model.notifications) && model.notifications.length ? (
+            {model.notifications?.length ? (
                 <div className={wrapClassName}>
                     <Icon name="notifications-enabled" className={iconClassName} />
                     <div className="flex flex-column">
-                        {sortNotifications(model.notifications).map((notification, i) => {
-                            const key = `${i}`;
-                            return (
-                                <PopoverNotification key={key} notification={notification} formatTime={formatTime} />
-                            );
-                        })}
+                        {model.notifications.map((notification) => (
+                            <PopoverNotification
+                                key={notification.id}
+                                notification={notification}
+                                formatTime={formatTime}
+                            />
+                        ))}
                     </div>
                 </div>
             ) : null}
             {htmlString ? (
                 <div className={wrapClassName}>
                     <Icon name="text-align-left" className={iconClassName} />
-                    <div className="break mt0 mb0 pre-wrap" dangerouslySetInnerHTML={{ __html: htmlString }} />
+                    <div
+                        className="text-break mt0 mb0 text-pre-wrap"
+                        dangerouslySetInnerHTML={{ __html: htmlString }}
+                    />
                 </div>
             ) : null}
         </>
@@ -176,15 +188,24 @@ const PopoverEventContent = ({
                 const attendeeEmail = attendee.email;
                 const selfEmail = model.selfAddress?.Email;
                 const displayName =
-                    displayNameEmailMap[normalizeEmail(attendeeEmail)]?.displayName || attendee.cn || attendeeEmail;
-                const isYou = selfEmail && normalizeInternalEmail(selfEmail) === normalizeInternalEmail(attendeeEmail);
+                    displayNameEmailMap[canonizeEmailByGuess(attendeeEmail)]?.displayName ||
+                    attendee.cn ||
+                    attendeeEmail;
+                const isYou = !!(
+                    selfEmail && canonizeInternalEmail(selfEmail) === canonizeInternalEmail(attendeeEmail)
+                );
                 const name = isYou ? c('Participant name').t`You` : displayName;
                 const title = name === attendee.email || isYou ? attendeeEmail : `${name} (${attendeeEmail})`;
+                const initials = getInitials(displayName);
+                const tooltip = getAttendanceTooltip({ partstat: attendee.partstat, name, isYou });
+
                 return {
                     title,
                     text: name,
-                    icon: <ParticipantStatusIcon name={name} partstat={attendee.partstat} />,
+                    icon: <AttendeeStatusIcon partstat={attendee.partstat} />,
                     partstat: attendee.partstat,
+                    initials,
+                    tooltip,
                 };
             })
             .reduce<GroupedAttendees>(
@@ -212,15 +233,15 @@ const PopoverEventContent = ({
             content: (
                 <>
                     {[...attendees[ACCEPTED], ...attendees[TENTATIVE], ...attendees[DECLINED], ...attendees.other].map(
-                        ({ icon, text, title }) => (
-                            <div className="mb0-25 flex flex-nowrap">
-                                <span className="flex-item-noshrink">{icon}</span>
-                                <span className="flex-item-fluid">
-                                    <Tooltip className="mw100 inbl ellipsis" title={title}>
-                                        {text}
-                                    </Tooltip>
-                                </span>
-                            </div>
+                        ({ icon, text, title, initials, tooltip }) => (
+                            <Participant
+                                key={title}
+                                title={title}
+                                initials={initials}
+                                icon={icon}
+                                text={text}
+                                tooltip={tooltip}
+                            />
                         )
                     )}
                 </>

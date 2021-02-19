@@ -1,3 +1,16 @@
+# [4.0.0-beta.14] - 2021-02-24
+## Added
+- Add plain text body for invitations 
+- Recognise secure links in event description
+
+## Updated
+- Keep notifications when changing the calendar of an event
+- Improve participation status design
+- Improve selectors design
+
+## Fixed
+- Merge event duplicate notifications
+
 # [4.0.0-beta.13] - 2021-02-09
 ## Updated
 - Add participants to events without pressing enter
@@ -7,7 +20,7 @@
 
 # [4.0.0-beta.12] - 2021-01-21
 ## Added
-- Send invitations from ProtonCalendar
+- Send invitations from Proton Calendar
 
 ## Updated
 - Harmonise answer for recurring events with single edits for all other calendar providers
@@ -163,7 +176,7 @@
 
 # Beta launch [4.0.0-beta.0] - 2019-12-30
 
-Release of ProtonCalendar on Beta https://protonmail.com/blog/protoncalendar-beta-announcement/
+Release of Proton Calendar on Beta https://protonmail.com/blog/protoncalendar-beta-announcement/
 
 ## Added
 

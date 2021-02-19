@@ -1,14 +1,15 @@
-import { getAttendeeEmail } from 'proton-shared/lib/calendar/attendees';
+import { getAttendeeEmail, getDuplicateAttendees } from 'proton-shared/lib/calendar/attendees';
 import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import {
     createInviteIcs,
+    generateEmailBody,
     generateEmailSubject,
     generateVtimezonesComponents,
     getHasUpdatedInviteData,
 } from 'proton-shared/lib/calendar/integration/invite';
-import { getHasAttendees } from 'proton-shared/lib/calendar/vcalHelper';
+import { getAttendeePartstat, getHasAttendees } from 'proton-shared/lib/calendar/vcalHelper';
 import { getIsAddressDisabled } from 'proton-shared/lib/helpers/address';
-import { normalizeEmail } from 'proton-shared/lib/helpers/email';
+import { canonizeEmailByGuess } from 'proton-shared/lib/helpers/email';
 import { GetVTimezones, Recipient } from 'proton-shared/lib/interfaces';
 import { VcalAttendeeProperty, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
@@ -30,20 +31,37 @@ const {
 
 const getAttendeesDiff = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
     const normalizedNewEmails = (newVevent.attendee || []).map((attendee) =>
-        normalizeEmail(getAttendeeEmail(attendee))
+        canonizeEmailByGuess(getAttendeeEmail(attendee))
     );
     const normalizedOldEmails = (oldVevent.attendee || []).map((attendee) =>
-        normalizeEmail(getAttendeeEmail(attendee))
+        canonizeEmailByGuess(getAttendeeEmail(attendee))
     );
     const addedAttendees = newVevent.attendee?.filter((attendee) => {
-        const normalizedNewEmail = normalizeEmail(getAttendeeEmail(attendee));
+        const normalizedNewEmail = canonizeEmailByGuess(getAttendeeEmail(attendee));
         return !normalizedOldEmails.includes(normalizedNewEmail);
     });
     const removedAttendees = oldVevent.attendee?.filter((attendee) => {
-        const normalizedOldEmail = normalizeEmail(getAttendeeEmail(attendee));
+        const normalizedOldEmail = canonizeEmailByGuess(getAttendeeEmail(attendee));
         return !normalizedNewEmails.includes(normalizedOldEmail);
     });
     return { addedAttendees, removedAttendees };
+};
+
+export const getDuplicateAttendeesSend = (vevent: VcalVeventComponent, inviteActions: InviteActions) => {
+    const { type, addedAttendees, removedAttendees } = inviteActions;
+    // we only need to check for duplicates among the attendees newly added to the event
+    if (type === INVITE_ACTION_TYPES.SEND_INVITATION) {
+        if (!addedAttendees?.length && !removedAttendees?.length) {
+            // it's a new invitation
+            return getDuplicateAttendees(vevent.attendee);
+        }
+        if (addedAttendees?.length) {
+            return getDuplicateAttendees(addedAttendees);
+        }
+    }
+    if (type === INVITE_ACTION_TYPES.SEND_UPDATE) {
+        return getDuplicateAttendees(vevent.attendee);
+    }
 };
 
 export const getUpdatedSaveInviteActions = ({
@@ -203,13 +221,15 @@ export const getSendIcsAction = ({
             });
             if (!hasAddedAttendees && !hasRemovedAttendees && attendees?.length) {
                 // it's a new invitation
+                const params = { method: ICAL_METHOD.REQUEST, vevent, isCreateEvent: true };
                 await sendIcs({
                     method: ICAL_METHOD.REQUEST,
                     ics: inviteIcs,
                     addressID,
                     from,
                     to: getSafeSendTo(attendees, sendPreferencesMap),
-                    subject: generateEmailSubject(ICAL_METHOD.REQUEST, vevent, true),
+                    subject: generateEmailSubject(params),
+                    plainTextBody: generateEmailBody(params),
                     sendPreferencesMap,
                     contactEmailsMap,
                 });
@@ -217,6 +237,7 @@ export const getSendIcsAction = ({
                 // it's an existing event, but we're just adding or removing participants
                 const promises = [];
                 if (addedAttendees?.length) {
+                    const params = { method: ICAL_METHOD.REQUEST, vevent, isCreateEvent: true };
                     promises.push(
                         sendIcs({
                             method: ICAL_METHOD.REQUEST,
@@ -224,7 +245,8 @@ export const getSendIcsAction = ({
                             addressID,
                             from,
                             to: getSafeSendTo(addedAttendees, sendPreferencesMap),
-                            subject: generateEmailSubject(ICAL_METHOD.REQUEST, vevent, true),
+                            subject: generateEmailSubject(params),
+                            plainTextBody: generateEmailBody(params),
                             sendPreferencesMap,
                             contactEmailsMap,
                         })
@@ -241,6 +263,7 @@ export const getSendIcsAction = ({
                         attendeesTo: removedAttendees,
                         vtimezones,
                     });
+                    const params = { method: ICAL_METHOD.CANCEL, vevent };
                     promises.push(
                         sendIcs({
                             method: ICAL_METHOD.CANCEL,
@@ -248,7 +271,8 @@ export const getSendIcsAction = ({
                             addressID,
                             from,
                             to: getSafeSendTo(removedAttendees, sendPreferencesMap),
-                            subject: generateEmailSubject(ICAL_METHOD.CANCEL, vevent),
+                            subject: generateEmailSubject(params),
+                            plainTextBody: generateEmailBody(params),
                             sendPreferencesMap,
                             contactEmailsMap,
                         })
@@ -283,6 +307,7 @@ export const getSendIcsAction = ({
             );
             const promises = [];
             if (remainingAttendees.length) {
+                const params = { method: ICAL_METHOD.REQUEST, vevent, isCreateEvent: false };
                 promises.push(
                     sendIcs({
                         method: ICAL_METHOD.REQUEST,
@@ -290,13 +315,15 @@ export const getSendIcsAction = ({
                         addressID,
                         from,
                         to: getSafeSendTo(remainingAttendees, sendPreferencesMap),
-                        subject: generateEmailSubject(ICAL_METHOD.REQUEST, vevent, false),
+                        subject: generateEmailSubject(params),
+                        plainTextBody: generateEmailBody(params),
                         sendPreferencesMap,
                         contactEmailsMap,
                     })
                 );
             }
             if (addedAttendees?.length) {
+                const params = { method: ICAL_METHOD.REQUEST, vevent, isCreateEvent: true };
                 promises.push(
                     sendIcs({
                         method: ICAL_METHOD.REQUEST,
@@ -304,7 +331,8 @@ export const getSendIcsAction = ({
                         addressID,
                         from,
                         to: getSafeSendTo(addedAttendees, sendPreferencesMap),
-                        subject: generateEmailSubject(ICAL_METHOD.REQUEST, vevent, true),
+                        subject: generateEmailSubject(params),
+                        plainTextBody: generateEmailBody(params),
                         sendPreferencesMap,
                         contactEmailsMap,
                     })
@@ -321,6 +349,7 @@ export const getSendIcsAction = ({
                     attendeesTo: removedAttendees,
                     vtimezones,
                 });
+                const params = { method: ICAL_METHOD.CANCEL, vevent: cancelVevent };
                 promises.push(
                     sendIcs({
                         method: ICAL_METHOD.CANCEL,
@@ -328,7 +357,8 @@ export const getSendIcsAction = ({
                         addressID,
                         from,
                         to: getSafeSendTo(removedAttendees, sendPreferencesMap),
-                        subject: generateEmailSubject(ICAL_METHOD.CANCEL, vevent),
+                        subject: generateEmailSubject(params),
+                        plainTextBody: generateEmailBody(params),
                         sendPreferencesMap,
                         contactEmailsMap,
                     })
@@ -357,13 +387,15 @@ export const getSendIcsAction = ({
                 attendeesTo: attendees,
                 vtimezones,
             });
+            const params = { method: ICAL_METHOD.CANCEL, vevent: cancelVevent };
             await sendIcs({
                 method: ICAL_METHOD.CANCEL,
                 ics: cancelIcs,
                 addressID,
                 from,
                 to: getSafeSendTo(attendees, sendPreferencesMap),
-                subject: generateEmailSubject(ICAL_METHOD.CANCEL, cancelVevent),
+                subject: generateEmailSubject(params),
+                plainTextBody: generateEmailBody(params),
                 sendPreferencesMap,
                 contactEmailsMap,
             });
@@ -396,16 +428,24 @@ export const getSendIcsAction = ({
                 vevent,
                 attendeesTo: [selfAttendeeWithPartstat],
             });
+            const displayName = selfAddress.DisplayName || selfAddress.Email;
+            const params = {
+                method: ICAL_METHOD.REPLY,
+                vevent,
+                partstat: getAttendeePartstat(selfAttendeeWithPartstat),
+                emailAddress: getAttendeeEmail(selfAttendee),
+            };
             await sendIcs({
                 method: ICAL_METHOD.REPLY,
                 ics: replyIcs,
                 addressID: selfAddress.ID,
                 from: {
                     Address: selfAddress.Email,
-                    Name: selfAddress.DisplayName || selfAddress.Email,
+                    Name: displayName,
                 },
                 to: [{ Address: organizerEmail, Name: organizer.parameters?.cn || organizerEmail }],
-                subject: generateEmailSubject(ICAL_METHOD.REPLY, vevent),
+                subject: generateEmailSubject(params),
+                plainTextBody: generateEmailBody(params),
                 sendPreferencesMap,
                 contactEmailsMap,
             });

@@ -52,7 +52,7 @@ import { IMPORT_ERROR_TYPE, ImportFileError } from '../components/import/ImportF
 import { MAX_IMPORT_EVENTS, MAX_NOTIFICATIONS } from '../constants';
 import getComponentFromCalendarEvent from '../containers/calendar/eventStore/cache/getComponentFromCalendarEvent';
 import { EncryptedEvent, VcalCalendarComponentOrError } from '../interfaces/Import';
-import { getSupportedAlarm } from './alarms';
+import { dedupeAlarmsWithNormalizedTriggers, getSupportedAlarm } from './alarms';
 
 const getParsedComponentHasError = (component: VcalCalendarComponentOrError): component is { error: Error } => {
     return !!(component as { error: Error }).error;
@@ -308,11 +308,6 @@ export const getSupportedEvent = ({
         const sequenceSafeValue = Number.isSafeInteger(sequenceValue) ? sequenceValue : 0;
         validated.sequence = { value: Math.max(0, sequenceSafeValue) };
 
-        const isAllDayStart = getIsPropertyAllDay(validated.dtstart);
-        const isAllDayEnd = dtend ? getIsPropertyAllDay(dtend) : undefined;
-        if (isAllDayEnd !== undefined && +isAllDayStart ^ +isAllDayEnd) {
-            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.ALLDAY_INCONSISTENCY, 'vevent', componentId);
-        }
         validated.dtstart = getSupportedDateOrDateTimeProperty({
             property: dtstart,
             component: 'vevent',
@@ -321,48 +316,13 @@ export const getSupportedEvent = ({
             calendarTzid,
             isRecurring,
         });
+        const isAllDayStart = getIsPropertyAllDay(validated.dtstart);
+        const startTzid = getPropertyTzid(validated.dtstart);
         if (!getIsWellFormedDateOrDateTime(validated.dtstart)) {
             throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTSTART_MALFORMED, 'vevent', componentId);
         }
         if (getIsDateOutOfBounds(validated.dtstart)) {
             throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTSTART_OUT_OF_BOUNDS, 'vevent', componentId);
-        }
-        if (exdate) {
-            if (!rrule) {
-                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.RRULE_MALFORMED, 'vevent', componentId);
-            }
-            const supportedExdate = exdate.map((property) =>
-                getSupportedDateOrDateTimeProperty({
-                    property,
-                    component: 'vevent',
-                    componentId,
-                    hasXWrTimezone,
-                    calendarTzid,
-                    isRecurring,
-                })
-            );
-            validated.exdate = supportedExdate.map((property) =>
-                getLinkedDateTimeProperty({
-                    property,
-                    component: 'vevent',
-                    componentId,
-                    isAllDay: getIsPropertyAllDay(validated.dtstart),
-                    tzid: getPropertyTzid(validated.dtstart),
-                })
-            );
-        }
-        if (recurrenceId) {
-            if (rrule) {
-                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.SINGLE_EDIT_UNSUPPORTED, 'vevent', componentId);
-            }
-            validated['recurrence-id'] = getSupportedDateOrDateTimeProperty({
-                property: recurrenceId,
-                component: 'vevent',
-                componentId,
-                hasXWrTimezone,
-                calendarTzid,
-                isRecurring,
-            });
         }
         if (dtend) {
             const supportedDtend = getSupportedDateOrDateTimeProperty({
@@ -383,14 +343,56 @@ export const getSupportedEvent = ({
             const endDateUTC = propertyToUTCDate(supportedDtend);
             // allow a non-RFC-compliant all-day event with DTSTART = DTEND
             const modifiedEndDateUTC =
-                !isAllDayEnd || +startDateUTC === +endDateUTC ? endDateUTC : addDays(endDateUTC, -1);
-            const duration = +modifiedEndDateUTC - +startDateUTC;
+                !getIsPropertyAllDay(dtend) || +startDateUTC === +endDateUTC ? endDateUTC : addDays(endDateUTC, -1);
+            const eventDuration = +modifiedEndDateUTC - +startDateUTC;
 
-            if (duration > 0) {
+            if (eventDuration > 0) {
                 validated.dtend = supportedDtend;
             }
         } else if (duration) {
             throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.VEVENT_DURATION, 'vevent', componentId);
+        }
+        const isAllDayEnd = validated.dtend ? getIsPropertyAllDay(validated.dtend) : undefined;
+        if (isAllDayEnd !== undefined && +isAllDayStart ^ +isAllDayEnd) {
+            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.ALLDAY_INCONSISTENCY, 'vevent', componentId);
+        }
+        if (exdate) {
+            if (!rrule) {
+                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.RRULE_MALFORMED, 'vevent', componentId);
+            }
+            const supportedExdate = exdate.map((property) =>
+                getSupportedDateOrDateTimeProperty({
+                    property,
+                    component: 'vevent',
+                    componentId,
+                    hasXWrTimezone,
+                    calendarTzid,
+                    isRecurring,
+                })
+            );
+            validated.exdate = supportedExdate.map((property) =>
+                getLinkedDateTimeProperty({
+                    property,
+                    component: 'vevent',
+                    componentId,
+                    isAllDay: isAllDayStart,
+                    tzid: startTzid,
+                })
+            );
+        }
+        if (recurrenceId) {
+            if (rrule) {
+                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.SINGLE_EDIT_UNSUPPORTED, 'vevent', componentId);
+            }
+            // we will link RECURRENCE-ID with DTSTART later in the import flow, when we know who the parent event is
+            validated['recurrence-id'] = getSupportedDateOrDateTimeProperty({
+                property: recurrenceId,
+                component: 'vevent',
+                componentId,
+                hasXWrTimezone,
+                calendarTzid,
+                isRecurring,
+            });
         }
 
         if (rrule) {
@@ -406,9 +408,10 @@ export const getSupportedEvent = ({
 
         const alarms = components?.filter(({ component }) => component === 'valarm') || [];
         const supportedAlarms = getSupportedAlarms(alarms, dtstart);
+        const dedupedAlarms = dedupeAlarmsWithNormalizedTriggers(supportedAlarms);
 
-        if (supportedAlarms.length) {
-            validated.components = supportedAlarms;
+        if (dedupedAlarms.length) {
+            validated.components = dedupedAlarms;
         }
 
         return validated;

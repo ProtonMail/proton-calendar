@@ -1,5 +1,5 @@
 import { ICAL_ATTENDEE_ROLE } from 'proton-shared/lib/calendar/constants';
-import { normalizeEmail } from 'proton-shared/lib/helpers/email';
+import { canonizeEmail } from 'proton-shared/lib/helpers/email';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import React from 'react';
@@ -17,7 +17,7 @@ interface Props {
 const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete }: Props) => {
     const { email: attendeeEmail, role } = attendee;
     const isOptional = role === ICAL_ATTENDEE_ROLE.OPTIONAL;
-    const { Name: contactName, Email: contactEmail } = contactEmailsMap[normalizeEmail(attendeeEmail)] || {};
+    const { Name: contactName, Email: contactEmail } = contactEmailsMap[canonizeEmail(attendeeEmail)] || {};
     const email = contactEmail || attendeeEmail;
     const optionalText = isOptional
         ? c('Action').t`Make this participant required`
@@ -29,11 +29,11 @@ const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete
             <div className="flex flex-item-fluid p0-5" title={displayFull ? `${contactName} <${contactEmail}>` : email}>
                 {displayFull ? (
                     <>
-                        <div className="mw50 ellipsis">{contactName}</div>
-                        <div className="ml0-25 mw50 ellipsis">{`<${contactEmail}>`}</div>
+                        <div className="max-w50 text-ellipsis">{contactName}</div>
+                        <div className="ml0-25 max-w50 text-ellipsis">{`<${contactEmail}>`}</div>
                     </>
                 ) : (
-                    <div className="mw100 ellipsis">{email}</div>
+                    <div className="max-w100 text-ellipsis">{email}</div>
                 )}
                 {isOptional ? <span className="color-subheader w100">{c('Label').t`Optional`}</span> : null}
             </div>

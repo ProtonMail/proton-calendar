@@ -1,4 +1,4 @@
-import { sanitizeDescription } from '../../src/app/helpers/sanitize';
+import { sanitizeDescription } from './sanitize';
 
 describe('sanitize description', () => {
     test('should drop disallowed tags', () => {
@@ -6,7 +6,7 @@ describe('sanitize description', () => {
             sanitizeDescription(
                 `<div><img src="https://protonmail.com" alt="test"/></span><a href="https://protonmail.com">protonmail</a></div>`
             )
-        ).toEqual(`<a href="https://protonmail.com" target="_blank" rel="noopener noreferrer">protonmail</a>`);
+        ).toEqual(`<a href="https://protonmail.com" rel="noopener noreferrer">protonmail</a>`);
     });
 
     test('should drop disallowed attributes', () => {

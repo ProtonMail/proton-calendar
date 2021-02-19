@@ -1,6 +1,17 @@
 import { c } from 'ttag';
-import React, { ChangeEvent } from 'react';
-import { Bordered, FileInput, Alert, Label, Field, Select, AttachedFile, classnames } from 'react-components';
+import React, { ChangeEvent, DragEvent } from 'react';
+import {
+    Bordered,
+    FileInput,
+    Alert,
+    Label,
+    Field,
+    AttachedFile,
+    classnames,
+    SelectTwo,
+    Option,
+    Dropzone,
+} from 'react-components';
 
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { ImportCalendarModel } from '../../interfaces/Import';
@@ -13,12 +24,27 @@ interface Props {
     onSelectCalendar: (calendar: Calendar) => void;
     onAttach: (event: ChangeEvent<HTMLInputElement>) => void;
     onClear: () => void;
+    isDropzoneHovered: boolean;
+    onDrop: (event: DragEvent) => void;
+    onDragEnter: (event: DragEvent) => void;
+    onDragLeave: (event: DragEvent) => void;
 }
 
-const AttachingModalContent = ({ model, calendars, onSelectCalendar, onAttach, onClear }: Props) => {
-    const options = calendars.map(({ Name, ID }) => ({ text: Name, value: ID }));
-    const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => {
-        const calendar = calendars.find(({ ID }) => ID === target.value);
+const AttachingModalContent = ({
+    model,
+    calendars,
+    onSelectCalendar,
+    onAttach,
+    onClear,
+    isDropzoneHovered,
+    onDrop,
+    onDragEnter,
+    onDragLeave,
+}: Props) => {
+    const options = calendars.map(({ Name, ID, Color }) => ({ text: Name, value: ID, color: Color }));
+    const handleChange = ({ value }: { value: string }) => {
+        const calendar = calendars.find(({ ID }) => ID === value);
+
         if (calendar) {
             onSelectCalendar(calendar);
         }
@@ -37,26 +63,37 @@ const AttachingModalContent = ({ model, calendars, onSelectCalendar, onAttach, o
     return (
         <>
             {alert}
-            <Bordered className={classnames(['flex', !!model.failure && 'bordered-container--error'])}>
+            <Bordered className={classnames(['flex relative', !!model.failure && 'bordered-container--error'])}>
                 {model.fileAttached ? (
                     <AttachedFile file={model.fileAttached} iconName="calendar" onClear={onClear} />
                 ) : (
-                    <FileInput className="center" accept=".ics" id="import-calendar" onChange={onAttach}>
-                        {c('Action').t`Select file from computer`}
-                    </FileInput>
+                    <Dropzone
+                        isHovered={isDropzoneHovered}
+                        onDrop={onDrop}
+                        onDragEnter={onDragEnter}
+                        onDragLeave={onDragLeave}
+                        className="w100"
+                    >
+                        <FileInput className="center" accept=".ics" id="import-calendar" onChange={onAttach}>
+                            {c('Action').t`Choose a file or drag it here`}
+                        </FileInput>
+                    </Dropzone>
                 )}
             </Bordered>
             {calendars.length > 1 && (
                 <div className="flex-nowrap mb1 onmobile-flex-column">
-                    <Label className="mr1" htmlFor="import-calendar-select">{c('Label').t`Import to:`}</Label>
+                    <Label className="pt0 mr1" htmlFor="import-calendar-select">{c('Label').t`Import to:`}</Label>
                     <Field>
-                        <Select
+                        <SelectTwo
                             id="import-calendar-select"
                             loading={false}
                             onChange={handleChange}
                             value={model.calendar.ID}
-                            options={options}
-                        />
+                        >
+                            {options.map(({ value, text }) => (
+                                <Option value={value} title={text} key={value} />
+                            ))}
+                        </SelectTwo>
                     </Field>
                 </div>
             )}

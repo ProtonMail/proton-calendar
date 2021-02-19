@@ -12,9 +12,9 @@ const CalendarToolbar = ({ dateCursorButtons, timezoneSelector, viewSelector }: 
         <Toolbar>
             {dateCursorButtons}
             <ToolbarSeparator className="mlauto" />
-            {timezoneSelector}
-            <ToolbarSeparator className="notablet nomobile" />
-            <span className="nomobile flex flex-item-noshrink">{viewSelector}</span>
+            <span className="flex no-tablet no-mobile w24e">{timezoneSelector}</span>
+            <ToolbarSeparator className="no-tablet no-mobile" />
+            <span className="no-mobile flex flex-item-noshrink">{viewSelector}</span>
         </Toolbar>
     );
 };
