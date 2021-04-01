@@ -1,3 +1,17 @@
+# [4.0.0-beta.16] - 2021-04-08
+
+## Added
+- Open ProtonCalendar to free users
+- Five new languages: Croatian, Traditional Chinese, Greek, Kabyle, and Spanish (Spain)
+
+## Updated
+- Color taxonomy for buttons
+- Optimizations for changing answer or updating notifications of invited events
+
+## Fixed
+- End date for all-day events was not properly changed when start date changed
+- Reset participation status only if necessary when changing answer for complex recurring invitations
+
 # [4.0.0-beta.15] - 2021-03-24
 
 ## Updated

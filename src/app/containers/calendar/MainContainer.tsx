@@ -1,12 +1,20 @@
 import { CALENDAR_FLAGS } from 'proton-shared/lib/calendar/constants';
 import React, { useMemo, useState } from 'react';
-import { ErrorBoundary, useAddresses, useCalendars, useUser, useWelcomeFlags } from 'react-components';
+import {
+    ErrorBoundary,
+    ModalsChildren,
+    StandardErrorPage,
+    useAddresses,
+    useCalendars,
+    useUser,
+    useWelcomeFlags,
+} from 'react-components';
 
-import CalendarFreeContainer from '../setup/CalendarFreeContainer';
 import CalendarOnboardingContainer from '../setup/CalendarOnboardingContainer';
 import CalendarSetupContainer from '../setup/CalendarSetupContainer';
 import ResetContainer from '../setup/ResetContainer';
 import MainContainerSetup from './MainContainerSetup';
+import CalendarModelEventManagerProvider from '../eventManager/ModelEventManagerProvider';
 
 const MainContainer = () => {
     const [addresses] = useAddresses();
@@ -34,10 +42,6 @@ const MainContainer = () => {
         });
     });
 
-    if (user.isFree) {
-        return <CalendarFreeContainer />;
-    }
-
     if (hasCalendarToGenerate) {
         return <CalendarSetupContainer onDone={() => setHasCalendarToGenerate(false)} />;
     }
@@ -59,8 +63,11 @@ const MainContainer = () => {
 
 const WrappedMainContainer = () => {
     return (
-        <ErrorBoundary>
-            <MainContainer />
+        <ErrorBoundary component={<StandardErrorPage />}>
+            <CalendarModelEventManagerProvider>
+                <ModalsChildren />
+                <MainContainer />
+            </CalendarModelEventManagerProvider>
         </ErrorBoundary>
     );
 };
