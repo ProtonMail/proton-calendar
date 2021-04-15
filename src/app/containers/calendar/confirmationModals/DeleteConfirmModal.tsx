@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Alert, ErrorButton, FormModal, Button } from 'react-components';
-import { RECURRING_TYPES } from '../../../constants';
+import { RECURRING_TYPES } from 'proton-shared/lib/calendar/constants';
 import { INVITE_ACTION_TYPES, InviteActions, RecurringActionData } from '../../../interfaces/Invite';
 
 const { DECLINE_INVITATION, DECLINE_DISABLED, CANCEL_INVITATION, CANCEL_DISABLED } = INVITE_ACTION_TYPES;
@@ -20,7 +20,7 @@ const getTexts = ({ type, sendCancellationNotice }: InviteActions) => {
             title: c('Title').t`Delete event`,
             submit: c('Action').t`Delete`,
             alertText: c('Info')
-                .t`The organizer of this event will not be notified that you decline the invitation as your address is disabled. Would you like to delete this event anyway?`,
+                .t`The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?`,
         };
     }
     if (type === CANCEL_INVITATION) {

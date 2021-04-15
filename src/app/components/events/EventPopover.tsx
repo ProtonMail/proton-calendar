@@ -1,6 +1,6 @@
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
-import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 
 import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -22,8 +22,8 @@ import {
     Tooltip,
     useLoading,
     usePopperAnchor,
+    CalendarInviteButtons,
 } from 'react-components';
-import InviteButtons from 'react-components/components/calendar/InviteButtons';
 import { c } from 'ttag';
 import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
 import {
@@ -148,7 +148,7 @@ const EventPopover = ({
         eventTitleSafe,
         isCancelled,
         userPartstat,
-        isSelfAddressDisabled,
+        isSelfAddressActive,
     } = getEventInformation(targetEvent, model);
 
     const handleDelete = () => {
@@ -157,16 +157,16 @@ const EventPopover = ({
                 !eventReadError && !isCalendarDisabled && !isCancelled && [ACCEPTED, TENTATIVE].includes(userPartstat);
             const inviteActions = model.isOrganizer
                 ? {
-                      type: isSelfAddressDisabled
-                          ? INVITE_ACTION_TYPES.CANCEL_DISABLED
-                          : INVITE_ACTION_TYPES.CANCEL_INVITATION,
+                      type: isSelfAddressActive
+                          ? INVITE_ACTION_TYPES.CANCEL_INVITATION
+                          : INVITE_ACTION_TYPES.CANCEL_DISABLED,
                       selfAddress: model.selfAddress,
                       selfAttendeeIndex: model.selfAttendeeIndex,
                   }
                 : {
-                      type: isSelfAddressDisabled
-                          ? INVITE_ACTION_TYPES.DECLINE_DISABLED
-                          : INVITE_ACTION_TYPES.DECLINE_INVITATION,
+                      type: isSelfAddressActive
+                          ? INVITE_ACTION_TYPES.DECLINE_INVITATION
+                          : INVITE_ACTION_TYPES.DECLINE_DISABLED,
                       sendCancellationNotice,
                       selfAddress: model.selfAddress,
                       selfAttendeeIndex: model.selfAttendeeIndex,
@@ -305,11 +305,11 @@ const EventPopover = ({
                     </>
                 ) : (
                     <>
-                        <InviteButtons
+                        <CalendarInviteButtons
                             className="mr1"
                             actions={actions}
                             partstat={userPartstat}
-                            disabled={isCalendarDisabled || isSelfAddressDisabled}
+                            disabled={isCalendarDisabled || !isSelfAddressActive}
                         />
                         <MoreButtons
                             onEdit={handleEdit}

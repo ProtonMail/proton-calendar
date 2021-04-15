@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Alert, ErrorButton, FormModal, Button } from 'react-components';
 import { c } from 'ttag';
-import { RECURRING_TYPES } from '../../../constants';
+import { RECURRING_TYPES } from 'proton-shared/lib/calendar/constants';
 import { INVITE_ACTION_TYPES, InviteActions, RecurringActionData } from '../../../interfaces/Invite';
 import SelectRecurringType from './SelectRecurringType';
 
@@ -36,7 +36,7 @@ const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
             return {
                 ...defaultTexts,
                 alertText: c('Info')
-                    .t`This event has been updated. The organizer will not be notified that you decline the invitation as your address is disabled. Would you like to delete this event anyway?`,
+                    .t`This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?`,
             };
         }
         return {
@@ -70,7 +70,7 @@ const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
             return {
                 ...defaultTexts,
                 alertText: c('Info')
-                    .t`The organizer of this series of events will not be notified that you decline the invitation as your address is disabled. Would you like to delete all the events in this series anyway?`,
+                    .t`The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?`,
             };
         }
         return {
