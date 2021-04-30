@@ -13,7 +13,8 @@ import {
 } from 'proton-shared/lib/calendar/serialize';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { useGetAddressKeys, useGetCalendarKeys } from 'react-components';
+import { useGetAddressKeys } from 'react-components';
+import { useGetCalendarKeys } from 'react-components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 
 export enum SyncOperationTypes {
     DELETE,
@@ -38,6 +39,7 @@ export interface UpdateEventActionOperation {
     data: {
         Event: CalendarEvent;
         veventComponent: VcalVeventComponent;
+        removedAttendees: string[];
     };
 }
 
@@ -75,10 +77,11 @@ export const getCreateSyncOperation = (veventComponent: VcalVeventComponent): Cr
 });
 export const getUpdateSyncOperation = (
     veventComponent: VcalVeventComponent,
-    Event: CalendarEvent
+    Event: CalendarEvent,
+    removedAttendees: string[] = []
 ): UpdateEventActionOperation => ({
     type: SyncOperationTypes.UPDATE,
-    data: { veventComponent, Event },
+    data: { veventComponent, Event, removedAttendees },
 });
 
 export const getDeleteSyncOperation = (Event: CalendarEvent): DeleteEventActionOperation => ({
@@ -172,7 +175,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
             }
 
             if (getIsUpdateSyncOperation(operation)) {
-                const { Event } = operation.data;
+                const { Event, removedAttendees } = operation.data;
 
                 const oldCalendarID = Event.CalendarID;
                 const isSwitchCalendar = oldCalendarID !== calendarID;
@@ -181,6 +184,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
 
                 const data = await createCalendarEvent({
                     eventComponent: veventComponent,
+                    removedAttendees,
                     isCreateEvent: false,
                     isSwitchCalendar,
                     isInvitation: !Event.IsOrganizer,

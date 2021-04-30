@@ -6,7 +6,7 @@ import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { getRecurrenceId } from 'proton-shared/lib/calendar/vcalHelper';
 import { splitKeys } from 'proton-shared/lib/keys';
-import { useGetCalendarKeys } from 'react-components';
+import { useGetCalendarKeys } from 'react-components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { toExdate } from '../recurrence/helper';
 
 export const getRecurrenceIdDate = (component: VcalVeventComponent) => {
@@ -42,8 +42,8 @@ export const getSharedEventIDAndSessionKey = async ({
     }
     const { CalendarID, SharedEventID } = calendarEvent;
     // we need to decrypt the sharedKeyPacket in Event to obtain the decrypted session key
-    const calendarKeys = await getCalendarKeys(CalendarID);
-    const [sessionKey] = await readSessionKeys({ calendarEvent, ...splitKeys(calendarKeys) });
+    const { privateKeys } = splitKeys(await getCalendarKeys(CalendarID));
+    const [sessionKey] = await readSessionKeys({ calendarEvent, privateKeys });
 
     return {
         sharedEventID: SharedEventID,
