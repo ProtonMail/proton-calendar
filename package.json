@@ -1,6 +1,6 @@
 {
     "name": "proton-calendar",
-    "version": "4.1.0",
+    "version": "4.1.11",
     "description": "React web application to manage ProtonMail calendar",
     "main": "index.js",
     "config": {
