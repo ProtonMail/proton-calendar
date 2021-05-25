@@ -31,6 +31,7 @@ import {
     SyncMultipleApiResponse,
     DateTimeModel,
     EventModel,
+    AttendeeModel,
     UpdateEventPartApiResponse,
 } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
@@ -325,7 +326,7 @@ const InteractiveCalendarView = ({
         );
     };
 
-    const getCreateModel = (isAllDay: boolean) => {
+    const getCreateModel = (isAllDay: boolean, attendees?: AttendeeModel[]) => {
         if (!defaultCalendar || !defaultCalendarBootstrap) {
             return;
         }
@@ -349,6 +350,7 @@ const InteractiveCalendarView = ({
             Address,
             isAllDay,
             tzid,
+            attendees,
         });
     };
 
@@ -650,7 +652,7 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleSendPrefsErrors = async ({ inviteActions, vevent, cancelVevent }: SendIcsActionData) => {
+    const handleSendPrefsErrors = async ({ inviteActions, vevent, cancelVevent, noCheck }: SendIcsActionData) => {
         const sendPreferencesMap = await getSendIcsPreferencesMap({
             inviteActions,
             vevent,
@@ -658,7 +660,7 @@ const InteractiveCalendarView = ({
             contactEmailsMap,
         });
         const hasErrors = Object.values(sendPreferencesMap).some((sendPref) => !!sendPref?.error);
-        if (!hasErrors) {
+        if (!hasErrors || noCheck) {
             return { sendPreferencesMap, inviteActions, vevent, cancelVevent };
         }
         return new Promise<CleanSendIcsActionData>((resolve, reject) => {
@@ -675,7 +677,7 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleSendIcs = async ({ inviteActions, vevent, cancelVevent }: SendIcsActionData) => {
+    const handleSendIcs = async ({ inviteActions, vevent, cancelVevent, noCheck }: SendIcsActionData) => {
         const onRequestError = () => {
             throw new Error(c('Error').t`Invitation failed to be sent`);
         };
@@ -696,7 +698,7 @@ const InteractiveCalendarView = ({
             inviteActions: cleanInviteActions,
             vevent: cleanVevent,
             cancelVevent: cleanCancelVevent,
-        } = await handleSendPrefsErrors({ inviteActions, vevent, cancelVevent });
+        } = await handleSendPrefsErrors({ inviteActions, vevent, cancelVevent, noCheck });
         // generate DTSTAMPs for the ICS
         const currentTimestamp = +serverTime();
         const cleanVeventWithDtstamp = cleanVevent
@@ -829,11 +831,11 @@ const InteractiveCalendarView = ({
         setEventModalID(createModal());
     };
 
-    const handleCreateEvent = () => {
+    const handleCreateEvent = (attendees: AttendeeModel[]) => {
         if (!defaultCalendar) {
             return;
         }
-        const startModel = getCreateModel(false);
+        const startModel = getCreateModel(false, attendees);
         if (!startModel) {
             throw new Error('Unable to get create model');
         }
@@ -913,11 +915,14 @@ const InteractiveCalendarView = ({
                         silence: true,
                     })
         );
-        // the routes called in requests do not have any specific jail limit
-        // the limit per user session is 25k requests / 900s
-        const responses = await processApiRequestsSafe(requests, 25000, 900 * SECOND);
-
-        return responses;
+        // Catch errors silently
+        try {
+            // the routes called in requests do not have any specific jail limit
+            // the limit per user session is 25k requests / 900s
+            return processApiRequestsSafe(requests, 25000, 900 * SECOND);
+        } catch (e) {
+            return [];
+        }
     };
 
     const handleUpdatePersonalPartActions = async (
@@ -945,11 +950,8 @@ const InteractiveCalendarView = ({
         try {
             // the routes called in requests do not have any specific jail limit
             // the limit per user session is 25k requests / 900s
-            const responses = await processApiRequestsSafe(requests, 25000, 900 * SECOND);
-
-            return responses;
+            return processApiRequestsSafe(requests, 25000, 900 * SECOND);
         } catch (e) {
-            noop();
             return [];
         }
     };
@@ -980,6 +982,7 @@ const InteractiveCalendarView = ({
                 getCalendarBootstrap: readCalendarBootstrap,
                 getCanonicalEmailsMap,
                 sendIcs: handleSendIcs,
+                onSendPrefsErrors: handleSendPrefsErrors,
                 handleSyncActions,
                 getCalendarKeys,
             });
@@ -1055,8 +1058,8 @@ const InteractiveCalendarView = ({
     };
 
     useImperativeHandle(interactiveRef, () => ({
-        createEvent: () => {
-            handleCreateEvent();
+        createEvent: (attendees) => {
+            handleCreateEvent(attendees);
         },
     }));
 

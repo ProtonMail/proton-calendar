@@ -41,6 +41,7 @@
         "@testing-library/jest-dom": "^4.0.0",
         "@testing-library/react": "^8.0.7",
         "@types/jest": "^24.0.18",
+        "@types/react-helmet": "^6.1.1",
         "babel-plugin-transform-require-context": "^0.1.1",
         "cross-env": "^5.2.0",
         "eslint": "^7.3.1",
@@ -65,6 +66,7 @@
         "proton-translations": "github:ProtonMail/proton-translations#fe-calendar",
         "proton-version": "github:ProtonMail/proton-version#semver:^1.0.0",
         "react-components": "github:ProtonMail/react-components#master",
+        "react-helmet": "^6.1.0",
         "tinycolor2": "^1.4.1",
         "ttag": "^1.7.5",
         "yetch": "^1.1.0"

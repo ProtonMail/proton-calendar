@@ -22,6 +22,7 @@ export interface InviteActions {
     partstat?: ICAL_ATTENDEE_STATUS;
     sendCancellationNotice?: boolean;
     resetSingleEditsPartstat?: boolean;
+    deleteSingleEdits?: boolean;
     selfAddress?: Address;
     selfAttendeeIndex?: number;
     addedAttendees?: VcalAttendeeProperty[];
@@ -38,6 +39,7 @@ export interface SendIcsActionData {
     inviteActions: InviteActions;
     vevent?: VcalVeventComponent;
     cancelVevent?: VcalVeventComponent;
+    noCheck?: boolean;
 }
 
 export interface CleanSendIcsActionData extends SendIcsActionData {
